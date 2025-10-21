@@ -43,7 +43,7 @@ def predict():
         df = pd.DataFrame([data])
 
         # Clean and transform features just like training
-        df["Price"] = df["price_text"].apply(clean_price)
+        #df["Price"] = df["price_text"].apply(clean_price)
         df["CoveredArea"] = df["covered_area"].apply(clean_area)
         df["PropertyType"] = df["prop_type"].apply(lambda x: 1 if str(x).strip().lower() == "house" else 0)
         df["Beds"] = df["beds"].apply(extract_num)
@@ -67,13 +67,13 @@ def predict():
         df["LocationEncoded"] = le_location.transform(df["location"].astype(str))
 
         # Drop unnecessary columns
-        df = df.drop(columns=["price_text", "covered_area", "prop_type", "purpose", "location", "amenities", "beds", "baths"])
+        df = df.drop(columns=["covered_area", "prop_type", "purpose", "location", "amenities", "beds", "baths"])
 
         # Handle missing values
         df.fillna(0, inplace=True)
 
         # Predict price
-        prediction = model.predict(df.drop(columns=["Price"]))[0]
+        prediction = model.predict(df)[0]
 
         return jsonify({
             "predicted_price_crore": round(prediction, 2)
