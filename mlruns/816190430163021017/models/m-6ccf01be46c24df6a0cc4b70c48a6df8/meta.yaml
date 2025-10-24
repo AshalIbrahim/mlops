@@ -1,0 +1,10 @@
+artifact_location: mlflow-artifacts:/816190430163021017/models/m-6ccf01be46c24df6a0cc4b70c48a6df8/artifacts
+creation_timestamp: 1761317488204
+experiment_id: '816190430163021017'
+last_updated_timestamp: 1761317491272
+model_id: m-6ccf01be46c24df6a0cc4b70c48a6df8
+model_type: ''
+name: ZameenRentModel
+source_run_id: c273ec223f4c44738dd926be7e5569d4
+status: 2
+status_message: null

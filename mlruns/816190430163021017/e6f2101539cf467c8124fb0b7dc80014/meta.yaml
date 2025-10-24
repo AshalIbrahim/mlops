@@ -1,0 +1,14 @@
+artifact_uri: mlflow-artifacts:/816190430163021017/e6f2101539cf467c8124fb0b7dc80014/artifacts
+end_time: 1761320034700
+entry_point_name: ''
+experiment_id: '816190430163021017'
+lifecycle_stage: active
+run_id: e6f2101539cf467c8124fb0b7dc80014
+run_name: Sale_Model
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1761320029986
+status: 3
+tags: []
+user_id: Admin

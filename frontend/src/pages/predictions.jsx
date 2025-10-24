@@ -6,9 +6,11 @@ const Predictions = () => {
         beds: '',
         bathrooms: '',
         coveredArea: '',
-        location: ''
+        location: '',
+        propType: ''
     });
     const [locations, setLocations] = useState([]);
+    const [propertyTypes, setPropertyTypes] = useState([]);
     const [predictedPrice, setPredictedPrice] = useState(null);
 
     useEffect(() => {
@@ -21,6 +23,15 @@ const Predictions = () => {
             }
         };
         fetchLocations();
+        const fetchPropertyTypes = async () => {
+            try {
+                const resp = await axios.get('http://localhost:8000/prop_type');
+                setPropertyTypes(resp.data.prop_type || []);
+            } catch (err) {
+                console.error('Error fetching property types:', err);
+            }
+        };
+        fetchPropertyTypes();
     }, []);
 
     const handleChange = (e) => {
@@ -105,6 +116,21 @@ const Predictions = () => {
                             <option key={index} value={location}>
                                 {location}
                             </option>
+                        ))}
+                    </select>
+                </div>
+                <div className="mb-4">
+                    <label className="block mb-2">Property Type:</label>
+                    <select
+                        name="propType"
+                        value={formData.propType}
+                        onChange={handleChange}
+                        className="w-full p-2 border rounded"
+                        required
+                    >
+                        <option value="">Select a property type</option>
+                        {propertyTypes.map((pt, idx) => (
+                            <option key={idx} value={pt}>{pt}</option>
                         ))}
                     </select>
                 </div>
