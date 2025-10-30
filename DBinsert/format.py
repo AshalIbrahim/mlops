@@ -3,9 +3,12 @@ import re
 import numpy as np
 import mysql.connector
 import time
+import os
+from dotenv import load_dotenv
+load_dotenv()
 
 # ---------- STEP 1: Load CSV ----------
-df = pd.read_csv("properties.csv")
+df = pd.read_csv("C:/Users/anshd/.vscode/mlops/working_code/properties.csv")
 
 # ---------- STEP 2: Normalize Column Names ----------
 df.columns = (
@@ -86,10 +89,10 @@ def connect_mysql(retries=3, delay=2):
     for i in range(retries):
         try:
             connection = mysql.connector.connect(
-                host="localhost",      # change if needed
-                user="root",           # your MySQL username
-                password="1234",  # your MySQL password
-                database="zameen"      # your database name
+                host=os.getenv("host"),      # change if needed
+                user=os.getenv("user"),           # your MySQL username
+                password=os.getenv("password"),  # your MySQL password
+                database="zameen"     # your database name
             )
             if connection.is_connected():
                 print("✅ Connected to MySQL successfully.")
@@ -122,7 +125,7 @@ try:
     cursor.executemany(insert_query, data_tuples)
     connection.commit()
 except Exception as e:
-    print("fuck")
+    print("err in insertion")
 
 
 
@@ -135,8 +138,8 @@ import mysql.connector
 import time
 
 # ---------- STEP 1: Load CSV ----------
-# (adjust path as needed)
-df = pd.read_csv("properties.csv")
+# (adjust path as needed)pi
+df = pd.read_csv("C:/Users/anshd/.vscode/mlops/working_code/properties.csv")
 
 # ---------- STEP 2: Normalize Column Names ----------
 df.columns = (
@@ -255,10 +258,13 @@ def connect_mysql(retries=3, delay=2):
     for i in range(retries):
         try:
             connection = mysql.connector.connect(
-                host="localhost",      # change if needed
-                user="root",           # your MySQL username
-                password="1234",  # your MySQL password
-                database="zameen"      # your database name
+                host=os.getenv('host'),
+                port=os.getenv('port'),
+                user=os.getenv('user'),
+                password=os.getenv('password'),
+                database="zameen"
+                
+
             )
             if connection.is_connected():
                 print("✅ Connected to MySQL successfully.")
