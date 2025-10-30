@@ -237,3 +237,8 @@ async def predict_price(input_data: PredictionInput):
         }
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Prediction failed: {str(e)}")
+
+@app.get("/health")
+def health_check():
+    return {"status": "ok"}         
+
