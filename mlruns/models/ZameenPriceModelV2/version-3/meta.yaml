@@ -1,0 +1,15 @@
+creation_timestamp: 1761320034598
+current_stage: None
+deployment_job_state: null
+description: ''
+last_updated_timestamp: 1761320034598
+model_id: m-1003e13d5ac24ae8ac3f1299cf3f094f
+name: ZameenPriceModelV2
+run_id: e6f2101539cf467c8124fb0b7dc80014
+run_link: ''
+source: models:/m-1003e13d5ac24ae8ac3f1299cf3f094f
+status: READY
+status_message: null
+storage_location: mlflow-artifacts:/816190430163021017/models/m-1003e13d5ac24ae8ac3f1299cf3f094f/artifacts
+user_id: null
+version: 3
