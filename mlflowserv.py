@@ -5,132 +5,100 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_absolute_error, r2_score
 import pandas as pd
 import json
+import os
+import boto3
+from dotenv import load_dotenv
+
+load_dotenv()
+print("AWS_ACCESS_KEY_ID:", os.getenv("AWS_ACCESS_KEY_ID"))
+print("AWS_SECRET_ACCESS_KEY:", os.getenv("AWS_SECRET_ACCESS_KEY"))
+session = boto3.Session()
+credentials = session.get_credentials()
+print(credentials.get_frozen_credentials())
+
 
 # ----------------------
-# MLflow setup
+# S3 Setup
 # ----------------------
-mlflow.set_tracking_uri("http://127.0.0.1:5000")  # Your MLflow tracking server
-mlflow.set_experiment("Zameen-Price-Prediction")
+S3_BUCKET = "zameen-project"
+S3_MODELS_PREFIX = "zameen_models"
+s3 = boto3.client("s3")  # credentials from environment or IAM role
+
+
+def upload_to_s3(local_path, s3_bucket, s3_key):
+    """Upload a file or directory to S3"""
+    if os.path.isdir(local_path):
+        for root, dirs, files in os.walk(local_path):
+            for file in files:
+                full_path = os.path.join(root, file)
+                relative_path = os.path.relpath(full_path, local_path)
+                s3_path = os.path.join(s3_key, relative_path)
+                s3.upload_file(full_path, s3_bucket, s3_path)
+    else:
+        s3.upload_file(local_path, s3_bucket, s3_key)
+    print(f"✅ Uploaded {local_path} to s3://{s3_bucket}/{s3_key}")
+
 
 # ----------------------
 # Load and preprocess data
 # ----------------------
 df = pd.read_csv("zameen_cleaned.csv")
 
-# Clean and split data
+# Filter only "for sale" data
 sale_data = df[df["purpose"].str.strip().str.lower() == "for sale"]
-rent_data = df[df["purpose"].str.strip().str.lower() == "for rent"]
 
-# Save valid locations and property types for validation
+# Save valid metadata
 valid_metadata = {
     "sale": {
-        "locations": sorted(sale_data["location"].unique().tolist()),
-        "prop_types": sorted(sale_data["prop_type"].unique().tolist()),
-    },
-    "rent": {
-        "locations": sorted(rent_data["location"].unique().tolist()),
-        "prop_types": sorted(rent_data["prop_type"].unique().tolist()),
-    },
+        "locations": sorted(sale_data["location"].dropna().unique().tolist()),
+        "prop_types": sorted(sale_data["prop_type"].dropna().unique().tolist()),
+    }
 }
 
 with open("valid_metadata.json", "w") as f:
     json.dump(valid_metadata, f, indent=4)
 
-print("Saved valid_metadata.json with validation data")
-
-# One-hot encode locations and property types for each dataset
+# One-hot encode locations and property types
 locations_sale = pd.get_dummies(sale_data["location"], prefix="location")
 prop_types_sale = pd.get_dummies(sale_data["prop_type"], prefix="prop_type")
-Xsale = pd.concat(
+X_sale = pd.concat(
     [sale_data[["covered_area", "beds", "baths"]], locations_sale, prop_types_sale],
     axis=1,
 )
 y_sale = sale_data["price"]
 
-locations_rent = pd.get_dummies(rent_data["location"], prefix="location")
-prop_types_rent = pd.get_dummies(rent_data["prop_type"], prefix="prop_type")
-Xrent = pd.concat(
-    [rent_data[["covered_area", "beds", "baths"]], locations_rent, prop_types_rent],
-    axis=1,
-)
-y_rent = rent_data["price"]
-
-# Split into train/test sets
+# Train/test split
 X_train_sale, X_test_sale, y_train_sale, y_test_sale = train_test_split(
-    Xsale, y_sale, test_size=0.3, random_state=42
-)
-X_train_rent, X_test_rent, y_train_rent, y_test_rent = train_test_split(
-    Xrent, y_rent, test_size=0.3, random_state=42
+    X_sale, y_sale, test_size=0.3, random_state=42
 )
 
-# ----------------------
-# Save feature schema
-# ----------------------
-feature_columns = {"sale": list(Xsale.columns), "rent": list(Xrent.columns)}
-
+# Save feature columns
+feature_columns = {"sale": list(X_sale.columns)}
 with open("feature_columns.json", "w") as f:
     json.dump(feature_columns, f, indent=4)
 
-print(
-    f"✅ Saved feature_columns.json with {len(Xsale.columns)} sale and {len(Xrent.columns)} rent features."
+# ----------------------
+# Train Sale Model
+# ----------------------
+model_sale = LinearRegression()
+model_sale.fit(X_train_sale, y_train_sale)
+y_pred_sale = model_sale.predict(X_test_sale)
+
+mae_sale = mean_absolute_error(y_test_sale, y_pred_sale)
+r2_sale = r2_score(y_test_sale, y_pred_sale)
+
+# Save model locally
+mlflow.sklearn.save_model(model_sale, "ZameenPriceModelSale")
+
+# Upload model and artifacts to S3
+upload_to_s3(
+    "ZameenPriceModelSale", S3_BUCKET, f"{S3_MODELS_PREFIX}/ZameenPriceModelSale"
+)
+upload_to_s3(
+    "feature_columns.json", S3_BUCKET, f"{S3_MODELS_PREFIX}/feature_columns.json"
+)
+upload_to_s3(
+    "valid_metadata.json", S3_BUCKET, f"{S3_MODELS_PREFIX}/valid_metadata.json"
 )
 
-# ----------------------
-# Train and log Sale model
-# ----------------------
-with mlflow.start_run(run_name="Sale_Model") as run:
-    model_sale = LinearRegression()
-    model_sale.fit(X_train_sale, y_train_sale)
-
-    y_pred_sale = model_sale.predict(X_test_sale)
-    mae_sale = mean_absolute_error(y_test_sale, y_pred_sale)
-    r2_sale = r2_score(y_test_sale, y_pred_sale)
-
-    mlflow.log_param("model_type", "LinearRegression")
-    mlflow.log_param("dataset", "For Sale")
-    mlflow.log_metric("MAE", mae_sale)
-    mlflow.log_metric("R2", r2_sale)
-
-    # Log feature schema and validation metadata as artifacts
-    mlflow.log_artifact("feature_columns.json")
-    mlflow.log_artifact("valid_metadata.json")
-
-    # Register model in MLflow
-    mlflow.sklearn.log_model(
-        sk_model=model_sale,
-        artifact_path="ZameenPriceModelSale",
-        registered_model_name="ZameenPriceModelV2",
-    )
-
-    print(f"✅ Sale model logged. Run ID: {run.info.run_id}")
-    print(f"   MAE: {mae_sale:.2f}, R²: {r2_sale:.4f}")
-
-# ----------------------
-# Train and log Rent model
-# ----------------------
-with mlflow.start_run(run_name="Rent_Model") as run:
-    model_rent = LinearRegression()
-    model_rent.fit(X_train_rent, y_train_rent)
-
-    y_pred_rent = model_rent.predict(X_test_rent)
-    mae_rent = mean_absolute_error(y_test_rent, y_pred_rent)
-    r2_rent = r2_score(y_test_rent, y_pred_rent)
-
-    mlflow.log_param("model_type", "LinearRegression")
-    mlflow.log_param("dataset", "For Rent")
-    mlflow.log_metric("MAE", mae_rent)
-    mlflow.log_metric("R2", r2_rent)
-
-    # Log feature schema and validation metadata as artifacts
-    mlflow.log_artifact("feature_columns.json")
-    mlflow.log_artifact("valid_metadata.json")
-
-    # Register model in MLflow
-    mlflow.sklearn.log_model(
-        sk_model=model_rent,
-        artifact_path="ZameenRentModel",
-        registered_model_name="ZameenPriceModelRentModel",
-    )
-
-    print(f"✅ Rent model logged. Run ID: {run.info.run_id}")
-    print(f"   MAE: {mae_rent:.2f}, R²: {r2_rent:.4f}")
+print(f"✅ Sale model trained and uploaded. MAE: {mae_sale:.2f}, R²: {r2_sale:.4f}")

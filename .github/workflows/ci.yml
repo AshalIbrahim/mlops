@@ -50,6 +50,11 @@ jobs:
           pip install pytest pytest-cov
           pip install mysql-connector-python boto3
 
+      - name: Scan Dependencies for Vulnerabilities
+        run: |
+          pip install pip-audit
+          pip-audit --strict  # Use --strict for a more thorough check    
+
       - name: Start MLflow server
         run: |
           mlflow server \
