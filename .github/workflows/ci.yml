@@ -52,9 +52,7 @@ jobs:
 
 
       - name: Run tests with coverage
-        run: |
-          export PYTHONPATH=$PYTHONPATH:$(pwd)
-          pytest --cov=backend --cov-fail-under=80
+        run: pytest --cov=backend --cov-fail-under=80
 
   build:
     name: Build and Push Docker Image to GHCR
