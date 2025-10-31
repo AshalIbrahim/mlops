@@ -50,15 +50,20 @@ jobs:
           pip install pytest pytest-cov
           pip install mysql-connector-python boto3
 
+      - name: Start MLflow server
+        run: |
+          mlflow server \
+            --backend-store-uri sqlite:///mlflow.db \
+            --default-artifact-root ./mlruns \
+            --host 127.0.0.1 \
+            --port 5000 &
+          sleep 5  # Give server time to start
 
       - name: Run tests with coverage
         working-directory: ${{ github.workspace }}  # project root
         env:
           PYTHONPATH: ${{ github.workspace }}
-        run: |
-          mlflow server 
-          sleep 10
-          pytest --cov=backend tests/ --cov-fail-under=70
+        run: pytest --cov=backend tests/ --cov-fail-under=70
 
 
   build:
