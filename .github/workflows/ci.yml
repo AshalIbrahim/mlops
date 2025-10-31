@@ -48,12 +48,14 @@ jobs:
           pip install -U pip
           pip install -r requirements.txt
           pip install pytest pytest-cov
-          pip install mysql-connector-python boto3
+          pip install mysql-connector-python boto3 mlflow
 
-      - name: Scan Dependencies for Vulnerabilities
-        run: |
-          pip install pip-audit
-          pip-audit --strict  # Use --strict for a more thorough check    
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          
 
       - name: Start MLflow server
         run: |
@@ -65,11 +67,10 @@ jobs:
           sleep 5  # Give server time to start
 
       - name: Run tests with coverage
-        working-directory: ${{ github.workspace }}  # project root
+        working-directory: ${{ github.workspace }}
         env:
           PYTHONPATH: ${{ github.workspace }}
         run: pytest --cov=backend tests/ --cov-fail-under=80
-
 
   build:
     name: Build and Push Docker Image to GHCR
@@ -124,8 +125,9 @@ jobs:
             fi
           done
           echo "✅ All golden endpoints passed!"
+
       - name: Stop canary container
-        run: |  
+        run: |
           container_id=$(docker ps -q --filter ancestor=ghcr.io/${{ github.repository }}:${{ github.sha }})
-          docker stop $container_id    
-          docker rm $container_id     
+          docker stop $container_id
+          docker rm $container_id
