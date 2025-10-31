@@ -86,3 +86,4 @@ mysql.connector
 ruff
 black 
 pytest
+pytest-cov

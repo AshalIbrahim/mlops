@@ -1,4 +1,8 @@
 import mysql.connector
+import sys
+import os
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 import pytest
 from backend.app import get_connection
 
@@ -9,7 +13,7 @@ def test_database_connection_success():
     """
 
     try:
-        conn = get_connection
+        conn = get_connection()
         assert conn.is_connected(), "Database connection failed."
     except mysql.connector.Error as err:
         pytest.fail(f"Database connection failed: {err}")
