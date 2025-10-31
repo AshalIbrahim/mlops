@@ -1,6 +1,6 @@
 import mysql.connector
 import pytest
-
+from backend.app import get_connection
 
 def test_database_connection_success():
     """
@@ -8,14 +8,7 @@ def test_database_connection_success():
     """
 
     try:
-        conn = mysql.connector.connect(
-            host="zameen-db.c5ye0uuk68w0.eu-north-1.rds.amazonaws.com",
-            port=3306,
-            user="admin",
-            password="Brianlara1",
-            database="zameen",  # your DB name
-        )
-
+        conn = get_connection
         assert conn.is_connected(), "Database connection failed."
     except mysql.connector.Error as err:
         pytest.fail(f"Database connection failed: {err}")

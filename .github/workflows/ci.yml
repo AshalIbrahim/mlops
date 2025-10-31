@@ -51,7 +51,7 @@ jobs:
           pip install mysql.connector boto3
 
       - name: Run tests with coverage
-        run: pytest --cov=app --cov-fail-under=80
+        run: pytest --cov=backend --cov-fail-under=80
 
   build:
     name: Build and Push Docker Image to GHCR
