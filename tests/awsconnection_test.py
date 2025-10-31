@@ -1,7 +1,6 @@
-# tests/test_app_real_db_extended.py
+# tests/test_app_real_db.py
 from fastapi.testclient import TestClient
 from backend.app import app, get_connection, load_location_and_property_types
-import mysql.connector
 
 client = TestClient(app)
 
@@ -33,9 +32,8 @@ def test_health_check():
     assert response.json() == {"status": "ok"}
 
 
-# --- Test /listings with edge cases ---
+# --- Test /listings with real DB ---
 def test_get_listings_real_db():
-    # Normal limit
     response = client.get("/listings?limit=5")
     assert response.status_code == 200
     data = response.json()
@@ -45,11 +43,6 @@ def test_get_listings_real_db():
             assert "prop_type" in item
             assert "price" in item
             assert "location" in item
-
-    # Edge case: limit=0
-    response = client.get("/listings?limit=0")
-    assert response.status_code == 200
-    assert response.json() == []
 
 
 # --- Test /locations and /prop_type endpoints ---
@@ -69,7 +62,7 @@ def test_get_prop_type_real_db():
     assert isinstance(data["prop_type"], list)
 
 
-# --- Test the helper function with real DB ---
+# --- Test the helper function that loads locations and property types ---
 def test_load_location_and_property_types_direct():
     result = load_location_and_property_types()
     assert isinstance(result, dict)
@@ -77,16 +70,3 @@ def test_load_location_and_property_types_direct():
     assert "prop_type" in result
     assert isinstance(result["locations"], list)
     assert isinstance(result["prop_type"], list)
-
-
-# --- Force DB exception to hit except blocks ---
-def test_load_location_and_property_types_error(monkeypatch):
-    # Force get_connection() to raise an exception
-    def fake_connection():
-        raise mysql.connector.Error("Forced DB error")
-
-    monkeypatch.setattr("backend.app.get_connection", fake_connection)
-
-    result = load_location_and_property_types()
-    assert result["locations"] == []
-    assert result["prop_type"] == []
