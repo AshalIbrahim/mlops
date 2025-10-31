@@ -12,7 +12,8 @@ def test_database_connection_success():
             host="zameen-db.c5ye0uuk68w0.eu-north-1.rds.amazonaws.com",
             port=3306,
             user="admin",
-            password="Brianlara1",  # your DB name
+            password="Brianlara1",
+            database="zameen",  # your DB name
         )
 
         assert conn.is_connected(), "Database connection failed."
