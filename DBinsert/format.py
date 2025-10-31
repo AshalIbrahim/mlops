@@ -120,7 +120,7 @@ load_dotenv()
 #             row.location, int(row.beds), int(row.baths), row.amenities
 #         )
 #         for _, row in df.iterrows()
-        
+
 #     ]
 
 #     cursor.executemany(insert_query, data_tuples)
@@ -264,7 +264,7 @@ def connect_mysql(retries=3, delay=2):
                 user=os.getenv('user'),
                 password=os.getenv('password'),
                 database="zameen"
-                
+
 
             )
             if connection.is_connected():

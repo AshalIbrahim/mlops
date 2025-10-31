@@ -51,7 +51,7 @@ const Predictions = () => {
                 bathrooms: parseInt(formData.bathrooms),
                 coveredArea: parseFloat(formData.coveredArea)
             };
-            
+
             const response = await axios.post('http://localhost:8000/predict', requestData);
             console.log('Response:', response.data); // For debugging
             if (response.data.error) {

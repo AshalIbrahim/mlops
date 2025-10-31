@@ -3150,14 +3150,14 @@ static CYTHON_SMALL_CODE int __pyx_m_traverse(PyObject *m, visitproc visit, void
 
 /* "fontTools/feaLib/lexer.py":43
  *     MODE_FILENAME_ = "FILENAME"
- * 
+ *
  *     def __init__(self, text, filename):             # <<<<<<<<<<<<<<
  *         self.filename_ = filename
  *         self.line_ = 1
 */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_9fontTools_6feaLib_5lexer_5Lexer_1__init__(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_6feaLib_5lexer_5Lexer_1__init__(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -3166,7 +3166,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_9fontTools_6feaLib_5lexer_5Lexer___init__, "Lexer.__init__(self, text, filename)");
 static PyMethodDef __pyx_mdef_9fontTools_6feaLib_5lexer_5Lexer_1__init__ = {"__init__", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9fontTools_6feaLib_5lexer_5Lexer_1__init__, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_9fontTools_6feaLib_5lexer_5Lexer___init__};
-static PyObject *__pyx_pw_9fontTools_6feaLib_5lexer_5Lexer_1__init__(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_6feaLib_5lexer_5Lexer_1__init__(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -3270,7 +3270,7 @@ static PyObject *__pyx_pf_9fontTools_6feaLib_5lexer_5Lexer___init__(CYTHON_UNUSE
   __Pyx_RefNannySetupContext("__init__", 0);
 
   /* "fontTools/feaLib/lexer.py":44
- * 
+ *
  *     def __init__(self, text, filename):
  *         self.filename_ = filename             # <<<<<<<<<<<<<<
  *         self.line_ = 1
@@ -3319,7 +3319,7 @@ static PyObject *__pyx_pf_9fontTools_6feaLib_5lexer_5Lexer___init__(CYTHON_UNUSE
  *         self.text_ = text
  *         self.text_length_ = len(text)             # <<<<<<<<<<<<<<
  *         self.mode_ = Lexer.MODE_NORMAL_
- * 
+ *
 */
   __pyx_t_1 = PyObject_Length(__pyx_v_text); if (unlikely(__pyx_t_1 == ((Py_ssize_t)-1))) __PYX_ERR(0, 49, __pyx_L1_error)
   __pyx_t_2 = PyLong_FromSsize_t(__pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 49, __pyx_L1_error)
@@ -3331,7 +3331,7 @@ static PyObject *__pyx_pf_9fontTools_6feaLib_5lexer_5Lexer___init__(CYTHON_UNUSE
  *         self.text_ = text
  *         self.text_length_ = len(text)
  *         self.mode_ = Lexer.MODE_NORMAL_             # <<<<<<<<<<<<<<
- * 
+ *
  *     def __iter__(self):
 */
   __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_Lexer); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 50, __pyx_L1_error)
@@ -3344,7 +3344,7 @@ static PyObject *__pyx_pf_9fontTools_6feaLib_5lexer_5Lexer___init__(CYTHON_UNUSE
 
   /* "fontTools/feaLib/lexer.py":43
  *     MODE_FILENAME_ = "FILENAME"
- * 
+ *
  *     def __init__(self, text, filename):             # <<<<<<<<<<<<<<
  *         self.filename_ = filename
  *         self.line_ = 1
@@ -3366,14 +3366,14 @@ static PyObject *__pyx_pf_9fontTools_6feaLib_5lexer_5Lexer___init__(CYTHON_UNUSE
 
 /* "fontTools/feaLib/lexer.py":52
  *         self.mode_ = Lexer.MODE_NORMAL_
- * 
+ *
  *     def __iter__(self):             # <<<<<<<<<<<<<<
  *         return self
- * 
+ *
 */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_9fontTools_6feaLib_5lexer_5Lexer_3__iter__(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_6feaLib_5lexer_5Lexer_3__iter__(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -3382,7 +3382,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_9fontTools_6feaLib_5lexer_5Lexer_2__iter__, "Lexer.__iter__(self)");
 static PyMethodDef __pyx_mdef_9fontTools_6feaLib_5lexer_5Lexer_3__iter__ = {"__iter__", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9fontTools_6feaLib_5lexer_5Lexer_3__iter__, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_9fontTools_6feaLib_5lexer_5Lexer_2__iter__};
-static PyObject *__pyx_pw_9fontTools_6feaLib_5lexer_5Lexer_3__iter__(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_6feaLib_5lexer_5Lexer_3__iter__(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -3464,10 +3464,10 @@ static PyObject *__pyx_pf_9fontTools_6feaLib_5lexer_5Lexer_2__iter__(CYTHON_UNUS
   __Pyx_RefNannySetupContext("__iter__", 0);
 
   /* "fontTools/feaLib/lexer.py":53
- * 
+ *
  *     def __iter__(self):
  *         return self             # <<<<<<<<<<<<<<
- * 
+ *
  *     def next(self):  # Python 2
 */
   __Pyx_XDECREF(__pyx_r);
@@ -3477,10 +3477,10 @@ static PyObject *__pyx_pf_9fontTools_6feaLib_5lexer_5Lexer_2__iter__(CYTHON_UNUS
 
   /* "fontTools/feaLib/lexer.py":52
  *         self.mode_ = Lexer.MODE_NORMAL_
- * 
+ *
  *     def __iter__(self):             # <<<<<<<<<<<<<<
  *         return self
- * 
+ *
 */
 
   /* function exit code */
@@ -3492,14 +3492,14 @@ static PyObject *__pyx_pf_9fontTools_6feaLib_5lexer_5Lexer_2__iter__(CYTHON_UNUS
 
 /* "fontTools/feaLib/lexer.py":55
  *         return self
- * 
+ *
  *     def next(self):  # Python 2             # <<<<<<<<<<<<<<
  *         return self.__next__()
- * 
+ *
 */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_9fontTools_6feaLib_5lexer_5Lexer_5next(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_6feaLib_5lexer_5Lexer_5next(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -3508,7 +3508,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_9fontTools_6feaLib_5lexer_5Lexer_4next, "Lexer.next(self)");
 static PyMethodDef __pyx_mdef_9fontTools_6feaLib_5lexer_5Lexer_5next = {"next", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9fontTools_6feaLib_5lexer_5Lexer_5next, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_9fontTools_6feaLib_5lexer_5Lexer_4next};
-static PyObject *__pyx_pw_9fontTools_6feaLib_5lexer_5Lexer_5next(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_6feaLib_5lexer_5Lexer_5next(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -3596,10 +3596,10 @@ static PyObject *__pyx_pf_9fontTools_6feaLib_5lexer_5Lexer_4next(CYTHON_UNUSED P
   __Pyx_RefNannySetupContext("next", 0);
 
   /* "fontTools/feaLib/lexer.py":56
- * 
+ *
  *     def next(self):  # Python 2
  *         return self.__next__()             # <<<<<<<<<<<<<<
- * 
+ *
  *     def __next__(self):  # Python 3
 */
   __Pyx_XDECREF(__pyx_r);
@@ -3619,10 +3619,10 @@ static PyObject *__pyx_pf_9fontTools_6feaLib_5lexer_5Lexer_4next(CYTHON_UNUSED P
 
   /* "fontTools/feaLib/lexer.py":55
  *         return self
- * 
+ *
  *     def next(self):  # Python 2             # <<<<<<<<<<<<<<
  *         return self.__next__()
- * 
+ *
 */
 
   /* function exit code */
@@ -3639,14 +3639,14 @@ static PyObject *__pyx_pf_9fontTools_6feaLib_5lexer_5Lexer_4next(CYTHON_UNUSED P
 
 /* "fontTools/feaLib/lexer.py":58
  *         return self.__next__()
- * 
+ *
  *     def __next__(self):  # Python 3             # <<<<<<<<<<<<<<
  *         while True:
  *             token_type, token, location = self.next_()
 */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_9fontTools_6feaLib_5lexer_5Lexer_7__next__(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_6feaLib_5lexer_5Lexer_7__next__(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -3655,7 +3655,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_9fontTools_6feaLib_5lexer_5Lexer_6__next__, "Lexer.__next__(self)");
 static PyMethodDef __pyx_mdef_9fontTools_6feaLib_5lexer_5Lexer_7__next__ = {"__next__", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9fontTools_6feaLib_5lexer_5Lexer_7__next__, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_9fontTools_6feaLib_5lexer_5Lexer_6__next__};
-static PyObject *__pyx_pw_9fontTools_6feaLib_5lexer_5Lexer_7__next__(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_6feaLib_5lexer_5Lexer_7__next__(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -3751,7 +3751,7 @@ static PyObject *__pyx_pf_9fontTools_6feaLib_5lexer_5Lexer_6__next__(CYTHON_UNUS
   __Pyx_RefNannySetupContext("__next__", 0);
 
   /* "fontTools/feaLib/lexer.py":59
- * 
+ *
  *     def __next__(self):  # Python 3
  *         while True:             # <<<<<<<<<<<<<<
  *             token_type, token, location = self.next_()
@@ -3847,7 +3847,7 @@ static PyObject *__pyx_pf_9fontTools_6feaLib_5lexer_5Lexer_6__next__(CYTHON_UNUS
  *             token_type, token, location = self.next_()
  *             if token_type != Lexer.NEWLINE:             # <<<<<<<<<<<<<<
  *                 return (token_type, token, location)
- * 
+ *
 */
     __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_mstate_global->__pyx_n_u_Lexer); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 61, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
@@ -3864,7 +3864,7 @@ static PyObject *__pyx_pf_9fontTools_6feaLib_5lexer_5Lexer_6__next__(CYTHON_UNUS
  *             token_type, token, location = self.next_()
  *             if token_type != Lexer.NEWLINE:
  *                 return (token_type, token, location)             # <<<<<<<<<<<<<<
- * 
+ *
  *     def location_(self):
 */
       __Pyx_XDECREF(__pyx_r);
@@ -3888,14 +3888,14 @@ static PyObject *__pyx_pf_9fontTools_6feaLib_5lexer_5Lexer_6__next__(CYTHON_UNUS
  *             token_type, token, location = self.next_()
  *             if token_type != Lexer.NEWLINE:             # <<<<<<<<<<<<<<
  *                 return (token_type, token, location)
- * 
+ *
 */
     }
   }
 
   /* "fontTools/feaLib/lexer.py":58
  *         return self.__next__()
- * 
+ *
  *     def __next__(self):  # Python 3             # <<<<<<<<<<<<<<
  *         while True:
  *             token_type, token, location = self.next_()
@@ -3923,14 +3923,14 @@ static PyObject *__pyx_pf_9fontTools_6feaLib_5lexer_5Lexer_6__next__(CYTHON_UNUS
 
 /* "fontTools/feaLib/lexer.py":64
  *                 return (token_type, token, location)
- * 
+ *
  *     def location_(self):             # <<<<<<<<<<<<<<
  *         column = self.pos_ - self.line_start_ + 1
  *         return FeatureLibLocation(self.filename_ or "<features>", self.line_, column)
 */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_9fontTools_6feaLib_5lexer_5Lexer_9location_(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_6feaLib_5lexer_5Lexer_9location_(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -3939,7 +3939,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_9fontTools_6feaLib_5lexer_5Lexer_8location_, "Lexer.location_(self)");
 static PyMethodDef __pyx_mdef_9fontTools_6feaLib_5lexer_5Lexer_9location_ = {"location_", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9fontTools_6feaLib_5lexer_5Lexer_9location_, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_9fontTools_6feaLib_5lexer_5Lexer_8location_};
-static PyObject *__pyx_pw_9fontTools_6feaLib_5lexer_5Lexer_9location_(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_6feaLib_5lexer_5Lexer_9location_(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -4032,11 +4032,11 @@ static PyObject *__pyx_pf_9fontTools_6feaLib_5lexer_5Lexer_8location_(CYTHON_UNU
   __Pyx_RefNannySetupContext("location_", 0);
 
   /* "fontTools/feaLib/lexer.py":65
- * 
+ *
  *     def location_(self):
  *         column = self.pos_ - self.line_start_ + 1             # <<<<<<<<<<<<<<
  *         return FeatureLibLocation(self.filename_ or "<features>", self.line_, column)
- * 
+ *
 */
   __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_pos); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 65, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -4056,7 +4056,7 @@ static PyObject *__pyx_pf_9fontTools_6feaLib_5lexer_5Lexer_8location_(CYTHON_UNU
  *     def location_(self):
  *         column = self.pos_ - self.line_start_ + 1
  *         return FeatureLibLocation(self.filename_ or "<features>", self.line_, column)             # <<<<<<<<<<<<<<
- * 
+ *
  *     def next_(self):
 */
   __Pyx_XDECREF(__pyx_r);
@@ -4107,7 +4107,7 @@ static PyObject *__pyx_pf_9fontTools_6feaLib_5lexer_5Lexer_8location_(CYTHON_UNU
 
   /* "fontTools/feaLib/lexer.py":64
  *                 return (token_type, token, location)
- * 
+ *
  *     def location_(self):             # <<<<<<<<<<<<<<
  *         column = self.pos_ - self.line_start_ + 1
  *         return FeatureLibLocation(self.filename_ or "<features>", self.line_, column)
@@ -4131,14 +4131,14 @@ static PyObject *__pyx_pf_9fontTools_6feaLib_5lexer_5Lexer_8location_(CYTHON_UNU
 
 /* "fontTools/feaLib/lexer.py":68
  *         return FeatureLibLocation(self.filename_ or "<features>", self.line_, column)
- * 
+ *
  *     def next_(self):             # <<<<<<<<<<<<<<
  *         self.scan_over_(Lexer.CHAR_WHITESPACE_)
  *         location = self.location_()
 */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_9fontTools_6feaLib_5lexer_5Lexer_11next_(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_6feaLib_5lexer_5Lexer_11next_(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -4147,7 +4147,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_9fontTools_6feaLib_5lexer_5Lexer_10next_, "Lexer.next_(self)");
 static PyMethodDef __pyx_mdef_9fontTools_6feaLib_5lexer_5Lexer_11next_ = {"next_", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9fontTools_6feaLib_5lexer_5Lexer_11next_, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_9fontTools_6feaLib_5lexer_5Lexer_10next_};
-static PyObject *__pyx_pw_9fontTools_6feaLib_5lexer_5Lexer_11next_(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_6feaLib_5lexer_5Lexer_11next_(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -4252,7 +4252,7 @@ static PyObject *__pyx_pf_9fontTools_6feaLib_5lexer_5Lexer_10next_(CYTHON_UNUSED
   __Pyx_RefNannySetupContext("next_", 0);
 
   /* "fontTools/feaLib/lexer.py":69
- * 
+ *
  *     def next_(self):
  *         self.scan_over_(Lexer.CHAR_WHITESPACE_)             # <<<<<<<<<<<<<<
  *         location = self.location_()
@@ -4354,7 +4354,7 @@ static PyObject *__pyx_pf_9fontTools_6feaLib_5lexer_5Lexer_10next_(CYTHON_UNUSED
 */
     __pyx_t_1 = NULL;
     __Pyx_INCREF(__pyx_builtin_StopIteration);
-    __pyx_t_2 = __pyx_builtin_StopIteration; 
+    __pyx_t_2 = __pyx_builtin_StopIteration;
     __pyx_t_5 = 1;
     {
       PyObject *__pyx_callargs[2] = {__pyx_t_1, NULL};
@@ -4382,7 +4382,7 @@ static PyObject *__pyx_pf_9fontTools_6feaLib_5lexer_5Lexer_10next_(CYTHON_UNUSED
  *             raise StopIteration()
  *         cur_char = text[start]             # <<<<<<<<<<<<<<
  *         next_char = text[start + 1] if start + 1 < limit else None
- * 
+ *
 */
   __pyx_t_4 = __Pyx_PyObject_GetItem(__pyx_v_text, __pyx_v_start); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 76, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
@@ -4393,7 +4393,7 @@ static PyObject *__pyx_pf_9fontTools_6feaLib_5lexer_5Lexer_10next_(CYTHON_UNUSED
  *             raise StopIteration()
  *         cur_char = text[start]
  *         next_char = text[start + 1] if start + 1 < limit else None             # <<<<<<<<<<<<<<
- * 
+ *
  *         if cur_char == "\n":
 */
   __pyx_t_2 = __Pyx_PyLong_AddObjC(__pyx_v_start, __pyx_mstate_global->__pyx_int_1, 1, 0, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 77, __pyx_L1_error)
@@ -4422,7 +4422,7 @@ static PyObject *__pyx_pf_9fontTools_6feaLib_5lexer_5Lexer_10next_(CYTHON_UNUSED
 
   /* "fontTools/feaLib/lexer.py":79
  *         next_char = text[start + 1] if start + 1 < limit else None
- * 
+ *
  *         if cur_char == "\n":             # <<<<<<<<<<<<<<
  *             self.pos_ += 1
  *             self.line_ += 1
@@ -4431,7 +4431,7 @@ static PyObject *__pyx_pf_9fontTools_6feaLib_5lexer_5Lexer_10next_(CYTHON_UNUSED
   if (__pyx_t_7) {
 
     /* "fontTools/feaLib/lexer.py":80
- * 
+ *
  *         if cur_char == "\n":
  *             self.pos_ += 1             # <<<<<<<<<<<<<<
  *             self.line_ += 1
@@ -4502,7 +4502,7 @@ static PyObject *__pyx_pf_9fontTools_6feaLib_5lexer_5Lexer_10next_(CYTHON_UNUSED
 
     /* "fontTools/feaLib/lexer.py":79
  *         next_char = text[start + 1] if start + 1 < limit else None
- * 
+ *
  *         if cur_char == "\n":             # <<<<<<<<<<<<<<
  *             self.pos_ += 1
  *             self.line_ += 1
@@ -4622,7 +4622,7 @@ static PyObject *__pyx_pf_9fontTools_6feaLib_5lexer_5Lexer_10next_(CYTHON_UNUSED
  *         if cur_char == "#":
  *             self.scan_until_(Lexer.CHAR_NEWLINE_)             # <<<<<<<<<<<<<<
  *             return (Lexer.COMMENT, text[start : self.pos_], location)
- * 
+ *
 */
     __pyx_t_3 = __pyx_v_self;
     __Pyx_INCREF(__pyx_t_3);
@@ -4646,7 +4646,7 @@ static PyObject *__pyx_pf_9fontTools_6feaLib_5lexer_5Lexer_10next_(CYTHON_UNUSED
  *         if cur_char == "#":
  *             self.scan_until_(Lexer.CHAR_NEWLINE_)
  *             return (Lexer.COMMENT, text[start : self.pos_], location)             # <<<<<<<<<<<<<<
- * 
+ *
  *         if self.mode_ is Lexer.MODE_FILENAME_:
 */
     __Pyx_XDECREF(__pyx_r);
@@ -4686,7 +4686,7 @@ static PyObject *__pyx_pf_9fontTools_6feaLib_5lexer_5Lexer_10next_(CYTHON_UNUSED
 
   /* "fontTools/feaLib/lexer.py":93
  *             return (Lexer.COMMENT, text[start : self.pos_], location)
- * 
+ *
  *         if self.mode_ is Lexer.MODE_FILENAME_:             # <<<<<<<<<<<<<<
  *             if cur_char != "(":
  *                 raise FeatureLibError("Expected '(' before file name", location)
@@ -4704,7 +4704,7 @@ static PyObject *__pyx_pf_9fontTools_6feaLib_5lexer_5Lexer_10next_(CYTHON_UNUSED
   if (__pyx_t_7) {
 
     /* "fontTools/feaLib/lexer.py":94
- * 
+ *
  *         if self.mode_ is Lexer.MODE_FILENAME_:
  *             if cur_char != "(":             # <<<<<<<<<<<<<<
  *                 raise FeatureLibError("Expected '(' before file name", location)
@@ -4748,7 +4748,7 @@ static PyObject *__pyx_pf_9fontTools_6feaLib_5lexer_5Lexer_10next_(CYTHON_UNUSED
       __PYX_ERR(0, 95, __pyx_L1_error)
 
       /* "fontTools/feaLib/lexer.py":94
- * 
+ *
  *         if self.mode_ is Lexer.MODE_FILENAME_:
  *             if cur_char != "(":             # <<<<<<<<<<<<<<
  *                 raise FeatureLibError("Expected '(' before file name", location)
@@ -4879,7 +4879,7 @@ static PyObject *__pyx_pf_9fontTools_6feaLib_5lexer_5Lexer_10next_(CYTHON_UNUSED
  *             self.pos_ += 1
  *             self.mode_ = Lexer.MODE_NORMAL_             # <<<<<<<<<<<<<<
  *             return (Lexer.FILENAME, text[start + 1 : self.pos_ - 1], location)
- * 
+ *
 */
     __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_Lexer); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 101, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
@@ -4893,7 +4893,7 @@ static PyObject *__pyx_pf_9fontTools_6feaLib_5lexer_5Lexer_10next_(CYTHON_UNUSED
  *             self.pos_ += 1
  *             self.mode_ = Lexer.MODE_NORMAL_
  *             return (Lexer.FILENAME, text[start + 1 : self.pos_ - 1], location)             # <<<<<<<<<<<<<<
- * 
+ *
  *         if cur_char == "\\" and next_char in Lexer.CHAR_DIGIT_:
 */
     __Pyx_XDECREF(__pyx_r);
@@ -4930,7 +4930,7 @@ static PyObject *__pyx_pf_9fontTools_6feaLib_5lexer_5Lexer_10next_(CYTHON_UNUSED
 
     /* "fontTools/feaLib/lexer.py":93
  *             return (Lexer.COMMENT, text[start : self.pos_], location)
- * 
+ *
  *         if self.mode_ is Lexer.MODE_FILENAME_:             # <<<<<<<<<<<<<<
  *             if cur_char != "(":
  *                 raise FeatureLibError("Expected '(' before file name", location)
@@ -4939,7 +4939,7 @@ static PyObject *__pyx_pf_9fontTools_6feaLib_5lexer_5Lexer_10next_(CYTHON_UNUSED
 
   /* "fontTools/feaLib/lexer.py":104
  *             return (Lexer.FILENAME, text[start + 1 : self.pos_ - 1], location)
- * 
+ *
  *         if cur_char == "\\" and next_char in Lexer.CHAR_DIGIT_:             # <<<<<<<<<<<<<<
  *             self.pos_ += 1
  *             self.scan_over_(Lexer.CHAR_DIGIT_)
@@ -4962,7 +4962,7 @@ static PyObject *__pyx_pf_9fontTools_6feaLib_5lexer_5Lexer_10next_(CYTHON_UNUSED
   if (__pyx_t_7) {
 
     /* "fontTools/feaLib/lexer.py":105
- * 
+ *
  *         if cur_char == "\\" and next_char in Lexer.CHAR_DIGIT_:
  *             self.pos_ += 1             # <<<<<<<<<<<<<<
  *             self.scan_over_(Lexer.CHAR_DIGIT_)
@@ -5016,7 +5016,7 @@ static PyObject *__pyx_pf_9fontTools_6feaLib_5lexer_5Lexer_10next_(CYTHON_UNUSED
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __pyx_t_1 = NULL;
     __Pyx_INCREF((PyObject *)(&PyLong_Type));
-    __pyx_t_4 = ((PyObject *)(&PyLong_Type)); 
+    __pyx_t_4 = ((PyObject *)(&PyLong_Type));
     __pyx_t_9 = __Pyx_PyLong_AddObjC(__pyx_v_start, __pyx_mstate_global->__pyx_int_1, 1, 0, 0); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 107, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_9);
     __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_pos); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 107, __pyx_L1_error)
@@ -5052,7 +5052,7 @@ static PyObject *__pyx_pf_9fontTools_6feaLib_5lexer_5Lexer_10next_(CYTHON_UNUSED
 
     /* "fontTools/feaLib/lexer.py":104
  *             return (Lexer.FILENAME, text[start + 1 : self.pos_ - 1], location)
- * 
+ *
  *         if cur_char == "\\" and next_char in Lexer.CHAR_DIGIT_:             # <<<<<<<<<<<<<<
  *             self.pos_ += 1
  *             self.scan_over_(Lexer.CHAR_DIGIT_)
@@ -5512,7 +5512,7 @@ static PyObject *__pyx_pf_9fontTools_6feaLib_5lexer_5Lexer_10next_(CYTHON_UNUSED
     __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
     __pyx_t_4 = NULL;
     __Pyx_INCREF((PyObject *)(&PyLong_Type));
-    __pyx_t_3 = ((PyObject *)(&PyLong_Type)); 
+    __pyx_t_3 = ((PyObject *)(&PyLong_Type));
     __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_pos); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 131, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __pyx_t_10 = __Pyx_PyObject_GetSlice(__pyx_v_text, 0, 0, &__pyx_v_start, &__pyx_t_1, NULL, 0, 0, 1); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 131, __pyx_L1_error)
@@ -5616,7 +5616,7 @@ static PyObject *__pyx_pf_9fontTools_6feaLib_5lexer_5Lexer_10next_(CYTHON_UNUSED
     __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
     __pyx_t_3 = NULL;
     __Pyx_INCREF((PyObject *)(&PyLong_Type));
-    __pyx_t_2 = ((PyObject *)(&PyLong_Type)); 
+    __pyx_t_2 = ((PyObject *)(&PyLong_Type));
     __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_pos); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 134, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __pyx_t_1 = __Pyx_PyObject_GetSlice(__pyx_v_text, 0, 0, &__pyx_v_start, &__pyx_t_4, NULL, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 134, __pyx_L1_error)
@@ -5744,7 +5744,7 @@ static PyObject *__pyx_pf_9fontTools_6feaLib_5lexer_5Lexer_10next_(CYTHON_UNUSED
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
       __pyx_t_11 = NULL;
       __Pyx_INCREF((PyObject *)(&PyLong_Type));
-      __pyx_t_10 = ((PyObject *)(&PyLong_Type)); 
+      __pyx_t_10 = ((PyObject *)(&PyLong_Type));
       __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_pos); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 138, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __pyx_t_4 = __Pyx_PyObject_GetSlice(__pyx_v_text, 0, 0, &__pyx_v_start, &__pyx_t_3, NULL, 0, 0, 1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 138, __pyx_L1_error)
@@ -5984,7 +5984,7 @@ static PyObject *__pyx_pf_9fontTools_6feaLib_5lexer_5Lexer_10next_(CYTHON_UNUSED
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_t_1 = NULL;
       __Pyx_INCREF((PyObject *)(&PyLong_Type));
-      __pyx_t_4 = ((PyObject *)(&PyLong_Type)); 
+      __pyx_t_4 = ((PyObject *)(&PyLong_Type));
       __pyx_t_11 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_pos); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 146, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_11);
       __pyx_t_3 = __Pyx_PyObject_GetSlice(__pyx_v_text, 0, 0, &__pyx_v_start, &__pyx_t_11, NULL, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 146, __pyx_L1_error)
@@ -6365,7 +6365,7 @@ static PyObject *__pyx_pf_9fontTools_6feaLib_5lexer_5Lexer_10next_(CYTHON_UNUSED
  *             else:
  *                 raise FeatureLibError("Expected '\"' to terminate string", location)             # <<<<<<<<<<<<<<
  *         raise FeatureLibError("Unexpected character: %r" % cur_char, location)
- * 
+ *
 */
     /*else*/ {
       __pyx_t_10 = NULL;
@@ -6409,7 +6409,7 @@ static PyObject *__pyx_pf_9fontTools_6feaLib_5lexer_5Lexer_10next_(CYTHON_UNUSED
  *             else:
  *                 raise FeatureLibError("Expected '\"' to terminate string", location)
  *         raise FeatureLibError("Unexpected character: %r" % cur_char, location)             # <<<<<<<<<<<<<<
- * 
+ *
  *     def scan_over_(self, valid):
 */
   __pyx_t_1 = NULL;
@@ -6444,7 +6444,7 @@ static PyObject *__pyx_pf_9fontTools_6feaLib_5lexer_5Lexer_10next_(CYTHON_UNUSED
 
   /* "fontTools/feaLib/lexer.py":68
  *         return FeatureLibLocation(self.filename_ or "<features>", self.line_, column)
- * 
+ *
  *     def next_(self):             # <<<<<<<<<<<<<<
  *         self.scan_over_(Lexer.CHAR_WHITESPACE_)
  *         location = self.location_()
@@ -6477,14 +6477,14 @@ static PyObject *__pyx_pf_9fontTools_6feaLib_5lexer_5Lexer_10next_(CYTHON_UNUSED
 
 /* "fontTools/feaLib/lexer.py":165
  *         raise FeatureLibError("Unexpected character: %r" % cur_char, location)
- * 
+ *
  *     def scan_over_(self, valid):             # <<<<<<<<<<<<<<
  *         p = self.pos_
  *         while p < self.text_length_ and self.text_[p] in valid:
 */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_9fontTools_6feaLib_5lexer_5Lexer_13scan_over_(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_6feaLib_5lexer_5Lexer_13scan_over_(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -6493,7 +6493,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_9fontTools_6feaLib_5lexer_5Lexer_12scan_over_, "Lexer.scan_over_(self, valid)");
 static PyMethodDef __pyx_mdef_9fontTools_6feaLib_5lexer_5Lexer_13scan_over_ = {"scan_over_", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9fontTools_6feaLib_5lexer_5Lexer_13scan_over_, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_9fontTools_6feaLib_5lexer_5Lexer_12scan_over_};
-static PyObject *__pyx_pw_9fontTools_6feaLib_5lexer_5Lexer_13scan_over_(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_6feaLib_5lexer_5Lexer_13scan_over_(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -6591,7 +6591,7 @@ static PyObject *__pyx_pf_9fontTools_6feaLib_5lexer_5Lexer_12scan_over_(CYTHON_U
   __Pyx_RefNannySetupContext("scan_over_", 0);
 
   /* "fontTools/feaLib/lexer.py":166
- * 
+ *
  *     def scan_over_(self, valid):
  *         p = self.pos_             # <<<<<<<<<<<<<<
  *         while p < self.text_length_ and self.text_[p] in valid:
@@ -6637,7 +6637,7 @@ static PyObject *__pyx_pf_9fontTools_6feaLib_5lexer_5Lexer_12scan_over_(CYTHON_U
  *         while p < self.text_length_ and self.text_[p] in valid:
  *             p += 1             # <<<<<<<<<<<<<<
  *         self.pos_ = p
- * 
+ *
 */
     __pyx_t_1 = __Pyx_PyLong_AddObjC(__pyx_v_p, __pyx_mstate_global->__pyx_int_1, 1, 1, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 168, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
@@ -6649,14 +6649,14 @@ static PyObject *__pyx_pf_9fontTools_6feaLib_5lexer_5Lexer_12scan_over_(CYTHON_U
  *         while p < self.text_length_ and self.text_[p] in valid:
  *             p += 1
  *         self.pos_ = p             # <<<<<<<<<<<<<<
- * 
+ *
  *     def scan_until_(self, stop_at):
 */
   if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_pos, __pyx_v_p) < 0) __PYX_ERR(0, 169, __pyx_L1_error)
 
   /* "fontTools/feaLib/lexer.py":165
  *         raise FeatureLibError("Unexpected character: %r" % cur_char, location)
- * 
+ *
  *     def scan_over_(self, valid):             # <<<<<<<<<<<<<<
  *         p = self.pos_
  *         while p < self.text_length_ and self.text_[p] in valid:
@@ -6679,14 +6679,14 @@ static PyObject *__pyx_pf_9fontTools_6feaLib_5lexer_5Lexer_12scan_over_(CYTHON_U
 
 /* "fontTools/feaLib/lexer.py":171
  *         self.pos_ = p
- * 
+ *
  *     def scan_until_(self, stop_at):             # <<<<<<<<<<<<<<
  *         p = self.pos_
  *         while p < self.text_length_ and self.text_[p] not in stop_at:
 */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_9fontTools_6feaLib_5lexer_5Lexer_15scan_until_(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_6feaLib_5lexer_5Lexer_15scan_until_(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -6695,7 +6695,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_9fontTools_6feaLib_5lexer_5Lexer_14scan_until_, "Lexer.scan_until_(self, stop_at)");
 static PyMethodDef __pyx_mdef_9fontTools_6feaLib_5lexer_5Lexer_15scan_until_ = {"scan_until_", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9fontTools_6feaLib_5lexer_5Lexer_15scan_until_, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_9fontTools_6feaLib_5lexer_5Lexer_14scan_until_};
-static PyObject *__pyx_pw_9fontTools_6feaLib_5lexer_5Lexer_15scan_until_(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_6feaLib_5lexer_5Lexer_15scan_until_(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -6793,7 +6793,7 @@ static PyObject *__pyx_pf_9fontTools_6feaLib_5lexer_5Lexer_14scan_until_(CYTHON_
   __Pyx_RefNannySetupContext("scan_until_", 0);
 
   /* "fontTools/feaLib/lexer.py":172
- * 
+ *
  *     def scan_until_(self, stop_at):
  *         p = self.pos_             # <<<<<<<<<<<<<<
  *         while p < self.text_length_ and self.text_[p] not in stop_at:
@@ -6839,7 +6839,7 @@ static PyObject *__pyx_pf_9fontTools_6feaLib_5lexer_5Lexer_14scan_until_(CYTHON_
  *         while p < self.text_length_ and self.text_[p] not in stop_at:
  *             p += 1             # <<<<<<<<<<<<<<
  *         self.pos_ = p
- * 
+ *
 */
     __pyx_t_1 = __Pyx_PyLong_AddObjC(__pyx_v_p, __pyx_mstate_global->__pyx_int_1, 1, 1, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 174, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
@@ -6851,14 +6851,14 @@ static PyObject *__pyx_pf_9fontTools_6feaLib_5lexer_5Lexer_14scan_until_(CYTHON_
  *         while p < self.text_length_ and self.text_[p] not in stop_at:
  *             p += 1
  *         self.pos_ = p             # <<<<<<<<<<<<<<
- * 
+ *
  *     def scan_anonymous_block(self, tag):
 */
   if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_pos, __pyx_v_p) < 0) __PYX_ERR(0, 175, __pyx_L1_error)
 
   /* "fontTools/feaLib/lexer.py":171
  *         self.pos_ = p
- * 
+ *
  *     def scan_until_(self, stop_at):             # <<<<<<<<<<<<<<
  *         p = self.pos_
  *         while p < self.text_length_ and self.text_[p] not in stop_at:
@@ -6881,14 +6881,14 @@ static PyObject *__pyx_pf_9fontTools_6feaLib_5lexer_5Lexer_14scan_until_(CYTHON_
 
 /* "fontTools/feaLib/lexer.py":177
  *         self.pos_ = p
- * 
+ *
  *     def scan_anonymous_block(self, tag):             # <<<<<<<<<<<<<<
  *         location = self.location_()
  *         tag = tag.strip()
 */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_9fontTools_6feaLib_5lexer_5Lexer_17scan_anonymous_block(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_6feaLib_5lexer_5Lexer_17scan_anonymous_block(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -6897,7 +6897,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_9fontTools_6feaLib_5lexer_5Lexer_16scan_anonymous_block, "Lexer.scan_anonymous_block(self, tag)");
 static PyMethodDef __pyx_mdef_9fontTools_6feaLib_5lexer_5Lexer_17scan_anonymous_block = {"scan_anonymous_block", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9fontTools_6feaLib_5lexer_5Lexer_17scan_anonymous_block, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_9fontTools_6feaLib_5lexer_5Lexer_16scan_anonymous_block};
-static PyObject *__pyx_pw_9fontTools_6feaLib_5lexer_5Lexer_17scan_anonymous_block(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_6feaLib_5lexer_5Lexer_17scan_anonymous_block(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -7003,7 +7003,7 @@ static PyObject *__pyx_pf_9fontTools_6feaLib_5lexer_5Lexer_16scan_anonymous_bloc
   __Pyx_INCREF(__pyx_v_tag);
 
   /* "fontTools/feaLib/lexer.py":178
- * 
+ *
  *     def scan_anonymous_block(self, tag):
  *         location = self.location_()             # <<<<<<<<<<<<<<
  *         tag = tag.strip()
@@ -7226,7 +7226,7 @@ static PyObject *__pyx_pf_9fontTools_6feaLib_5lexer_5Lexer_16scan_anonymous_bloc
  *             )
  *         self.pos_ += len(split[0])             # <<<<<<<<<<<<<<
  *         return (Lexer.ANONYMOUS_BLOCK, split[0], location)
- * 
+ *
 */
   __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_pos); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 188, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
@@ -7247,8 +7247,8 @@ static PyObject *__pyx_pf_9fontTools_6feaLib_5lexer_5Lexer_16scan_anonymous_bloc
  *             )
  *         self.pos_ += len(split[0])
  *         return (Lexer.ANONYMOUS_BLOCK, split[0], location)             # <<<<<<<<<<<<<<
- * 
- * 
+ *
+ *
 */
   __Pyx_XDECREF(__pyx_r);
   __Pyx_GetModuleGlobalName(__pyx_t_7, __pyx_mstate_global->__pyx_n_u_Lexer); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 189, __pyx_L1_error)
@@ -7275,7 +7275,7 @@ static PyObject *__pyx_pf_9fontTools_6feaLib_5lexer_5Lexer_16scan_anonymous_bloc
 
   /* "fontTools/feaLib/lexer.py":177
  *         self.pos_ = p
- * 
+ *
  *     def scan_anonymous_block(self, tag):             # <<<<<<<<<<<<<<
  *         location = self.location_()
  *         tag = tag.strip()
@@ -7303,14 +7303,14 @@ static PyObject *__pyx_pf_9fontTools_6feaLib_5lexer_5Lexer_16scan_anonymous_bloc
 
 /* "fontTools/feaLib/lexer.py":207
  *     """
- * 
+ *
  *     def __init__(self, featurefile, *, includeDir=None):             # <<<<<<<<<<<<<<
  *         """Initializes an IncludingLexer.
- * 
+ *
 */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_9fontTools_6feaLib_5lexer_14IncludingLexer_1__init__(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_6feaLib_5lexer_14IncludingLexer_1__init__(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -7319,7 +7319,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_9fontTools_6feaLib_5lexer_14IncludingLexer___init__, "IncludingLexer.__init__(self, featurefile, *, includeDir=None)\n\nInitializes an IncludingLexer.\n\nBehavior:\n    If includeDir is passed, it will be used to determine the top-level\n    include directory to use for all encountered include statements. If it is\n    not passed, ``os.path.dirname(featurefile)`` will be considered the\n    include directory.");
 static PyMethodDef __pyx_mdef_9fontTools_6feaLib_5lexer_14IncludingLexer_1__init__ = {"__init__", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9fontTools_6feaLib_5lexer_14IncludingLexer_1__init__, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_9fontTools_6feaLib_5lexer_14IncludingLexer___init__};
-static PyObject *__pyx_pw_9fontTools_6feaLib_5lexer_14IncludingLexer_1__init__(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_6feaLib_5lexer_14IncludingLexer_1__init__(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -7420,7 +7420,7 @@ static PyObject *__pyx_pf_9fontTools_6feaLib_5lexer_14IncludingLexer___init__(CY
 
   /* "fontTools/feaLib/lexer.py":217
  *         """
- * 
+ *
  *         self.lexers_ = [self.make_lexer_(featurefile)]             # <<<<<<<<<<<<<<
  *         self.featurefilepath = self.lexers_[0].filename_
  *         self.includeDir = includeDir
@@ -7444,11 +7444,11 @@ static PyObject *__pyx_pf_9fontTools_6feaLib_5lexer_14IncludingLexer___init__(CY
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
   /* "fontTools/feaLib/lexer.py":218
- * 
+ *
  *         self.lexers_ = [self.make_lexer_(featurefile)]
  *         self.featurefilepath = self.lexers_[0].filename_             # <<<<<<<<<<<<<<
  *         self.includeDir = includeDir
- * 
+ *
 */
   __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_lexers); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 218, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -7465,17 +7465,17 @@ static PyObject *__pyx_pf_9fontTools_6feaLib_5lexer_14IncludingLexer___init__(CY
  *         self.lexers_ = [self.make_lexer_(featurefile)]
  *         self.featurefilepath = self.lexers_[0].filename_
  *         self.includeDir = includeDir             # <<<<<<<<<<<<<<
- * 
+ *
  *     def __iter__(self):
 */
   if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_includeDir, __pyx_v_includeDir) < 0) __PYX_ERR(0, 219, __pyx_L1_error)
 
   /* "fontTools/feaLib/lexer.py":207
  *     """
- * 
+ *
  *     def __init__(self, featurefile, *, includeDir=None):             # <<<<<<<<<<<<<<
  *         """Initializes an IncludingLexer.
- * 
+ *
 */
 
   /* function exit code */
@@ -7494,14 +7494,14 @@ static PyObject *__pyx_pf_9fontTools_6feaLib_5lexer_14IncludingLexer___init__(CY
 
 /* "fontTools/feaLib/lexer.py":221
  *         self.includeDir = includeDir
- * 
+ *
  *     def __iter__(self):             # <<<<<<<<<<<<<<
  *         return self
- * 
+ *
 */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_9fontTools_6feaLib_5lexer_14IncludingLexer_3__iter__(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_6feaLib_5lexer_14IncludingLexer_3__iter__(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -7510,7 +7510,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_9fontTools_6feaLib_5lexer_14IncludingLexer_2__iter__, "IncludingLexer.__iter__(self)");
 static PyMethodDef __pyx_mdef_9fontTools_6feaLib_5lexer_14IncludingLexer_3__iter__ = {"__iter__", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9fontTools_6feaLib_5lexer_14IncludingLexer_3__iter__, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_9fontTools_6feaLib_5lexer_14IncludingLexer_2__iter__};
-static PyObject *__pyx_pw_9fontTools_6feaLib_5lexer_14IncludingLexer_3__iter__(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_6feaLib_5lexer_14IncludingLexer_3__iter__(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -7592,10 +7592,10 @@ static PyObject *__pyx_pf_9fontTools_6feaLib_5lexer_14IncludingLexer_2__iter__(C
   __Pyx_RefNannySetupContext("__iter__", 0);
 
   /* "fontTools/feaLib/lexer.py":222
- * 
+ *
  *     def __iter__(self):
  *         return self             # <<<<<<<<<<<<<<
- * 
+ *
  *     def next(self):  # Python 2
 */
   __Pyx_XDECREF(__pyx_r);
@@ -7605,10 +7605,10 @@ static PyObject *__pyx_pf_9fontTools_6feaLib_5lexer_14IncludingLexer_2__iter__(C
 
   /* "fontTools/feaLib/lexer.py":221
  *         self.includeDir = includeDir
- * 
+ *
  *     def __iter__(self):             # <<<<<<<<<<<<<<
  *         return self
- * 
+ *
 */
 
   /* function exit code */
@@ -7620,14 +7620,14 @@ static PyObject *__pyx_pf_9fontTools_6feaLib_5lexer_14IncludingLexer_2__iter__(C
 
 /* "fontTools/feaLib/lexer.py":224
  *         return self
- * 
+ *
  *     def next(self):  # Python 2             # <<<<<<<<<<<<<<
  *         return self.__next__()
- * 
+ *
 */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_9fontTools_6feaLib_5lexer_14IncludingLexer_5next(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_6feaLib_5lexer_14IncludingLexer_5next(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -7636,7 +7636,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_9fontTools_6feaLib_5lexer_14IncludingLexer_4next, "IncludingLexer.next(self)");
 static PyMethodDef __pyx_mdef_9fontTools_6feaLib_5lexer_14IncludingLexer_5next = {"next", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9fontTools_6feaLib_5lexer_14IncludingLexer_5next, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_9fontTools_6feaLib_5lexer_14IncludingLexer_4next};
-static PyObject *__pyx_pw_9fontTools_6feaLib_5lexer_14IncludingLexer_5next(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_6feaLib_5lexer_14IncludingLexer_5next(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -7724,10 +7724,10 @@ static PyObject *__pyx_pf_9fontTools_6feaLib_5lexer_14IncludingLexer_4next(CYTHO
   __Pyx_RefNannySetupContext("next", 0);
 
   /* "fontTools/feaLib/lexer.py":225
- * 
+ *
  *     def next(self):  # Python 2
  *         return self.__next__()             # <<<<<<<<<<<<<<
- * 
+ *
  *     def __next__(self):  # Python 3
 */
   __Pyx_XDECREF(__pyx_r);
@@ -7747,10 +7747,10 @@ static PyObject *__pyx_pf_9fontTools_6feaLib_5lexer_14IncludingLexer_4next(CYTHO
 
   /* "fontTools/feaLib/lexer.py":224
  *         return self
- * 
+ *
  *     def next(self):  # Python 2             # <<<<<<<<<<<<<<
  *         return self.__next__()
- * 
+ *
 */
 
   /* function exit code */
@@ -7767,14 +7767,14 @@ static PyObject *__pyx_pf_9fontTools_6feaLib_5lexer_14IncludingLexer_4next(CYTHO
 
 /* "fontTools/feaLib/lexer.py":227
  *         return self.__next__()
- * 
+ *
  *     def __next__(self):  # Python 3             # <<<<<<<<<<<<<<
  *         while self.lexers_:
  *             lexer = self.lexers_[-1]
 */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_9fontTools_6feaLib_5lexer_14IncludingLexer_7__next__(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_6feaLib_5lexer_14IncludingLexer_7__next__(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -7783,7 +7783,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_9fontTools_6feaLib_5lexer_14IncludingLexer_6__next__, "IncludingLexer.__next__(self)");
 static PyMethodDef __pyx_mdef_9fontTools_6feaLib_5lexer_14IncludingLexer_7__next__ = {"__next__", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9fontTools_6feaLib_5lexer_14IncludingLexer_7__next__, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_9fontTools_6feaLib_5lexer_14IncludingLexer_6__next__};
-static PyObject *__pyx_pw_9fontTools_6feaLib_5lexer_14IncludingLexer_7__next__(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_6feaLib_5lexer_14IncludingLexer_7__next__(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -7902,7 +7902,7 @@ static PyObject *__pyx_pf_9fontTools_6feaLib_5lexer_14IncludingLexer_6__next__(C
   __Pyx_RefNannySetupContext("__next__", 0);
 
   /* "fontTools/feaLib/lexer.py":228
- * 
+ *
  *     def __next__(self):  # Python 3
  *         while self.lexers_:             # <<<<<<<<<<<<<<
  *             lexer = self.lexers_[-1]
@@ -8718,7 +8718,7 @@ static PyObject *__pyx_pf_9fontTools_6feaLib_5lexer_14IncludingLexer_6__next__(C
  *             else:
  *                 return (token_type, token, location)             # <<<<<<<<<<<<<<
  *         raise StopIteration()
- * 
+ *
 */
     /*else*/ {
       __Pyx_XDECREF(__pyx_r);
@@ -8745,12 +8745,12 @@ static PyObject *__pyx_pf_9fontTools_6feaLib_5lexer_14IncludingLexer_6__next__(C
  *             else:
  *                 return (token_type, token, location)
  *         raise StopIteration()             # <<<<<<<<<<<<<<
- * 
+ *
  *     @staticmethod
 */
   __pyx_t_9 = NULL;
   __Pyx_INCREF(__pyx_builtin_StopIteration);
-  __pyx_t_7 = __pyx_builtin_StopIteration; 
+  __pyx_t_7 = __pyx_builtin_StopIteration;
   __pyx_t_13 = 1;
   {
     PyObject *__pyx_callargs[2] = {__pyx_t_9, NULL};
@@ -8766,7 +8766,7 @@ static PyObject *__pyx_pf_9fontTools_6feaLib_5lexer_14IncludingLexer_6__next__(C
 
   /* "fontTools/feaLib/lexer.py":227
  *         return self.__next__()
- * 
+ *
  *     def __next__(self):  # Python 3             # <<<<<<<<<<<<<<
  *         while self.lexers_:
  *             lexer = self.lexers_[-1]
@@ -8800,14 +8800,14 @@ static PyObject *__pyx_pf_9fontTools_6feaLib_5lexer_14IncludingLexer_6__next__(C
 
 /* "fontTools/feaLib/lexer.py":266
  *         raise StopIteration()
- * 
+ *
  *     @staticmethod             # <<<<<<<<<<<<<<
  *     def make_lexer_(file_or_path):
  *         if hasattr(file_or_path, "read"):
 */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_9fontTools_6feaLib_5lexer_14IncludingLexer_9make_lexer_(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_6feaLib_5lexer_14IncludingLexer_9make_lexer_(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -8816,7 +8816,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_9fontTools_6feaLib_5lexer_14IncludingLexer_8make_lexer_, "IncludingLexer.make_lexer_(file_or_path)");
 static PyMethodDef __pyx_mdef_9fontTools_6feaLib_5lexer_14IncludingLexer_9make_lexer_ = {"make_lexer_", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9fontTools_6feaLib_5lexer_14IncludingLexer_9make_lexer_, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_9fontTools_6feaLib_5lexer_14IncludingLexer_8make_lexer_};
-static PyObject *__pyx_pw_9fontTools_6feaLib_5lexer_14IncludingLexer_9make_lexer_(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_6feaLib_5lexer_14IncludingLexer_9make_lexer_(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -8968,7 +8968,7 @@ static PyObject *__pyx_pf_9fontTools_6feaLib_5lexer_14IncludingLexer_8make_lexer
 */
     __pyx_t_3 = NULL;
     __Pyx_INCREF(__pyx_builtin_open);
-    __pyx_t_4 = __pyx_builtin_open; 
+    __pyx_t_4 = __pyx_builtin_open;
     __pyx_t_5 = 1;
     {
       PyObject *__pyx_callargs[3 + ((CYTHON_VECTORCALL) ? 1 : 0)] = {__pyx_t_3, __pyx_v_filename, __pyx_mstate_global->__pyx_n_u_r};
@@ -9033,7 +9033,7 @@ static PyObject *__pyx_pf_9fontTools_6feaLib_5lexer_14IncludingLexer_8make_lexer
  *         if closing:
  *             fileobj.close()             # <<<<<<<<<<<<<<
  *         return Lexer(data, filename)
- * 
+ *
 */
     __pyx_t_4 = __pyx_v_fileobj;
     __Pyx_INCREF(__pyx_t_4);
@@ -9060,7 +9060,7 @@ static PyObject *__pyx_pf_9fontTools_6feaLib_5lexer_14IncludingLexer_8make_lexer
  *         if closing:
  *             fileobj.close()
  *         return Lexer(data, filename)             # <<<<<<<<<<<<<<
- * 
+ *
  *     def scan_anonymous_block(self, tag):
 */
   __Pyx_XDECREF(__pyx_r);
@@ -9093,7 +9093,7 @@ static PyObject *__pyx_pf_9fontTools_6feaLib_5lexer_14IncludingLexer_8make_lexer
 
   /* "fontTools/feaLib/lexer.py":266
  *         raise StopIteration()
- * 
+ *
  *     @staticmethod             # <<<<<<<<<<<<<<
  *     def make_lexer_(file_or_path):
  *         if hasattr(file_or_path, "read"):
@@ -9118,14 +9118,14 @@ static PyObject *__pyx_pf_9fontTools_6feaLib_5lexer_14IncludingLexer_8make_lexer
 
 /* "fontTools/feaLib/lexer.py":279
  *         return Lexer(data, filename)
- * 
+ *
  *     def scan_anonymous_block(self, tag):             # <<<<<<<<<<<<<<
  *         return self.lexers_[-1].scan_anonymous_block(tag)
- * 
+ *
 */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_9fontTools_6feaLib_5lexer_14IncludingLexer_11scan_anonymous_block(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_6feaLib_5lexer_14IncludingLexer_11scan_anonymous_block(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -9134,7 +9134,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_9fontTools_6feaLib_5lexer_14IncludingLexer_10scan_anonymous_block, "IncludingLexer.scan_anonymous_block(self, tag)");
 static PyMethodDef __pyx_mdef_9fontTools_6feaLib_5lexer_14IncludingLexer_11scan_anonymous_block = {"scan_anonymous_block", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9fontTools_6feaLib_5lexer_14IncludingLexer_11scan_anonymous_block, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_9fontTools_6feaLib_5lexer_14IncludingLexer_10scan_anonymous_block};
-static PyObject *__pyx_pw_9fontTools_6feaLib_5lexer_14IncludingLexer_11scan_anonymous_block(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_6feaLib_5lexer_14IncludingLexer_11scan_anonymous_block(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -9232,11 +9232,11 @@ static PyObject *__pyx_pf_9fontTools_6feaLib_5lexer_14IncludingLexer_10scan_anon
   __Pyx_RefNannySetupContext("scan_anonymous_block", 0);
 
   /* "fontTools/feaLib/lexer.py":280
- * 
+ *
  *     def scan_anonymous_block(self, tag):
  *         return self.lexers_[-1].scan_anonymous_block(tag)             # <<<<<<<<<<<<<<
- * 
- * 
+ *
+ *
 */
   __Pyx_XDECREF(__pyx_r);
   __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_lexers); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 280, __pyx_L1_error)
@@ -9261,10 +9261,10 @@ static PyObject *__pyx_pf_9fontTools_6feaLib_5lexer_14IncludingLexer_10scan_anon
 
   /* "fontTools/feaLib/lexer.py":279
  *         return Lexer(data, filename)
- * 
+ *
  *     def scan_anonymous_block(self, tag):             # <<<<<<<<<<<<<<
  *         return self.lexers_[-1].scan_anonymous_block(tag)
- * 
+ *
 */
 
   /* function exit code */
@@ -9283,13 +9283,13 @@ static PyObject *__pyx_pf_9fontTools_6feaLib_5lexer_14IncludingLexer_10scan_anon
 
 /* "fontTools/feaLib/lexer.py":286
  *     """Lexer that does not follow `include` statements, emits them as-is."""
- * 
+ *
  *     def __next__(self):  # Python 3             # <<<<<<<<<<<<<<
  *         return next(self.lexers_[0])
 */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_9fontTools_6feaLib_5lexer_17NonIncludingLexer_1__next__(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_6feaLib_5lexer_17NonIncludingLexer_1__next__(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -9298,7 +9298,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_9fontTools_6feaLib_5lexer_17NonIncludingLexer___next__, "NonIncludingLexer.__next__(self)");
 static PyMethodDef __pyx_mdef_9fontTools_6feaLib_5lexer_17NonIncludingLexer_1__next__ = {"__next__", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9fontTools_6feaLib_5lexer_17NonIncludingLexer_1__next__, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_9fontTools_6feaLib_5lexer_17NonIncludingLexer___next__};
-static PyObject *__pyx_pw_9fontTools_6feaLib_5lexer_17NonIncludingLexer_1__next__(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_6feaLib_5lexer_17NonIncludingLexer_1__next__(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -9385,7 +9385,7 @@ static PyObject *__pyx_pf_9fontTools_6feaLib_5lexer_17NonIncludingLexer___next__
   __Pyx_RefNannySetupContext("__next__", 0);
 
   /* "fontTools/feaLib/lexer.py":287
- * 
+ *
  *     def __next__(self):  # Python 3
  *         return next(self.lexers_[0])             # <<<<<<<<<<<<<<
 */
@@ -9404,7 +9404,7 @@ static PyObject *__pyx_pf_9fontTools_6feaLib_5lexer_17NonIncludingLexer___next__
 
   /* "fontTools/feaLib/lexer.py":286
  *     """Lexer that does not follow `include` statements, emits them as-is."""
- * 
+ *
  *     def __next__(self):  # Python 3             # <<<<<<<<<<<<<<
  *         return next(self.lexers_[0])
 */
@@ -9836,7 +9836,7 @@ __Pyx_RefNannySetupContext("PyInit_lexer", 0);
  * from fontTools.feaLib.location import FeatureLibLocation
  * import re             # <<<<<<<<<<<<<<
  * import os
- * 
+ *
 */
   __pyx_t_2 = __Pyx_ImportDottedModule(__pyx_mstate_global->__pyx_n_u_re, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 3, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -9847,7 +9847,7 @@ __Pyx_RefNannySetupContext("PyInit_lexer", 0);
  * from fontTools.feaLib.location import FeatureLibLocation
  * import re
  * import os             # <<<<<<<<<<<<<<
- * 
+ *
  * try:
 */
   __pyx_t_2 = __Pyx_ImportDottedModule(__pyx_mstate_global->__pyx_n_u_os, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 4, __pyx_L1_error)
@@ -9857,7 +9857,7 @@ __Pyx_RefNannySetupContext("PyInit_lexer", 0);
 
   /* "fontTools/feaLib/lexer.py":6
  * import os
- * 
+ *
  * try:             # <<<<<<<<<<<<<<
  *     import cython
  * except ImportError:
@@ -9867,7 +9867,7 @@ __Pyx_RefNannySetupContext("PyInit_lexer", 0);
     /*try:*/ {
 
       /* "fontTools/feaLib/lexer.py":7
- * 
+ *
  * try:
  *     import cython             # <<<<<<<<<<<<<<
  * except ImportError:
@@ -9877,8 +9877,8 @@ __Pyx_RefNannySetupContext("PyInit_lexer", 0);
   }
 
   /* "fontTools/feaLib/lexer.py":13
- * 
- * 
+ *
+ *
  * class Lexer(object):             # <<<<<<<<<<<<<<
  *     NUMBER = "NUMBER"
  *     HEXADECIMAL = "HEXADECIMAL"
@@ -9894,7 +9894,7 @@ __Pyx_RefNannySetupContext("PyInit_lexer", 0);
   }
 
   /* "fontTools/feaLib/lexer.py":14
- * 
+ *
  * class Lexer(object):
  *     NUMBER = "NUMBER"             # <<<<<<<<<<<<<<
  *     HEXADECIMAL = "HEXADECIMAL"
@@ -10033,7 +10033,7 @@ __Pyx_RefNannySetupContext("PyInit_lexer", 0);
  *     COMMENT = "COMMENT"
  *     NEWLINE = "NEWLINE"             # <<<<<<<<<<<<<<
  *     ANONYMOUS_BLOCK = "ANONYMOUS_BLOCK"
- * 
+ *
 */
   if (__Pyx_SetNameInClass(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_NEWLINE, __pyx_mstate_global->__pyx_n_u_NEWLINE) < 0) __PYX_ERR(0, 26, __pyx_L1_error)
 
@@ -10041,14 +10041,14 @@ __Pyx_RefNannySetupContext("PyInit_lexer", 0);
  *     COMMENT = "COMMENT"
  *     NEWLINE = "NEWLINE"
  *     ANONYMOUS_BLOCK = "ANONYMOUS_BLOCK"             # <<<<<<<<<<<<<<
- * 
+ *
  *     CHAR_WHITESPACE_ = " \t"
 */
   if (__Pyx_SetNameInClass(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_ANONYMOUS_BLOCK, __pyx_mstate_global->__pyx_n_u_ANONYMOUS_BLOCK) < 0) __PYX_ERR(0, 27, __pyx_L1_error)
 
   /* "fontTools/feaLib/lexer.py":29
  *     ANONYMOUS_BLOCK = "ANONYMOUS_BLOCK"
- * 
+ *
  *     CHAR_WHITESPACE_ = " \t"             # <<<<<<<<<<<<<<
  *     CHAR_NEWLINE_ = "\r\n"
  *     CHAR_SYMBOL_ = ",;:-+'{}[]<>()="
@@ -10056,7 +10056,7 @@ __Pyx_RefNannySetupContext("PyInit_lexer", 0);
   if (__Pyx_SetNameInClass(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_CHAR_WHITESPACE, __pyx_mstate_global->__pyx_kp_u__13) < 0) __PYX_ERR(0, 29, __pyx_L1_error)
 
   /* "fontTools/feaLib/lexer.py":30
- * 
+ *
  *     CHAR_WHITESPACE_ = " \t"
  *     CHAR_NEWLINE_ = "\r\n"             # <<<<<<<<<<<<<<
  *     CHAR_SYMBOL_ = ",;:-+'{}[]<>()="
@@ -10105,7 +10105,7 @@ __Pyx_RefNannySetupContext("PyInit_lexer", 0);
  *     CHAR_LETTER_ = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
  *     CHAR_NAME_START_ = CHAR_LETTER_ + "_+*:.^~!\\"             # <<<<<<<<<<<<<<
  *     CHAR_NAME_CONTINUATION_ = CHAR_LETTER_ + CHAR_DIGIT_ + "_.+*:^~!/-"
- * 
+ *
 */
   __pyx_t_10 = PyObject_GetItem(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_CHAR_LETTER);
   if (unlikely(!__pyx_t_10)) {
@@ -10124,7 +10124,7 @@ __Pyx_RefNannySetupContext("PyInit_lexer", 0);
  *     CHAR_LETTER_ = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
  *     CHAR_NAME_START_ = CHAR_LETTER_ + "_+*:.^~!\\"
  *     CHAR_NAME_CONTINUATION_ = CHAR_LETTER_ + CHAR_DIGIT_ + "_.+*:^~!/-"             # <<<<<<<<<<<<<<
- * 
+ *
  *     RE_GLYPHCLASS = re.compile(r"^[A-Za-z_0-9.\-]+$")
 */
   __pyx_t_9 = PyObject_GetItem(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_CHAR_LETTER);
@@ -10153,9 +10153,9 @@ __Pyx_RefNannySetupContext("PyInit_lexer", 0);
 
   /* "fontTools/feaLib/lexer.py":38
  *     CHAR_NAME_CONTINUATION_ = CHAR_LETTER_ + CHAR_DIGIT_ + "_.+*:^~!/-"
- * 
+ *
  *     RE_GLYPHCLASS = re.compile(r"^[A-Za-z_0-9.\-]+$")             # <<<<<<<<<<<<<<
- * 
+ *
  *     MODE_NORMAL_ = "NORMAL"
 */
   __pyx_t_8 = NULL;
@@ -10178,25 +10178,25 @@ __Pyx_RefNannySetupContext("PyInit_lexer", 0);
 
   /* "fontTools/feaLib/lexer.py":40
  *     RE_GLYPHCLASS = re.compile(r"^[A-Za-z_0-9.\-]+$")
- * 
+ *
  *     MODE_NORMAL_ = "NORMAL"             # <<<<<<<<<<<<<<
  *     MODE_FILENAME_ = "FILENAME"
- * 
+ *
 */
   if (__Pyx_SetNameInClass(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_MODE_NORMAL, __pyx_mstate_global->__pyx_n_u_NORMAL) < 0) __PYX_ERR(0, 40, __pyx_L1_error)
 
   /* "fontTools/feaLib/lexer.py":41
- * 
+ *
  *     MODE_NORMAL_ = "NORMAL"
  *     MODE_FILENAME_ = "FILENAME"             # <<<<<<<<<<<<<<
- * 
+ *
  *     def __init__(self, text, filename):
 */
   if (__Pyx_SetNameInClass(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_MODE_FILENAME, __pyx_mstate_global->__pyx_n_u_FILENAME) < 0) __PYX_ERR(0, 41, __pyx_L1_error)
 
   /* "fontTools/feaLib/lexer.py":43
  *     MODE_FILENAME_ = "FILENAME"
- * 
+ *
  *     def __init__(self, text, filename):             # <<<<<<<<<<<<<<
  *         self.filename_ = filename
  *         self.line_ = 1
@@ -10208,10 +10208,10 @@ __Pyx_RefNannySetupContext("PyInit_lexer", 0);
 
   /* "fontTools/feaLib/lexer.py":52
  *         self.mode_ = Lexer.MODE_NORMAL_
- * 
+ *
  *     def __iter__(self):             # <<<<<<<<<<<<<<
  *         return self
- * 
+ *
 */
   __pyx_t_10 = __Pyx_CyFunction_New(&__pyx_mdef_9fontTools_6feaLib_5lexer_5Lexer_3__iter__, 0, __pyx_mstate_global->__pyx_n_u_Lexer___iter, NULL, __pyx_mstate_global->__pyx_n_u_fontTools_feaLib_lexer, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[1])); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 52, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_10);
@@ -10220,10 +10220,10 @@ __Pyx_RefNannySetupContext("PyInit_lexer", 0);
 
   /* "fontTools/feaLib/lexer.py":55
  *         return self
- * 
+ *
  *     def next(self):  # Python 2             # <<<<<<<<<<<<<<
  *         return self.__next__()
- * 
+ *
 */
   __pyx_t_10 = __Pyx_CyFunction_New(&__pyx_mdef_9fontTools_6feaLib_5lexer_5Lexer_5next, 0, __pyx_mstate_global->__pyx_n_u_Lexer_next, NULL, __pyx_mstate_global->__pyx_n_u_fontTools_feaLib_lexer, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[2])); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 55, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_10);
@@ -10232,7 +10232,7 @@ __Pyx_RefNannySetupContext("PyInit_lexer", 0);
 
   /* "fontTools/feaLib/lexer.py":58
  *         return self.__next__()
- * 
+ *
  *     def __next__(self):  # Python 3             # <<<<<<<<<<<<<<
  *         while True:
  *             token_type, token, location = self.next_()
@@ -10244,7 +10244,7 @@ __Pyx_RefNannySetupContext("PyInit_lexer", 0);
 
   /* "fontTools/feaLib/lexer.py":64
  *                 return (token_type, token, location)
- * 
+ *
  *     def location_(self):             # <<<<<<<<<<<<<<
  *         column = self.pos_ - self.line_start_ + 1
  *         return FeatureLibLocation(self.filename_ or "<features>", self.line_, column)
@@ -10256,7 +10256,7 @@ __Pyx_RefNannySetupContext("PyInit_lexer", 0);
 
   /* "fontTools/feaLib/lexer.py":68
  *         return FeatureLibLocation(self.filename_ or "<features>", self.line_, column)
- * 
+ *
  *     def next_(self):             # <<<<<<<<<<<<<<
  *         self.scan_over_(Lexer.CHAR_WHITESPACE_)
  *         location = self.location_()
@@ -10268,7 +10268,7 @@ __Pyx_RefNannySetupContext("PyInit_lexer", 0);
 
   /* "fontTools/feaLib/lexer.py":165
  *         raise FeatureLibError("Unexpected character: %r" % cur_char, location)
- * 
+ *
  *     def scan_over_(self, valid):             # <<<<<<<<<<<<<<
  *         p = self.pos_
  *         while p < self.text_length_ and self.text_[p] in valid:
@@ -10280,7 +10280,7 @@ __Pyx_RefNannySetupContext("PyInit_lexer", 0);
 
   /* "fontTools/feaLib/lexer.py":171
  *         self.pos_ = p
- * 
+ *
  *     def scan_until_(self, stop_at):             # <<<<<<<<<<<<<<
  *         p = self.pos_
  *         while p < self.text_length_ and self.text_[p] not in stop_at:
@@ -10292,7 +10292,7 @@ __Pyx_RefNannySetupContext("PyInit_lexer", 0);
 
   /* "fontTools/feaLib/lexer.py":177
  *         self.pos_ = p
- * 
+ *
  *     def scan_anonymous_block(self, tag):             # <<<<<<<<<<<<<<
  *         location = self.location_()
  *         tag = tag.strip()
@@ -10303,8 +10303,8 @@ __Pyx_RefNannySetupContext("PyInit_lexer", 0);
   __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
 
   /* "fontTools/feaLib/lexer.py":13
- * 
- * 
+ *
+ *
  * class Lexer(object):             # <<<<<<<<<<<<<<
  *     NUMBER = "NUMBER"
  *     HEXADECIMAL = "HEXADECIMAL"
@@ -10318,11 +10318,11 @@ __Pyx_RefNannySetupContext("PyInit_lexer", 0);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
   /* "fontTools/feaLib/lexer.py":192
- * 
- * 
+ *
+ *
  * class IncludingLexer(object):             # <<<<<<<<<<<<<<
  *     """A Lexer that follows include statements.
- * 
+ *
 */
   __pyx_t_2 = __Pyx_PEP560_update_bases(__pyx_mstate_global->__pyx_tuple[3]); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 192, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -10336,10 +10336,10 @@ __Pyx_RefNannySetupContext("PyInit_lexer", 0);
 
   /* "fontTools/feaLib/lexer.py":207
  *     """
- * 
+ *
  *     def __init__(self, featurefile, *, includeDir=None):             # <<<<<<<<<<<<<<
  *         """Initializes an IncludingLexer.
- * 
+ *
 */
   __pyx_t_10 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 207, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_10);
@@ -10353,10 +10353,10 @@ __Pyx_RefNannySetupContext("PyInit_lexer", 0);
 
   /* "fontTools/feaLib/lexer.py":221
  *         self.includeDir = includeDir
- * 
+ *
  *     def __iter__(self):             # <<<<<<<<<<<<<<
  *         return self
- * 
+ *
 */
   __pyx_t_7 = __Pyx_CyFunction_New(&__pyx_mdef_9fontTools_6feaLib_5lexer_14IncludingLexer_3__iter__, 0, __pyx_mstate_global->__pyx_n_u_IncludingLexer___iter, NULL, __pyx_mstate_global->__pyx_n_u_fontTools_feaLib_lexer, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[10])); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 221, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
@@ -10365,10 +10365,10 @@ __Pyx_RefNannySetupContext("PyInit_lexer", 0);
 
   /* "fontTools/feaLib/lexer.py":224
  *         return self
- * 
+ *
  *     def next(self):  # Python 2             # <<<<<<<<<<<<<<
  *         return self.__next__()
- * 
+ *
 */
   __pyx_t_7 = __Pyx_CyFunction_New(&__pyx_mdef_9fontTools_6feaLib_5lexer_14IncludingLexer_5next, 0, __pyx_mstate_global->__pyx_n_u_IncludingLexer_next, NULL, __pyx_mstate_global->__pyx_n_u_fontTools_feaLib_lexer, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[11])); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 224, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
@@ -10377,7 +10377,7 @@ __Pyx_RefNannySetupContext("PyInit_lexer", 0);
 
   /* "fontTools/feaLib/lexer.py":227
  *         return self.__next__()
- * 
+ *
  *     def __next__(self):  # Python 3             # <<<<<<<<<<<<<<
  *         while self.lexers_:
  *             lexer = self.lexers_[-1]
@@ -10389,14 +10389,14 @@ __Pyx_RefNannySetupContext("PyInit_lexer", 0);
 
   /* "fontTools/feaLib/lexer.py":266
  *         raise StopIteration()
- * 
+ *
  *     @staticmethod             # <<<<<<<<<<<<<<
  *     def make_lexer_(file_or_path):
  *         if hasattr(file_or_path, "read"):
 */
   __pyx_t_10 = NULL;
   __Pyx_INCREF(__pyx_builtin_staticmethod);
-  __pyx_t_8 = __pyx_builtin_staticmethod; 
+  __pyx_t_8 = __pyx_builtin_staticmethod;
   __pyx_t_9 = __Pyx_CyFunction_New(&__pyx_mdef_9fontTools_6feaLib_5lexer_14IncludingLexer_9make_lexer_, __Pyx_CYFUNCTION_STATICMETHOD, __pyx_mstate_global->__pyx_n_u_IncludingLexer_make_lexer, NULL, __pyx_mstate_global->__pyx_n_u_fontTools_feaLib_lexer, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[13])); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 266, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_9);
   __pyx_t_11 = 1;
@@ -10414,10 +10414,10 @@ __Pyx_RefNannySetupContext("PyInit_lexer", 0);
 
   /* "fontTools/feaLib/lexer.py":279
  *         return Lexer(data, filename)
- * 
+ *
  *     def scan_anonymous_block(self, tag):             # <<<<<<<<<<<<<<
  *         return self.lexers_[-1].scan_anonymous_block(tag)
- * 
+ *
 */
   __pyx_t_7 = __Pyx_CyFunction_New(&__pyx_mdef_9fontTools_6feaLib_5lexer_14IncludingLexer_11scan_anonymous_block, 0, __pyx_mstate_global->__pyx_n_u_IncludingLexer_scan_anonymous_bl, NULL, __pyx_mstate_global->__pyx_n_u_fontTools_feaLib_lexer, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[14])); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 279, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
@@ -10425,11 +10425,11 @@ __Pyx_RefNannySetupContext("PyInit_lexer", 0);
   __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
 
   /* "fontTools/feaLib/lexer.py":192
- * 
- * 
+ *
+ *
  * class IncludingLexer(object):             # <<<<<<<<<<<<<<
  *     """A Lexer that follows include statements.
- * 
+ *
 */
   __pyx_t_7 = __Pyx_Py3ClassCreate(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_IncludingLexer, __pyx_t_2, __pyx_t_6, NULL, 0, 0); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 192, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
@@ -10440,11 +10440,11 @@ __Pyx_RefNannySetupContext("PyInit_lexer", 0);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
   /* "fontTools/feaLib/lexer.py":283
- * 
- * 
+ *
+ *
  * class NonIncludingLexer(IncludingLexer):             # <<<<<<<<<<<<<<
  *     """Lexer that does not follow `include` statements, emits them as-is."""
- * 
+ *
 */
   __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_IncludingLexer); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 283, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -10464,7 +10464,7 @@ __Pyx_RefNannySetupContext("PyInit_lexer", 0);
 
   /* "fontTools/feaLib/lexer.py":286
  *     """Lexer that does not follow `include` statements, emits them as-is."""
- * 
+ *
  *     def __next__(self):  # Python 3             # <<<<<<<<<<<<<<
  *         return next(self.lexers_[0])
 */
@@ -10474,11 +10474,11 @@ __Pyx_RefNannySetupContext("PyInit_lexer", 0);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
   /* "fontTools/feaLib/lexer.py":283
- * 
- * 
+ *
+ *
  * class NonIncludingLexer(IncludingLexer):             # <<<<<<<<<<<<<<
  *     """Lexer that does not follow `include` statements, emits them as-is."""
- * 
+ *
 */
   __pyx_t_3 = __Pyx_Py3ClassCreate(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_NonIncludingLexer, __pyx_t_2, __pyx_t_7, NULL, 0, 0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 283, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
@@ -10773,8 +10773,8 @@ static int __Pyx_InitCachedConstants(__pyx_mstatetype *__pyx_mstate) {
   __Pyx_RefNannySetupContext("__Pyx_InitCachedConstants", 0);
 
   /* "fontTools/feaLib/lexer.py":13
- * 
- * 
+ *
+ *
  * class Lexer(object):             # <<<<<<<<<<<<<<
  *     NUMBER = "NUMBER"
  *     HEXADECIMAL = "HEXADECIMAL"
@@ -10787,11 +10787,11 @@ static int __Pyx_InitCachedConstants(__pyx_mstatetype *__pyx_mstate) {
   __Pyx_GIVEREF(__pyx_mstate_global->__pyx_tuple[1]);
 
   /* "fontTools/feaLib/lexer.py":192
- * 
- * 
+ *
+ *
  * class IncludingLexer(object):             # <<<<<<<<<<<<<<
  *     """A Lexer that follows include statements.
- * 
+ *
 */
   __pyx_mstate_global->__pyx_tuple[2] = PyTuple_Pack(1, __pyx_builtin_object); if (unlikely(!__pyx_mstate_global->__pyx_tuple[2])) __PYX_ERR(0, 192, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_mstate_global->__pyx_tuple[2]);
@@ -12400,8 +12400,8 @@ static PyObject* __Pyx_Unpacked___Pyx_PyLong_AddObjC(PyObject *op1, PyObject *op
         return PyLong_FromLongLong(llx);
 #endif
     return __Pyx_Fallback___Pyx_PyLong_AddObjC(op1, op2, inplace);
-    
-    
+
+
 }
 #endif
 static PyObject* __Pyx_Float___Pyx_PyLong_AddObjC(PyObject *float_val, long intval, int zerodivision_check) {
@@ -12409,7 +12409,7 @@ static PyObject* __Pyx_Float___Pyx_PyLong_AddObjC(PyObject *float_val, long intv
     const long b = intval;
     double a = __Pyx_PyFloat_AS_DOUBLE(float_val);
         double result;
-        
+
         result = ((double)a) + (double)b;
         return PyFloat_FromDouble(result);
 }
@@ -12848,8 +12848,8 @@ static PyObject* __Pyx_Unpacked___Pyx_PyLong_SubtractObjC(PyObject *op1, PyObjec
         return PyLong_FromLongLong(llx);
 #endif
     return __Pyx_Fallback___Pyx_PyLong_SubtractObjC(op1, op2, inplace);
-    
-    
+
+
 }
 #endif
 static PyObject* __Pyx_Float___Pyx_PyLong_SubtractObjC(PyObject *float_val, long intval, int zerodivision_check) {
@@ -12857,7 +12857,7 @@ static PyObject* __Pyx_Float___Pyx_PyLong_SubtractObjC(PyObject *float_val, long
     const long b = intval;
     double a = __Pyx_PyFloat_AS_DOUBLE(float_val);
         double result;
-        
+
         result = ((double)a) - (double)b;
         return PyFloat_FromDouble(result);
 }

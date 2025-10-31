@@ -1549,11 +1549,11 @@ struct __pyx_obj_9fontTools_4misc_11bezierTools___pyx_scope_struct_6_genexpr;
 struct __pyx_obj_9fontTools_4misc_11bezierTools___pyx_scope_struct_7_genexpr;
 
 /* "fontTools/misc/bezierTools.py":815
- * 
- * 
+ *
+ *
  * def solveQuadratic(a, b, c, sqrt=sqrt):             # <<<<<<<<<<<<<<
  *     """Solve a quadratic equation.
- * 
+ *
 */
 struct __pyx_defaults {
   PyObject_HEAD
@@ -1590,8 +1590,8 @@ struct __pyx_obj_9fontTools_4misc_11bezierTools___pyx_scope_struct_1_genexpr {
 
 
 /* "fontTools/misc/bezierTools.py":644
- * 
- * 
+ *
+ *
  * @cython.locals(             # <<<<<<<<<<<<<<
  *     pt1=cython.complex,
  *     pt2=cython.complex,
@@ -1611,8 +1611,8 @@ struct __pyx_obj_9fontTools_4misc_11bezierTools___pyx_scope_struct_2_splitCubicA
 
 
 /* "fontTools/misc/bezierTools.py":770
- * 
- * 
+ *
+ *
  * @cython.locals(             # <<<<<<<<<<<<<<
  *     a=cython.complex,
  *     b=cython.complex,
@@ -1650,8 +1650,8 @@ struct __pyx_obj_9fontTools_4misc_11bezierTools___pyx_scope_struct_3__splitCubic
  *     else:
  *         raise ValueError("Unknown curve degree")
  *     return sorted(i for i in intersections if 0.0 <= i <= 1)             # <<<<<<<<<<<<<<
- * 
- * 
+ *
+ *
 */
 struct __pyx_obj_9fontTools_4misc_11bezierTools___pyx_scope_struct_4_genexpr {
   PyObject_HEAD
@@ -1661,8 +1661,8 @@ struct __pyx_obj_9fontTools_4misc_11bezierTools___pyx_scope_struct_4_genexpr {
 
 
 /* "fontTools/misc/bezierTools.py":1313
- * 
- * 
+ *
+ *
  * def _curve_curve_intersections_t(             # <<<<<<<<<<<<<<
  *     curve1, curve2, precision=1e-3, range1=None, range2=None
  * ):
@@ -1677,8 +1677,8 @@ struct __pyx_obj_9fontTools_4misc_11bezierTools___pyx_scope_struct_5__curve_curv
  * def _is_linelike(segment):
  *     maybeline = _alignment_transformation(segment).transformPoints(segment)
  *     return all(math.isclose(p[1], 0.0) for p in maybeline)             # <<<<<<<<<<<<<<
- * 
- * 
+ *
+ *
 */
 struct __pyx_obj_9fontTools_4misc_11bezierTools___pyx_scope_struct_6_genexpr {
   PyObject_HEAD
@@ -1691,8 +1691,8 @@ struct __pyx_obj_9fontTools_4misc_11bezierTools___pyx_scope_struct_6_genexpr {
  *         return "%g" % obj
  *     else:
  *         return "(%s)" % ", ".join(_segmentrepr(x) for x in it)             # <<<<<<<<<<<<<<
- * 
- * 
+ *
+ *
 */
 struct __pyx_obj_9fontTools_4misc_11bezierTools___pyx_scope_struct_7_genexpr {
   PyObject_HEAD
@@ -4072,15 +4072,15 @@ static CYTHON_SMALL_CODE int __pyx_m_traverse(PyObject *m, visitproc visit, void
 /* #### Code section: module_code ### */
 
 /* "fontTools/misc/bezierTools.py":56
- * 
- * 
+ *
+ *
  * def calcCubicArcLength(pt1, pt2, pt3, pt4, tolerance=0.005):             # <<<<<<<<<<<<<<
  *     """Calculates the arc length for a cubic Bezier segment.
- * 
+ *
 */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_1calcCubicArcLength(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_1calcCubicArcLength(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -4089,7 +4089,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_9fontTools_4misc_11bezierTools_calcCubicArcLength, "calcCubicArcLength(pt1, pt2, pt3, pt4, tolerance=0.005)\n\nCalculates the arc length for a cubic Bezier segment.\n\nWhereas :func:`approximateCubicArcLength` approximates the length, this\nfunction calculates it by \"measuring\", recursively dividing the curve\nuntil the divided segments are shorter than ``tolerance``.\n\nArgs:\n    pt1,pt2,pt3,pt4: Control points of the Bezier as 2D tuples.\n    tolerance: Controls the precision of the calcuation.\n\nReturns:\n    Arc length value.");
 static PyMethodDef __pyx_mdef_9fontTools_4misc_11bezierTools_1calcCubicArcLength = {"calcCubicArcLength", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9fontTools_4misc_11bezierTools_1calcCubicArcLength, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_9fontTools_4misc_11bezierTools_calcCubicArcLength};
-static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_1calcCubicArcLength(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_1calcCubicArcLength(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -4238,7 +4238,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_calcCubicArcLength(CYTH
  *     return calcCubicArcLengthC(
  *         complex(*pt1), complex(*pt2), complex(*pt3), complex(*pt4), tolerance             # <<<<<<<<<<<<<<
  *     )
- * 
+ *
 */
   __pyx_t_4 = __Pyx_PySequence_Tuple(__pyx_v_pt1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 71, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
@@ -4289,11 +4289,11 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_calcCubicArcLength(CYTH
   goto __pyx_L0;
 
   /* "fontTools/misc/bezierTools.py":56
- * 
- * 
+ *
+ *
  * def calcCubicArcLength(pt1, pt2, pt3, pt4, tolerance=0.005):             # <<<<<<<<<<<<<<
  *     """Calculates the arc length for a cubic Bezier segment.
- * 
+ *
 */
 
   /* function exit code */
@@ -4315,15 +4315,15 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_calcCubicArcLength(CYTH
 }
 
 /* "fontTools/misc/bezierTools.py":75
- * 
- * 
+ *
+ *
  * def _split_cubic_into_two(p0, p1, p2, p3):             # <<<<<<<<<<<<<<
  *     mid = (p0 + 3 * (p1 + p2) + p3) * 0.125
  *     deriv3 = (p3 + p2 - p1 - p0) * 0.125
 */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_3_split_cubic_into_two(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_3_split_cubic_into_two(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -4332,7 +4332,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_9fontTools_4misc_11bezierTools_2_split_cubic_into_two, "_split_cubic_into_two(p0, p1, p2, p3)");
 static PyMethodDef __pyx_mdef_9fontTools_4misc_11bezierTools_3_split_cubic_into_two = {"_split_cubic_into_two", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9fontTools_4misc_11bezierTools_3_split_cubic_into_two, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_9fontTools_4misc_11bezierTools_2_split_cubic_into_two};
-static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_3_split_cubic_into_two(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_3_split_cubic_into_two(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -4447,7 +4447,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_2_split_cubic_into_two(
   __Pyx_RefNannySetupContext("_split_cubic_into_two", 0);
 
   /* "fontTools/misc/bezierTools.py":76
- * 
+ *
  * def _split_cubic_into_two(p0, p1, p2, p3):
  *     mid = (p0 + 3 * (p1 + p2) + p3) * 0.125             # <<<<<<<<<<<<<<
  *     deriv3 = (p3 + p2 - p1 - p0) * 0.125
@@ -4534,7 +4534,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_2_split_cubic_into_two(
  *         (p0, (p0 + p1) * 0.5, mid - deriv3, mid),
  *         (mid, mid + deriv3, (p2 + p3) * 0.5, p3),             # <<<<<<<<<<<<<<
  *     )
- * 
+ *
 */
   __pyx_t_2 = PyNumber_Add(__pyx_v_mid, __pyx_v_deriv3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 80, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -4578,8 +4578,8 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_2_split_cubic_into_two(
   goto __pyx_L0;
 
   /* "fontTools/misc/bezierTools.py":75
- * 
- * 
+ *
+ *
  * def _split_cubic_into_two(p0, p1, p2, p3):             # <<<<<<<<<<<<<<
  *     mid = (p0 + 3 * (p1 + p2) + p3) * 0.125
  *     deriv3 = (p3 + p2 - p1 - p0) * 0.125
@@ -4602,15 +4602,15 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_2_split_cubic_into_two(
 }
 
 /* "fontTools/misc/bezierTools.py":84
- * 
- * 
+ *
+ *
  * @cython.returns(cython.double)             # <<<<<<<<<<<<<<
  * @cython.locals(
  *     p0=cython.complex,
 */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_5_calcCubicArcLengthCRecurse(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_5_calcCubicArcLengthCRecurse(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -4619,7 +4619,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_9fontTools_4misc_11bezierTools_4_calcCubicArcLengthCRecurse, "_calcCubicArcLengthCRecurse(double mult, double complex p0, double complex p1, double complex p2, double complex p3)");
 static PyMethodDef __pyx_mdef_9fontTools_4misc_11bezierTools_5_calcCubicArcLengthCRecurse = {"_calcCubicArcLengthCRecurse", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9fontTools_4misc_11bezierTools_5_calcCubicArcLengthCRecurse, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_9fontTools_4misc_11bezierTools_4_calcCubicArcLengthCRecurse};
-static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_5_calcCubicArcLengthCRecurse(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_5_calcCubicArcLengthCRecurse(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -4947,7 +4947,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_4_calcCubicArcLengthCRe
  *         return _calcCubicArcLengthCRecurse(mult, *one) + _calcCubicArcLengthCRecurse(
  *             mult, *two             # <<<<<<<<<<<<<<
  *         )
- * 
+ *
 */
     __pyx_t_1 = PyFloat_FromDouble(__pyx_v_mult); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 100, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
@@ -4970,7 +4970,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_4_calcCubicArcLengthCRe
  *         return _calcCubicArcLengthCRecurse(mult, *one) + _calcCubicArcLengthCRecurse(
  *             mult, *two             # <<<<<<<<<<<<<<
  *         )
- * 
+ *
 */
     __pyx_t_1 = __Pyx_PySequence_Tuple(__pyx_v_two); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 99, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
@@ -5000,8 +5000,8 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_4_calcCubicArcLengthCRe
   }
 
   /* "fontTools/misc/bezierTools.py":84
- * 
- * 
+ *
+ *
  * @cython.returns(cython.double)             # <<<<<<<<<<<<<<
  * @cython.locals(
  *     p0=cython.complex,
@@ -5027,15 +5027,15 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_4_calcCubicArcLengthCRe
 }
 
 /* "fontTools/misc/bezierTools.py":104
- * 
- * 
+ *
+ *
  * @cython.returns(cython.double)             # <<<<<<<<<<<<<<
  * @cython.locals(
  *     pt1=cython.complex,
 */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_7calcCubicArcLengthC(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_7calcCubicArcLengthC(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -5044,7 +5044,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_9fontTools_4misc_11bezierTools_6calcCubicArcLengthC, "calcCubicArcLengthC(double complex pt1, double complex pt2, double complex pt3, double complex pt4, double tolerance=0.005)\n\nCalculates the arc length for a cubic Bezier segment.\n\nArgs:\n    pt1,pt2,pt3,pt4: Control points of the Bezier as complex numbers.\n    tolerance: Controls the precision of the calcuation.\n\nReturns:\n    Arc length value.");
 static PyMethodDef __pyx_mdef_9fontTools_4misc_11bezierTools_7calcCubicArcLengthC = {"calcCubicArcLengthC", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9fontTools_4misc_11bezierTools_7calcCubicArcLengthC, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_9fontTools_4misc_11bezierTools_6calcCubicArcLengthC};
-static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_7calcCubicArcLengthC(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_7calcCubicArcLengthC(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -5184,7 +5184,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_6calcCubicArcLengthC(CY
  *     """
  *     mult = 1.0 + 1.5 * tolerance  # The 1.5 is a empirical hack; no math             # <<<<<<<<<<<<<<
  *     return _calcCubicArcLengthCRecurse(mult, pt1, pt2, pt3, pt4)
- * 
+ *
 */
   __pyx_v_mult = (1.0 + (1.5 * __pyx_v_tolerance));
 
@@ -5192,8 +5192,8 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_6calcCubicArcLengthC(CY
  *     """
  *     mult = 1.0 + 1.5 * tolerance  # The 1.5 is a empirical hack; no math
  *     return _calcCubicArcLengthCRecurse(mult, pt1, pt2, pt3, pt4)             # <<<<<<<<<<<<<<
- * 
- * 
+ *
+ *
 */
   __Pyx_XDECREF(__pyx_r);
   __pyx_t_2 = NULL;
@@ -5239,8 +5239,8 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_6calcCubicArcLengthC(CY
   goto __pyx_L0;
 
   /* "fontTools/misc/bezierTools.py":104
- * 
- * 
+ *
+ *
  * @cython.returns(cython.double)             # <<<<<<<<<<<<<<
  * @cython.locals(
  *     pt1=cython.complex,
@@ -5265,8 +5265,8 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_6calcCubicArcLengthC(CY
 }
 
 /* "fontTools/misc/bezierTools.py":133
- * 
- * 
+ *
+ *
  * @cython.cfunc             # <<<<<<<<<<<<<<
  * @cython.inline
  * @cython.returns(cython.double)
@@ -5279,15 +5279,15 @@ static CYTHON_INLINE double __pyx_f_9fontTools_4misc_11bezierTools__dot(__pyx_t_
  * @cython.locals(v1=cython.complex, v2=cython.complex)
  * def _dot(v1, v2):
  *     return (v1 * v2.conjugate()).real             # <<<<<<<<<<<<<<
- * 
- * 
+ *
+ *
 */
   __pyx_r = __Pyx_CREAL(__Pyx_c_prod_double(__pyx_v_v1, __Pyx_c_conj_double(__pyx_v_v2)));
   goto __pyx_L0;
 
   /* "fontTools/misc/bezierTools.py":133
- * 
- * 
+ *
+ *
  * @cython.cfunc             # <<<<<<<<<<<<<<
  * @cython.inline
  * @cython.returns(cython.double)
@@ -5299,8 +5299,8 @@ static CYTHON_INLINE double __pyx_f_9fontTools_4misc_11bezierTools__dot(__pyx_t_
 }
 
 /* "fontTools/misc/bezierTools.py":141
- * 
- * 
+ *
+ *
  * @cython.cfunc             # <<<<<<<<<<<<<<
  * @cython.inline
  * @cython.returns(cython.double)
@@ -5325,8 +5325,8 @@ static CYTHON_INLINE double __pyx_f_9fontTools_4misc_11bezierTools__intSecAtan(d
  *     # In : sympy.integrate(sp.sec(sp.atan(x)))
  *     # Out: x*sqrt(x**2 + 1)/2 + asinh(x)/2
  *     return x * math.sqrt(x**2 + 1) / 2 + math.asinh(x) / 2             # <<<<<<<<<<<<<<
- * 
- * 
+ *
+ *
 */
   __pyx_t_1 = PyFloat_FromDouble(__pyx_v_x); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 148, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -5408,8 +5408,8 @@ static CYTHON_INLINE double __pyx_f_9fontTools_4misc_11bezierTools__intSecAtan(d
   goto __pyx_L0;
 
   /* "fontTools/misc/bezierTools.py":141
- * 
- * 
+ *
+ *
  * @cython.cfunc             # <<<<<<<<<<<<<<
  * @cython.inline
  * @cython.returns(cython.double)
@@ -5430,15 +5430,15 @@ static CYTHON_INLINE double __pyx_f_9fontTools_4misc_11bezierTools__intSecAtan(d
 }
 
 /* "fontTools/misc/bezierTools.py":151
- * 
- * 
+ *
+ *
  * def calcQuadraticArcLength(pt1, pt2, pt3):             # <<<<<<<<<<<<<<
  *     """Calculates the arc length for a quadratic Bezier segment.
- * 
+ *
 */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_9calcQuadraticArcLength(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_9calcQuadraticArcLength(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -5447,7 +5447,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_9fontTools_4misc_11bezierTools_8calcQuadraticArcLength, "calcQuadraticArcLength(pt1, pt2, pt3)\n\nCalculates the arc length for a quadratic Bezier segment.\n\nArgs:\n    pt1: Start point of the Bezier as 2D tuple.\n    pt2: Handle point of the Bezier as 2D tuple.\n    pt3: End point of the Bezier as 2D tuple.\n\nReturns:\n    Arc length value.\n\nExample::\n\n    >>> calcQuadraticArcLength((0, 0), (0, 0), (0, 0)) # empty segment\n    0.0\n    >>> calcQuadraticArcLength((0, 0), (50, 0), (80, 0)) # collinear points\n    80.0\n    >>> calcQuadraticArcLength((0, 0), (0, 50), (0, 80)) # collinear points vertical\n    80.0\n    >>> calcQuadraticArcLength((0, 0), (50, 20), (100, 40)) # collinear points\n    107.70329614269008\n    >>> calcQuadraticArcLength((0, 0), (0, 100), (100, 0))\n    154.02976155645263\n    >>> calcQuadraticArcLength((0, 0), (0, 50), (100, 0))\n    120.21581243984076\n    >>> calcQuadraticArcLength((0, 0), (50, -10), (80, 50))\n    102.53273816445825\n    >>> calcQuadraticArcLength((0, 0), (40, 0), (-40, 0)) # collinear points, control point outside\n    66.66666666666667\n    >>> calcQuadraticArcLength((0, 0), (40, 0), (0, 0)) # collinear points, looping back\n    40.0");
 static PyMethodDef __pyx_mdef_9fontTools_4misc_11bezierTools_9calcQuadraticArcLength = {"calcQuadraticArcLength", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9fontTools_4misc_11bezierTools_9calcQuadraticArcLength, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_9fontTools_4misc_11bezierTools_8calcQuadraticArcLength};
-static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_9calcQuadraticArcLength(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_9calcQuadraticArcLength(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -5559,8 +5559,8 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_8calcQuadraticArcLength
  *         40.0
  *     """
  *     return calcQuadraticArcLengthC(complex(*pt1), complex(*pt2), complex(*pt3))             # <<<<<<<<<<<<<<
- * 
- * 
+ *
+ *
 */
   __Pyx_XDECREF(__pyx_r);
   __pyx_t_2 = NULL;
@@ -5609,11 +5609,11 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_8calcQuadraticArcLength
   goto __pyx_L0;
 
   /* "fontTools/misc/bezierTools.py":151
- * 
- * 
+ *
+ *
  * def calcQuadraticArcLength(pt1, pt2, pt3):             # <<<<<<<<<<<<<<
  *     """Calculates the arc length for a quadratic Bezier segment.
- * 
+ *
 */
 
   /* function exit code */
@@ -5634,15 +5634,15 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_8calcQuadraticArcLength
 }
 
 /* "fontTools/misc/bezierTools.py":186
- * 
- * 
+ *
+ *
  * @cython.returns(cython.double)             # <<<<<<<<<<<<<<
  * @cython.locals(
  *     pt1=cython.complex,
 */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_11calcQuadraticArcLengthC(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_11calcQuadraticArcLengthC(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -5651,7 +5651,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_9fontTools_4misc_11bezierTools_10calcQuadraticArcLengthC, "calcQuadraticArcLengthC(double complex pt1, double complex pt2, double complex pt3)\n\nCalculates the arc length for a quadratic Bezier segment.\n\nArgs:\n    pt1: Start point of the Bezier as a complex number.\n    pt2: Handle point of the Bezier as a complex number.\n    pt3: End point of the Bezier as a complex number.\n\nReturns:\n    Arc length value.");
 static PyMethodDef __pyx_mdef_9fontTools_4misc_11bezierTools_11calcQuadraticArcLengthC = {"calcQuadraticArcLengthC", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9fontTools_4misc_11bezierTools_11calcQuadraticArcLengthC, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_9fontTools_4misc_11bezierTools_10calcQuadraticArcLengthC};
-static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_11calcQuadraticArcLengthC(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_11calcQuadraticArcLengthC(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -5864,7 +5864,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_10calcQuadraticArcLengt
  *         if _dot(d0, d1) >= 0:
  *             return abs(pt3 - pt1)
 */
-  __pyx_t_3 = fabs(__pyx_v_origDist); 
+  __pyx_t_3 = fabs(__pyx_v_origDist);
   __pyx_t_2 = PyFloat_FromDouble(__pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 226, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_epsilon); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 226, __pyx_L1_error)
@@ -5984,7 +5984,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_10calcQuadraticArcLengt
  *     x1 = _dot(d, d1) / origDist
  *     Len = abs(2 * (_intSecAtan(x1) - _intSecAtan(x0)) * origDist / (scale * (x1 - x0)))             # <<<<<<<<<<<<<<
  *     return Len
- * 
+ *
 */
   __pyx_t_3 = __pyx_f_9fontTools_4misc_11bezierTools__intSecAtan(__pyx_v_x1); if (unlikely(__pyx_t_3 == ((double)-1) && PyErr_Occurred())) __PYX_ERR(0, 233, __pyx_L1_error)
   __pyx_t_6 = __pyx_f_9fontTools_4misc_11bezierTools__intSecAtan(__pyx_v_x0); if (unlikely(__pyx_t_6 == ((double)-1) && PyErr_Occurred())) __PYX_ERR(0, 233, __pyx_L1_error)
@@ -5994,15 +5994,15 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_10calcQuadraticArcLengt
     PyErr_SetString(PyExc_ZeroDivisionError, "float division");
     __PYX_ERR(0, 233, __pyx_L1_error)
   }
-  __pyx_t_3 = fabs((__pyx_t_7 / __pyx_t_6)); 
+  __pyx_t_3 = fabs((__pyx_t_7 / __pyx_t_6));
   __pyx_v_Len = __pyx_t_3;
 
   /* "fontTools/misc/bezierTools.py":234
  *     x1 = _dot(d, d1) / origDist
  *     Len = abs(2 * (_intSecAtan(x1) - _intSecAtan(x0)) * origDist / (scale * (x1 - x0)))
  *     return Len             # <<<<<<<<<<<<<<
- * 
- * 
+ *
+ *
 */
   __Pyx_XDECREF(__pyx_r);
   __pyx_t_5 = PyFloat_FromDouble(__pyx_v_Len); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 234, __pyx_L1_error)
@@ -6012,8 +6012,8 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_10calcQuadraticArcLengt
   goto __pyx_L0;
 
   /* "fontTools/misc/bezierTools.py":186
- * 
- * 
+ *
+ *
  * @cython.returns(cython.double)             # <<<<<<<<<<<<<<
  * @cython.locals(
  *     pt1=cython.complex,
@@ -6033,15 +6033,15 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_10calcQuadraticArcLengt
 }
 
 /* "fontTools/misc/bezierTools.py":237
- * 
- * 
+ *
+ *
  * def approximateQuadraticArcLength(pt1, pt2, pt3):             # <<<<<<<<<<<<<<
  *     """Calculates the arc length for a quadratic Bezier segment.
- * 
+ *
 */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_13approximateQuadraticArcLength(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_13approximateQuadraticArcLength(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -6050,7 +6050,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_9fontTools_4misc_11bezierTools_12approximateQuadraticArcLength, "approximateQuadraticArcLength(pt1, pt2, pt3)\n\nCalculates the arc length for a quadratic Bezier segment.\n\nUses Gauss-Legendre quadrature for a branch-free approximation.\nSee :func:`calcQuadraticArcLength` for a slower but more accurate result.\n\nArgs:\n    pt1: Start point of the Bezier as 2D tuple.\n    pt2: Handle point of the Bezier as 2D tuple.\n    pt3: End point of the Bezier as 2D tuple.\n\nReturns:\n    Approximate arc length value.");
 static PyMethodDef __pyx_mdef_9fontTools_4misc_11bezierTools_13approximateQuadraticArcLength = {"approximateQuadraticArcLength", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9fontTools_4misc_11bezierTools_13approximateQuadraticArcLength, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_9fontTools_4misc_11bezierTools_12approximateQuadraticArcLength};
-static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_13approximateQuadraticArcLength(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_13approximateQuadraticArcLength(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -6162,8 +6162,8 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_12approximateQuadraticA
  *         Approximate arc length value.
  *     """
  *     return approximateQuadraticArcLengthC(complex(*pt1), complex(*pt2), complex(*pt3))             # <<<<<<<<<<<<<<
- * 
- * 
+ *
+ *
 */
   __Pyx_XDECREF(__pyx_r);
   __pyx_t_2 = NULL;
@@ -6212,11 +6212,11 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_12approximateQuadraticA
   goto __pyx_L0;
 
   /* "fontTools/misc/bezierTools.py":237
- * 
- * 
+ *
+ *
  * def approximateQuadraticArcLength(pt1, pt2, pt3):             # <<<<<<<<<<<<<<
  *     """Calculates the arc length for a quadratic Bezier segment.
- * 
+ *
 */
 
   /* function exit code */
@@ -6237,15 +6237,15 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_12approximateQuadraticA
 }
 
 /* "fontTools/misc/bezierTools.py":254
- * 
- * 
+ *
+ *
  * @cython.returns(cython.double)             # <<<<<<<<<<<<<<
  * @cython.locals(
  *     pt1=cython.complex,
 */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_15approximateQuadraticArcLengthC(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_15approximateQuadraticArcLengthC(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -6254,7 +6254,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_9fontTools_4misc_11bezierTools_14approximateQuadraticArcLengthC, "approximateQuadraticArcLengthC(double complex pt1, double complex pt2, double complex pt3)\n\nCalculates the arc length for a quadratic Bezier segment.\n\nUses Gauss-Legendre quadrature for a branch-free approximation.\nSee :func:`calcQuadraticArcLength` for a slower but more accurate result.\n\nArgs:\n    pt1: Start point of the Bezier as a complex number.\n    pt2: Handle point of the Bezier as a complex number.\n    pt3: End point of the Bezier as a complex number.\n\nReturns:\n    Approximate arc length value.");
 static PyMethodDef __pyx_mdef_9fontTools_4misc_11bezierTools_15approximateQuadraticArcLengthC = {"approximateQuadraticArcLengthC", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9fontTools_4misc_11bezierTools_15approximateQuadraticArcLengthC, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_9fontTools_4misc_11bezierTools_14approximateQuadraticArcLengthC};
-static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_15approximateQuadraticArcLengthC(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_15approximateQuadraticArcLengthC(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -6387,10 +6387,10 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_14approximateQuadraticA
 
   /* "fontTools/misc/bezierTools.py":295
  *     )
- * 
+ *
  *     return v0 + v1 + v2             # <<<<<<<<<<<<<<
- * 
- * 
+ *
+ *
 */
   __Pyx_XDECREF(__pyx_r);
   __pyx_t_1 = PyFloat_FromDouble(((__pyx_v_v0 + __pyx_v_v1) + __pyx_v_v2)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 295, __pyx_L1_error)
@@ -6400,8 +6400,8 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_14approximateQuadraticA
   goto __pyx_L0;
 
   /* "fontTools/misc/bezierTools.py":254
- * 
- * 
+ *
+ *
  * @cython.returns(cython.double)             # <<<<<<<<<<<<<<
  * @cython.locals(
  *     pt1=cython.complex,
@@ -6419,15 +6419,15 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_14approximateQuadraticA
 }
 
 /* "fontTools/misc/bezierTools.py":298
- * 
- * 
+ *
+ *
  * def calcQuadraticBounds(pt1, pt2, pt3):             # <<<<<<<<<<<<<<
  *     """Calculates the bounding rectangle for a quadratic Bezier segment.
- * 
+ *
 */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_17calcQuadraticBounds(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_17calcQuadraticBounds(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -6436,7 +6436,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_9fontTools_4misc_11bezierTools_16calcQuadraticBounds, "calcQuadraticBounds(pt1, pt2, pt3)\n\nCalculates the bounding rectangle for a quadratic Bezier segment.\n\nArgs:\n    pt1: Start point of the Bezier as a 2D tuple.\n    pt2: Handle point of the Bezier as a 2D tuple.\n    pt3: End point of the Bezier as a 2D tuple.\n\nReturns:\n    A four-item tuple representing the bounding rectangle ``(xMin, yMin, xMax, yMax)``.\n\nExample::\n\n    >>> calcQuadraticBounds((0, 0), (50, 100), (100, 0))\n    (0, 0, 100, 50.0)\n    >>> calcQuadraticBounds((0, 0), (100, 0), (100, 100))\n    (0.0, 0.0, 100, 100)");
 static PyMethodDef __pyx_mdef_9fontTools_4misc_11bezierTools_17calcQuadraticBounds = {"calcQuadraticBounds", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9fontTools_4misc_11bezierTools_17calcQuadraticBounds, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_9fontTools_4misc_11bezierTools_16calcQuadraticBounds};
-static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_17calcQuadraticBounds(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_17calcQuadraticBounds(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -6920,7 +6920,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_16calcQuadraticBounds(C
  *         if 0 <= t < 1
  *     ] + [pt1, pt3]             # <<<<<<<<<<<<<<
  *     return calcBounds(points)
- * 
+ *
 */
   { /* enter inner scope */
 
@@ -7051,7 +7051,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_16calcQuadraticBounds(C
  *         if 0 <= t < 1
  *     ] + [pt1, pt3]             # <<<<<<<<<<<<<<
  *     return calcBounds(points)
- * 
+ *
 */
   __pyx_t_5 = PyList_New(2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 328, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
@@ -7072,8 +7072,8 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_16calcQuadraticBounds(C
  *         if 0 <= t < 1
  *     ] + [pt1, pt3]
  *     return calcBounds(points)             # <<<<<<<<<<<<<<
- * 
- * 
+ *
+ *
 */
   __Pyx_XDECREF(__pyx_r);
   __pyx_t_5 = NULL;
@@ -7104,11 +7104,11 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_16calcQuadraticBounds(C
   goto __pyx_L0;
 
   /* "fontTools/misc/bezierTools.py":298
- * 
- * 
+ *
+ *
  * def calcQuadraticBounds(pt1, pt2, pt3):             # <<<<<<<<<<<<<<
  *     """Calculates the bounding rectangle for a quadratic Bezier segment.
- * 
+ *
 */
 
   /* function exit code */
@@ -7140,15 +7140,15 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_16calcQuadraticBounds(C
 }
 
 /* "fontTools/misc/bezierTools.py":332
- * 
- * 
+ *
+ *
  * def approximateCubicArcLength(pt1, pt2, pt3, pt4):             # <<<<<<<<<<<<<<
  *     """Approximates the arc length for a cubic Bezier segment.
- * 
+ *
 */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_19approximateCubicArcLength(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_19approximateCubicArcLength(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -7157,7 +7157,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_9fontTools_4misc_11bezierTools_18approximateCubicArcLength, "approximateCubicArcLength(pt1, pt2, pt3, pt4)\n\nApproximates the arc length for a cubic Bezier segment.\n\nUses Gauss-Lobatto quadrature with n=5 points to approximate arc length.\nSee :func:`calcCubicArcLength` for a slower but more accurate result.\n\nArgs:\n    pt1,pt2,pt3,pt4: Control points of the Bezier as 2D tuples.\n\nReturns:\n    Arc length value.\n\nExample::\n\n    >>> approximateCubicArcLength((0, 0), (25, 100), (75, 100), (100, 0))\n    190.04332968932817\n    >>> approximateCubicArcLength((0, 0), (50, 0), (100, 50), (100, 100))\n    154.8852074945903\n    >>> approximateCubicArcLength((0, 0), (50, 0), (100, 0), (150, 0)) # line; exact result should be 150.\n    149.99999999999991\n    >>> approximateCubicArcLength((0, 0), (50, 0), (100, 0), (-50, 0)) # cusp; exact result should be 150.\n    136.9267662156362\n    >>> approximateCubicArcLength((0, 0), (50, 0), (100, -50), (-50, 0)) # cusp\n    154.80848416537057");
 static PyMethodDef __pyx_mdef_9fontTools_4misc_11bezierTools_19approximateCubicArcLength = {"approximateCubicArcLength", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9fontTools_4misc_11bezierTools_19approximateCubicArcLength, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_9fontTools_4misc_11bezierTools_18approximateCubicArcLength};
-static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_19approximateCubicArcLength(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_19approximateCubicArcLength(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -7291,7 +7291,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_18approximateCubicArcLe
  *     return approximateCubicArcLengthC(
  *         complex(*pt1), complex(*pt2), complex(*pt3), complex(*pt4)             # <<<<<<<<<<<<<<
  *     )
- * 
+ *
 */
   __pyx_t_4 = __Pyx_PySequence_Tuple(__pyx_v_pt1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 358, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
@@ -7342,11 +7342,11 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_18approximateCubicArcLe
   goto __pyx_L0;
 
   /* "fontTools/misc/bezierTools.py":332
- * 
- * 
+ *
+ *
  * def approximateCubicArcLength(pt1, pt2, pt3, pt4):             # <<<<<<<<<<<<<<
  *     """Approximates the arc length for a cubic Bezier segment.
- * 
+ *
 */
 
   /* function exit code */
@@ -7368,15 +7368,15 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_18approximateCubicArcLe
 }
 
 /* "fontTools/misc/bezierTools.py":362
- * 
- * 
+ *
+ *
  * @cython.returns(cython.double)             # <<<<<<<<<<<<<<
  * @cython.locals(
  *     pt1=cython.complex,
 */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_21approximateCubicArcLengthC(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_21approximateCubicArcLengthC(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -7385,7 +7385,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_9fontTools_4misc_11bezierTools_20approximateCubicArcLengthC, "approximateCubicArcLengthC(double complex pt1, double complex pt2, double complex pt3, double complex pt4)\n\nApproximates the arc length for a cubic Bezier segment.\n\nArgs:\n    pt1,pt2,pt3,pt4: Control points of the Bezier as complex numbers.\n\nReturns:\n    Arc length value.");
 static PyMethodDef __pyx_mdef_9fontTools_4misc_11bezierTools_21approximateCubicArcLengthC = {"approximateCubicArcLengthC", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9fontTools_4misc_11bezierTools_21approximateCubicArcLengthC, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_9fontTools_4misc_11bezierTools_20approximateCubicArcLengthC};
-static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_21approximateCubicArcLengthC(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_21approximateCubicArcLengthC(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -7539,17 +7539,17 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_20approximateCubicArcLe
  *         + 0.558983582205757 * pt4
  *     )
  *     v4 = abs(pt4 - pt3) * 0.15             # <<<<<<<<<<<<<<
- * 
+ *
  *     return v0 + v1 + v2 + v3 + v4
 */
   __pyx_v_v4 = (__Pyx_c_abs_double(__Pyx_c_diff_double(__pyx_v_pt4, __pyx_v_pt3)) * 0.15);
 
   /* "fontTools/misc/bezierTools.py":409
  *     v4 = abs(pt4 - pt3) * 0.15
- * 
+ *
  *     return v0 + v1 + v2 + v3 + v4             # <<<<<<<<<<<<<<
- * 
- * 
+ *
+ *
 */
   __Pyx_XDECREF(__pyx_r);
   __pyx_t_1 = PyFloat_FromDouble(((((__pyx_v_v0 + __pyx_v_v1) + __pyx_v_v2) + __pyx_v_v3) + __pyx_v_v4)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 409, __pyx_L1_error)
@@ -7559,8 +7559,8 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_20approximateCubicArcLe
   goto __pyx_L0;
 
   /* "fontTools/misc/bezierTools.py":362
- * 
- * 
+ *
+ *
  * @cython.returns(cython.double)             # <<<<<<<<<<<<<<
  * @cython.locals(
  *     pt1=cython.complex,
@@ -7578,15 +7578,15 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_20approximateCubicArcLe
 }
 
 /* "fontTools/misc/bezierTools.py":412
- * 
- * 
+ *
+ *
  * def calcCubicBounds(pt1, pt2, pt3, pt4):             # <<<<<<<<<<<<<<
  *     """Calculates the bounding rectangle for a quadratic Bezier segment.
- * 
+ *
 */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_23calcCubicBounds(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_23calcCubicBounds(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -7595,7 +7595,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_9fontTools_4misc_11bezierTools_22calcCubicBounds, "calcCubicBounds(pt1, pt2, pt3, pt4)\n\nCalculates the bounding rectangle for a quadratic Bezier segment.\n\nArgs:\n    pt1,pt2,pt3,pt4: Control points of the Bezier as 2D tuples.\n\nReturns:\n    A four-item tuple representing the bounding rectangle ``(xMin, yMin, xMax, yMax)``.\n\nExample::\n\n    >>> calcCubicBounds((0, 0), (25, 100), (75, 100), (100, 0))\n    (0, 0, 100, 75.0)\n    >>> calcCubicBounds((0, 0), (50, 0), (100, 50), (100, 100))\n    (0.0, 0.0, 100, 100)\n    >>> print(\"%f %f %f %f\" % calcCubicBounds((50, 0), (0, 100), (100, 100), (50, 0)))\n    35.566243 0.000000 64.433757 75.000000");
 static PyMethodDef __pyx_mdef_9fontTools_4misc_11bezierTools_23calcCubicBounds = {"calcCubicBounds", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9fontTools_4misc_11bezierTools_23calcCubicBounds, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_9fontTools_4misc_11bezierTools_22calcCubicBounds};
-static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_23calcCubicBounds(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_23calcCubicBounds(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -8209,7 +8209,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_22calcCubicBounds(CYTHO
  *     xRoots = [t for t in solveQuadratic(ax3, bx2, cx) if 0 <= t < 1]
  *     yRoots = [t for t in solveQuadratic(ay3, by2, cy) if 0 <= t < 1]             # <<<<<<<<<<<<<<
  *     roots = xRoots + yRoots
- * 
+ *
 */
   { /* enter inner scope */
     __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 437, __pyx_L23_error)
@@ -8315,7 +8315,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_22calcCubicBounds(CYTHO
  *     xRoots = [t for t in solveQuadratic(ax3, bx2, cx) if 0 <= t < 1]
  *     yRoots = [t for t in solveQuadratic(ay3, by2, cy) if 0 <= t < 1]
  *     roots = xRoots + yRoots             # <<<<<<<<<<<<<<
- * 
+ *
  *     points = [
 */
   __pyx_t_1 = PyNumber_Add(__pyx_v_xRoots, __pyx_v_yRoots); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 438, __pyx_L1_error)
@@ -8328,13 +8328,13 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_22calcCubicBounds(CYTHO
  *         for t in roots
  *     ] + [pt1, pt4]             # <<<<<<<<<<<<<<
  *     return calcBounds(points)
- * 
+ *
 */
   { /* enter inner scope */
 
     /* "fontTools/misc/bezierTools.py":440
  *     roots = xRoots + yRoots
- * 
+ *
  *     points = [             # <<<<<<<<<<<<<<
  *         (
  *             ax * t * t * t + bx * t * t + cx * t + dx,
@@ -8474,7 +8474,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_22calcCubicBounds(CYTHO
  *         for t in roots
  *     ] + [pt1, pt4]             # <<<<<<<<<<<<<<
  *     return calcBounds(points)
- * 
+ *
 */
   __pyx_t_5 = PyList_New(2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 446, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
@@ -8495,8 +8495,8 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_22calcCubicBounds(CYTHO
  *         for t in roots
  *     ] + [pt1, pt4]
  *     return calcBounds(points)             # <<<<<<<<<<<<<<
- * 
- * 
+ *
+ *
 */
   __Pyx_XDECREF(__pyx_r);
   __pyx_t_5 = NULL;
@@ -8527,11 +8527,11 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_22calcCubicBounds(CYTHO
   goto __pyx_L0;
 
   /* "fontTools/misc/bezierTools.py":412
- * 
- * 
+ *
+ *
  * def calcCubicBounds(pt1, pt2, pt3, pt4):             # <<<<<<<<<<<<<<
  *     """Calculates the bounding rectangle for a quadratic Bezier segment.
- * 
+ *
 */
 
   /* function exit code */
@@ -8572,15 +8572,15 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_22calcCubicBounds(CYTHO
 }
 
 /* "fontTools/misc/bezierTools.py":450
- * 
- * 
+ *
+ *
  * def splitLine(pt1, pt2, where, isHorizontal):             # <<<<<<<<<<<<<<
  *     """Split a line at a given coordinate.
- * 
+ *
 */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_25splitLine(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_25splitLine(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -8589,7 +8589,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_9fontTools_4misc_11bezierTools_24splitLine, "splitLine(pt1, pt2, where, isHorizontal)\n\nSplit a line at a given coordinate.\n\nArgs:\n    pt1: Start point of line as 2D tuple.\n    pt2: End point of line as 2D tuple.\n    where: Position at which to split the line.\n    isHorizontal: Direction of the ray splitting the line. If true,\n        ``where`` is interpreted as a Y coordinate; if false, then\n        ``where`` is interpreted as an X coordinate.\n\nReturns:\n    A list of two line segments (each line segment being two 2D tuples)\n    if the line was successfully split, or a list containing the original\n    line.\n\nExample::\n\n    >>> printSegments(splitLine((0, 0), (100, 100), 50, True))\n    ((0, 0), (50, 50))\n    ((50, 50), (100, 100))\n    >>> printSegments(splitLine((0, 0), (100, 100), 100, True))\n    ((0, 0), (100, 100))\n    >>> printSegments(splitLine((0, 0), (100, 100), 0, True))\n    ((0, 0), (0, 0))\n    ((0, 0), (100, 100))\n    >>> printSegments(splitLine((0, 0), (100, 100), 0, False))\n    ((0, 0), (0, 0))\n    ((0, 0), (100, 100))\n    >>> printSegments(splitLine((100, 0), (0, 0), 50, False))\n    ((100, 0), (50, 0))\n    ((50, 0), (0, 0))\n    >>> printSegments(splitLine((0, 100), (0, 0), 50, True))\n    ((0, 100), (0, 50))\n    ((0, 50), (0, 0))");
 static PyMethodDef __pyx_mdef_9fontTools_4misc_11bezierTools_25splitLine = {"splitLine", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9fontTools_4misc_11bezierTools_25splitLine, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_9fontTools_4misc_11bezierTools_24splitLine};
-static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_25splitLine(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_25splitLine(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -8718,7 +8718,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_24splitLine(CYTHON_UNUS
  *     """
  *     pt1x, pt1y = pt1             # <<<<<<<<<<<<<<
  *     pt2x, pt2y = pt2
- * 
+ *
 */
   if ((likely(PyTuple_CheckExact(__pyx_v_pt1))) || (PyList_CheckExact(__pyx_v_pt1))) {
     PyObject* sequence = __pyx_v_pt1;
@@ -8777,7 +8777,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_24splitLine(CYTHON_UNUS
  *     """
  *     pt1x, pt1y = pt1
  *     pt2x, pt2y = pt2             # <<<<<<<<<<<<<<
- * 
+ *
  *     ax = pt2x - pt1x
 */
   if ((likely(PyTuple_CheckExact(__pyx_v_pt2))) || (PyList_CheckExact(__pyx_v_pt2))) {
@@ -8835,10 +8835,10 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_24splitLine(CYTHON_UNUS
 
   /* "fontTools/misc/bezierTools.py":489
  *     pt2x, pt2y = pt2
- * 
+ *
  *     ax = pt2x - pt1x             # <<<<<<<<<<<<<<
  *     ay = pt2y - pt1y
- * 
+ *
 */
   __pyx_t_1 = PyNumber_Subtract(__pyx_v_pt2x, __pyx_v_pt1x); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 489, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -8846,10 +8846,10 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_24splitLine(CYTHON_UNUS
   __pyx_t_1 = 0;
 
   /* "fontTools/misc/bezierTools.py":490
- * 
+ *
  *     ax = pt2x - pt1x
  *     ay = pt2y - pt1y             # <<<<<<<<<<<<<<
- * 
+ *
  *     bx = pt1x
 */
   __pyx_t_1 = PyNumber_Subtract(__pyx_v_pt2y, __pyx_v_pt1y); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 490, __pyx_L1_error)
@@ -8859,19 +8859,19 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_24splitLine(CYTHON_UNUS
 
   /* "fontTools/misc/bezierTools.py":492
  *     ay = pt2y - pt1y
- * 
+ *
  *     bx = pt1x             # <<<<<<<<<<<<<<
  *     by = pt1y
- * 
+ *
 */
   __Pyx_INCREF(__pyx_v_pt1x);
   __pyx_v_bx = __pyx_v_pt1x;
 
   /* "fontTools/misc/bezierTools.py":493
- * 
+ *
  *     bx = pt1x
  *     by = pt1y             # <<<<<<<<<<<<<<
- * 
+ *
  *     a = (ax, ay)[isHorizontal]
 */
   __Pyx_INCREF(__pyx_v_pt1y);
@@ -8879,9 +8879,9 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_24splitLine(CYTHON_UNUS
 
   /* "fontTools/misc/bezierTools.py":495
  *     by = pt1y
- * 
+ *
  *     a = (ax, ay)[isHorizontal]             # <<<<<<<<<<<<<<
- * 
+ *
  *     if a == 0:
 */
   __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 495, __pyx_L1_error)
@@ -8900,7 +8900,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_24splitLine(CYTHON_UNUS
 
   /* "fontTools/misc/bezierTools.py":497
  *     a = (ax, ay)[isHorizontal]
- * 
+ *
  *     if a == 0:             # <<<<<<<<<<<<<<
  *         return [(pt1, pt2)]
  *     t = (where - (bx, by)[isHorizontal]) / a
@@ -8909,7 +8909,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_24splitLine(CYTHON_UNUS
   if (__pyx_t_5) {
 
     /* "fontTools/misc/bezierTools.py":498
- * 
+ *
  *     if a == 0:
  *         return [(pt1, pt2)]             # <<<<<<<<<<<<<<
  *     t = (where - (bx, by)[isHorizontal]) / a
@@ -8935,7 +8935,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_24splitLine(CYTHON_UNUS
 
     /* "fontTools/misc/bezierTools.py":497
  *     a = (ax, ay)[isHorizontal]
- * 
+ *
  *     if a == 0:             # <<<<<<<<<<<<<<
  *         return [(pt1, pt2)]
  *     t = (where - (bx, by)[isHorizontal]) / a
@@ -9062,8 +9062,8 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_24splitLine(CYTHON_UNUS
  *         return [(pt1, midPt), (midPt, pt2)]
  *     else:
  *         return [(pt1, pt2)]             # <<<<<<<<<<<<<<
- * 
- * 
+ *
+ *
 */
   /*else*/ {
     __Pyx_XDECREF(__pyx_r);
@@ -9086,11 +9086,11 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_24splitLine(CYTHON_UNUS
   }
 
   /* "fontTools/misc/bezierTools.py":450
- * 
- * 
+ *
+ *
  * def splitLine(pt1, pt2, where, isHorizontal):             # <<<<<<<<<<<<<<
  *     """Split a line at a given coordinate.
- * 
+ *
 */
 
   /* function exit code */
@@ -9118,15 +9118,15 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_24splitLine(CYTHON_UNUS
 }
 
 /* "fontTools/misc/bezierTools.py":507
- * 
- * 
+ *
+ *
  * def splitQuadratic(pt1, pt2, pt3, where, isHorizontal):             # <<<<<<<<<<<<<<
  *     """Split a quadratic Bezier curve at a given coordinate.
- * 
+ *
 */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_27splitQuadratic(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_27splitQuadratic(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -9135,7 +9135,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_9fontTools_4misc_11bezierTools_26splitQuadratic, "splitQuadratic(pt1, pt2, pt3, where, isHorizontal)\n\nSplit a quadratic Bezier curve at a given coordinate.\n\nArgs:\n    pt1,pt2,pt3: Control points of the Bezier as 2D tuples.\n    where: Position at which to split the curve.\n    isHorizontal: Direction of the ray splitting the curve. If true,\n        ``where`` is interpreted as a Y coordinate; if false, then\n        ``where`` is interpreted as an X coordinate.\n\nReturns:\n    A list of two curve segments (each curve segment being three 2D tuples)\n    if the curve was successfully split, or a list containing the original\n    curve.\n\nExample::\n\n    >>> printSegments(splitQuadratic((0, 0), (50, 100), (100, 0), 150, False))\n    ((0, 0), (50, 100), (100, 0))\n    >>> printSegments(splitQuadratic((0, 0), (50, 100), (100, 0), 50, False))\n    ((0, 0), (25, 50), (50, 50))\n    ((50, 50), (75, 50), (100, 0))\n    >>> printSegments(splitQuadratic((0, 0), (50, 100), (100, 0), 25, False))\n    ((0, 0), (12.5, 25), (25, 37.5))\n    ((25, 37.5), (62.5, 75), (100, 0))\n    >>> printSegments(splitQuadratic((0, 0), (50, 100), (100, 0), 25, True))\n    ((0, 0), (7.32233, 14.6447), (14.6447, 25))\n    ((14.6447, 25), (50, 75), (85.3553, 25))\n    ((85.3553, 25), (92.6777, 14.6447), (100, -7.10543e-15))\n    >>> # XXX I'm not at all sure if the following behavior is desirable:\n    >>> printSegments(splitQuadratic((0, 0), (50, 100), (100, 0), 50, True))\n    ((0, 0), (25, 50), (50, 50))\n    ((50, 50), (50, 50), (50, 50))\n    ((50, 50), (75, 50), (100, 0))");
 static PyMethodDef __pyx_mdef_9fontTools_4misc_11bezierTools_27splitQuadratic = {"splitQuadratic", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9fontTools_4misc_11bezierTools_27splitQuadratic, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_9fontTools_4misc_11bezierTools_26splitQuadratic};
-static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_27splitQuadratic(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_27splitQuadratic(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -9402,11 +9402,11 @@ static PyObject *__pyx_gb_9fontTools_4misc_11bezierTools_14splitQuadratic_2gener
 }
 
 /* "fontTools/misc/bezierTools.py":507
- * 
- * 
+ *
+ *
  * def splitQuadratic(pt1, pt2, pt3, where, isHorizontal):             # <<<<<<<<<<<<<<
  *     """Split a quadratic Bezier curve at a given coordinate.
- * 
+ *
 */
 
 static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_26splitQuadratic(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_pt1, PyObject *__pyx_v_pt2, PyObject *__pyx_v_pt3, PyObject *__pyx_v_where, PyObject *__pyx_v_isHorizontal) {
@@ -9614,7 +9614,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_26splitQuadratic(CYTHON
  *     if not solutions:
  *         return [(pt1, pt2, pt3)]             # <<<<<<<<<<<<<<
  *     return _splitQuadraticAtT(a, b, c, *solutions)
- * 
+ *
 */
     __Pyx_XDECREF(__pyx_r);
     __pyx_t_2 = PyTuple_New(3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 548, __pyx_L1_error)
@@ -9650,8 +9650,8 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_26splitQuadratic(CYTHON
  *     if not solutions:
  *         return [(pt1, pt2, pt3)]
  *     return _splitQuadraticAtT(a, b, c, *solutions)             # <<<<<<<<<<<<<<
- * 
- * 
+ *
+ *
 */
   __Pyx_XDECREF(__pyx_r);
   __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_mstate_global->__pyx_n_u_splitQuadraticAtT); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 549, __pyx_L1_error)
@@ -9682,11 +9682,11 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_26splitQuadratic(CYTHON
   goto __pyx_L0;
 
   /* "fontTools/misc/bezierTools.py":507
- * 
- * 
+ *
+ *
  * def splitQuadratic(pt1, pt2, pt3, where, isHorizontal):             # <<<<<<<<<<<<<<
  *     """Split a quadratic Bezier curve at a given coordinate.
- * 
+ *
 */
 
   /* function exit code */
@@ -9712,15 +9712,15 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_26splitQuadratic(CYTHON
 }
 
 /* "fontTools/misc/bezierTools.py":552
- * 
- * 
+ *
+ *
  * def splitCubic(pt1, pt2, pt3, pt4, where, isHorizontal):             # <<<<<<<<<<<<<<
  *     """Split a cubic Bezier curve at a given coordinate.
- * 
+ *
 */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_29splitCubic(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_29splitCubic(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -9729,7 +9729,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_9fontTools_4misc_11bezierTools_28splitCubic, "splitCubic(pt1, pt2, pt3, pt4, where, isHorizontal)\n\nSplit a cubic Bezier curve at a given coordinate.\n\nArgs:\n    pt1,pt2,pt3,pt4: Control points of the Bezier as 2D tuples.\n    where: Position at which to split the curve.\n    isHorizontal: Direction of the ray splitting the curve. If true,\n        ``where`` is interpreted as a Y coordinate; if false, then\n        ``where`` is interpreted as an X coordinate.\n\nReturns:\n    A list of two curve segments (each curve segment being four 2D tuples)\n    if the curve was successfully split, or a list containing the original\n    curve.\n\nExample::\n\n    >>> printSegments(splitCubic((0, 0), (25, 100), (75, 100), (100, 0), 150, False))\n    ((0, 0), (25, 100), (75, 100), (100, 0))\n    >>> printSegments(splitCubic((0, 0), (25, 100), (75, 100), (100, 0), 50, False))\n    ((0, 0), (12.5, 50), (31.25, 75), (50, 75))\n    ((50, 75), (68.75, 75), (87.5, 50), (100, 0))\n    >>> printSegments(splitCubic((0, 0), (25, 100), (75, 100), (100, 0), 25, True))\n    ((0, 0), (2.29379, 9.17517), (4.79804, 17.5085), (7.47414, 25))\n    ((7.47414, 25), (31.2886, 91.6667), (68.7114, 91.6667), (92.5259, 25))\n    ((92.5259, 25), (95.202, 17.5085), (97.7062, 9.17517), (100, 1.77636e-15))");
 static PyMethodDef __pyx_mdef_9fontTools_4misc_11bezierTools_29splitCubic = {"splitCubic", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9fontTools_4misc_11bezierTools_29splitCubic, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_9fontTools_4misc_11bezierTools_28splitCubic};
-static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_29splitCubic(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_29splitCubic(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -10004,11 +10004,11 @@ static PyObject *__pyx_gb_9fontTools_4misc_11bezierTools_10splitCubic_2generator
 }
 
 /* "fontTools/misc/bezierTools.py":552
- * 
- * 
+ *
+ *
  * def splitCubic(pt1, pt2, pt3, pt4, where, isHorizontal):             # <<<<<<<<<<<<<<
  *     """Split a cubic Bezier curve at a given coordinate.
- * 
+ *
 */
 
 static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_28splitCubic(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_pt1, PyObject *__pyx_v_pt2, PyObject *__pyx_v_pt3, PyObject *__pyx_v_pt4, PyObject *__pyx_v_where, PyObject *__pyx_v_isHorizontal) {
@@ -10231,7 +10231,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_28splitCubic(CYTHON_UNU
  *     if not solutions:
  *         return [(pt1, pt2, pt3, pt4)]             # <<<<<<<<<<<<<<
  *     return _splitCubicAtT(a, b, c, d, *solutions)
- * 
+ *
 */
     __Pyx_XDECREF(__pyx_r);
     __pyx_t_5 = PyTuple_New(4); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 585, __pyx_L1_error)
@@ -10270,8 +10270,8 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_28splitCubic(CYTHON_UNU
  *     if not solutions:
  *         return [(pt1, pt2, pt3, pt4)]
  *     return _splitCubicAtT(a, b, c, d, *solutions)             # <<<<<<<<<<<<<<
- * 
- * 
+ *
+ *
 */
   __Pyx_XDECREF(__pyx_r);
   __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_mstate_global->__pyx_n_u_splitCubicAtT); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 586, __pyx_L1_error)
@@ -10305,11 +10305,11 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_28splitCubic(CYTHON_UNU
   goto __pyx_L0;
 
   /* "fontTools/misc/bezierTools.py":552
- * 
- * 
+ *
+ *
  * def splitCubic(pt1, pt2, pt3, pt4, where, isHorizontal):             # <<<<<<<<<<<<<<
  *     """Split a cubic Bezier curve at a given coordinate.
- * 
+ *
 */
 
   /* function exit code */
@@ -10337,15 +10337,15 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_28splitCubic(CYTHON_UNU
 }
 
 /* "fontTools/misc/bezierTools.py":589
- * 
- * 
+ *
+ *
  * def splitQuadraticAtT(pt1, pt2, pt3, *ts):             # <<<<<<<<<<<<<<
  *     """Split a quadratic Bezier curve at one or more values of t.
- * 
+ *
 */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_31splitQuadraticAtT(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_31splitQuadraticAtT(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -10354,7 +10354,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_9fontTools_4misc_11bezierTools_30splitQuadraticAtT, "splitQuadraticAtT(pt1, pt2, pt3, *ts)\n\nSplit a quadratic Bezier curve at one or more values of t.\n\nArgs:\n    pt1,pt2,pt3: Control points of the Bezier as 2D tuples.\n    *ts: Positions at which to split the curve.\n\nReturns:\n    A list of curve segments (each curve segment being three 2D tuples).\n\nExamples::\n\n    >>> printSegments(splitQuadraticAtT((0, 0), (50, 100), (100, 0), 0.5))\n    ((0, 0), (25, 50), (50, 50))\n    ((50, 50), (75, 50), (100, 0))\n    >>> printSegments(splitQuadraticAtT((0, 0), (50, 100), (100, 0), 0.5, 0.75))\n    ((0, 0), (25, 50), (50, 50))\n    ((50, 50), (62.5, 50), (75, 37.5))\n    ((75, 37.5), (87.5, 25), (100, 0))");
 static PyMethodDef __pyx_mdef_9fontTools_4misc_11bezierTools_31splitQuadraticAtT = {"splitQuadraticAtT", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9fontTools_4misc_11bezierTools_31splitQuadraticAtT, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_9fontTools_4misc_11bezierTools_30splitQuadraticAtT};
-static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_31splitQuadraticAtT(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_31splitQuadraticAtT(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -10479,7 +10479,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_30splitQuadraticAtT(CYT
  *     """
  *     a, b, c = calcQuadraticParameters(pt1, pt2, pt3)             # <<<<<<<<<<<<<<
  *     return _splitQuadraticAtT(a, b, c, *ts)
- * 
+ *
 */
   __pyx_t_2 = NULL;
   __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_calcQuadraticParameters); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 609, __pyx_L1_error)
@@ -10574,8 +10574,8 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_30splitQuadraticAtT(CYT
  *     """
  *     a, b, c = calcQuadraticParameters(pt1, pt2, pt3)
  *     return _splitQuadraticAtT(a, b, c, *ts)             # <<<<<<<<<<<<<<
- * 
- * 
+ *
+ *
 */
   __Pyx_XDECREF(__pyx_r);
   __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_mstate_global->__pyx_n_u_splitQuadraticAtT); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 610, __pyx_L1_error)
@@ -10603,11 +10603,11 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_30splitQuadraticAtT(CYT
   goto __pyx_L0;
 
   /* "fontTools/misc/bezierTools.py":589
- * 
- * 
+ *
+ *
  * def splitQuadraticAtT(pt1, pt2, pt3, *ts):             # <<<<<<<<<<<<<<
  *     """Split a quadratic Bezier curve at one or more values of t.
- * 
+ *
 */
 
   /* function exit code */
@@ -10629,15 +10629,15 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_30splitQuadraticAtT(CYT
 }
 
 /* "fontTools/misc/bezierTools.py":613
- * 
- * 
+ *
+ *
  * def splitCubicAtT(pt1, pt2, pt3, pt4, *ts):             # <<<<<<<<<<<<<<
  *     """Split a cubic Bezier curve at one or more values of t.
- * 
+ *
 */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_33splitCubicAtT(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_33splitCubicAtT(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -10646,7 +10646,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_9fontTools_4misc_11bezierTools_32splitCubicAtT, "splitCubicAtT(pt1, pt2, pt3, pt4, *ts)\n\nSplit a cubic Bezier curve at one or more values of t.\n\nArgs:\n    pt1,pt2,pt3,pt4: Control points of the Bezier as 2D tuples.\n    *ts: Positions at which to split the curve.\n\nReturns:\n    A list of curve segments (each curve segment being four 2D tuples).\n\nExamples::\n\n    >>> printSegments(splitCubicAtT((0, 0), (25, 100), (75, 100), (100, 0), 0.5))\n    ((0, 0), (12.5, 50), (31.25, 75), (50, 75))\n    ((50, 75), (68.75, 75), (87.5, 50), (100, 0))\n    >>> printSegments(splitCubicAtT((0, 0), (25, 100), (75, 100), (100, 0), 0.5, 0.75))\n    ((0, 0), (12.5, 50), (31.25, 75), (50, 75))\n    ((50, 75), (59.375, 75), (68.75, 68.75), (77.3438, 56.25))\n    ((77.3438, 56.25), (85.9375, 43.75), (93.75, 25), (100, 0))");
 static PyMethodDef __pyx_mdef_9fontTools_4misc_11bezierTools_33splitCubicAtT = {"splitCubicAtT", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9fontTools_4misc_11bezierTools_33splitCubicAtT, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_9fontTools_4misc_11bezierTools_32splitCubicAtT};
-static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_33splitCubicAtT(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_33splitCubicAtT(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -10782,7 +10782,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_32splitCubicAtT(CYTHON_
  *     """
  *     a, b, c, d = calcCubicParameters(pt1, pt2, pt3, pt4)             # <<<<<<<<<<<<<<
  *     split = _splitCubicAtT(a, b, c, d, *ts)
- * 
+ *
 */
   __pyx_t_2 = NULL;
   __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_calcCubicParameters); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 633, __pyx_L1_error)
@@ -10887,7 +10887,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_32splitCubicAtT(CYTHON_
  *     """
  *     a, b, c, d = calcCubicParameters(pt1, pt2, pt3, pt4)
  *     split = _splitCubicAtT(a, b, c, d, *ts)             # <<<<<<<<<<<<<<
- * 
+ *
  *     # the split impl can introduce floating point errors; we know the first
 */
   __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_mstate_global->__pyx_n_u_splitCubicAtT); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 634, __pyx_L1_error)
@@ -10951,7 +10951,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_32splitCubicAtT(CYTHON_
  *     split[0] = (pt1, *split[0][1:])
  *     split[-1] = (*split[-1][:-1], pt4)             # <<<<<<<<<<<<<<
  *     return split
- * 
+ *
 */
   __pyx_t_1 = __Pyx_GetItemInt(__pyx_v_split, -1L, long, 1, __Pyx_PyLong_From_long, 0, 1, 1, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 640, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -10975,8 +10975,8 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_32splitCubicAtT(CYTHON_
  *     split[0] = (pt1, *split[0][1:])
  *     split[-1] = (*split[-1][:-1], pt4)
  *     return split             # <<<<<<<<<<<<<<
- * 
- * 
+ *
+ *
 */
   __Pyx_XDECREF(__pyx_r);
   __Pyx_INCREF(__pyx_v_split);
@@ -10984,11 +10984,11 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_32splitCubicAtT(CYTHON_
   goto __pyx_L0;
 
   /* "fontTools/misc/bezierTools.py":613
- * 
- * 
+ *
+ *
  * def splitCubicAtT(pt1, pt2, pt3, pt4, *ts):             # <<<<<<<<<<<<<<
  *     """Split a cubic Bezier curve at one or more values of t.
- * 
+ *
 */
 
   /* function exit code */
@@ -11014,15 +11014,15 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_32splitCubicAtT(CYTHON_
 static PyObject *__pyx_gb_9fontTools_4misc_11bezierTools_36generator(__pyx_CoroutineObject *__pyx_generator, CYTHON_UNUSED PyThreadState *__pyx_tstate, PyObject *__pyx_sent_value); /* proto */
 
 /* "fontTools/misc/bezierTools.py":644
- * 
- * 
+ *
+ *
  * @cython.locals(             # <<<<<<<<<<<<<<
  *     pt1=cython.complex,
  *     pt2=cython.complex,
 */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_35splitCubicAtTC(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_35splitCubicAtTC(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -11031,7 +11031,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_9fontTools_4misc_11bezierTools_34splitCubicAtTC, "splitCubicAtTC(double complex pt1, double complex pt2, double complex pt3, double complex pt4, *ts)\n\nSplit a cubic Bezier curve at one or more values of t.\n\nArgs:\n    pt1,pt2,pt3,pt4: Control points of the Bezier as complex numbers..\n    *ts: Positions at which to split the curve.\n\nYields:\n    Curve segments (each curve segment being four complex numbers).");
 static PyMethodDef __pyx_mdef_9fontTools_4misc_11bezierTools_35splitCubicAtTC = {"splitCubicAtTC", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9fontTools_4misc_11bezierTools_35splitCubicAtTC, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_9fontTools_4misc_11bezierTools_34splitCubicAtTC};
-static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_35splitCubicAtTC(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_35splitCubicAtTC(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -11220,7 +11220,7 @@ static PyObject *__pyx_gb_9fontTools_4misc_11bezierTools_36generator(__pyx_Corou
  *     """
  *     a, b, c, d = calcCubicParametersC(pt1, pt2, pt3, pt4)             # <<<<<<<<<<<<<<
  *     yield from _splitCubicAtTC(a, b, c, d, *ts)
- * 
+ *
 */
   __pyx_t_1 = __pyx_f_9fontTools_4misc_11bezierTools_calcCubicParametersC(__pyx_cur_scope->__pyx_v_pt1, __pyx_cur_scope->__pyx_v_pt2, __pyx_cur_scope->__pyx_v_pt3, __pyx_cur_scope->__pyx_v_pt4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 664, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -11308,8 +11308,8 @@ static PyObject *__pyx_gb_9fontTools_4misc_11bezierTools_36generator(__pyx_Corou
  *     """
  *     a, b, c, d = calcCubicParametersC(pt1, pt2, pt3, pt4)
  *     yield from _splitCubicAtTC(a, b, c, d, *ts)             # <<<<<<<<<<<<<<
- * 
- * 
+ *
+ *
 */
   __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_mstate_global->__pyx_n_u_splitCubicAtTC_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 665, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -11364,8 +11364,8 @@ static PyObject *__pyx_gb_9fontTools_4misc_11bezierTools_36generator(__pyx_Corou
   CYTHON_MAYBE_UNUSED_VAR(__pyx_cur_scope);
 
   /* "fontTools/misc/bezierTools.py":644
- * 
- * 
+ *
+ *
  * @cython.locals(             # <<<<<<<<<<<<<<
  *     pt1=cython.complex,
  *     pt2=cython.complex,
@@ -11397,15 +11397,15 @@ static PyObject *__pyx_gb_9fontTools_4misc_11bezierTools_36generator(__pyx_Corou
 }
 
 /* "fontTools/misc/bezierTools.py":668
- * 
- * 
+ *
+ *
  * @cython.returns(cython.complex)             # <<<<<<<<<<<<<<
  * @cython.locals(
  *     t=cython.double,
 */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_38splitCubicIntoTwoAtTC(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_38splitCubicIntoTwoAtTC(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -11414,7 +11414,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_9fontTools_4misc_11bezierTools_37splitCubicIntoTwoAtTC, "splitCubicIntoTwoAtTC(double complex pt1, double complex pt2, double complex pt3, double complex pt4, double t)\n\nSplit a cubic Bezier curve at t.\n\nArgs:\n    pt1,pt2,pt3,pt4: Control points of the Bezier as complex numbers.\n    t: Position at which to split the curve.\n\nReturns:\n    A tuple of two curve segments (each curve segment being four complex numbers).");
 static PyMethodDef __pyx_mdef_9fontTools_4misc_11bezierTools_38splitCubicIntoTwoAtTC = {"splitCubicIntoTwoAtTC", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9fontTools_4misc_11bezierTools_38splitCubicIntoTwoAtTC, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_9fontTools_4misc_11bezierTools_37splitCubicIntoTwoAtTC};
-static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_38splitCubicIntoTwoAtTC(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_38splitCubicIntoTwoAtTC(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -11593,7 +11593,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_37splitCubicIntoTwoAtTC
  *     )
  *     off1 = _1_t_2 * pt1 + _2_t_1_t * pt2 + t2 * pt3             # <<<<<<<<<<<<<<
  *     off2 = _1_t_2 * pt2 + _2_t_1_t * pt3 + t2 * pt4
- * 
+ *
 */
   __pyx_v_off1 = __Pyx_c_sum_double(__Pyx_c_sum_double(__Pyx_c_prod_double(__pyx_t_double_complex_from_parts(__pyx_v__1_t_2, 0), __pyx_v_pt1), __Pyx_c_prod_double(__pyx_t_double_complex_from_parts(__pyx_v__2_t_1_t, 0), __pyx_v_pt2)), __Pyx_c_prod_double(__pyx_t_double_complex_from_parts(__pyx_v_t2, 0), __pyx_v_pt3));
 
@@ -11601,35 +11601,35 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_37splitCubicIntoTwoAtTC
  *     )
  *     off1 = _1_t_2 * pt1 + _2_t_1_t * pt2 + t2 * pt3
  *     off2 = _1_t_2 * pt2 + _2_t_1_t * pt3 + t2 * pt4             # <<<<<<<<<<<<<<
- * 
+ *
  *     pt2 = pt1 + (pt2 - pt1) * t
 */
   __pyx_v_off2 = __Pyx_c_sum_double(__Pyx_c_sum_double(__Pyx_c_prod_double(__pyx_t_double_complex_from_parts(__pyx_v__1_t_2, 0), __pyx_v_pt2), __Pyx_c_prod_double(__pyx_t_double_complex_from_parts(__pyx_v__2_t_1_t, 0), __pyx_v_pt3)), __Pyx_c_prod_double(__pyx_t_double_complex_from_parts(__pyx_v_t2, 0), __pyx_v_pt4));
 
   /* "fontTools/misc/bezierTools.py":702
  *     off2 = _1_t_2 * pt2 + _2_t_1_t * pt3 + t2 * pt4
- * 
+ *
  *     pt2 = pt1 + (pt2 - pt1) * t             # <<<<<<<<<<<<<<
  *     pt3 = pt4 + (pt3 - pt4) * _1_t
- * 
+ *
 */
   __pyx_v_pt2 = __Pyx_c_sum_double(__pyx_v_pt1, __Pyx_c_prod_double(__Pyx_c_diff_double(__pyx_v_pt2, __pyx_v_pt1), __pyx_t_double_complex_from_parts(__pyx_v_t, 0)));
 
   /* "fontTools/misc/bezierTools.py":703
- * 
+ *
  *     pt2 = pt1 + (pt2 - pt1) * t
  *     pt3 = pt4 + (pt3 - pt4) * _1_t             # <<<<<<<<<<<<<<
- * 
+ *
  *     return ((pt1, pt2, off1, pointAtT), (pointAtT, off2, pt3, pt4))
 */
   __pyx_v_pt3 = __Pyx_c_sum_double(__pyx_v_pt4, __Pyx_c_prod_double(__Pyx_c_diff_double(__pyx_v_pt3, __pyx_v_pt4), __pyx_t_double_complex_from_parts(__pyx_v__1_t, 0)));
 
   /* "fontTools/misc/bezierTools.py":705
  *     pt3 = pt4 + (pt3 - pt4) * _1_t
- * 
+ *
  *     return ((pt1, pt2, off1, pointAtT), (pointAtT, off2, pt3, pt4))             # <<<<<<<<<<<<<<
- * 
- * 
+ *
+ *
 */
   __Pyx_XDECREF(__pyx_r);
   __pyx_t_1 = __pyx_PyComplex_FromComplex(__pyx_v_pt1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 705, __pyx_L1_error)
@@ -11689,8 +11689,8 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_37splitCubicIntoTwoAtTC
   goto __pyx_L0;
 
   /* "fontTools/misc/bezierTools.py":668
- * 
- * 
+ *
+ *
  * @cython.returns(cython.complex)             # <<<<<<<<<<<<<<
  * @cython.locals(
  *     t=cython.double,
@@ -11713,15 +11713,15 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_37splitCubicIntoTwoAtTC
 }
 
 /* "fontTools/misc/bezierTools.py":708
- * 
- * 
+ *
+ *
  * def _splitQuadraticAtT(a, b, c, *ts):             # <<<<<<<<<<<<<<
  *     ts = list(ts)
  *     segments = []
 */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_40_splitQuadraticAtT(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_40_splitQuadraticAtT(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -11730,7 +11730,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_9fontTools_4misc_11bezierTools_39_splitQuadraticAtT, "_splitQuadraticAtT(a, b, c, *ts)");
 static PyMethodDef __pyx_mdef_9fontTools_4misc_11bezierTools_40_splitQuadraticAtT = {"_splitQuadraticAtT", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9fontTools_4misc_11bezierTools_40_splitQuadraticAtT, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_9fontTools_4misc_11bezierTools_39_splitQuadraticAtT};
-static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_40_splitQuadraticAtT(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_40_splitQuadraticAtT(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -11876,7 +11876,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_39_splitQuadraticAtT(CY
   __Pyx_INCREF(__pyx_v_ts);
 
   /* "fontTools/misc/bezierTools.py":709
- * 
+ *
  * def _splitQuadraticAtT(a, b, c, *ts):
  *     ts = list(ts)             # <<<<<<<<<<<<<<
  *     segments = []
@@ -12111,7 +12111,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_39_splitQuadraticAtT(CY
 */
   __pyx_t_2 = NULL;
   __Pyx_INCREF(__pyx_builtin_range);
-  __pyx_t_4 = __pyx_builtin_range; 
+  __pyx_t_4 = __pyx_builtin_range;
   __pyx_t_6 = PyObject_Length(__pyx_v_ts); if (unlikely(__pyx_t_6 == ((Py_ssize_t)-1))) __PYX_ERR(0, 716, __pyx_L1_error)
   __pyx_t_7 = PyLong_FromSsize_t((__pyx_t_6 - 1)); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 716, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
@@ -12312,7 +12312,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_39_splitQuadraticAtT(CY
  *         t1_2 = t1 * t1
  *         c1x = ax * t1_2 + bx * t1 + cx             # <<<<<<<<<<<<<<
  *         c1y = ay * t1_2 + by * t1 + cy
- * 
+ *
 */
     __pyx_t_7 = PyNumber_Multiply(__pyx_v_ax, __pyx_v_t1_2); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 727, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
@@ -12332,7 +12332,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_39_splitQuadraticAtT(CY
  *         t1_2 = t1 * t1
  *         c1x = ax * t1_2 + bx * t1 + cx
  *         c1y = ay * t1_2 + by * t1 + cy             # <<<<<<<<<<<<<<
- * 
+ *
  *         pt1, pt2, pt3 = calcQuadraticPoints((a1x, a1y), (b1x, b1y), (c1x, c1y))
 */
     __pyx_t_1 = PyNumber_Multiply(__pyx_v_ay, __pyx_v_t1_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 728, __pyx_L1_error)
@@ -12351,7 +12351,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_39_splitQuadraticAtT(CY
 
     /* "fontTools/misc/bezierTools.py":730
  *         c1y = ay * t1_2 + by * t1 + cy
- * 
+ *
  *         pt1, pt2, pt3 = calcQuadraticPoints((a1x, a1y), (b1x, b1y), (c1x, c1y))             # <<<<<<<<<<<<<<
  *         segments.append((pt1, pt2, pt3))
  *     return segments
@@ -12473,11 +12473,11 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_39_splitQuadraticAtT(CY
     __pyx_t_11 = 0;
 
     /* "fontTools/misc/bezierTools.py":731
- * 
+ *
  *         pt1, pt2, pt3 = calcQuadraticPoints((a1x, a1y), (b1x, b1y), (c1x, c1y))
  *         segments.append((pt1, pt2, pt3))             # <<<<<<<<<<<<<<
  *     return segments
- * 
+ *
 */
     __pyx_t_2 = PyTuple_New(3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 731, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
@@ -12507,8 +12507,8 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_39_splitQuadraticAtT(CY
  *         pt1, pt2, pt3 = calcQuadraticPoints((a1x, a1y), (b1x, b1y), (c1x, c1y))
  *         segments.append((pt1, pt2, pt3))
  *     return segments             # <<<<<<<<<<<<<<
- * 
- * 
+ *
+ *
 */
   __Pyx_XDECREF(__pyx_r);
   __Pyx_INCREF(__pyx_v_segments);
@@ -12516,8 +12516,8 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_39_splitQuadraticAtT(CY
   goto __pyx_L0;
 
   /* "fontTools/misc/bezierTools.py":708
- * 
- * 
+ *
+ *
  * def _splitQuadraticAtT(a, b, c, *ts):             # <<<<<<<<<<<<<<
  *     ts = list(ts)
  *     segments = []
@@ -12564,15 +12564,15 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_39_splitQuadraticAtT(CY
 }
 
 /* "fontTools/misc/bezierTools.py":735
- * 
- * 
+ *
+ *
  * def _splitCubicAtT(a, b, c, d, *ts):             # <<<<<<<<<<<<<<
  *     ts = list(ts)
  *     ts.insert(0, 0.0)
 */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_42_splitCubicAtT(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_42_splitCubicAtT(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -12581,7 +12581,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_9fontTools_4misc_11bezierTools_41_splitCubicAtT, "_splitCubicAtT(a, b, c, d, *ts)");
 static PyMethodDef __pyx_mdef_9fontTools_4misc_11bezierTools_42_splitCubicAtT = {"_splitCubicAtT", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9fontTools_4misc_11bezierTools_42_splitCubicAtT, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_9fontTools_4misc_11bezierTools_41_splitCubicAtT};
-static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_42_splitCubicAtT(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_42_splitCubicAtT(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -12743,7 +12743,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_41_splitCubicAtT(CYTHON
   __Pyx_INCREF(__pyx_v_ts);
 
   /* "fontTools/misc/bezierTools.py":736
- * 
+ *
  * def _splitCubicAtT(a, b, c, d, *ts):
  *     ts = list(ts)             # <<<<<<<<<<<<<<
  *     ts.insert(0, 0.0)
@@ -13038,7 +13038,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_41_splitCubicAtT(CYTHON
 */
   __pyx_t_1 = NULL;
   __Pyx_INCREF(__pyx_builtin_range);
-  __pyx_t_4 = __pyx_builtin_range; 
+  __pyx_t_4 = __pyx_builtin_range;
   __pyx_t_6 = PyObject_Length(__pyx_v_ts); if (unlikely(__pyx_t_6 == ((Py_ssize_t)-1))) __PYX_ERR(0, 744, __pyx_L1_error)
   __pyx_t_7 = PyLong_FromSsize_t((__pyx_t_6 - 1)); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 744, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
@@ -13122,7 +13122,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_41_splitCubicAtT(CYTHON
  *         t1 = ts[i]
  *         t2 = ts[i + 1]             # <<<<<<<<<<<<<<
  *         delta = t2 - t1
- * 
+ *
 */
     __pyx_t_2 = __Pyx_PyLong_AddObjC(__pyx_v_i, __pyx_mstate_global->__pyx_int_1, 1, 0, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 746, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
@@ -13136,7 +13136,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_41_splitCubicAtT(CYTHON
  *         t1 = ts[i]
  *         t2 = ts[i + 1]
  *         delta = t2 - t1             # <<<<<<<<<<<<<<
- * 
+ *
  *         delta_2 = delta * delta
 */
     __pyx_t_7 = PyNumber_Subtract(__pyx_v_t2, __pyx_v_t1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 747, __pyx_L1_error)
@@ -13146,7 +13146,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_41_splitCubicAtT(CYTHON
 
     /* "fontTools/misc/bezierTools.py":749
  *         delta = t2 - t1
- * 
+ *
  *         delta_2 = delta * delta             # <<<<<<<<<<<<<<
  *         delta_3 = delta * delta_2
  *         t1_2 = t1 * t1
@@ -13157,7 +13157,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_41_splitCubicAtT(CYTHON
     __pyx_t_7 = 0;
 
     /* "fontTools/misc/bezierTools.py":750
- * 
+ *
  *         delta_2 = delta * delta
  *         delta_3 = delta * delta_2             # <<<<<<<<<<<<<<
  *         t1_2 = t1 * t1
@@ -13173,7 +13173,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_41_splitCubicAtT(CYTHON
  *         delta_3 = delta * delta_2
  *         t1_2 = t1 * t1             # <<<<<<<<<<<<<<
  *         t1_3 = t1 * t1_2
- * 
+ *
 */
     __pyx_t_7 = PyNumber_Multiply(__pyx_v_t1, __pyx_v_t1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 751, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
@@ -13184,7 +13184,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_41_splitCubicAtT(CYTHON
  *         delta_3 = delta * delta_2
  *         t1_2 = t1 * t1
  *         t1_3 = t1 * t1_2             # <<<<<<<<<<<<<<
- * 
+ *
  *         # calc new a, b, c and d
 */
     __pyx_t_7 = PyNumber_Multiply(__pyx_v_t1, __pyx_v_t1_2); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 752, __pyx_L1_error)
@@ -13193,7 +13193,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_41_splitCubicAtT(CYTHON
     __pyx_t_7 = 0;
 
     /* "fontTools/misc/bezierTools.py":755
- * 
+ *
  *         # calc new a, b, c and d
  *         a1x = ax * delta_3             # <<<<<<<<<<<<<<
  *         a1y = ay * delta_3
@@ -13535,7 +13535,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_41_splitCubicAtT(CYTHON
  *         )
  *         segments.append((pt1, pt2, pt3, pt4))             # <<<<<<<<<<<<<<
  *     return segments
- * 
+ *
 */
     __pyx_t_7 = PyTuple_New(4); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 766, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
@@ -13568,8 +13568,8 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_41_splitCubicAtT(CYTHON
  *         )
  *         segments.append((pt1, pt2, pt3, pt4))
  *     return segments             # <<<<<<<<<<<<<<
- * 
- * 
+ *
+ *
 */
   __Pyx_XDECREF(__pyx_r);
   __Pyx_INCREF(__pyx_v_segments);
@@ -13577,8 +13577,8 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_41_splitCubicAtT(CYTHON
   goto __pyx_L0;
 
   /* "fontTools/misc/bezierTools.py":735
- * 
- * 
+ *
+ *
  * def _splitCubicAtT(a, b, c, d, *ts):             # <<<<<<<<<<<<<<
  *     ts = list(ts)
  *     ts.insert(0, 0.0)
@@ -13634,15 +13634,15 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_41_splitCubicAtT(CYTHON
 static PyObject *__pyx_gb_9fontTools_4misc_11bezierTools_45generator1(__pyx_CoroutineObject *__pyx_generator, CYTHON_UNUSED PyThreadState *__pyx_tstate, PyObject *__pyx_sent_value); /* proto */
 
 /* "fontTools/misc/bezierTools.py":770
- * 
- * 
+ *
+ *
  * @cython.locals(             # <<<<<<<<<<<<<<
  *     a=cython.complex,
  *     b=cython.complex,
 */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_44_splitCubicAtTC(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_44_splitCubicAtTC(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -13651,7 +13651,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_9fontTools_4misc_11bezierTools_43_splitCubicAtTC, "_splitCubicAtTC(double complex a, double complex b, double complex c, double complex d, *ts)");
 static PyMethodDef __pyx_mdef_9fontTools_4misc_11bezierTools_44_splitCubicAtTC = {"_splitCubicAtTC", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9fontTools_4misc_11bezierTools_44_splitCubicAtTC, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_9fontTools_4misc_11bezierTools_43_splitCubicAtTC};
-static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_44_splitCubicAtTC(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_44_splitCubicAtTC(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -13882,7 +13882,7 @@ static PyObject *__pyx_gb_9fontTools_4misc_11bezierTools_45generator1(__pyx_Coro
 */
   __pyx_t_1 = NULL;
   __Pyx_INCREF(__pyx_builtin_range);
-  __pyx_t_4 = __pyx_builtin_range; 
+  __pyx_t_4 = __pyx_builtin_range;
   __pyx_t_5 = PyObject_Length(__pyx_cur_scope->__pyx_v_ts); if (unlikely(__pyx_t_5 == ((Py_ssize_t)-1))) __PYX_ERR(0, 789, __pyx_L1_error)
   __pyx_t_6 = PyLong_FromSsize_t((__pyx_t_5 - 1)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 789, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
@@ -13969,7 +13969,7 @@ static PyObject *__pyx_gb_9fontTools_4misc_11bezierTools_45generator1(__pyx_Coro
  *         t1 = ts[i]
  *         t2 = ts[i + 1]             # <<<<<<<<<<<<<<
  *         delta = t2 - t1
- * 
+ *
 */
     __pyx_t_2 = __Pyx_PyLong_AddObjC(__pyx_cur_scope->__pyx_v_i, __pyx_mstate_global->__pyx_int_1, 1, 0, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 791, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
@@ -13984,14 +13984,14 @@ static PyObject *__pyx_gb_9fontTools_4misc_11bezierTools_45generator1(__pyx_Coro
  *         t1 = ts[i]
  *         t2 = ts[i + 1]
  *         delta = t2 - t1             # <<<<<<<<<<<<<<
- * 
+ *
  *         delta_2 = delta * delta
 */
     __pyx_cur_scope->__pyx_v_delta = (__pyx_cur_scope->__pyx_v_t2 - __pyx_cur_scope->__pyx_v_t1);
 
     /* "fontTools/misc/bezierTools.py":794
  *         delta = t2 - t1
- * 
+ *
  *         delta_2 = delta * delta             # <<<<<<<<<<<<<<
  *         delta_3 = delta * delta_2
  *         t1_2 = t1 * t1
@@ -13999,7 +13999,7 @@ static PyObject *__pyx_gb_9fontTools_4misc_11bezierTools_45generator1(__pyx_Coro
     __pyx_cur_scope->__pyx_v_delta_2 = (__pyx_cur_scope->__pyx_v_delta * __pyx_cur_scope->__pyx_v_delta);
 
     /* "fontTools/misc/bezierTools.py":795
- * 
+ *
  *         delta_2 = delta * delta
  *         delta_3 = delta * delta_2             # <<<<<<<<<<<<<<
  *         t1_2 = t1 * t1
@@ -14012,7 +14012,7 @@ static PyObject *__pyx_gb_9fontTools_4misc_11bezierTools_45generator1(__pyx_Coro
  *         delta_3 = delta * delta_2
  *         t1_2 = t1 * t1             # <<<<<<<<<<<<<<
  *         t1_3 = t1 * t1_2
- * 
+ *
 */
     __pyx_cur_scope->__pyx_v_t1_2 = (__pyx_cur_scope->__pyx_v_t1 * __pyx_cur_scope->__pyx_v_t1);
 
@@ -14020,13 +14020,13 @@ static PyObject *__pyx_gb_9fontTools_4misc_11bezierTools_45generator1(__pyx_Coro
  *         delta_3 = delta * delta_2
  *         t1_2 = t1 * t1
  *         t1_3 = t1 * t1_2             # <<<<<<<<<<<<<<
- * 
+ *
  *         # calc new a, b, c and d
 */
     __pyx_cur_scope->__pyx_v_t1_3 = (__pyx_cur_scope->__pyx_v_t1 * __pyx_cur_scope->__pyx_v_t1_2);
 
     /* "fontTools/misc/bezierTools.py":800
- * 
+ *
  *         # calc new a, b, c and d
  *         a1 = a * delta_3             # <<<<<<<<<<<<<<
  *         b1 = (3 * a * t1 + b) * delta_2
@@ -14066,7 +14066,7 @@ static PyObject *__pyx_gb_9fontTools_4misc_11bezierTools_45generator1(__pyx_Coro
  *         d1 = a * t1_3 + b * t1_2 + c * t1 + d
  *         pt1, pt2, pt3, pt4 = calcCubicPointsC(a1, b1, c1, d1)             # <<<<<<<<<<<<<<
  *         yield (pt1, pt2, pt3, pt4)
- * 
+ *
 */
     __pyx_t_6 = __pyx_f_9fontTools_4misc_11bezierTools_calcCubicPointsC(__pyx_cur_scope->__pyx_v_a1, __pyx_cur_scope->__pyx_v_b1, __pyx_cur_scope->__pyx_v_c1, __pyx_cur_scope->__pyx_v_d1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 804, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
@@ -14158,8 +14158,8 @@ static PyObject *__pyx_gb_9fontTools_4misc_11bezierTools_45generator1(__pyx_Coro
  *         d1 = a * t1_3 + b * t1_2 + c * t1 + d
  *         pt1, pt2, pt3, pt4 = calcCubicPointsC(a1, b1, c1, d1)
  *         yield (pt1, pt2, pt3, pt4)             # <<<<<<<<<<<<<<
- * 
- * 
+ *
+ *
 */
     __pyx_t_6 = PyTuple_New(4); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 805, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
@@ -14207,8 +14207,8 @@ static PyObject *__pyx_gb_9fontTools_4misc_11bezierTools_45generator1(__pyx_Coro
   CYTHON_MAYBE_UNUSED_VAR(__pyx_cur_scope);
 
   /* "fontTools/misc/bezierTools.py":770
- * 
- * 
+ *
+ *
  * @cython.locals(             # <<<<<<<<<<<<<<
  *     a=cython.complex,
  *     b=cython.complex,
@@ -14241,11 +14241,11 @@ static PyObject *__pyx_gb_9fontTools_4misc_11bezierTools_45generator1(__pyx_Coro
 }
 
 /* "fontTools/misc/bezierTools.py":815
- * 
- * 
+ *
+ *
  * def solveQuadratic(a, b, c, sqrt=sqrt):             # <<<<<<<<<<<<<<
  *     """Solve a quadratic equation.
- * 
+ *
 */
 
 static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_96__defaults__(CYTHON_UNUSED PyObject *__pyx_self) {
@@ -14288,7 +14288,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_96__defaults__(CYTHON_U
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_47solveQuadratic(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_47solveQuadratic(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -14297,7 +14297,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_9fontTools_4misc_11bezierTools_46solveQuadratic, "solveQuadratic(a, b, c, sqrt=sqrt)\n\nSolve a quadratic equation.\n\nSolves *a*x*x + b*x + c = 0* where a, b and c are real.\n\nArgs:\n    a: coefficient of *x\302\262*\n    b: coefficient of *x*\n    c: constant term\n\nReturns:\n    A list of roots. Note that the returned list is neither guaranteed to\n    be sorted nor to contain unique values!");
 static PyMethodDef __pyx_mdef_9fontTools_4misc_11bezierTools_47solveQuadratic = {"solveQuadratic", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9fontTools_4misc_11bezierTools_47solveQuadratic, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_9fontTools_4misc_11bezierTools_46solveQuadratic};
-static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_47solveQuadratic(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_47solveQuadratic(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -14555,7 +14555,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_46solveQuadratic(CYTHON
 */
       __pyx_t_3 = NULL;
       __Pyx_INCREF(__pyx_v_sqrt);
-      __pyx_t_1 = __pyx_v_sqrt; 
+      __pyx_t_1 = __pyx_v_sqrt;
       __pyx_t_5 = 1;
       #if CYTHON_UNPACK_METHODS
       if (unlikely(PyMethod_Check(__pyx_t_1))) {
@@ -14634,7 +14634,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_46solveQuadratic(CYTHON
  *             # complex roots, ignore
  *             roots = []             # <<<<<<<<<<<<<<
  *     return roots
- * 
+ *
 */
     /*else*/ {
       __pyx_t_2 = PyList_New(0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 844, __pyx_L1_error)
@@ -14650,8 +14650,8 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_46solveQuadratic(CYTHON
  *             # complex roots, ignore
  *             roots = []
  *     return roots             # <<<<<<<<<<<<<<
- * 
- * 
+ *
+ *
 */
   __Pyx_XDECREF(__pyx_r);
   __Pyx_INCREF(__pyx_v_roots);
@@ -14659,11 +14659,11 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_46solveQuadratic(CYTHON
   goto __pyx_L0;
 
   /* "fontTools/misc/bezierTools.py":815
- * 
- * 
+ *
+ *
  * def solveQuadratic(a, b, c, sqrt=sqrt):             # <<<<<<<<<<<<<<
  *     """Solve a quadratic equation.
- * 
+ *
 */
 
   /* function exit code */
@@ -14683,15 +14683,15 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_46solveQuadratic(CYTHON
 }
 
 /* "fontTools/misc/bezierTools.py":848
- * 
- * 
+ *
+ *
  * def solveCubic(a, b, c, d):             # <<<<<<<<<<<<<<
  *     """Solve a cubic equation.
- * 
+ *
 */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_49solveCubic(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_49solveCubic(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -14700,7 +14700,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_9fontTools_4misc_11bezierTools_48solveCubic, "solveCubic(a, b, c, d)\n\nSolve a cubic equation.\n\nSolves *a*x*x*x + b*x*x + c*x + d = 0* where a, b, c and d are real.\n\nArgs:\n    a: coefficient of *x\302\263*\n    b: coefficient of *x\302\262*\n    c: coefficient of *x*\n    d: constant term\n\nReturns:\n    A list of roots. Note that the returned list is neither guaranteed to\n    be sorted nor to contain unique values!\n\nExamples::\n\n    >>> solveCubic(1, 1, -6, 0)\n    [-3.0, -0.0, 2.0]\n    >>> solveCubic(-10.0, -9.0, 48.0, -29.0)\n    [-2.9, 1.0, 1.0]\n    >>> solveCubic(-9.875, -9.0, 47.625, -28.75)\n    [-2.911392, 1.0, 1.0]\n    >>> solveCubic(1.0, -4.5, 6.75, -3.375)\n    [1.5, 1.5, 1.5]\n    >>> solveCubic(-12.0, 18.0, -9.0, 1.50023651123)\n    [0.5, 0.5, 0.5]\n    >>> solveCubic(\n    ...     9.0, 0.0, 0.0, -7.62939453125e-05\n    ... ) == [-0.0, -0.0, -0.0]\n    True");
 static PyMethodDef __pyx_mdef_9fontTools_4misc_11bezierTools_49solveCubic = {"solveCubic", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9fontTools_4misc_11bezierTools_49solveCubic, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_9fontTools_4misc_11bezierTools_48solveCubic};
-static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_49solveCubic(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_49solveCubic(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -14927,7 +14927,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_48solveCubic(CYTHON_UNU
  *     a1 = b / a
  *     a2 = c / a             # <<<<<<<<<<<<<<
  *     a3 = d / a
- * 
+ *
 */
   __pyx_t_3 = __Pyx_PyNumber_Divide(__pyx_v_c, __pyx_v_a); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 892, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
@@ -14938,7 +14938,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_48solveCubic(CYTHON_UNU
  *     a1 = b / a
  *     a2 = c / a
  *     a3 = d / a             # <<<<<<<<<<<<<<
- * 
+ *
  *     Q = (a1 * a1 - 3.0 * a2) / 9.0
 */
   __pyx_t_3 = __Pyx_PyNumber_Divide(__pyx_v_d, __pyx_v_a); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 893, __pyx_L1_error)
@@ -14948,10 +14948,10 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_48solveCubic(CYTHON_UNU
 
   /* "fontTools/misc/bezierTools.py":895
  *     a3 = d / a
- * 
+ *
  *     Q = (a1 * a1 - 3.0 * a2) / 9.0             # <<<<<<<<<<<<<<
  *     R = (2.0 * a1 * a1 * a1 - 9.0 * a1 * a2 + 27.0 * a3) / 54.0
- * 
+ *
 */
   __pyx_t_3 = PyNumber_Multiply(__pyx_v_a1, __pyx_v_a1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 895, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
@@ -14968,10 +14968,10 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_48solveCubic(CYTHON_UNU
   __pyx_t_1 = 0;
 
   /* "fontTools/misc/bezierTools.py":896
- * 
+ *
  *     Q = (a1 * a1 - 3.0 * a2) / 9.0
  *     R = (2.0 * a1 * a1 * a1 - 9.0 * a1 * a2 + 27.0 * a3) / 54.0             # <<<<<<<<<<<<<<
- * 
+ *
  *     R2 = R * R
 */
   __pyx_t_1 = PyNumber_Multiply(__pyx_mstate_global->__pyx_float_2_0, __pyx_v_a1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 896, __pyx_L1_error)
@@ -15005,7 +15005,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_48solveCubic(CYTHON_UNU
 
   /* "fontTools/misc/bezierTools.py":898
  *     R = (2.0 * a1 * a1 * a1 - 9.0 * a1 * a2 + 27.0 * a3) / 54.0
- * 
+ *
  *     R2 = R * R             # <<<<<<<<<<<<<<
  *     Q3 = Q * Q * Q
  *     R2 = 0 if R2 < epsilon else R2
@@ -15016,7 +15016,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_48solveCubic(CYTHON_UNU
   __pyx_t_3 = 0;
 
   /* "fontTools/misc/bezierTools.py":899
- * 
+ *
  *     R2 = R * R
  *     Q3 = Q * Q * Q             # <<<<<<<<<<<<<<
  *     R2 = 0 if R2 < epsilon else R2
@@ -15035,7 +15035,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_48solveCubic(CYTHON_UNU
  *     Q3 = Q * Q * Q
  *     R2 = 0 if R2 < epsilon else R2             # <<<<<<<<<<<<<<
  *     Q3 = 0 if abs(Q3) < epsilon else Q3
- * 
+ *
 */
   __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_epsilon); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 900, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
@@ -15057,7 +15057,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_48solveCubic(CYTHON_UNU
  *     Q3 = Q * Q * Q
  *     R2 = 0 if R2 < epsilon else R2
  *     Q3 = 0 if abs(Q3) < epsilon else Q3             # <<<<<<<<<<<<<<
- * 
+ *
  *     R2_Q3 = R2 - Q3
 */
   __pyx_t_2 = __Pyx_PyNumber_Absolute(__pyx_v_Q3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 901, __pyx_L1_error)
@@ -15081,9 +15081,9 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_48solveCubic(CYTHON_UNU
 
   /* "fontTools/misc/bezierTools.py":903
  *     Q3 = 0 if abs(Q3) < epsilon else Q3
- * 
+ *
  *     R2_Q3 = R2 - Q3             # <<<<<<<<<<<<<<
- * 
+ *
  *     if R2 == 0.0 and Q3 == 0.0:
 */
   __pyx_t_1 = PyNumber_Subtract(__pyx_v_R2, __pyx_v_Q3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 903, __pyx_L1_error)
@@ -15093,7 +15093,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_48solveCubic(CYTHON_UNU
 
   /* "fontTools/misc/bezierTools.py":905
  *     R2_Q3 = R2 - Q3
- * 
+ *
  *     if R2 == 0.0 and Q3 == 0.0:             # <<<<<<<<<<<<<<
  *         x = round(-a1 / 3.0, epsilonDigits)
  *         return [x, x, x]
@@ -15110,7 +15110,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_48solveCubic(CYTHON_UNU
   if (__pyx_t_4) {
 
     /* "fontTools/misc/bezierTools.py":906
- * 
+ *
  *     if R2 == 0.0 and Q3 == 0.0:
  *         x = round(-a1 / 3.0, epsilonDigits)             # <<<<<<<<<<<<<<
  *         return [x, x, x]
@@ -15118,7 +15118,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_48solveCubic(CYTHON_UNU
 */
     __pyx_t_6 = NULL;
     __Pyx_INCREF(__pyx_builtin_round);
-    __pyx_t_3 = __pyx_builtin_round; 
+    __pyx_t_3 = __pyx_builtin_round;
     __pyx_t_2 = PyNumber_Negative(__pyx_v_a1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 906, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __pyx_t_8 = __Pyx_PyFloat_TrueDivideObjC(__pyx_t_2, __pyx_mstate_global->__pyx_float_3_0, 3.0, 0, 0); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 906, __pyx_L1_error)
@@ -15165,7 +15165,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_48solveCubic(CYTHON_UNU
 
     /* "fontTools/misc/bezierTools.py":905
  *     R2_Q3 = R2 - Q3
- * 
+ *
  *     if R2 == 0.0 and Q3 == 0.0:             # <<<<<<<<<<<<<<
  *         x = round(-a1 / 3.0, epsilonDigits)
  *         return [x, x, x]
@@ -15576,7 +15576,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_48solveCubic(CYTHON_UNU
 */
       __pyx_t_3 = NULL;
       __Pyx_INCREF(__pyx_builtin_round);
-      __pyx_t_1 = __pyx_builtin_round; 
+      __pyx_t_1 = __pyx_builtin_round;
       __pyx_t_11 = PyNumber_Add(__pyx_v_x0, __pyx_v_x1); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 919, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_11);
       __pyx_t_2 = PyNumber_Add(__pyx_t_11, __pyx_v_x2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 919, __pyx_L1_error)
@@ -15643,7 +15643,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_48solveCubic(CYTHON_UNU
 */
       __pyx_t_1 = NULL;
       __Pyx_INCREF(__pyx_builtin_round);
-      __pyx_t_8 = __pyx_builtin_round; 
+      __pyx_t_8 = __pyx_builtin_round;
       __pyx_t_11 = PyNumber_Add(__pyx_v_x0, __pyx_v_x1); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 921, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_11);
       __pyx_t_3 = __Pyx_PyFloat_TrueDivideObjC(__pyx_t_11, __pyx_mstate_global->__pyx_float_2_0, 2.0, 0, 0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 921, __pyx_L1_error)
@@ -15677,7 +15677,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_48solveCubic(CYTHON_UNU
 */
       __pyx_t_8 = NULL;
       __Pyx_INCREF(__pyx_builtin_round);
-      __pyx_t_11 = __pyx_builtin_round; 
+      __pyx_t_11 = __pyx_builtin_round;
       __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_epsilonDigits); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 922, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __pyx_t_5 = 1;
@@ -15730,7 +15730,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_48solveCubic(CYTHON_UNU
 */
       __pyx_t_11 = NULL;
       __Pyx_INCREF(__pyx_builtin_round);
-      __pyx_t_2 = __pyx_builtin_round; 
+      __pyx_t_2 = __pyx_builtin_round;
       __Pyx_GetModuleGlobalName(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_epsilonDigits); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 924, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_8);
       __pyx_t_5 = 1;
@@ -15755,7 +15755,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_48solveCubic(CYTHON_UNU
 */
       __pyx_t_2 = NULL;
       __Pyx_INCREF(__pyx_builtin_round);
-      __pyx_t_8 = __pyx_builtin_round; 
+      __pyx_t_8 = __pyx_builtin_round;
       __pyx_t_11 = PyNumber_Add(__pyx_v_x1, __pyx_v_x2); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 925, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_11);
       __pyx_t_1 = __Pyx_PyFloat_TrueDivideObjC(__pyx_t_11, __pyx_mstate_global->__pyx_float_2_0, 2.0, 0, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 925, __pyx_L1_error)
@@ -15800,7 +15800,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_48solveCubic(CYTHON_UNU
     /*else*/ {
       __pyx_t_8 = NULL;
       __Pyx_INCREF(__pyx_builtin_round);
-      __pyx_t_11 = __pyx_builtin_round; 
+      __pyx_t_11 = __pyx_builtin_round;
       __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_mstate_global->__pyx_n_u_epsilonDigits); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 927, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __pyx_t_5 = 1;
@@ -15825,7 +15825,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_48solveCubic(CYTHON_UNU
 */
       __pyx_t_11 = NULL;
       __Pyx_INCREF(__pyx_builtin_round);
-      __pyx_t_1 = __pyx_builtin_round; 
+      __pyx_t_1 = __pyx_builtin_round;
       __Pyx_GetModuleGlobalName(__pyx_t_8, __pyx_mstate_global->__pyx_n_u_epsilonDigits); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 928, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_8);
       __pyx_t_5 = 1;
@@ -15850,7 +15850,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_48solveCubic(CYTHON_UNU
 */
       __pyx_t_1 = NULL;
       __Pyx_INCREF(__pyx_builtin_round);
-      __pyx_t_8 = __pyx_builtin_round; 
+      __pyx_t_8 = __pyx_builtin_round;
       __Pyx_GetModuleGlobalName(__pyx_t_11, __pyx_mstate_global->__pyx_n_u_epsilonDigits); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 929, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_11);
       __pyx_t_5 = 1;
@@ -15999,11 +15999,11 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_48solveCubic(CYTHON_UNU
  *             x = -x
  *         x = round(x - a1 / 3.0, epsilonDigits)             # <<<<<<<<<<<<<<
  *         return [x]
- * 
+ *
 */
     __pyx_t_3 = NULL;
     __Pyx_INCREF(__pyx_builtin_round);
-    __pyx_t_8 = __pyx_builtin_round; 
+    __pyx_t_8 = __pyx_builtin_round;
     __pyx_t_1 = __Pyx_PyFloat_TrueDivideObjC(__pyx_v_a1, __pyx_mstate_global->__pyx_float_3_0, 3.0, 0, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 936, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __pyx_t_2 = PyNumber_Subtract(__pyx_v_x, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 936, __pyx_L1_error)
@@ -16029,8 +16029,8 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_48solveCubic(CYTHON_UNU
  *             x = -x
  *         x = round(x - a1 / 3.0, epsilonDigits)
  *         return [x]             # <<<<<<<<<<<<<<
- * 
- * 
+ *
+ *
 */
     __Pyx_XDECREF(__pyx_r);
     __pyx_t_11 = PyList_New(1); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 937, __pyx_L1_error)
@@ -16044,11 +16044,11 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_48solveCubic(CYTHON_UNU
   }
 
   /* "fontTools/misc/bezierTools.py":848
- * 
- * 
+ *
+ *
  * def solveCubic(a, b, c, d):             # <<<<<<<<<<<<<<
  *     """Solve a cubic equation.
- * 
+ *
 */
 
   /* function exit code */
@@ -16085,15 +16085,15 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_48solveCubic(CYTHON_UNU
 }
 
 /* "fontTools/misc/bezierTools.py":945
- * 
- * 
+ *
+ *
  * def calcQuadraticParameters(pt1, pt2, pt3):             # <<<<<<<<<<<<<<
  *     x2, y2 = pt2
  *     x3, y3 = pt3
 */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_51calcQuadraticParameters(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_51calcQuadraticParameters(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -16102,7 +16102,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_9fontTools_4misc_11bezierTools_50calcQuadraticParameters, "calcQuadraticParameters(pt1, pt2, pt3)");
 static PyMethodDef __pyx_mdef_9fontTools_4misc_11bezierTools_51calcQuadraticParameters = {"calcQuadraticParameters", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9fontTools_4misc_11bezierTools_51calcQuadraticParameters, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_9fontTools_4misc_11bezierTools_50calcQuadraticParameters};
-static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_51calcQuadraticParameters(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_51calcQuadraticParameters(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -16218,7 +16218,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_50calcQuadraticParamete
   __Pyx_RefNannySetupContext("calcQuadraticParameters", 0);
 
   /* "fontTools/misc/bezierTools.py":946
- * 
+ *
  * def calcQuadraticParameters(pt1, pt2, pt3):
  *     x2, y2 = pt2             # <<<<<<<<<<<<<<
  *     x3, y3 = pt3
@@ -16447,7 +16447,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_50calcQuadraticParamete
  *     ax = x3 - cx - bx
  *     ay = y3 - cy - by             # <<<<<<<<<<<<<<
  *     return (ax, ay), (bx, by), (cx, cy)
- * 
+ *
 */
   __pyx_t_1 = PyNumber_Subtract(__pyx_v_y3, __pyx_v_cy); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 952, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -16461,8 +16461,8 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_50calcQuadraticParamete
  *     ax = x3 - cx - bx
  *     ay = y3 - cy - by
  *     return (ax, ay), (bx, by), (cx, cy)             # <<<<<<<<<<<<<<
- * 
- * 
+ *
+ *
 */
   __Pyx_XDECREF(__pyx_r);
   __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 953, __pyx_L1_error)
@@ -16505,8 +16505,8 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_50calcQuadraticParamete
   goto __pyx_L0;
 
   /* "fontTools/misc/bezierTools.py":945
- * 
- * 
+ *
+ *
  * def calcQuadraticParameters(pt1, pt2, pt3):             # <<<<<<<<<<<<<<
  *     x2, y2 = pt2
  *     x3, y3 = pt3
@@ -16537,15 +16537,15 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_50calcQuadraticParamete
 }
 
 /* "fontTools/misc/bezierTools.py":956
- * 
- * 
+ *
+ *
  * def calcCubicParameters(pt1, pt2, pt3, pt4):             # <<<<<<<<<<<<<<
  *     x2, y2 = pt2
  *     x3, y3 = pt3
 */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_53calcCubicParameters(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_53calcCubicParameters(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -16554,7 +16554,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_9fontTools_4misc_11bezierTools_52calcCubicParameters, "calcCubicParameters(pt1, pt2, pt3, pt4)");
 static PyMethodDef __pyx_mdef_9fontTools_4misc_11bezierTools_53calcCubicParameters = {"calcCubicParameters", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9fontTools_4misc_11bezierTools_53calcCubicParameters, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_9fontTools_4misc_11bezierTools_52calcCubicParameters};
-static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_53calcCubicParameters(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_53calcCubicParameters(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -16683,7 +16683,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_52calcCubicParameters(C
   __Pyx_RefNannySetupContext("calcCubicParameters", 0);
 
   /* "fontTools/misc/bezierTools.py":957
- * 
+ *
  * def calcCubicParameters(pt1, pt2, pt3, pt4):
  *     x2, y2 = pt2             # <<<<<<<<<<<<<<
  *     x3, y3 = pt3
@@ -17011,7 +17011,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_52calcCubicParameters(C
  *     ax = x4 - dx - cx - bx
  *     ay = y4 - dy - cy - by             # <<<<<<<<<<<<<<
  *     return (ax, ay), (bx, by), (cx, cy), (dx, dy)
- * 
+ *
 */
   __pyx_t_1 = PyNumber_Subtract(__pyx_v_y4, __pyx_v_dy); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 966, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -17028,8 +17028,8 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_52calcCubicParameters(C
  *     ax = x4 - dx - cx - bx
  *     ay = y4 - dy - cy - by
  *     return (ax, ay), (bx, by), (cx, cy), (dx, dy)             # <<<<<<<<<<<<<<
- * 
- * 
+ *
+ *
 */
   __Pyx_XDECREF(__pyx_r);
   __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 967, __pyx_L1_error)
@@ -17083,8 +17083,8 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_52calcCubicParameters(C
   goto __pyx_L0;
 
   /* "fontTools/misc/bezierTools.py":956
- * 
- * 
+ *
+ *
  * def calcCubicParameters(pt1, pt2, pt3, pt4):             # <<<<<<<<<<<<<<
  *     x2, y2 = pt2
  *     x3, y3 = pt3
@@ -17120,8 +17120,8 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_52calcCubicParameters(C
 }
 
 /* "fontTools/misc/bezierTools.py":970
- * 
- * 
+ *
+ *
  * @cython.cfunc             # <<<<<<<<<<<<<<
  * @cython.inline
  * @cython.locals(
@@ -17166,7 +17166,7 @@ static CYTHON_INLINE PyObject *__pyx_f_9fontTools_4misc_11bezierTools_calcCubicP
  *     b = (pt3 - pt2) * 3.0 - c
  *     a = pt4 - pt1 - c - b             # <<<<<<<<<<<<<<
  *     return (a, b, c, pt1)
- * 
+ *
 */
   __pyx_v_a = __Pyx_c_diff_double(__Pyx_c_diff_double(__Pyx_c_diff_double(__pyx_v_pt4, __pyx_v_pt1), __pyx_v_c), __pyx_v_b);
 
@@ -17174,8 +17174,8 @@ static CYTHON_INLINE PyObject *__pyx_f_9fontTools_4misc_11bezierTools_calcCubicP
  *     b = (pt3 - pt2) * 3.0 - c
  *     a = pt4 - pt1 - c - b
  *     return (a, b, c, pt1)             # <<<<<<<<<<<<<<
- * 
- * 
+ *
+ *
 */
   __Pyx_XDECREF(__pyx_r);
   __pyx_t_1 = __pyx_PyComplex_FromComplex(__pyx_v_a); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 985, __pyx_L1_error)
@@ -17205,8 +17205,8 @@ static CYTHON_INLINE PyObject *__pyx_f_9fontTools_4misc_11bezierTools_calcCubicP
   goto __pyx_L0;
 
   /* "fontTools/misc/bezierTools.py":970
- * 
- * 
+ *
+ *
  * @cython.cfunc             # <<<<<<<<<<<<<<
  * @cython.inline
  * @cython.locals(
@@ -17228,15 +17228,15 @@ static CYTHON_INLINE PyObject *__pyx_f_9fontTools_4misc_11bezierTools_calcCubicP
 }
 
 /* "fontTools/misc/bezierTools.py":988
- * 
- * 
+ *
+ *
  * def calcQuadraticPoints(a, b, c):             # <<<<<<<<<<<<<<
  *     ax, ay = a
  *     bx, by = b
 */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_55calcQuadraticPoints(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_55calcQuadraticPoints(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -17245,7 +17245,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_9fontTools_4misc_11bezierTools_54calcQuadraticPoints, "calcQuadraticPoints(a, b, c)");
 static PyMethodDef __pyx_mdef_9fontTools_4misc_11bezierTools_55calcQuadraticPoints = {"calcQuadraticPoints", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9fontTools_4misc_11bezierTools_55calcQuadraticPoints, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_9fontTools_4misc_11bezierTools_54calcQuadraticPoints};
-static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_55calcQuadraticPoints(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_55calcQuadraticPoints(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -17363,7 +17363,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_54calcQuadraticPoints(C
   __Pyx_RefNannySetupContext("calcQuadraticPoints", 0);
 
   /* "fontTools/misc/bezierTools.py":989
- * 
+ *
  * def calcQuadraticPoints(a, b, c):
  *     ax, ay = a             # <<<<<<<<<<<<<<
  *     bx, by = b
@@ -17612,7 +17612,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_54calcQuadraticPoints(C
  *     x3 = ax + bx + cx
  *     y3 = ay + by + cy             # <<<<<<<<<<<<<<
  *     return (x1, y1), (x2, y2), (x3, y3)
- * 
+ *
 */
   __pyx_t_1 = PyNumber_Add(__pyx_v_ay, __pyx_v_by); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 997, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -17626,8 +17626,8 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_54calcQuadraticPoints(C
  *     x3 = ax + bx + cx
  *     y3 = ay + by + cy
  *     return (x1, y1), (x2, y2), (x3, y3)             # <<<<<<<<<<<<<<
- * 
- * 
+ *
+ *
 */
   __Pyx_XDECREF(__pyx_r);
   __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 998, __pyx_L1_error)
@@ -17670,8 +17670,8 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_54calcQuadraticPoints(C
   goto __pyx_L0;
 
   /* "fontTools/misc/bezierTools.py":988
- * 
- * 
+ *
+ *
  * def calcQuadraticPoints(a, b, c):             # <<<<<<<<<<<<<<
  *     ax, ay = a
  *     bx, by = b
@@ -17704,15 +17704,15 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_54calcQuadraticPoints(C
 }
 
 /* "fontTools/misc/bezierTools.py":1001
- * 
- * 
+ *
+ *
  * def calcCubicPoints(a, b, c, d):             # <<<<<<<<<<<<<<
  *     ax, ay = a
  *     bx, by = b
 */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_57calcCubicPoints(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_57calcCubicPoints(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -17721,7 +17721,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_9fontTools_4misc_11bezierTools_56calcCubicPoints, "calcCubicPoints(a, b, c, d)");
 static PyMethodDef __pyx_mdef_9fontTools_4misc_11bezierTools_57calcCubicPoints = {"calcCubicPoints", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9fontTools_4misc_11bezierTools_57calcCubicPoints, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_9fontTools_4misc_11bezierTools_56calcCubicPoints};
-static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_57calcCubicPoints(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_57calcCubicPoints(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -17852,7 +17852,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_56calcCubicPoints(CYTHO
   __Pyx_RefNannySetupContext("calcCubicPoints", 0);
 
   /* "fontTools/misc/bezierTools.py":1002
- * 
+ *
  * def calcCubicPoints(a, b, c, d):
  *     ax, ay = a             # <<<<<<<<<<<<<<
  *     bx, by = b
@@ -18200,7 +18200,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_56calcCubicPoints(CYTHO
  *     x4 = ax + dx + cx + bx
  *     y4 = ay + dy + cy + by             # <<<<<<<<<<<<<<
  *     return (x1, y1), (x2, y2), (x3, y3), (x4, y4)
- * 
+ *
 */
   __pyx_t_1 = PyNumber_Add(__pyx_v_ay, __pyx_v_dy); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1013, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -18217,8 +18217,8 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_56calcCubicPoints(CYTHO
  *     x4 = ax + dx + cx + bx
  *     y4 = ay + dy + cy + by
  *     return (x1, y1), (x2, y2), (x3, y3), (x4, y4)             # <<<<<<<<<<<<<<
- * 
- * 
+ *
+ *
 */
   __Pyx_XDECREF(__pyx_r);
   __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1014, __pyx_L1_error)
@@ -18272,8 +18272,8 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_56calcCubicPoints(CYTHO
   goto __pyx_L0;
 
   /* "fontTools/misc/bezierTools.py":1001
- * 
- * 
+ *
+ *
  * def calcCubicPoints(a, b, c, d):             # <<<<<<<<<<<<<<
  *     ax, ay = a
  *     bx, by = b
@@ -18311,8 +18311,8 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_56calcCubicPoints(CYTHO
 }
 
 /* "fontTools/misc/bezierTools.py":1017
- * 
- * 
+ *
+ *
  * @cython.cfunc             # <<<<<<<<<<<<<<
  * @cython.inline
  * @cython.locals(
@@ -18357,7 +18357,7 @@ static CYTHON_INLINE PyObject *__pyx_f_9fontTools_4misc_11bezierTools_calcCubicP
  *     p3 = (b + c) * (1 / 3) + p2
  *     p4 = a + b + c + d             # <<<<<<<<<<<<<<
  *     return (d, p2, p3, p4)
- * 
+ *
 */
   __pyx_v_p4 = __Pyx_c_sum_double(__Pyx_c_sum_double(__Pyx_c_sum_double(__pyx_v_a, __pyx_v_b), __pyx_v_c), __pyx_v_d);
 
@@ -18365,8 +18365,8 @@ static CYTHON_INLINE PyObject *__pyx_f_9fontTools_4misc_11bezierTools_calcCubicP
  *     p3 = (b + c) * (1 / 3) + p2
  *     p4 = a + b + c + d
  *     return (d, p2, p3, p4)             # <<<<<<<<<<<<<<
- * 
- * 
+ *
+ *
 */
   __Pyx_XDECREF(__pyx_r);
   __pyx_t_1 = __pyx_PyComplex_FromComplex(__pyx_v_d); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1032, __pyx_L1_error)
@@ -18396,8 +18396,8 @@ static CYTHON_INLINE PyObject *__pyx_f_9fontTools_4misc_11bezierTools_calcCubicP
   goto __pyx_L0;
 
   /* "fontTools/misc/bezierTools.py":1017
- * 
- * 
+ *
+ *
  * @cython.cfunc             # <<<<<<<<<<<<<<
  * @cython.inline
  * @cython.locals(
@@ -18419,15 +18419,15 @@ static CYTHON_INLINE PyObject *__pyx_f_9fontTools_4misc_11bezierTools_calcCubicP
 }
 
 /* "fontTools/misc/bezierTools.py":1040
- * 
- * 
+ *
+ *
  * def linePointAtT(pt1, pt2, t):             # <<<<<<<<<<<<<<
  *     """Finds the point at time `t` on a line.
- * 
+ *
 */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_59linePointAtT(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_59linePointAtT(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -18436,7 +18436,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_9fontTools_4misc_11bezierTools_58linePointAtT, "linePointAtT(pt1, pt2, t)\n\nFinds the point at time `t` on a line.\n\nArgs:\n    pt1, pt2: Coordinates of the line as 2D tuples.\n    t: The time along the line.\n\nReturns:\n    A 2D tuple with the coordinates of the point.");
 static PyMethodDef __pyx_mdef_9fontTools_4misc_11bezierTools_59linePointAtT = {"linePointAtT", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9fontTools_4misc_11bezierTools_59linePointAtT, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_9fontTools_4misc_11bezierTools_58linePointAtT};
-static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_59linePointAtT(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_59linePointAtT(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -18544,8 +18544,8 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_58linePointAtT(CYTHON_U
  *         A 2D tuple with the coordinates of the point.
  *     """
  *     return ((pt1[0] * (1 - t) + pt2[0] * t), (pt1[1] * (1 - t) + pt2[1] * t))             # <<<<<<<<<<<<<<
- * 
- * 
+ *
+ *
 */
   __Pyx_XDECREF(__pyx_r);
   __pyx_t_1 = __Pyx_GetItemInt(__pyx_v_pt1, 0, long, 1, __Pyx_PyLong_From_long, 0, 0, 1, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1050, __pyx_L1_error)
@@ -18595,11 +18595,11 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_58linePointAtT(CYTHON_U
   goto __pyx_L0;
 
   /* "fontTools/misc/bezierTools.py":1040
- * 
- * 
+ *
+ *
  * def linePointAtT(pt1, pt2, t):             # <<<<<<<<<<<<<<
  *     """Finds the point at time `t` on a line.
- * 
+ *
 */
 
   /* function exit code */
@@ -18617,15 +18617,15 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_58linePointAtT(CYTHON_U
 }
 
 /* "fontTools/misc/bezierTools.py":1053
- * 
- * 
+ *
+ *
  * def quadraticPointAtT(pt1, pt2, pt3, t):             # <<<<<<<<<<<<<<
  *     """Finds the point at time `t` on a quadratic curve.
- * 
+ *
 */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_61quadraticPointAtT(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_61quadraticPointAtT(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -18634,7 +18634,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_9fontTools_4misc_11bezierTools_60quadraticPointAtT, "quadraticPointAtT(pt1, pt2, pt3, t)\n\nFinds the point at time `t` on a quadratic curve.\n\nArgs:\n    pt1, pt2, pt3: Coordinates of the curve as 2D tuples.\n    t: The time along the curve.\n\nReturns:\n    A 2D tuple with the coordinates of the point.");
 static PyMethodDef __pyx_mdef_9fontTools_4misc_11bezierTools_61quadraticPointAtT = {"quadraticPointAtT", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9fontTools_4misc_11bezierTools_61quadraticPointAtT, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_9fontTools_4misc_11bezierTools_60quadraticPointAtT};
-static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_61quadraticPointAtT(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_61quadraticPointAtT(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -18807,7 +18807,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_60quadraticPointAtT(CYT
  *     x = (1 - t) * (1 - t) * pt1[0] + 2 * (1 - t) * t * pt2[0] + t * t * pt3[0]
  *     y = (1 - t) * (1 - t) * pt1[1] + 2 * (1 - t) * t * pt2[1] + t * t * pt3[1]             # <<<<<<<<<<<<<<
  *     return (x, y)
- * 
+ *
 */
   __pyx_t_1 = __Pyx_PyLong_SubtractCObj(__pyx_mstate_global->__pyx_int_1, __pyx_v_t, 1, 0, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1064, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -18860,8 +18860,8 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_60quadraticPointAtT(CYT
  *     x = (1 - t) * (1 - t) * pt1[0] + 2 * (1 - t) * t * pt2[0] + t * t * pt3[0]
  *     y = (1 - t) * (1 - t) * pt1[1] + 2 * (1 - t) * t * pt2[1] + t * t * pt3[1]
  *     return (x, y)             # <<<<<<<<<<<<<<
- * 
- * 
+ *
+ *
 */
   __Pyx_XDECREF(__pyx_r);
   __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1065, __pyx_L1_error)
@@ -18877,11 +18877,11 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_60quadraticPointAtT(CYT
   goto __pyx_L0;
 
   /* "fontTools/misc/bezierTools.py":1053
- * 
- * 
+ *
+ *
  * def quadraticPointAtT(pt1, pt2, pt3, t):             # <<<<<<<<<<<<<<
  *     """Finds the point at time `t` on a quadratic curve.
- * 
+ *
 */
 
   /* function exit code */
@@ -18901,15 +18901,15 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_60quadraticPointAtT(CYT
 }
 
 /* "fontTools/misc/bezierTools.py":1068
- * 
- * 
+ *
+ *
  * def cubicPointAtT(pt1, pt2, pt3, pt4, t):             # <<<<<<<<<<<<<<
  *     """Finds the point at time `t` on a cubic curve.
- * 
+ *
 */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_63cubicPointAtT(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_63cubicPointAtT(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -18918,7 +18918,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_9fontTools_4misc_11bezierTools_62cubicPointAtT, "cubicPointAtT(pt1, pt2, pt3, pt4, t)\n\nFinds the point at time `t` on a cubic curve.\n\nArgs:\n    pt1, pt2, pt3, pt4: Coordinates of the curve as 2D tuples.\n    t: The time along the curve.\n\nReturns:\n    A 2D tuple with the coordinates of the point.");
 static PyMethodDef __pyx_mdef_9fontTools_4misc_11bezierTools_63cubicPointAtT = {"cubicPointAtT", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9fontTools_4misc_11bezierTools_63cubicPointAtT, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_9fontTools_4misc_11bezierTools_62cubicPointAtT};
-static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_63cubicPointAtT(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_63cubicPointAtT(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -19230,8 +19230,8 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_62cubicPointAtT(CYTHON_
  *         + t2 * t * pt4[1]
  *     )
  *     return (x, y)             # <<<<<<<<<<<<<<
- * 
- * 
+ *
+ *
 */
   __Pyx_XDECREF(__pyx_r);
   __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1091, __pyx_L1_error)
@@ -19247,11 +19247,11 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_62cubicPointAtT(CYTHON_
   goto __pyx_L0;
 
   /* "fontTools/misc/bezierTools.py":1068
- * 
- * 
+ *
+ *
  * def cubicPointAtT(pt1, pt2, pt3, pt4, t):             # <<<<<<<<<<<<<<
  *     """Finds the point at time `t` on a cubic curve.
- * 
+ *
 */
 
   /* function exit code */
@@ -19275,15 +19275,15 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_62cubicPointAtT(CYTHON_
 }
 
 /* "fontTools/misc/bezierTools.py":1094
- * 
- * 
+ *
+ *
  * @cython.returns(cython.complex)             # <<<<<<<<<<<<<<
  * @cython.locals(
  *     t=cython.double,
 */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_65cubicPointAtTC(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_65cubicPointAtTC(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -19292,7 +19292,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_9fontTools_4misc_11bezierTools_64cubicPointAtTC, "cubicPointAtTC(double complex pt1, double complex pt2, double complex pt3, double complex pt4, double t)\n\nFinds the point at time `t` on a cubic curve.\n\nArgs:\n    pt1, pt2, pt3, pt4: Coordinates of the curve as complex numbers.\n    t: The time along the curve.\n\nReturns:\n    A complex number with the coordinates of the point.");
 static PyMethodDef __pyx_mdef_9fontTools_4misc_11bezierTools_65cubicPointAtTC = {"cubicPointAtTC", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9fontTools_4misc_11bezierTools_65cubicPointAtTC, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_9fontTools_4misc_11bezierTools_64cubicPointAtTC};
-static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_65cubicPointAtTC(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_65cubicPointAtTC(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -19436,7 +19436,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_64cubicPointAtTC(CYTHON
  *     _1_t = 1 - t
  *     _1_t_2 = _1_t * _1_t             # <<<<<<<<<<<<<<
  *     return _1_t_2 * _1_t * pt1 + 3 * (_1_t_2 * t * pt2 + _1_t * t2 * pt3) + t2 * t * pt4
- * 
+ *
 */
   __pyx_v__1_t_2 = (__pyx_v__1_t * __pyx_v__1_t);
 
@@ -19444,8 +19444,8 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_64cubicPointAtTC(CYTHON
  *     _1_t = 1 - t
  *     _1_t_2 = _1_t * _1_t
  *     return _1_t_2 * _1_t * pt1 + 3 * (_1_t_2 * t * pt2 + _1_t * t2 * pt3) + t2 * t * pt4             # <<<<<<<<<<<<<<
- * 
- * 
+ *
+ *
 */
   __Pyx_XDECREF(__pyx_r);
   __pyx_t_1 = __Pyx_c_sum_double(__Pyx_c_sum_double(__Pyx_c_prod_double(__pyx_t_double_complex_from_parts((__pyx_v__1_t_2 * __pyx_v__1_t), 0), __pyx_v_pt1), __Pyx_c_prod_double(__pyx_t_double_complex_from_parts(3, 0), __Pyx_c_sum_double(__Pyx_c_prod_double(__pyx_t_double_complex_from_parts((__pyx_v__1_t_2 * __pyx_v_t), 0), __pyx_v_pt2), __Pyx_c_prod_double(__pyx_t_double_complex_from_parts((__pyx_v__1_t * __pyx_v_t2), 0), __pyx_v_pt3)))), __Pyx_c_prod_double(__pyx_t_double_complex_from_parts((__pyx_v_t2 * __pyx_v_t), 0), __pyx_v_pt4));
@@ -19456,8 +19456,8 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_64cubicPointAtTC(CYTHON
   goto __pyx_L0;
 
   /* "fontTools/misc/bezierTools.py":1094
- * 
- * 
+ *
+ *
  * @cython.returns(cython.complex)             # <<<<<<<<<<<<<<
  * @cython.locals(
  *     t=cython.double,
@@ -19475,15 +19475,15 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_64cubicPointAtTC(CYTHON
 }
 
 /* "fontTools/misc/bezierTools.py":1119
- * 
- * 
+ *
+ *
  * def segmentPointAtT(seg, t):             # <<<<<<<<<<<<<<
  *     if len(seg) == 2:
  *         return linePointAtT(*seg, t)
 */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_67segmentPointAtT(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_67segmentPointAtT(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -19492,7 +19492,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_9fontTools_4misc_11bezierTools_66segmentPointAtT, "segmentPointAtT(seg, t)");
 static PyMethodDef __pyx_mdef_9fontTools_4misc_11bezierTools_67segmentPointAtT = {"segmentPointAtT", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9fontTools_4misc_11bezierTools_67segmentPointAtT, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_9fontTools_4misc_11bezierTools_66segmentPointAtT};
-static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_67segmentPointAtT(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_67segmentPointAtT(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -19592,7 +19592,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_66segmentPointAtT(CYTHO
   __Pyx_RefNannySetupContext("segmentPointAtT", 0);
 
   /* "fontTools/misc/bezierTools.py":1120
- * 
+ *
  * def segmentPointAtT(seg, t):
  *     if len(seg) == 2:             # <<<<<<<<<<<<<<
  *         return linePointAtT(*seg, t)
@@ -19632,7 +19632,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_66segmentPointAtT(CYTHO
     goto __pyx_L0;
 
     /* "fontTools/misc/bezierTools.py":1120
- * 
+ *
  * def segmentPointAtT(seg, t):
  *     if len(seg) == 2:             # <<<<<<<<<<<<<<
  *         return linePointAtT(*seg, t)
@@ -19705,7 +19705,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_66segmentPointAtT(CYTHO
  *     elif len(seg) == 4:
  *         return cubicPointAtT(*seg, t)             # <<<<<<<<<<<<<<
  *     raise ValueError("Unknown curve degree")
- * 
+ *
 */
     __Pyx_XDECREF(__pyx_r);
     __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_cubicPointAtT); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1125, __pyx_L1_error)
@@ -19742,12 +19742,12 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_66segmentPointAtT(CYTHO
  *     elif len(seg) == 4:
  *         return cubicPointAtT(*seg, t)
  *     raise ValueError("Unknown curve degree")             # <<<<<<<<<<<<<<
- * 
- * 
+ *
+ *
 */
   __pyx_t_6 = NULL;
   __Pyx_INCREF(__pyx_builtin_ValueError);
-  __pyx_t_3 = __pyx_builtin_ValueError; 
+  __pyx_t_3 = __pyx_builtin_ValueError;
   __pyx_t_7 = 1;
   {
     PyObject *__pyx_callargs[2] = {__pyx_t_6, __pyx_mstate_global->__pyx_kp_u_Unknown_curve_degree};
@@ -19762,8 +19762,8 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_66segmentPointAtT(CYTHO
   __PYX_ERR(0, 1126, __pyx_L1_error)
 
   /* "fontTools/misc/bezierTools.py":1119
- * 
- * 
+ *
+ *
  * def segmentPointAtT(seg, t):             # <<<<<<<<<<<<<<
  *     if len(seg) == 2:
  *         return linePointAtT(*seg, t)
@@ -19784,15 +19784,15 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_66segmentPointAtT(CYTHO
 }
 
 /* "fontTools/misc/bezierTools.py":1134
- * 
- * 
+ *
+ *
  * def _line_t_of_pt(s, e, pt):             # <<<<<<<<<<<<<<
  *     sx, sy = s
  *     ex, ey = e
 */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_69_line_t_of_pt(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_69_line_t_of_pt(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -19801,7 +19801,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_9fontTools_4misc_11bezierTools_68_line_t_of_pt, "_line_t_of_pt(s, e, pt)");
 static PyMethodDef __pyx_mdef_9fontTools_4misc_11bezierTools_69_line_t_of_pt = {"_line_t_of_pt", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9fontTools_4misc_11bezierTools_69_line_t_of_pt, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_9fontTools_4misc_11bezierTools_68_line_t_of_pt};
-static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_69_line_t_of_pt(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_69_line_t_of_pt(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -19914,7 +19914,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_68_line_t_of_pt(CYTHON_
   __Pyx_RefNannySetupContext("_line_t_of_pt", 0);
 
   /* "fontTools/misc/bezierTools.py":1135
- * 
+ *
  * def _line_t_of_pt(s, e, pt):
  *     sx, sy = s             # <<<<<<<<<<<<<<
  *     ex, ey = e
@@ -20211,8 +20211,8 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_68_line_t_of_pt(CYTHON_
  *         return (px - sx) / (ex - sx)
  *     else:
  *         return (py - sy) / (ey - sy)             # <<<<<<<<<<<<<<
- * 
- * 
+ *
+ *
 */
   /*else*/ {
     __Pyx_XDECREF(__pyx_r);
@@ -20230,8 +20230,8 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_68_line_t_of_pt(CYTHON_
   }
 
   /* "fontTools/misc/bezierTools.py":1134
- * 
- * 
+ *
+ *
  * def _line_t_of_pt(s, e, pt):             # <<<<<<<<<<<<<<
  *     sx, sy = s
  *     ex, ey = e
@@ -20257,15 +20257,15 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_68_line_t_of_pt(CYTHON_
 }
 
 /* "fontTools/misc/bezierTools.py":1148
- * 
- * 
+ *
+ *
  * def _both_points_are_on_same_side_of_origin(a, b, origin):             # <<<<<<<<<<<<<<
  *     xDiff = (a[0] - origin[0]) * (b[0] - origin[0])
  *     yDiff = (a[1] - origin[1]) * (b[1] - origin[1])
 */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_71_both_points_are_on_same_side_of_origin(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_71_both_points_are_on_same_side_of_origin(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -20274,7 +20274,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_9fontTools_4misc_11bezierTools_70_both_points_are_on_same_side_of_origin, "_both_points_are_on_same_side_of_origin(a, b, origin)");
 static PyMethodDef __pyx_mdef_9fontTools_4misc_11bezierTools_71_both_points_are_on_same_side_of_origin = {"_both_points_are_on_same_side_of_origin", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9fontTools_4misc_11bezierTools_71_both_points_are_on_same_side_of_origin, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_9fontTools_4misc_11bezierTools_70_both_points_are_on_same_side_of_origin};
-static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_71_both_points_are_on_same_side_of_origin(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_71_both_points_are_on_same_side_of_origin(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -20383,7 +20383,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_70_both_points_are_on_s
   __Pyx_RefNannySetupContext("_both_points_are_on_same_side_of_origin", 0);
 
   /* "fontTools/misc/bezierTools.py":1149
- * 
+ *
  * def _both_points_are_on_same_side_of_origin(a, b, origin):
  *     xDiff = (a[0] - origin[0]) * (b[0] - origin[0])             # <<<<<<<<<<<<<<
  *     yDiff = (a[1] - origin[1]) * (b[1] - origin[1])
@@ -20417,7 +20417,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_70_both_points_are_on_s
  *     xDiff = (a[0] - origin[0]) * (b[0] - origin[0])
  *     yDiff = (a[1] - origin[1]) * (b[1] - origin[1])             # <<<<<<<<<<<<<<
  *     return not (xDiff <= 0.0 and yDiff <= 0.0)
- * 
+ *
 */
   __pyx_t_1 = __Pyx_GetItemInt(__pyx_v_a, 1, long, 1, __Pyx_PyLong_From_long, 0, 0, 1, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1150, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -20446,8 +20446,8 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_70_both_points_are_on_s
  *     xDiff = (a[0] - origin[0]) * (b[0] - origin[0])
  *     yDiff = (a[1] - origin[1]) * (b[1] - origin[1])
  *     return not (xDiff <= 0.0 and yDiff <= 0.0)             # <<<<<<<<<<<<<<
- * 
- * 
+ *
+ *
 */
   __Pyx_XDECREF(__pyx_r);
   __pyx_t_1 = PyObject_RichCompare(__pyx_v_xDiff, __pyx_mstate_global->__pyx_float_0_0, Py_LE); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1151, __pyx_L1_error)
@@ -20470,8 +20470,8 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_70_both_points_are_on_s
   goto __pyx_L0;
 
   /* "fontTools/misc/bezierTools.py":1148
- * 
- * 
+ *
+ *
  * def _both_points_are_on_same_side_of_origin(a, b, origin):             # <<<<<<<<<<<<<<
  *     xDiff = (a[0] - origin[0]) * (b[0] - origin[0])
  *     yDiff = (a[1] - origin[1]) * (b[1] - origin[1])
@@ -20494,15 +20494,15 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_70_both_points_are_on_s
 }
 
 /* "fontTools/misc/bezierTools.py":1154
- * 
- * 
+ *
+ *
  * def lineLineIntersections(s1, e1, s2, e2):             # <<<<<<<<<<<<<<
  *     """Finds intersections between two line segments.
- * 
+ *
 */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_73lineLineIntersections(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_73lineLineIntersections(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -20511,7 +20511,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_9fontTools_4misc_11bezierTools_72lineLineIntersections, "lineLineIntersections(s1, e1, s2, e2)\n\nFinds intersections between two line segments.\n\nArgs:\n    s1, e1: Coordinates of the first line as 2D tuples.\n    s2, e2: Coordinates of the second line as 2D tuples.\n\nReturns:\n    A list of ``Intersection`` objects, each object having ``pt``, ``t1``\n    and ``t2`` attributes containing the intersection point, time on first\n    segment and time on second segment respectively.\n\nExamples::\n\n    >>> a = lineLineIntersections( (310,389), (453, 222), (289, 251), (447, 367))\n    >>> len(a)\n    1\n    >>> intersection = a[0]\n    >>> intersection.pt\n    (374.44882952482897, 313.73458370177315)\n    >>> (intersection.t1, intersection.t2)\n    (0.45069111555824465, 0.5408153767394238)");
 static PyMethodDef __pyx_mdef_9fontTools_4misc_11bezierTools_73lineLineIntersections = {"lineLineIntersections", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9fontTools_4misc_11bezierTools_73lineLineIntersections, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_9fontTools_4misc_11bezierTools_72lineLineIntersections};
-static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_73lineLineIntersections(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_73lineLineIntersections(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -21806,7 +21806,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_72lineLineIntersections
 
   /* "fontTools/misc/bezierTools.py":1214
  *         ]
- * 
+ *
  *     slope12 = (e1y - s1y) / (e1x - s1x)             # <<<<<<<<<<<<<<
  *     slope34 = (e2y - s2y) / (e2x - s2x)
  *     if math.isclose(slope12, slope34):
@@ -21823,7 +21823,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_72lineLineIntersections
   __pyx_t_10 = 0;
 
   /* "fontTools/misc/bezierTools.py":1215
- * 
+ *
  *     slope12 = (e1y - s1y) / (e1x - s1x)
  *     slope34 = (e2y - s2y) / (e2x - s2x)             # <<<<<<<<<<<<<<
  *     if math.isclose(slope12, slope34):
@@ -22195,8 +22195,8 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_72lineLineIntersections
  *             )
  *         ]
  *     return []             # <<<<<<<<<<<<<<
- * 
- * 
+ *
+ *
 */
   __Pyx_XDECREF(__pyx_r);
   __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1229, __pyx_L1_error)
@@ -22206,11 +22206,11 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_72lineLineIntersections
   goto __pyx_L0;
 
   /* "fontTools/misc/bezierTools.py":1154
- * 
- * 
+ *
+ *
  * def lineLineIntersections(s1, e1, s2, e2):             # <<<<<<<<<<<<<<
  *     """Finds intersections between two line segments.
- * 
+ *
 */
 
   /* function exit code */
@@ -22244,15 +22244,15 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_72lineLineIntersections
 }
 
 /* "fontTools/misc/bezierTools.py":1232
- * 
- * 
+ *
+ *
  * def _alignment_transformation(segment):             # <<<<<<<<<<<<<<
  *     # Returns a transformation which aligns a segment horizontally at the
  *     # origin. Apply this transformation to curves and root-find to find
 */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_75_alignment_transformation(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_75_alignment_transformation(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -22261,7 +22261,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_9fontTools_4misc_11bezierTools_74_alignment_transformation, "_alignment_transformation(segment)");
 static PyMethodDef __pyx_mdef_9fontTools_4misc_11bezierTools_75_alignment_transformation = {"_alignment_transformation", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9fontTools_4misc_11bezierTools_75_alignment_transformation, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_9fontTools_4misc_11bezierTools_74_alignment_transformation};
-static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_75_alignment_transformation(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_75_alignment_transformation(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -22385,7 +22385,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_74_alignment_transforma
  *     end = segment[-1]
  *     angle = math.atan2(end[1] - start[1], end[0] - start[0])             # <<<<<<<<<<<<<<
  *     return Identity.rotate(-angle).translate(-start[0], -start[1])
- * 
+ *
 */
   __pyx_t_2 = NULL;
   __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_math); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1238, __pyx_L1_error)
@@ -22438,8 +22438,8 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_74_alignment_transforma
  *     end = segment[-1]
  *     angle = math.atan2(end[1] - start[1], end[0] - start[0])
  *     return Identity.rotate(-angle).translate(-start[0], -start[1])             # <<<<<<<<<<<<<<
- * 
- * 
+ *
+ *
 */
   __Pyx_XDECREF(__pyx_r);
   __pyx_t_6 = NULL;
@@ -22499,8 +22499,8 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_74_alignment_transforma
   goto __pyx_L0;
 
   /* "fontTools/misc/bezierTools.py":1232
- * 
- * 
+ *
+ *
  * def _alignment_transformation(segment):             # <<<<<<<<<<<<<<
  *     # Returns a transformation which aligns a segment horizontally at the
  *     # origin. Apply this transformation to curves and root-find to find
@@ -22527,15 +22527,15 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_74_alignment_transforma
 }
 
 /* "fontTools/misc/bezierTools.py":1242
- * 
- * 
+ *
+ *
  * def _curve_line_intersections_t(curve, line):             # <<<<<<<<<<<<<<
  *     aligned_curve = _alignment_transformation(line).transformPoints(curve)
  *     if len(curve) == 3:
 */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_77_curve_line_intersections_t(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_77_curve_line_intersections_t(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -22544,7 +22544,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_9fontTools_4misc_11bezierTools_76_curve_line_intersections_t, "_curve_line_intersections_t(curve, line)");
 static PyMethodDef __pyx_mdef_9fontTools_4misc_11bezierTools_77_curve_line_intersections_t = {"_curve_line_intersections_t", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9fontTools_4misc_11bezierTools_77_curve_line_intersections_t, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_9fontTools_4misc_11bezierTools_76_curve_line_intersections_t};
-static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_77_curve_line_intersections_t(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_77_curve_line_intersections_t(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -22633,8 +22633,8 @@ static PyObject *__pyx_gb_9fontTools_4misc_11bezierTools_27_curve_line_intersect
  *     else:
  *         raise ValueError("Unknown curve degree")
  *     return sorted(i for i in intersections if 0.0 <= i <= 1)             # <<<<<<<<<<<<<<
- * 
- * 
+ *
+ *
 */
 
 static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_27_curve_line_intersections_t_genexpr(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_genexpr_arg_0) {
@@ -22787,8 +22787,8 @@ static PyObject *__pyx_gb_9fontTools_4misc_11bezierTools_27_curve_line_intersect
 }
 
 /* "fontTools/misc/bezierTools.py":1242
- * 
- * 
+ *
+ *
  * def _curve_line_intersections_t(curve, line):             # <<<<<<<<<<<<<<
  *     aligned_curve = _alignment_transformation(line).transformPoints(curve)
  *     if len(curve) == 3:
@@ -22821,7 +22821,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_76_curve_line_intersect
   __Pyx_RefNannySetupContext("_curve_line_intersections_t", 0);
 
   /* "fontTools/misc/bezierTools.py":1243
- * 
+ *
  * def _curve_line_intersections_t(curve, line):
  *     aligned_curve = _alignment_transformation(line).transformPoints(curve)             # <<<<<<<<<<<<<<
  *     if len(curve) == 3:
@@ -23170,12 +23170,12 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_76_curve_line_intersect
  *     else:
  *         raise ValueError("Unknown curve degree")             # <<<<<<<<<<<<<<
  *     return sorted(i for i in intersections if 0.0 <= i <= 1)
- * 
+ *
 */
   /*else*/ {
     __pyx_t_4 = NULL;
     __Pyx_INCREF(__pyx_builtin_ValueError);
-    __pyx_t_11 = __pyx_builtin_ValueError; 
+    __pyx_t_11 = __pyx_builtin_ValueError;
     __pyx_t_6 = 1;
     {
       PyObject *__pyx_callargs[2] = {__pyx_t_4, __pyx_mstate_global->__pyx_kp_u_Unknown_curve_degree};
@@ -23195,8 +23195,8 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_76_curve_line_intersect
  *     else:
  *         raise ValueError("Unknown curve degree")
  *     return sorted(i for i in intersections if 0.0 <= i <= 1)             # <<<<<<<<<<<<<<
- * 
- * 
+ *
+ *
 */
   __Pyx_XDECREF(__pyx_r);
   __pyx_t_10 = __pyx_pf_9fontTools_4misc_11bezierTools_27_curve_line_intersections_t_genexpr(NULL, __pyx_v_intersections); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 1252, __pyx_L1_error)
@@ -23210,8 +23210,8 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_76_curve_line_intersect
   goto __pyx_L0;
 
   /* "fontTools/misc/bezierTools.py":1242
- * 
- * 
+ *
+ *
  * def _curve_line_intersections_t(curve, line):             # <<<<<<<<<<<<<<
  *     aligned_curve = _alignment_transformation(line).transformPoints(curve)
  *     if len(curve) == 3:
@@ -23242,15 +23242,15 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_76_curve_line_intersect
 }
 
 /* "fontTools/misc/bezierTools.py":1255
- * 
- * 
+ *
+ *
  * def curveLineIntersections(curve, line):             # <<<<<<<<<<<<<<
  *     """Finds intersections between a curve and a line.
- * 
+ *
 */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_79curveLineIntersections(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_79curveLineIntersections(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -23259,7 +23259,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_9fontTools_4misc_11bezierTools_78curveLineIntersections, "curveLineIntersections(curve, line)\n\nFinds intersections between a curve and a line.\n\nArgs:\n    curve: List of coordinates of the curve segment as 2D tuples.\n    line: List of coordinates of the line segment as 2D tuples.\n\nReturns:\n    A list of ``Intersection`` objects, each object having ``pt``, ``t1``\n    and ``t2`` attributes containing the intersection point, time on first\n    segment and time on second segment respectively.\n\nExamples::\n    >>> curve = [ (100, 240), (30, 60), (210, 230), (160, 30) ]\n    >>> line  = [ (25, 260), (230, 20) ]\n    >>> intersections = curveLineIntersections(curve, line)\n    >>> len(intersections)\n    3\n    >>> intersections[0].pt\n    (84.9000930760723, 189.87306176459828)");
 static PyMethodDef __pyx_mdef_9fontTools_4misc_11bezierTools_79curveLineIntersections = {"curveLineIntersections", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9fontTools_4misc_11bezierTools_79curveLineIntersections, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_9fontTools_4misc_11bezierTools_78curveLineIntersections};
-static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_79curveLineIntersections(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_79curveLineIntersections(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -23442,7 +23442,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_78curveLineIntersection
   /*else*/ {
     __pyx_t_4 = NULL;
     __Pyx_INCREF(__pyx_builtin_ValueError);
-    __pyx_t_5 = __pyx_builtin_ValueError; 
+    __pyx_t_5 = __pyx_builtin_ValueError;
     __pyx_t_6 = 1;
     {
       PyObject *__pyx_callargs[2] = {__pyx_t_4, __pyx_mstate_global->__pyx_kp_u_Unknown_curve_degree};
@@ -23636,7 +23636,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_78curveLineIntersection
  *         pt = linePointAtT(*line, line_t)
  *         intersections.append(Intersection(pt=pt, t1=t, t2=line_t))             # <<<<<<<<<<<<<<
  *     return intersections
- * 
+ *
 */
     __pyx_t_8 = NULL;
     __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_Intersection); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1289, __pyx_L1_error)
@@ -23684,8 +23684,8 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_78curveLineIntersection
  *         pt = linePointAtT(*line, line_t)
  *         intersections.append(Intersection(pt=pt, t1=t, t2=line_t))
  *     return intersections             # <<<<<<<<<<<<<<
- * 
- * 
+ *
+ *
 */
   __Pyx_XDECREF(__pyx_r);
   __Pyx_INCREF(__pyx_v_intersections);
@@ -23693,11 +23693,11 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_78curveLineIntersection
   goto __pyx_L0;
 
   /* "fontTools/misc/bezierTools.py":1255
- * 
- * 
+ *
+ *
  * def curveLineIntersections(curve, line):             # <<<<<<<<<<<<<<
  *     """Finds intersections between a curve and a line.
- * 
+ *
 */
 
   /* function exit code */
@@ -23721,15 +23721,15 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_78curveLineIntersection
 }
 
 /* "fontTools/misc/bezierTools.py":1293
- * 
- * 
+ *
+ *
  * def _curve_bounds(c):             # <<<<<<<<<<<<<<
  *     if len(c) == 3:
  *         return calcQuadraticBounds(*c)
 */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_81_curve_bounds(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_81_curve_bounds(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -23738,7 +23738,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_9fontTools_4misc_11bezierTools_80_curve_bounds, "_curve_bounds(c)");
 static PyMethodDef __pyx_mdef_9fontTools_4misc_11bezierTools_81_curve_bounds = {"_curve_bounds", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9fontTools_4misc_11bezierTools_81_curve_bounds, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_9fontTools_4misc_11bezierTools_80_curve_bounds};
-static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_81_curve_bounds(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_81_curve_bounds(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -23829,7 +23829,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_80_curve_bounds(CYTHON_
   __Pyx_RefNannySetupContext("_curve_bounds", 0);
 
   /* "fontTools/misc/bezierTools.py":1294
- * 
+ *
  * def _curve_bounds(c):
  *     if len(c) == 3:             # <<<<<<<<<<<<<<
  *         return calcQuadraticBounds(*c)
@@ -23860,7 +23860,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_80_curve_bounds(CYTHON_
     goto __pyx_L0;
 
     /* "fontTools/misc/bezierTools.py":1294
- * 
+ *
  * def _curve_bounds(c):
  *     if len(c) == 3:             # <<<<<<<<<<<<<<
  *         return calcQuadraticBounds(*c)
@@ -23884,7 +23884,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_80_curve_bounds(CYTHON_
  *     elif len(c) == 4:
  *         return calcCubicBounds(*c)             # <<<<<<<<<<<<<<
  *     raise ValueError("Unknown curve degree")
- * 
+ *
 */
     __Pyx_XDECREF(__pyx_r);
     __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_calcCubicBounds); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1297, __pyx_L1_error)
@@ -23912,12 +23912,12 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_80_curve_bounds(CYTHON_
  *     elif len(c) == 4:
  *         return calcCubicBounds(*c)
  *     raise ValueError("Unknown curve degree")             # <<<<<<<<<<<<<<
- * 
- * 
+ *
+ *
 */
   __pyx_t_4 = NULL;
   __Pyx_INCREF(__pyx_builtin_ValueError);
-  __pyx_t_5 = __pyx_builtin_ValueError; 
+  __pyx_t_5 = __pyx_builtin_ValueError;
   __pyx_t_6 = 1;
   {
     PyObject *__pyx_callargs[2] = {__pyx_t_4, __pyx_mstate_global->__pyx_kp_u_Unknown_curve_degree};
@@ -23932,8 +23932,8 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_80_curve_bounds(CYTHON_
   __PYX_ERR(0, 1298, __pyx_L1_error)
 
   /* "fontTools/misc/bezierTools.py":1293
- * 
- * 
+ *
+ *
  * def _curve_bounds(c):             # <<<<<<<<<<<<<<
  *     if len(c) == 3:
  *         return calcQuadraticBounds(*c)
@@ -23953,15 +23953,15 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_80_curve_bounds(CYTHON_
 }
 
 /* "fontTools/misc/bezierTools.py":1301
- * 
- * 
+ *
+ *
  * def _split_segment_at_t(c, t):             # <<<<<<<<<<<<<<
  *     if len(c) == 2:
  *         s, e = c
 */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_83_split_segment_at_t(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_83_split_segment_at_t(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -23970,7 +23970,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_9fontTools_4misc_11bezierTools_82_split_segment_at_t, "_split_segment_at_t(c, t)");
 static PyMethodDef __pyx_mdef_9fontTools_4misc_11bezierTools_83_split_segment_at_t = {"_split_segment_at_t", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9fontTools_4misc_11bezierTools_83_split_segment_at_t, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_9fontTools_4misc_11bezierTools_82_split_segment_at_t};
-static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_83_split_segment_at_t(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_83_split_segment_at_t(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -24074,7 +24074,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_82_split_segment_at_t(C
   __Pyx_RefNannySetupContext("_split_segment_at_t", 0);
 
   /* "fontTools/misc/bezierTools.py":1302
- * 
+ *
  * def _split_segment_at_t(c, t):
  *     if len(c) == 2:             # <<<<<<<<<<<<<<
  *         s, e = c
@@ -24214,7 +24214,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_82_split_segment_at_t(C
     goto __pyx_L0;
 
     /* "fontTools/misc/bezierTools.py":1302
- * 
+ *
  * def _split_segment_at_t(c, t):
  *     if len(c) == 2:             # <<<<<<<<<<<<<<
  *         s, e = c
@@ -24287,7 +24287,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_82_split_segment_at_t(C
  *     elif len(c) == 4:
  *         return splitCubicAtT(*c, t)             # <<<<<<<<<<<<<<
  *     raise ValueError("Unknown curve degree")
- * 
+ *
 */
     __Pyx_XDECREF(__pyx_r);
     __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_splitCubicAtT_2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1309, __pyx_L1_error)
@@ -24324,12 +24324,12 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_82_split_segment_at_t(C
  *     elif len(c) == 4:
  *         return splitCubicAtT(*c, t)
  *     raise ValueError("Unknown curve degree")             # <<<<<<<<<<<<<<
- * 
- * 
+ *
+ *
 */
   __pyx_t_5 = NULL;
   __Pyx_INCREF(__pyx_builtin_ValueError);
-  __pyx_t_4 = __pyx_builtin_ValueError; 
+  __pyx_t_4 = __pyx_builtin_ValueError;
   __pyx_t_7 = 1;
   {
     PyObject *__pyx_callargs[2] = {__pyx_t_5, __pyx_mstate_global->__pyx_kp_u_Unknown_curve_degree};
@@ -24344,8 +24344,8 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_82_split_segment_at_t(C
   __PYX_ERR(0, 1310, __pyx_L1_error)
 
   /* "fontTools/misc/bezierTools.py":1301
- * 
- * 
+ *
+ *
  * def _split_segment_at_t(c, t):             # <<<<<<<<<<<<<<
  *     if len(c) == 2:
  *         s, e = c
@@ -24369,15 +24369,15 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_82_split_segment_at_t(C
 }
 
 /* "fontTools/misc/bezierTools.py":1313
- * 
- * 
+ *
+ *
  * def _curve_curve_intersections_t(             # <<<<<<<<<<<<<<
  *     curve1, curve2, precision=1e-3, range1=None, range2=None
  * ):
 */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_85_curve_curve_intersections_t(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_85_curve_curve_intersections_t(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -24386,7 +24386,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_9fontTools_4misc_11bezierTools_84_curve_curve_intersections_t, "_curve_curve_intersections_t(curve1, curve2, precision=1e-3, range1=None, range2=None)");
 static PyMethodDef __pyx_mdef_9fontTools_4misc_11bezierTools_85_curve_curve_intersections_t = {"_curve_curve_intersections_t", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9fontTools_4misc_11bezierTools_85_curve_curve_intersections_t, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_9fontTools_4misc_11bezierTools_84_curve_curve_intersections_t};
-static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_85_curve_curve_intersections_t(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_85_curve_curve_intersections_t(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -24451,7 +24451,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
       if (!values[2]) values[2] = __Pyx_NewRef(((PyObject *)((PyObject*)__pyx_mstate_global->__pyx_float_1eneg_3)));
 
       /* "fontTools/misc/bezierTools.py":1314
- * 
+ *
  * def _curve_curve_intersections_t(
  *     curve1, curve2, precision=1e-3, range1=None, range2=None             # <<<<<<<<<<<<<<
  * ):
@@ -24510,8 +24510,8 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   __pyx_r = __pyx_pf_9fontTools_4misc_11bezierTools_84_curve_curve_intersections_t(__pyx_self, __pyx_v_curve1, __pyx_v_curve2, __pyx_v_precision, __pyx_v_range1, __pyx_v_range2);
 
   /* "fontTools/misc/bezierTools.py":1313
- * 
- * 
+ *
+ *
  * def _curve_curve_intersections_t(             # <<<<<<<<<<<<<<
  *     curve1, curve2, precision=1e-3, range1=None, range2=None
  * ):
@@ -24527,14 +24527,14 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 
 /* "fontTools/misc/bezierTools.py":1329
  *         return []
- * 
+ *
  *     def midpoint(r):             # <<<<<<<<<<<<<<
  *         return 0.5 * (r[0] + r[1])
- * 
+ *
 */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_28_curve_curve_intersections_t_1midpoint(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_28_curve_curve_intersections_t_1midpoint(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -24542,7 +24542,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
 static PyMethodDef __pyx_mdef_9fontTools_4misc_11bezierTools_28_curve_curve_intersections_t_1midpoint = {"midpoint", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9fontTools_4misc_11bezierTools_28_curve_curve_intersections_t_1midpoint, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_28_curve_curve_intersections_t_1midpoint(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_28_curve_curve_intersections_t_1midpoint(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -24630,10 +24630,10 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_28_curve_curve_intersec
   __Pyx_RefNannySetupContext("midpoint", 0);
 
   /* "fontTools/misc/bezierTools.py":1330
- * 
+ *
  *     def midpoint(r):
  *         return 0.5 * (r[0] + r[1])             # <<<<<<<<<<<<<<
- * 
+ *
  *     # If they do overlap but they're tiny, approximate
 */
   __Pyx_XDECREF(__pyx_r);
@@ -24654,10 +24654,10 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_28_curve_curve_intersec
 
   /* "fontTools/misc/bezierTools.py":1329
  *         return []
- * 
+ *
  *     def midpoint(r):             # <<<<<<<<<<<<<<
  *         return 0.5 * (r[0] + r[1])
- * 
+ *
 */
 
   /* function exit code */
@@ -24675,14 +24675,14 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_28_curve_curve_intersec
 
 /* "fontTools/misc/bezierTools.py":1366
  *     )
- * 
+ *
  *     unique_key = lambda ts: (int(ts[0] / precision), int(ts[1] / precision))             # <<<<<<<<<<<<<<
  *     seen = set()
  *     unique_values = []
 */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_28_curve_curve_intersections_t_2lambda3(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_28_curve_curve_intersections_t_2lambda3(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -24690,7 +24690,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
 static PyMethodDef __pyx_mdef_9fontTools_4misc_11bezierTools_28_curve_curve_intersections_t_2lambda3 = {"lambda3", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9fontTools_4misc_11bezierTools_28_curve_curve_intersections_t_2lambda3, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_28_curve_curve_intersections_t_2lambda3(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_28_curve_curve_intersections_t_2lambda3(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -24825,8 +24825,8 @@ static PyObject *__pyx_lambda_funcdef_lambda3(PyObject *__pyx_self, PyObject *__
 }
 
 /* "fontTools/misc/bezierTools.py":1313
- * 
- * 
+ *
+ *
  * def _curve_curve_intersections_t(             # <<<<<<<<<<<<<<
  *     curve1, curve2, precision=1e-3, range1=None, range2=None
  * ):
@@ -24888,7 +24888,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_84_curve_curve_intersec
  * ):
  *     bounds1 = _curve_bounds(curve1)             # <<<<<<<<<<<<<<
  *     bounds2 = _curve_bounds(curve2)
- * 
+ *
 */
   __pyx_t_2 = NULL;
   __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_curve_bounds); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1316, __pyx_L1_error)
@@ -24920,7 +24920,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_84_curve_curve_intersec
  * ):
  *     bounds1 = _curve_bounds(curve1)
  *     bounds2 = _curve_bounds(curve2)             # <<<<<<<<<<<<<<
- * 
+ *
  *     if not range1:
 */
   __pyx_t_3 = NULL;
@@ -24951,7 +24951,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_84_curve_curve_intersec
 
   /* "fontTools/misc/bezierTools.py":1319
  *     bounds2 = _curve_bounds(curve2)
- * 
+ *
  *     if not range1:             # <<<<<<<<<<<<<<
  *         range1 = (0.0, 1.0)
  *     if not range2:
@@ -24961,7 +24961,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_84_curve_curve_intersec
   if (__pyx_t_6) {
 
     /* "fontTools/misc/bezierTools.py":1320
- * 
+ *
  *     if not range1:
  *         range1 = (0.0, 1.0)             # <<<<<<<<<<<<<<
  *     if not range2:
@@ -24972,7 +24972,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_84_curve_curve_intersec
 
     /* "fontTools/misc/bezierTools.py":1319
  *     bounds2 = _curve_bounds(curve2)
- * 
+ *
  *     if not range1:             # <<<<<<<<<<<<<<
  *         range1 = (0.0, 1.0)
  *     if not range2:
@@ -24984,7 +24984,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_84_curve_curve_intersec
  *         range1 = (0.0, 1.0)
  *     if not range2:             # <<<<<<<<<<<<<<
  *         range2 = (0.0, 1.0)
- * 
+ *
 */
   __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_v_range2); if (unlikely((__pyx_t_6 < 0))) __PYX_ERR(0, 1321, __pyx_L1_error)
   __pyx_t_5 = (!__pyx_t_6);
@@ -24994,7 +24994,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_84_curve_curve_intersec
  *         range1 = (0.0, 1.0)
  *     if not range2:
  *         range2 = (0.0, 1.0)             # <<<<<<<<<<<<<<
- * 
+ *
  *     # If bounds don't intersect, go home
 */
     __Pyx_INCREF(__pyx_mstate_global->__pyx_tuple[1]);
@@ -25005,12 +25005,12 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_84_curve_curve_intersec
  *         range1 = (0.0, 1.0)
  *     if not range2:             # <<<<<<<<<<<<<<
  *         range2 = (0.0, 1.0)
- * 
+ *
 */
   }
 
   /* "fontTools/misc/bezierTools.py":1325
- * 
+ *
  *     # If bounds don't intersect, go home
  *     intersects, _ = sectRect(bounds1, bounds2)             # <<<<<<<<<<<<<<
  *     if not intersects:
@@ -25099,7 +25099,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_84_curve_curve_intersec
  *     intersects, _ = sectRect(bounds1, bounds2)
  *     if not intersects:             # <<<<<<<<<<<<<<
  *         return []
- * 
+ *
 */
   __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_v_intersects); if (unlikely((__pyx_t_5 < 0))) __PYX_ERR(0, 1326, __pyx_L1_error)
   __pyx_t_6 = (!__pyx_t_5);
@@ -25109,7 +25109,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_84_curve_curve_intersec
  *     intersects, _ = sectRect(bounds1, bounds2)
  *     if not intersects:
  *         return []             # <<<<<<<<<<<<<<
- * 
+ *
  *     def midpoint(r):
 */
     __Pyx_XDECREF(__pyx_r);
@@ -25124,16 +25124,16 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_84_curve_curve_intersec
  *     intersects, _ = sectRect(bounds1, bounds2)
  *     if not intersects:             # <<<<<<<<<<<<<<
  *         return []
- * 
+ *
 */
   }
 
   /* "fontTools/misc/bezierTools.py":1329
  *         return []
- * 
+ *
  *     def midpoint(r):             # <<<<<<<<<<<<<<
  *         return 0.5 * (r[0] + r[1])
- * 
+ *
 */
   __pyx_t_1 = __Pyx_CyFunction_New(&__pyx_mdef_9fontTools_4misc_11bezierTools_28_curve_curve_intersections_t_1midpoint, 0, __pyx_mstate_global->__pyx_n_u_curve_curve_intersections_t_loc, NULL, __pyx_mstate_global->__pyx_n_u_fontTools_misc_bezierTools, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[5])); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1329, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -25141,11 +25141,11 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_84_curve_curve_intersec
   __pyx_t_1 = 0;
 
   /* "fontTools/misc/bezierTools.py":1333
- * 
+ *
  *     # If they do overlap but they're tiny, approximate
  *     if rectArea(bounds1) < precision and rectArea(bounds2) < precision:             # <<<<<<<<<<<<<<
  *         return [(midpoint(range1), midpoint(range2))]
- * 
+ *
 */
   __pyx_t_2 = NULL;
   __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_rectArea); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1333, __pyx_L1_error)
@@ -25214,7 +25214,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_84_curve_curve_intersec
  *     # If they do overlap but they're tiny, approximate
  *     if rectArea(bounds1) < precision and rectArea(bounds2) < precision:
  *         return [(midpoint(range1), midpoint(range2))]             # <<<<<<<<<<<<<<
- * 
+ *
  *     c11, c12 = _split_segment_at_t(curve1, 0.5)
 */
     __Pyx_XDECREF(__pyx_r);
@@ -25240,17 +25240,17 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_84_curve_curve_intersec
     goto __pyx_L0;
 
     /* "fontTools/misc/bezierTools.py":1333
- * 
+ *
  *     # If they do overlap but they're tiny, approximate
  *     if rectArea(bounds1) < precision and rectArea(bounds2) < precision:             # <<<<<<<<<<<<<<
  *         return [(midpoint(range1), midpoint(range2))]
- * 
+ *
 */
   }
 
   /* "fontTools/misc/bezierTools.py":1336
  *         return [(midpoint(range1), midpoint(range2))]
- * 
+ *
  *     c11, c12 = _split_segment_at_t(curve1, 0.5)             # <<<<<<<<<<<<<<
  *     c11_range = (range1[0], midpoint(range1))
  *     c12_range = (midpoint(range1), range1[1])
@@ -25334,11 +25334,11 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_84_curve_curve_intersec
   __pyx_t_1 = 0;
 
   /* "fontTools/misc/bezierTools.py":1337
- * 
+ *
  *     c11, c12 = _split_segment_at_t(curve1, 0.5)
  *     c11_range = (range1[0], midpoint(range1))             # <<<<<<<<<<<<<<
  *     c12_range = (midpoint(range1), range1[1])
- * 
+ *
 */
   __pyx_t_3 = __Pyx_GetItemInt(__pyx_v_range1, 0, long, 1, __Pyx_PyLong_From_long, 0, 0, 1, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1337, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
@@ -25359,7 +25359,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_84_curve_curve_intersec
  *     c11, c12 = _split_segment_at_t(curve1, 0.5)
  *     c11_range = (range1[0], midpoint(range1))
  *     c12_range = (midpoint(range1), range1[1])             # <<<<<<<<<<<<<<
- * 
+ *
  *     c21, c22 = _split_segment_at_t(curve2, 0.5)
 */
   __pyx_t_2 = __pyx_pf_9fontTools_4misc_11bezierTools_28_curve_curve_intersections_t_midpoint(__pyx_v_midpoint, __pyx_v_range1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1338, __pyx_L1_error)
@@ -25379,7 +25379,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_84_curve_curve_intersec
 
   /* "fontTools/misc/bezierTools.py":1340
  *     c12_range = (midpoint(range1), range1[1])
- * 
+ *
  *     c21, c22 = _split_segment_at_t(curve2, 0.5)             # <<<<<<<<<<<<<<
  *     c21_range = (range2[0], midpoint(range2))
  *     c22_range = (midpoint(range2), range2[1])
@@ -25463,11 +25463,11 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_84_curve_curve_intersec
   __pyx_t_1 = 0;
 
   /* "fontTools/misc/bezierTools.py":1341
- * 
+ *
  *     c21, c22 = _split_segment_at_t(curve2, 0.5)
  *     c21_range = (range2[0], midpoint(range2))             # <<<<<<<<<<<<<<
  *     c22_range = (midpoint(range2), range2[1])
- * 
+ *
 */
   __pyx_t_3 = __Pyx_GetItemInt(__pyx_v_range2, 0, long, 1, __Pyx_PyLong_From_long, 0, 0, 1, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1341, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
@@ -25488,7 +25488,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_84_curve_curve_intersec
  *     c21, c22 = _split_segment_at_t(curve2, 0.5)
  *     c21_range = (range2[0], midpoint(range2))
  *     c22_range = (midpoint(range2), range2[1])             # <<<<<<<<<<<<<<
- * 
+ *
  *     found = []
 */
   __pyx_t_2 = __pyx_pf_9fontTools_4misc_11bezierTools_28_curve_curve_intersections_t_midpoint(__pyx_v_midpoint, __pyx_v_range2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1342, __pyx_L1_error)
@@ -25508,7 +25508,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_84_curve_curve_intersec
 
   /* "fontTools/misc/bezierTools.py":1344
  *     c22_range = (midpoint(range2), range2[1])
- * 
+ *
  *     found = []             # <<<<<<<<<<<<<<
  *     found.extend(
  *         _curve_curve_intersections_t(
@@ -25563,7 +25563,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_84_curve_curve_intersec
   }
 
   /* "fontTools/misc/bezierTools.py":1345
- * 
+ *
  *     found = []
  *     found.extend(             # <<<<<<<<<<<<<<
  *         _curve_curve_intersections_t(
@@ -25736,7 +25736,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_84_curve_curve_intersec
 
   /* "fontTools/misc/bezierTools.py":1366
  *     )
- * 
+ *
  *     unique_key = lambda ts: (int(ts[0] / precision), int(ts[1] / precision))             # <<<<<<<<<<<<<<
  *     seen = set()
  *     unique_values = []
@@ -25747,11 +25747,11 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_84_curve_curve_intersec
   __pyx_t_3 = 0;
 
   /* "fontTools/misc/bezierTools.py":1367
- * 
+ *
  *     unique_key = lambda ts: (int(ts[0] / precision), int(ts[1] / precision))
  *     seen = set()             # <<<<<<<<<<<<<<
  *     unique_values = []
- * 
+ *
 */
   __pyx_t_3 = PySet_New(0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1367, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
@@ -25762,7 +25762,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_84_curve_curve_intersec
  *     unique_key = lambda ts: (int(ts[0] / precision), int(ts[1] / precision))
  *     seen = set()
  *     unique_values = []             # <<<<<<<<<<<<<<
- * 
+ *
  *     for ts in found:
 */
   __pyx_t_3 = PyList_New(0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1368, __pyx_L1_error)
@@ -25772,7 +25772,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_84_curve_curve_intersec
 
   /* "fontTools/misc/bezierTools.py":1370
  *     unique_values = []
- * 
+ *
  *     for ts in found:             # <<<<<<<<<<<<<<
  *         key = unique_key(ts)
  *         if key in seen:
@@ -25795,7 +25795,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_84_curve_curve_intersec
     __pyx_t_2 = 0;
 
     /* "fontTools/misc/bezierTools.py":1371
- * 
+ *
  *     for ts in found:
  *         key = unique_key(ts)             # <<<<<<<<<<<<<<
  *         if key in seen:
@@ -25839,7 +25839,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_84_curve_curve_intersec
  *             continue
  *         seen.add(key)             # <<<<<<<<<<<<<<
  *         unique_values.append(ts)
- * 
+ *
 */
     __pyx_t_9 = PySet_Add(__pyx_v_seen, __pyx_v_key); if (unlikely(__pyx_t_9 == ((int)-1))) __PYX_ERR(0, 1374, __pyx_L1_error)
 
@@ -25847,14 +25847,14 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_84_curve_curve_intersec
  *             continue
  *         seen.add(key)
  *         unique_values.append(ts)             # <<<<<<<<<<<<<<
- * 
+ *
  *     return unique_values
 */
     __pyx_t_9 = __Pyx_PyList_Append(__pyx_v_unique_values, __pyx_v_ts); if (unlikely(__pyx_t_9 == ((int)-1))) __PYX_ERR(0, 1375, __pyx_L1_error)
 
     /* "fontTools/misc/bezierTools.py":1370
  *     unique_values = []
- * 
+ *
  *     for ts in found:             # <<<<<<<<<<<<<<
  *         key = unique_key(ts)
  *         if key in seen:
@@ -25865,10 +25865,10 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_84_curve_curve_intersec
 
   /* "fontTools/misc/bezierTools.py":1377
  *         unique_values.append(ts)
- * 
+ *
  *     return unique_values             # <<<<<<<<<<<<<<
- * 
- * 
+ *
+ *
 */
   __Pyx_XDECREF(__pyx_r);
   __Pyx_INCREF(__pyx_v_unique_values);
@@ -25876,8 +25876,8 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_84_curve_curve_intersec
   goto __pyx_L0;
 
   /* "fontTools/misc/bezierTools.py":1313
- * 
- * 
+ *
+ *
  * def _curve_curve_intersections_t(             # <<<<<<<<<<<<<<
  *     curve1, curve2, precision=1e-3, range1=None, range2=None
  * ):
@@ -25920,15 +25920,15 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_84_curve_curve_intersec
 }
 
 /* "fontTools/misc/bezierTools.py":1380
- * 
- * 
+ *
+ *
  * def _is_linelike(segment):             # <<<<<<<<<<<<<<
  *     maybeline = _alignment_transformation(segment).transformPoints(segment)
  *     return all(math.isclose(p[1], 0.0) for p in maybeline)
 */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_87_is_linelike(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_87_is_linelike(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -25937,7 +25937,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_9fontTools_4misc_11bezierTools_86_is_linelike, "_is_linelike(segment)");
 static PyMethodDef __pyx_mdef_9fontTools_4misc_11bezierTools_87_is_linelike = {"_is_linelike", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9fontTools_4misc_11bezierTools_87_is_linelike, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_9fontTools_4misc_11bezierTools_86_is_linelike};
-static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_87_is_linelike(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_87_is_linelike(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -26018,8 +26018,8 @@ static PyObject *__pyx_gb_9fontTools_4misc_11bezierTools_12_is_linelike_2generat
  * def _is_linelike(segment):
  *     maybeline = _alignment_transformation(segment).transformPoints(segment)
  *     return all(math.isclose(p[1], 0.0) for p in maybeline)             # <<<<<<<<<<<<<<
- * 
- * 
+ *
+ *
 */
 
 static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_12_is_linelike_genexpr(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_genexpr_arg_0) {
@@ -26212,8 +26212,8 @@ static PyObject *__pyx_gb_9fontTools_4misc_11bezierTools_12_is_linelike_2generat
 }
 
 /* "fontTools/misc/bezierTools.py":1380
- * 
- * 
+ *
+ *
  * def _is_linelike(segment):             # <<<<<<<<<<<<<<
  *     maybeline = _alignment_transformation(segment).transformPoints(segment)
  *     return all(math.isclose(p[1], 0.0) for p in maybeline)
@@ -26236,11 +26236,11 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_86_is_linelike(CYTHON_U
   __Pyx_RefNannySetupContext("_is_linelike", 0);
 
   /* "fontTools/misc/bezierTools.py":1381
- * 
+ *
  * def _is_linelike(segment):
  *     maybeline = _alignment_transformation(segment).transformPoints(segment)             # <<<<<<<<<<<<<<
  *     return all(math.isclose(p[1], 0.0) for p in maybeline)
- * 
+ *
 */
   __pyx_t_4 = NULL;
   __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_alignment_transformation); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 1381, __pyx_L1_error)
@@ -26283,8 +26283,8 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_86_is_linelike(CYTHON_U
  * def _is_linelike(segment):
  *     maybeline = _alignment_transformation(segment).transformPoints(segment)
  *     return all(math.isclose(p[1], 0.0) for p in maybeline)             # <<<<<<<<<<<<<<
- * 
- * 
+ *
+ *
 */
   __Pyx_XDECREF(__pyx_r);
   __pyx_t_1 = __pyx_pf_9fontTools_4misc_11bezierTools_12_is_linelike_genexpr(NULL, __pyx_v_maybeline); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1382, __pyx_L1_error)
@@ -26297,8 +26297,8 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_86_is_linelike(CYTHON_U
   goto __pyx_L0;
 
   /* "fontTools/misc/bezierTools.py":1380
- * 
- * 
+ *
+ *
  * def _is_linelike(segment):             # <<<<<<<<<<<<<<
  *     maybeline = _alignment_transformation(segment).transformPoints(segment)
  *     return all(math.isclose(p[1], 0.0) for p in maybeline)
@@ -26322,15 +26322,15 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_86_is_linelike(CYTHON_U
 }
 
 /* "fontTools/misc/bezierTools.py":1385
- * 
- * 
+ *
+ *
  * def curveCurveIntersections(curve1, curve2):             # <<<<<<<<<<<<<<
  *     """Finds intersections between a curve and a curve.
- * 
+ *
 */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_89curveCurveIntersections(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_89curveCurveIntersections(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -26339,7 +26339,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_9fontTools_4misc_11bezierTools_88curveCurveIntersections, "curveCurveIntersections(curve1, curve2)\n\nFinds intersections between a curve and a curve.\n\nArgs:\n    curve1: List of coordinates of the first curve segment as 2D tuples.\n    curve2: List of coordinates of the second curve segment as 2D tuples.\n\nReturns:\n    A list of ``Intersection`` objects, each object having ``pt``, ``t1``\n    and ``t2`` attributes containing the intersection point, time on first\n    segment and time on second segment respectively.\n\nExamples::\n    >>> curve1 = [ (10,100), (90,30), (40,140), (220,220) ]\n    >>> curve2 = [ (5,150), (180,20), (80,250), (210,190) ]\n    >>> intersections = curveCurveIntersections(curve1, curve2)\n    >>> len(intersections)\n    3\n    >>> intersections[0].pt\n    (81.7831487395506, 109.88904552375288)");
 static PyMethodDef __pyx_mdef_9fontTools_4misc_11bezierTools_89curveCurveIntersections = {"curveCurveIntersections", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9fontTools_4misc_11bezierTools_89curveCurveIntersections, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_9fontTools_4misc_11bezierTools_88curveCurveIntersections};
-static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_89curveCurveIntersections(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_89curveCurveIntersections(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -26674,7 +26674,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_88curveCurveIntersectio
  *     elif _is_linelike(curve2):
  *         line2 = curve2[0], curve2[-1]             # <<<<<<<<<<<<<<
  *         return curveLineIntersections(curve1, line2)
- * 
+ *
 */
     __pyx_t_2 = __Pyx_GetItemInt(__pyx_v_curve2, 0, long, 1, __Pyx_PyLong_From_long, 0, 0, 1, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1414, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
@@ -26695,7 +26695,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_88curveCurveIntersectio
  *     elif _is_linelike(curve2):
  *         line2 = curve2[0], curve2[-1]
  *         return curveLineIntersections(curve1, line2)             # <<<<<<<<<<<<<<
- * 
+ *
  *     intersection_ts = _curve_curve_intersections_t(curve1, curve2)
 */
     __Pyx_XDECREF(__pyx_r);
@@ -26737,7 +26737,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_88curveCurveIntersectio
 
   /* "fontTools/misc/bezierTools.py":1417
  *         return curveLineIntersections(curve1, line2)
- * 
+ *
  *     intersection_ts = _curve_curve_intersections_t(curve1, curve2)             # <<<<<<<<<<<<<<
  *     return [
  *         Intersection(pt=segmentPointAtT(curve1, ts[0]), t1=ts[0], t2=ts[1])
@@ -26769,7 +26769,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_88curveCurveIntersectio
   __pyx_t_3 = 0;
 
   /* "fontTools/misc/bezierTools.py":1418
- * 
+ *
  *     intersection_ts = _curve_curve_intersections_t(curve1, curve2)
  *     return [             # <<<<<<<<<<<<<<
  *         Intersection(pt=segmentPointAtT(curve1, ts[0]), t1=ts[0], t2=ts[1])
@@ -26785,7 +26785,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_88curveCurveIntersectio
  *         Intersection(pt=segmentPointAtT(curve1, ts[0]), t1=ts[0], t2=ts[1])
  *         for ts in intersection_ts             # <<<<<<<<<<<<<<
  *     ]
- * 
+ *
 */
     if (likely(PyList_CheckExact(__pyx_v_intersection_ts)) || PyTuple_CheckExact(__pyx_v_intersection_ts)) {
       __pyx_t_1 = __pyx_v_intersection_ts; __Pyx_INCREF(__pyx_t_1);
@@ -26916,7 +26916,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_88curveCurveIntersectio
  *         Intersection(pt=segmentPointAtT(curve1, ts[0]), t1=ts[0], t2=ts[1])
  *         for ts in intersection_ts             # <<<<<<<<<<<<<<
  *     ]
- * 
+ *
 */
     }
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -26932,11 +26932,11 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_88curveCurveIntersectio
   goto __pyx_L0;
 
   /* "fontTools/misc/bezierTools.py":1385
- * 
- * 
+ *
+ *
  * def curveCurveIntersections(curve1, curve2):             # <<<<<<<<<<<<<<
  *     """Finds intersections between a curve and a curve.
- * 
+ *
 */
 
   /* function exit code */
@@ -26963,15 +26963,15 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_88curveCurveIntersectio
 }
 
 /* "fontTools/misc/bezierTools.py":1424
- * 
- * 
+ *
+ *
  * def segmentSegmentIntersections(seg1, seg2):             # <<<<<<<<<<<<<<
  *     """Finds intersections between two segments.
- * 
+ *
 */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_91segmentSegmentIntersections(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_91segmentSegmentIntersections(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -26980,7 +26980,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_9fontTools_4misc_11bezierTools_90segmentSegmentIntersections, "segmentSegmentIntersections(seg1, seg2)\n\nFinds intersections between two segments.\n\nArgs:\n    seg1: List of coordinates of the first segment as 2D tuples.\n    seg2: List of coordinates of the second segment as 2D tuples.\n\nReturns:\n    A list of ``Intersection`` objects, each object having ``pt``, ``t1``\n    and ``t2`` attributes containing the intersection point, time on first\n    segment and time on second segment respectively.\n\nExamples::\n    >>> curve1 = [ (10,100), (90,30), (40,140), (220,220) ]\n    >>> curve2 = [ (5,150), (180,20), (80,250), (210,190) ]\n    >>> intersections = segmentSegmentIntersections(curve1, curve2)\n    >>> len(intersections)\n    3\n    >>> intersections[0].pt\n    (81.7831487395506, 109.88904552375288)\n    >>> curve3 = [ (100, 240), (30, 60), (210, 230), (160, 30) ]\n    >>> line  = [ (25, 260), (230, 20) ]\n    >>> intersections = segmentSegmentIntersections(curve3, line)\n    >>> len(intersections)\n    3\n    >>> intersections[0].pt\n    (84.9000930760723, 189.87306176459828)");
 static PyMethodDef __pyx_mdef_9fontTools_4misc_11bezierTools_91segmentSegmentIntersections = {"segmentSegmentIntersections", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9fontTools_4misc_11bezierTools_91segmentSegmentIntersections, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_9fontTools_4misc_11bezierTools_90segmentSegmentIntersections};
-static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_91segmentSegmentIntersections(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_91segmentSegmentIntersections(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -27322,7 +27322,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_90segmentSegmentInterse
   /*else*/ {
     __pyx_t_11 = NULL;
     __Pyx_INCREF(__pyx_builtin_ValueError);
-    __pyx_t_6 = __pyx_builtin_ValueError; 
+    __pyx_t_6 = __pyx_builtin_ValueError;
     __pyx_t_9 = 1;
     {
       PyObject *__pyx_callargs[2] = {__pyx_t_11, __pyx_mstate_global->__pyx_kp_u_Couldn_t_work_out_which_intersec};
@@ -27353,7 +27353,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_90segmentSegmentInterse
  *     if not swapped:
  *         return intersections             # <<<<<<<<<<<<<<
  *     return [Intersection(pt=i.pt, t1=i.t2, t2=i.t1) for i in intersections]
- * 
+ *
 */
     __Pyx_XDECREF(__pyx_r);
     __Pyx_INCREF(__pyx_v_intersections);
@@ -27373,8 +27373,8 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_90segmentSegmentInterse
  *     if not swapped:
  *         return intersections
  *     return [Intersection(pt=i.pt, t1=i.t2, t2=i.t1) for i in intersections]             # <<<<<<<<<<<<<<
- * 
- * 
+ *
+ *
 */
   __Pyx_XDECREF(__pyx_r);
   { /* enter inner scope */
@@ -27485,11 +27485,11 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_90segmentSegmentInterse
   goto __pyx_L0;
 
   /* "fontTools/misc/bezierTools.py":1424
- * 
- * 
+ *
+ *
  * def segmentSegmentIntersections(seg1, seg2):             # <<<<<<<<<<<<<<
  *     """Finds intersections between two segments.
- * 
+ *
 */
 
   /* function exit code */
@@ -27516,15 +27516,15 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_90segmentSegmentInterse
 }
 
 /* "fontTools/misc/bezierTools.py":1472
- * 
- * 
+ *
+ *
  * def _segmentrepr(obj):             # <<<<<<<<<<<<<<
  *     """
  *     >>> _segmentrepr([1, [2, 3], [], [[2, [3, 4], [0.1, 2.2]]]])
 */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_93_segmentrepr(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_93_segmentrepr(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -27533,7 +27533,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_9fontTools_4misc_11bezierTools_92_segmentrepr, "_segmentrepr(obj)\n\n>>> _segmentrepr([1, [2, 3], [], [[2, [3, 4], [0.1, 2.2]]]])\n'(1, (2, 3), (), ((2, (3, 4), (0.1, 2.2))))'");
 static PyMethodDef __pyx_mdef_9fontTools_4misc_11bezierTools_93_segmentrepr = {"_segmentrepr", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9fontTools_4misc_11bezierTools_93_segmentrepr, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_9fontTools_4misc_11bezierTools_92_segmentrepr};
-static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_93_segmentrepr(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_93_segmentrepr(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -27614,8 +27614,8 @@ static PyObject *__pyx_gb_9fontTools_4misc_11bezierTools_12_segmentrepr_2generat
  *         return "%g" % obj
  *     else:
  *         return "(%s)" % ", ".join(_segmentrepr(x) for x in it)             # <<<<<<<<<<<<<<
- * 
- * 
+ *
+ *
 */
 
 static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_12_segmentrepr_genexpr(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_genexpr_arg_0) {
@@ -27787,8 +27787,8 @@ static PyObject *__pyx_gb_9fontTools_4misc_11bezierTools_12_segmentrepr_2generat
 }
 
 /* "fontTools/misc/bezierTools.py":1472
- * 
- * 
+ *
+ *
  * def _segmentrepr(obj):             # <<<<<<<<<<<<<<
  *     """
  *     >>> _segmentrepr([1, [2, 3], [], [[2, [3, 4], [0.1, 2.2]]]])
@@ -27853,8 +27853,8 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_92_segmentrepr(CYTHON_U
  *         return "%g" % obj
  *     else:
  *         return "(%s)" % ", ".join(_segmentrepr(x) for x in it)             # <<<<<<<<<<<<<<
- * 
- * 
+ *
+ *
 */
     /*else:*/ {
       __Pyx_XDECREF(__pyx_r);
@@ -27932,8 +27932,8 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_92_segmentrepr(CYTHON_U
   }
 
   /* "fontTools/misc/bezierTools.py":1472
- * 
- * 
+ *
+ *
  * def _segmentrepr(obj):             # <<<<<<<<<<<<<<
  *     """
  *     >>> _segmentrepr([1, [2, 3], [], [[2, [3, 4], [0.1, 2.2]]]])
@@ -27956,15 +27956,15 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_92_segmentrepr(CYTHON_U
 }
 
 /* "fontTools/misc/bezierTools.py":1485
- * 
- * 
+ *
+ *
  * def printSegments(segments):             # <<<<<<<<<<<<<<
  *     """Helper for the doctests, displaying each segment in a list of
  *     segments on a single line as a tuple.
 */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_95printSegments(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_95printSegments(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -27973,7 +27973,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_9fontTools_4misc_11bezierTools_94printSegments, "printSegments(segments)\n\nHelper for the doctests, displaying each segment in a list of\nsegments on a single line as a tuple.");
 static PyMethodDef __pyx_mdef_9fontTools_4misc_11bezierTools_95printSegments = {"printSegments", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9fontTools_4misc_11bezierTools_95printSegments, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_9fontTools_4misc_11bezierTools_94printSegments};
-static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_95printSegments(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_4misc_11bezierTools_95printSegments(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -28073,7 +28073,7 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_94printSegments(CYTHON_
  *     """
  *     for segment in segments:             # <<<<<<<<<<<<<<
  *         print(_segmentrepr(segment))
- * 
+ *
 */
   if (likely(PyList_CheckExact(__pyx_v_segments)) || PyTuple_CheckExact(__pyx_v_segments)) {
     __pyx_t_1 = __pyx_v_segments; __Pyx_INCREF(__pyx_t_1);
@@ -28131,12 +28131,12 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_94printSegments(CYTHON_
  *     """
  *     for segment in segments:
  *         print(_segmentrepr(segment))             # <<<<<<<<<<<<<<
- * 
- * 
+ *
+ *
 */
     __pyx_t_5 = NULL;
     __Pyx_INCREF(__pyx_builtin_print);
-    __pyx_t_6 = __pyx_builtin_print; 
+    __pyx_t_6 = __pyx_builtin_print;
     __pyx_t_8 = NULL;
     __Pyx_GetModuleGlobalName(__pyx_t_9, __pyx_mstate_global->__pyx_n_u_segmentrepr); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 1490, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_9);
@@ -28177,14 +28177,14 @@ static PyObject *__pyx_pf_9fontTools_4misc_11bezierTools_94printSegments(CYTHON_
  *     """
  *     for segment in segments:             # <<<<<<<<<<<<<<
  *         print(_segmentrepr(segment))
- * 
+ *
 */
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
   /* "fontTools/misc/bezierTools.py":1485
- * 
- * 
+ *
+ *
  * def printSegments(segments):             # <<<<<<<<<<<<<<
  *     """Helper for the doctests, displaying each segment in a list of
  *     segments on a single line as a tuple.
@@ -30187,7 +30187,7 @@ __Pyx_RefNannySetupContext("PyInit_bezierTools", 0);
 
   /* "fontTools/misc/bezierTools.py":5
  * """
- * 
+ *
  * from fontTools.misc.arrayTools import calcBounds, sectRect, rectArea             # <<<<<<<<<<<<<<
  * from fontTools.misc.transform import Identity
  * import math
@@ -30212,7 +30212,7 @@ __Pyx_RefNannySetupContext("PyInit_bezierTools", 0);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
   /* "fontTools/misc/bezierTools.py":6
- * 
+ *
  * from fontTools.misc.arrayTools import calcBounds, sectRect, rectArea
  * from fontTools.misc.transform import Identity             # <<<<<<<<<<<<<<
  * import math
@@ -30234,7 +30234,7 @@ __Pyx_RefNannySetupContext("PyInit_bezierTools", 0);
  * from fontTools.misc.transform import Identity
  * import math             # <<<<<<<<<<<<<<
  * from collections import namedtuple
- * 
+ *
 */
   __pyx_t_2 = __Pyx_ImportDottedModule(__pyx_mstate_global->__pyx_n_u_math, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 7, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -30245,7 +30245,7 @@ __Pyx_RefNannySetupContext("PyInit_bezierTools", 0);
  * from fontTools.misc.transform import Identity
  * import math
  * from collections import namedtuple             # <<<<<<<<<<<<<<
- * 
+ *
  * try:
 */
   __pyx_t_2 = __Pyx_PyList_Pack(1, __pyx_mstate_global->__pyx_n_u_namedtuple); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 8, __pyx_L1_error)
@@ -30261,7 +30261,7 @@ __Pyx_RefNannySetupContext("PyInit_bezierTools", 0);
 
   /* "fontTools/misc/bezierTools.py":10
  * from collections import namedtuple
- * 
+ *
  * try:             # <<<<<<<<<<<<<<
  *     import cython
  * except (AttributeError, ImportError):
@@ -30271,7 +30271,7 @@ __Pyx_RefNannySetupContext("PyInit_bezierTools", 0);
     /*try:*/ {
 
       /* "fontTools/misc/bezierTools.py":11
- * 
+ *
  * try:
  *     import cython             # <<<<<<<<<<<<<<
  * except (AttributeError, ImportError):
@@ -30284,26 +30284,26 @@ __Pyx_RefNannySetupContext("PyInit_bezierTools", 0);
  *     # if cython not installed, use mock module with no-op decorators and types
  *     from fontTools.misc import cython
  * COMPILED = cython.compiled             # <<<<<<<<<<<<<<
- * 
- * 
+ *
+ *
 */
   if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_COMPILED, Py_True) < 0) __PYX_ERR(0, 15, __pyx_L1_error)
 
   /* "fontTools/misc/bezierTools.py":18
- * 
- * 
+ *
+ *
  * EPSILON = 1e-9             # <<<<<<<<<<<<<<
- * 
- * 
+ *
+ *
 */
   if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_EPSILON, __pyx_mstate_global->__pyx_float_1eneg_9) < 0) __PYX_ERR(0, 18, __pyx_L1_error)
 
   /* "fontTools/misc/bezierTools.py":21
- * 
- * 
+ *
+ *
  * Intersection = namedtuple("Intersection", ["pt", "t1", "t2"])             # <<<<<<<<<<<<<<
- * 
- * 
+ *
+ *
 */
   __pyx_t_2 = NULL;
   __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_namedtuple); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 21, __pyx_L1_error)
@@ -30324,8 +30324,8 @@ __Pyx_RefNannySetupContext("PyInit_bezierTools", 0);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
   /* "fontTools/misc/bezierTools.py":24
- * 
- * 
+ *
+ *
  * __all__ = [             # <<<<<<<<<<<<<<
  *     "approximateCubicArcLength",
  *     "approximateCubicArcLengthC",
@@ -30336,11 +30336,11 @@ __Pyx_RefNannySetupContext("PyInit_bezierTools", 0);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
   /* "fontTools/misc/bezierTools.py":56
- * 
- * 
+ *
+ *
  * def calcCubicArcLength(pt1, pt2, pt3, pt4, tolerance=0.005):             # <<<<<<<<<<<<<<
  *     """Calculates the arc length for a cubic Bezier segment.
- * 
+ *
 */
   __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_9fontTools_4misc_11bezierTools_1calcCubicArcLength, 0, __pyx_mstate_global->__pyx_n_u_calcCubicArcLength, NULL, __pyx_mstate_global->__pyx_n_u_fontTools_misc_bezierTools, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[9])); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 56, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
@@ -30349,8 +30349,8 @@ __Pyx_RefNannySetupContext("PyInit_bezierTools", 0);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
   /* "fontTools/misc/bezierTools.py":75
- * 
- * 
+ *
+ *
  * def _split_cubic_into_two(p0, p1, p2, p3):             # <<<<<<<<<<<<<<
  *     mid = (p0 + 3 * (p1 + p2) + p3) * 0.125
  *     deriv3 = (p3 + p2 - p1 - p0) * 0.125
@@ -30361,8 +30361,8 @@ __Pyx_RefNannySetupContext("PyInit_bezierTools", 0);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
   /* "fontTools/misc/bezierTools.py":84
- * 
- * 
+ *
+ *
  * @cython.returns(cython.double)             # <<<<<<<<<<<<<<
  * @cython.locals(
  *     p0=cython.complex,
@@ -30377,14 +30377,14 @@ __Pyx_RefNannySetupContext("PyInit_bezierTools", 0);
  * )
  * def calcCubicArcLengthC(pt1, pt2, pt3, pt4, tolerance=0.005):             # <<<<<<<<<<<<<<
  *     """Calculates the arc length for a cubic Bezier segment.
- * 
+ *
 */
   __pyx_t_3 = PyFloat_FromDouble(((double)0.005)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 115, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
 
   /* "fontTools/misc/bezierTools.py":104
- * 
- * 
+ *
+ *
  * @cython.returns(cython.double)             # <<<<<<<<<<<<<<
  * @cython.locals(
  *     pt1=cython.complex,
@@ -30400,29 +30400,29 @@ __Pyx_RefNannySetupContext("PyInit_bezierTools", 0);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
   /* "fontTools/misc/bezierTools.py":129
- * 
- * 
+ *
+ *
  * epsilonDigits = 6             # <<<<<<<<<<<<<<
  * epsilon = 1e-10
- * 
+ *
 */
   if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_epsilonDigits, __pyx_mstate_global->__pyx_int_6) < 0) __PYX_ERR(0, 129, __pyx_L1_error)
 
   /* "fontTools/misc/bezierTools.py":130
- * 
+ *
  * epsilonDigits = 6
  * epsilon = 1e-10             # <<<<<<<<<<<<<<
- * 
- * 
+ *
+ *
 */
   if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_epsilon, __pyx_mstate_global->__pyx_float_1eneg_10) < 0) __PYX_ERR(0, 130, __pyx_L1_error)
 
   /* "fontTools/misc/bezierTools.py":151
- * 
- * 
+ *
+ *
  * def calcQuadraticArcLength(pt1, pt2, pt3):             # <<<<<<<<<<<<<<
  *     """Calculates the arc length for a quadratic Bezier segment.
- * 
+ *
 */
   __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_9fontTools_4misc_11bezierTools_9calcQuadraticArcLength, 0, __pyx_mstate_global->__pyx_n_u_calcQuadraticArcLength, NULL, __pyx_mstate_global->__pyx_n_u_fontTools_misc_bezierTools, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[13])); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 151, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
@@ -30430,8 +30430,8 @@ __Pyx_RefNannySetupContext("PyInit_bezierTools", 0);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
   /* "fontTools/misc/bezierTools.py":186
- * 
- * 
+ *
+ *
  * @cython.returns(cython.double)             # <<<<<<<<<<<<<<
  * @cython.locals(
  *     pt1=cython.complex,
@@ -30442,11 +30442,11 @@ __Pyx_RefNannySetupContext("PyInit_bezierTools", 0);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
   /* "fontTools/misc/bezierTools.py":237
- * 
- * 
+ *
+ *
  * def approximateQuadraticArcLength(pt1, pt2, pt3):             # <<<<<<<<<<<<<<
  *     """Calculates the arc length for a quadratic Bezier segment.
- * 
+ *
 */
   __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_9fontTools_4misc_11bezierTools_13approximateQuadraticArcLength, 0, __pyx_mstate_global->__pyx_n_u_approximateQuadraticArcLength, NULL, __pyx_mstate_global->__pyx_n_u_fontTools_misc_bezierTools, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[15])); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 237, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
@@ -30454,8 +30454,8 @@ __Pyx_RefNannySetupContext("PyInit_bezierTools", 0);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
   /* "fontTools/misc/bezierTools.py":254
- * 
- * 
+ *
+ *
  * @cython.returns(cython.double)             # <<<<<<<<<<<<<<
  * @cython.locals(
  *     pt1=cython.complex,
@@ -30466,11 +30466,11 @@ __Pyx_RefNannySetupContext("PyInit_bezierTools", 0);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
   /* "fontTools/misc/bezierTools.py":298
- * 
- * 
+ *
+ *
  * def calcQuadraticBounds(pt1, pt2, pt3):             # <<<<<<<<<<<<<<
  *     """Calculates the bounding rectangle for a quadratic Bezier segment.
- * 
+ *
 */
   __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_9fontTools_4misc_11bezierTools_17calcQuadraticBounds, 0, __pyx_mstate_global->__pyx_n_u_calcQuadraticBounds, NULL, __pyx_mstate_global->__pyx_n_u_fontTools_misc_bezierTools, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[17])); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 298, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
@@ -30478,11 +30478,11 @@ __Pyx_RefNannySetupContext("PyInit_bezierTools", 0);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
   /* "fontTools/misc/bezierTools.py":332
- * 
- * 
+ *
+ *
  * def approximateCubicArcLength(pt1, pt2, pt3, pt4):             # <<<<<<<<<<<<<<
  *     """Approximates the arc length for a cubic Bezier segment.
- * 
+ *
 */
   __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_9fontTools_4misc_11bezierTools_19approximateCubicArcLength, 0, __pyx_mstate_global->__pyx_n_u_approximateCubicArcLength, NULL, __pyx_mstate_global->__pyx_n_u_fontTools_misc_bezierTools, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[18])); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 332, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
@@ -30490,8 +30490,8 @@ __Pyx_RefNannySetupContext("PyInit_bezierTools", 0);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
   /* "fontTools/misc/bezierTools.py":362
- * 
- * 
+ *
+ *
  * @cython.returns(cython.double)             # <<<<<<<<<<<<<<
  * @cython.locals(
  *     pt1=cython.complex,
@@ -30502,11 +30502,11 @@ __Pyx_RefNannySetupContext("PyInit_bezierTools", 0);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
   /* "fontTools/misc/bezierTools.py":412
- * 
- * 
+ *
+ *
  * def calcCubicBounds(pt1, pt2, pt3, pt4):             # <<<<<<<<<<<<<<
  *     """Calculates the bounding rectangle for a quadratic Bezier segment.
- * 
+ *
 */
   __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_9fontTools_4misc_11bezierTools_23calcCubicBounds, 0, __pyx_mstate_global->__pyx_n_u_calcCubicBounds, NULL, __pyx_mstate_global->__pyx_n_u_fontTools_misc_bezierTools, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[20])); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 412, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
@@ -30514,11 +30514,11 @@ __Pyx_RefNannySetupContext("PyInit_bezierTools", 0);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
   /* "fontTools/misc/bezierTools.py":450
- * 
- * 
+ *
+ *
  * def splitLine(pt1, pt2, where, isHorizontal):             # <<<<<<<<<<<<<<
  *     """Split a line at a given coordinate.
- * 
+ *
 */
   __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_9fontTools_4misc_11bezierTools_25splitLine, 0, __pyx_mstate_global->__pyx_n_u_splitLine, NULL, __pyx_mstate_global->__pyx_n_u_fontTools_misc_bezierTools, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[21])); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 450, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
@@ -30526,11 +30526,11 @@ __Pyx_RefNannySetupContext("PyInit_bezierTools", 0);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
   /* "fontTools/misc/bezierTools.py":507
- * 
- * 
+ *
+ *
  * def splitQuadratic(pt1, pt2, pt3, where, isHorizontal):             # <<<<<<<<<<<<<<
  *     """Split a quadratic Bezier curve at a given coordinate.
- * 
+ *
 */
   __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_9fontTools_4misc_11bezierTools_27splitQuadratic, 0, __pyx_mstate_global->__pyx_n_u_splitQuadratic, NULL, __pyx_mstate_global->__pyx_n_u_fontTools_misc_bezierTools, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[22])); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 507, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
@@ -30538,11 +30538,11 @@ __Pyx_RefNannySetupContext("PyInit_bezierTools", 0);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
   /* "fontTools/misc/bezierTools.py":552
- * 
- * 
+ *
+ *
  * def splitCubic(pt1, pt2, pt3, pt4, where, isHorizontal):             # <<<<<<<<<<<<<<
  *     """Split a cubic Bezier curve at a given coordinate.
- * 
+ *
 */
   __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_9fontTools_4misc_11bezierTools_29splitCubic, 0, __pyx_mstate_global->__pyx_n_u_splitCubic, NULL, __pyx_mstate_global->__pyx_n_u_fontTools_misc_bezierTools, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[23])); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 552, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
@@ -30550,11 +30550,11 @@ __Pyx_RefNannySetupContext("PyInit_bezierTools", 0);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
   /* "fontTools/misc/bezierTools.py":589
- * 
- * 
+ *
+ *
  * def splitQuadraticAtT(pt1, pt2, pt3, *ts):             # <<<<<<<<<<<<<<
  *     """Split a quadratic Bezier curve at one or more values of t.
- * 
+ *
 */
   __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_9fontTools_4misc_11bezierTools_31splitQuadraticAtT, 0, __pyx_mstate_global->__pyx_n_u_splitQuadraticAtT_2, NULL, __pyx_mstate_global->__pyx_n_u_fontTools_misc_bezierTools, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[24])); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 589, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
@@ -30562,11 +30562,11 @@ __Pyx_RefNannySetupContext("PyInit_bezierTools", 0);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
   /* "fontTools/misc/bezierTools.py":613
- * 
- * 
+ *
+ *
  * def splitCubicAtT(pt1, pt2, pt3, pt4, *ts):             # <<<<<<<<<<<<<<
  *     """Split a cubic Bezier curve at one or more values of t.
- * 
+ *
 */
   __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_9fontTools_4misc_11bezierTools_33splitCubicAtT, 0, __pyx_mstate_global->__pyx_n_u_splitCubicAtT_2, NULL, __pyx_mstate_global->__pyx_n_u_fontTools_misc_bezierTools, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[25])); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 613, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
@@ -30574,8 +30574,8 @@ __Pyx_RefNannySetupContext("PyInit_bezierTools", 0);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
   /* "fontTools/misc/bezierTools.py":644
- * 
- * 
+ *
+ *
  * @cython.locals(             # <<<<<<<<<<<<<<
  *     pt1=cython.complex,
  *     pt2=cython.complex,
@@ -30586,8 +30586,8 @@ __Pyx_RefNannySetupContext("PyInit_bezierTools", 0);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
   /* "fontTools/misc/bezierTools.py":668
- * 
- * 
+ *
+ *
  * @cython.returns(cython.complex)             # <<<<<<<<<<<<<<
  * @cython.locals(
  *     t=cython.double,
@@ -30598,8 +30598,8 @@ __Pyx_RefNannySetupContext("PyInit_bezierTools", 0);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
   /* "fontTools/misc/bezierTools.py":708
- * 
- * 
+ *
+ *
  * def _splitQuadraticAtT(a, b, c, *ts):             # <<<<<<<<<<<<<<
  *     ts = list(ts)
  *     segments = []
@@ -30610,8 +30610,8 @@ __Pyx_RefNannySetupContext("PyInit_bezierTools", 0);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
   /* "fontTools/misc/bezierTools.py":735
- * 
- * 
+ *
+ *
  * def _splitCubicAtT(a, b, c, d, *ts):             # <<<<<<<<<<<<<<
  *     ts = list(ts)
  *     ts.insert(0, 0.0)
@@ -30622,8 +30622,8 @@ __Pyx_RefNannySetupContext("PyInit_bezierTools", 0);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
   /* "fontTools/misc/bezierTools.py":770
- * 
- * 
+ *
+ *
  * @cython.locals(             # <<<<<<<<<<<<<<
  *     a=cython.complex,
  *     b=cython.complex,
@@ -30635,10 +30635,10 @@ __Pyx_RefNannySetupContext("PyInit_bezierTools", 0);
 
   /* "fontTools/misc/bezierTools.py":812
  * #
- * 
+ *
  * from math import sqrt, acos, cos, pi             # <<<<<<<<<<<<<<
- * 
- * 
+ *
+ *
 */
   __pyx_t_3 = __Pyx_PyList_Pack(4, __pyx_mstate_global->__pyx_n_u_sqrt, __pyx_mstate_global->__pyx_n_u_acos, __pyx_mstate_global->__pyx_n_u_cos, __pyx_mstate_global->__pyx_n_u_pi); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 812, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
@@ -30664,11 +30664,11 @@ __Pyx_RefNannySetupContext("PyInit_bezierTools", 0);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
   /* "fontTools/misc/bezierTools.py":815
- * 
- * 
+ *
+ *
  * def solveQuadratic(a, b, c, sqrt=sqrt):             # <<<<<<<<<<<<<<
  *     """Solve a quadratic equation.
- * 
+ *
 */
   __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_9fontTools_4misc_11bezierTools_47solveQuadratic, 0, __pyx_mstate_global->__pyx_n_u_solveQuadratic, NULL, __pyx_mstate_global->__pyx_n_u_fontTools_misc_bezierTools, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[29])); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 815, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
@@ -30683,11 +30683,11 @@ __Pyx_RefNannySetupContext("PyInit_bezierTools", 0);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
   /* "fontTools/misc/bezierTools.py":848
- * 
- * 
+ *
+ *
  * def solveCubic(a, b, c, d):             # <<<<<<<<<<<<<<
  *     """Solve a cubic equation.
- * 
+ *
 */
   __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_9fontTools_4misc_11bezierTools_49solveCubic, 0, __pyx_mstate_global->__pyx_n_u_solveCubic, NULL, __pyx_mstate_global->__pyx_n_u_fontTools_misc_bezierTools, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[30])); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 848, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
@@ -30695,8 +30695,8 @@ __Pyx_RefNannySetupContext("PyInit_bezierTools", 0);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
   /* "fontTools/misc/bezierTools.py":945
- * 
- * 
+ *
+ *
  * def calcQuadraticParameters(pt1, pt2, pt3):             # <<<<<<<<<<<<<<
  *     x2, y2 = pt2
  *     x3, y3 = pt3
@@ -30707,8 +30707,8 @@ __Pyx_RefNannySetupContext("PyInit_bezierTools", 0);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
   /* "fontTools/misc/bezierTools.py":956
- * 
- * 
+ *
+ *
  * def calcCubicParameters(pt1, pt2, pt3, pt4):             # <<<<<<<<<<<<<<
  *     x2, y2 = pt2
  *     x3, y3 = pt3
@@ -30719,8 +30719,8 @@ __Pyx_RefNannySetupContext("PyInit_bezierTools", 0);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
   /* "fontTools/misc/bezierTools.py":988
- * 
- * 
+ *
+ *
  * def calcQuadraticPoints(a, b, c):             # <<<<<<<<<<<<<<
  *     ax, ay = a
  *     bx, by = b
@@ -30731,8 +30731,8 @@ __Pyx_RefNannySetupContext("PyInit_bezierTools", 0);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
   /* "fontTools/misc/bezierTools.py":1001
- * 
- * 
+ *
+ *
  * def calcCubicPoints(a, b, c, d):             # <<<<<<<<<<<<<<
  *     ax, ay = a
  *     bx, by = b
@@ -30743,11 +30743,11 @@ __Pyx_RefNannySetupContext("PyInit_bezierTools", 0);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
   /* "fontTools/misc/bezierTools.py":1040
- * 
- * 
+ *
+ *
  * def linePointAtT(pt1, pt2, t):             # <<<<<<<<<<<<<<
  *     """Finds the point at time `t` on a line.
- * 
+ *
 */
   __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_9fontTools_4misc_11bezierTools_59linePointAtT, 0, __pyx_mstate_global->__pyx_n_u_linePointAtT, NULL, __pyx_mstate_global->__pyx_n_u_fontTools_misc_bezierTools, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[35])); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1040, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
@@ -30755,11 +30755,11 @@ __Pyx_RefNannySetupContext("PyInit_bezierTools", 0);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
   /* "fontTools/misc/bezierTools.py":1053
- * 
- * 
+ *
+ *
  * def quadraticPointAtT(pt1, pt2, pt3, t):             # <<<<<<<<<<<<<<
  *     """Finds the point at time `t` on a quadratic curve.
- * 
+ *
 */
   __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_9fontTools_4misc_11bezierTools_61quadraticPointAtT, 0, __pyx_mstate_global->__pyx_n_u_quadraticPointAtT, NULL, __pyx_mstate_global->__pyx_n_u_fontTools_misc_bezierTools, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[36])); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1053, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
@@ -30767,11 +30767,11 @@ __Pyx_RefNannySetupContext("PyInit_bezierTools", 0);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
   /* "fontTools/misc/bezierTools.py":1068
- * 
- * 
+ *
+ *
  * def cubicPointAtT(pt1, pt2, pt3, pt4, t):             # <<<<<<<<<<<<<<
  *     """Finds the point at time `t` on a cubic curve.
- * 
+ *
 */
   __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_9fontTools_4misc_11bezierTools_63cubicPointAtT, 0, __pyx_mstate_global->__pyx_n_u_cubicPointAtT, NULL, __pyx_mstate_global->__pyx_n_u_fontTools_misc_bezierTools, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[37])); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1068, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
@@ -30779,8 +30779,8 @@ __Pyx_RefNannySetupContext("PyInit_bezierTools", 0);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
   /* "fontTools/misc/bezierTools.py":1094
- * 
- * 
+ *
+ *
  * @cython.returns(cython.complex)             # <<<<<<<<<<<<<<
  * @cython.locals(
  *     t=cython.double,
@@ -30791,8 +30791,8 @@ __Pyx_RefNannySetupContext("PyInit_bezierTools", 0);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
   /* "fontTools/misc/bezierTools.py":1119
- * 
- * 
+ *
+ *
  * def segmentPointAtT(seg, t):             # <<<<<<<<<<<<<<
  *     if len(seg) == 2:
  *         return linePointAtT(*seg, t)
@@ -30803,8 +30803,8 @@ __Pyx_RefNannySetupContext("PyInit_bezierTools", 0);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
   /* "fontTools/misc/bezierTools.py":1134
- * 
- * 
+ *
+ *
  * def _line_t_of_pt(s, e, pt):             # <<<<<<<<<<<<<<
  *     sx, sy = s
  *     ex, ey = e
@@ -30815,8 +30815,8 @@ __Pyx_RefNannySetupContext("PyInit_bezierTools", 0);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
   /* "fontTools/misc/bezierTools.py":1148
- * 
- * 
+ *
+ *
  * def _both_points_are_on_same_side_of_origin(a, b, origin):             # <<<<<<<<<<<<<<
  *     xDiff = (a[0] - origin[0]) * (b[0] - origin[0])
  *     yDiff = (a[1] - origin[1]) * (b[1] - origin[1])
@@ -30827,11 +30827,11 @@ __Pyx_RefNannySetupContext("PyInit_bezierTools", 0);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
   /* "fontTools/misc/bezierTools.py":1154
- * 
- * 
+ *
+ *
  * def lineLineIntersections(s1, e1, s2, e2):             # <<<<<<<<<<<<<<
  *     """Finds intersections between two line segments.
- * 
+ *
 */
   __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_9fontTools_4misc_11bezierTools_73lineLineIntersections, 0, __pyx_mstate_global->__pyx_n_u_lineLineIntersections, NULL, __pyx_mstate_global->__pyx_n_u_fontTools_misc_bezierTools, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[42])); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1154, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
@@ -30839,8 +30839,8 @@ __Pyx_RefNannySetupContext("PyInit_bezierTools", 0);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
   /* "fontTools/misc/bezierTools.py":1232
- * 
- * 
+ *
+ *
  * def _alignment_transformation(segment):             # <<<<<<<<<<<<<<
  *     # Returns a transformation which aligns a segment horizontally at the
  *     # origin. Apply this transformation to curves and root-find to find
@@ -30851,8 +30851,8 @@ __Pyx_RefNannySetupContext("PyInit_bezierTools", 0);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
   /* "fontTools/misc/bezierTools.py":1242
- * 
- * 
+ *
+ *
  * def _curve_line_intersections_t(curve, line):             # <<<<<<<<<<<<<<
  *     aligned_curve = _alignment_transformation(line).transformPoints(curve)
  *     if len(curve) == 3:
@@ -30863,11 +30863,11 @@ __Pyx_RefNannySetupContext("PyInit_bezierTools", 0);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
   /* "fontTools/misc/bezierTools.py":1255
- * 
- * 
+ *
+ *
  * def curveLineIntersections(curve, line):             # <<<<<<<<<<<<<<
  *     """Finds intersections between a curve and a line.
- * 
+ *
 */
   __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_9fontTools_4misc_11bezierTools_79curveLineIntersections, 0, __pyx_mstate_global->__pyx_n_u_curveLineIntersections, NULL, __pyx_mstate_global->__pyx_n_u_fontTools_misc_bezierTools, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[45])); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1255, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
@@ -30875,8 +30875,8 @@ __Pyx_RefNannySetupContext("PyInit_bezierTools", 0);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
   /* "fontTools/misc/bezierTools.py":1293
- * 
- * 
+ *
+ *
  * def _curve_bounds(c):             # <<<<<<<<<<<<<<
  *     if len(c) == 3:
  *         return calcQuadraticBounds(*c)
@@ -30887,8 +30887,8 @@ __Pyx_RefNannySetupContext("PyInit_bezierTools", 0);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
   /* "fontTools/misc/bezierTools.py":1301
- * 
- * 
+ *
+ *
  * def _split_segment_at_t(c, t):             # <<<<<<<<<<<<<<
  *     if len(c) == 2:
  *         s, e = c
@@ -30899,8 +30899,8 @@ __Pyx_RefNannySetupContext("PyInit_bezierTools", 0);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
   /* "fontTools/misc/bezierTools.py":1313
- * 
- * 
+ *
+ *
  * def _curve_curve_intersections_t(             # <<<<<<<<<<<<<<
  *     curve1, curve2, precision=1e-3, range1=None, range2=None
  * ):
@@ -30912,8 +30912,8 @@ __Pyx_RefNannySetupContext("PyInit_bezierTools", 0);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
   /* "fontTools/misc/bezierTools.py":1380
- * 
- * 
+ *
+ *
  * def _is_linelike(segment):             # <<<<<<<<<<<<<<
  *     maybeline = _alignment_transformation(segment).transformPoints(segment)
  *     return all(math.isclose(p[1], 0.0) for p in maybeline)
@@ -30924,11 +30924,11 @@ __Pyx_RefNannySetupContext("PyInit_bezierTools", 0);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
   /* "fontTools/misc/bezierTools.py":1385
- * 
- * 
+ *
+ *
  * def curveCurveIntersections(curve1, curve2):             # <<<<<<<<<<<<<<
  *     """Finds intersections between a curve and a curve.
- * 
+ *
 */
   __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_9fontTools_4misc_11bezierTools_89curveCurveIntersections, 0, __pyx_mstate_global->__pyx_n_u_curveCurveIntersections, NULL, __pyx_mstate_global->__pyx_n_u_fontTools_misc_bezierTools, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[50])); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1385, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
@@ -30936,11 +30936,11 @@ __Pyx_RefNannySetupContext("PyInit_bezierTools", 0);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
   /* "fontTools/misc/bezierTools.py":1424
- * 
- * 
+ *
+ *
  * def segmentSegmentIntersections(seg1, seg2):             # <<<<<<<<<<<<<<
  *     """Finds intersections between two segments.
- * 
+ *
 */
   __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_9fontTools_4misc_11bezierTools_91segmentSegmentIntersections, 0, __pyx_mstate_global->__pyx_n_u_segmentSegmentIntersections, NULL, __pyx_mstate_global->__pyx_n_u_fontTools_misc_bezierTools, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[51])); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1424, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
@@ -30948,8 +30948,8 @@ __Pyx_RefNannySetupContext("PyInit_bezierTools", 0);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
   /* "fontTools/misc/bezierTools.py":1472
- * 
- * 
+ *
+ *
  * def _segmentrepr(obj):             # <<<<<<<<<<<<<<
  *     """
  *     >>> _segmentrepr([1, [2, 3], [], [[2, [3, 4], [0.1, 2.2]]]])
@@ -30960,8 +30960,8 @@ __Pyx_RefNannySetupContext("PyInit_bezierTools", 0);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
   /* "fontTools/misc/bezierTools.py":1485
- * 
- * 
+ *
+ *
  * def printSegments(segments):             # <<<<<<<<<<<<<<
  *     """Helper for the doctests, displaying each segment in a list of
  *     segments on a single line as a tuple.
@@ -30972,8 +30972,8 @@ __Pyx_RefNannySetupContext("PyInit_bezierTools", 0);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
   /* "fontTools/misc/bezierTools.py":1493
- * 
- * 
+ *
+ *
  * if __name__ == "__main__":             # <<<<<<<<<<<<<<
  *     import sys
  *     import doctest
@@ -30985,11 +30985,11 @@ __Pyx_RefNannySetupContext("PyInit_bezierTools", 0);
   if (__pyx_t_9) {
 
     /* "fontTools/misc/bezierTools.py":1494
- * 
+ *
  * if __name__ == "__main__":
  *     import sys             # <<<<<<<<<<<<<<
  *     import doctest
- * 
+ *
 */
     __pyx_t_6 = __Pyx_ImportDottedModule(__pyx_mstate_global->__pyx_n_u_sys, NULL); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1494, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
@@ -31000,7 +31000,7 @@ __Pyx_RefNannySetupContext("PyInit_bezierTools", 0);
  * if __name__ == "__main__":
  *     import sys
  *     import doctest             # <<<<<<<<<<<<<<
- * 
+ *
  *     sys.exit(doctest.testmod().failed)
 */
     __pyx_t_6 = __Pyx_ImportDottedModule(__pyx_mstate_global->__pyx_n_u_doctest, NULL); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1495, __pyx_L1_error)
@@ -31010,7 +31010,7 @@ __Pyx_RefNannySetupContext("PyInit_bezierTools", 0);
 
     /* "fontTools/misc/bezierTools.py":1497
  *     import doctest
- * 
+ *
  *     sys.exit(doctest.testmod().failed)             # <<<<<<<<<<<<<<
 */
     __pyx_t_3 = NULL;
@@ -31050,8 +31050,8 @@ __Pyx_RefNannySetupContext("PyInit_bezierTools", 0);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
     /* "fontTools/misc/bezierTools.py":1493
- * 
- * 
+ *
+ *
  * if __name__ == "__main__":             # <<<<<<<<<<<<<<
  *     import sys
  *     import doctest
@@ -31527,7 +31527,7 @@ static int __Pyx_InitCachedConstants(__pyx_mstatetype *__pyx_mstate) {
  *     split[0] = (pt1, *split[0][1:])
  *     split[-1] = (*split[-1][:-1], pt4)             # <<<<<<<<<<<<<<
  *     return split
- * 
+ *
 */
   __pyx_mstate_global->__pyx_slice[1] = PySlice_New(Py_None, __pyx_mstate_global->__pyx_int_neg_1, Py_None); if (unlikely(!__pyx_mstate_global->__pyx_slice[1])) __PYX_ERR(0, 640, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_mstate_global->__pyx_slice[1]);
@@ -31545,7 +31545,7 @@ static int __Pyx_InitCachedConstants(__pyx_mstatetype *__pyx_mstate) {
   __Pyx_GIVEREF(__pyx_mstate_global->__pyx_tuple[0]);
 
   /* "fontTools/misc/bezierTools.py":1320
- * 
+ *
  *     if not range1:
  *         range1 = (0.0, 1.0)             # <<<<<<<<<<<<<<
  *     if not range2:
@@ -31556,19 +31556,19 @@ static int __Pyx_InitCachedConstants(__pyx_mstatetype *__pyx_mstate) {
   __Pyx_GIVEREF(__pyx_mstate_global->__pyx_tuple[1]);
 
   /* "fontTools/misc/bezierTools.py":56
- * 
- * 
+ *
+ *
  * def calcCubicArcLength(pt1, pt2, pt3, pt4, tolerance=0.005):             # <<<<<<<<<<<<<<
  *     """Calculates the arc length for a cubic Bezier segment.
- * 
+ *
 */
   __pyx_mstate_global->__pyx_tuple[2] = PyTuple_Pack(1, ((PyObject*)__pyx_mstate_global->__pyx_float_0_005)); if (unlikely(!__pyx_mstate_global->__pyx_tuple[2])) __PYX_ERR(0, 56, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_mstate_global->__pyx_tuple[2]);
   __Pyx_GIVEREF(__pyx_mstate_global->__pyx_tuple[2]);
 
   /* "fontTools/misc/bezierTools.py":1313
- * 
- * 
+ *
+ *
  * def _curve_curve_intersections_t(             # <<<<<<<<<<<<<<
  *     curve1, curve2, precision=1e-3, range1=None, range2=None
  * ):
@@ -33326,8 +33326,8 @@ static PyObject* __Pyx_Unpacked___Pyx_PyLong_MultiplyCObj(PyObject *op1, PyObjec
         return PyLong_FromLongLong(llx);
 #endif
     return __Pyx_Fallback___Pyx_PyLong_MultiplyCObj(op1, op2, inplace);
-    
-    
+
+
 }
 #endif
 static PyObject* __Pyx_Float___Pyx_PyLong_MultiplyCObj(PyObject *float_val, long intval, int zerodivision_check) {
@@ -33335,7 +33335,7 @@ static PyObject* __Pyx_Float___Pyx_PyLong_MultiplyCObj(PyObject *float_val, long
     const long a = intval;
     double b = __Pyx_PyFloat_AS_DOUBLE(float_val);
         double result;
-        
+
         result = ((double)a) * (double)b;
         return PyFloat_FromDouble(result);
 }
@@ -33456,7 +33456,7 @@ static PyObject* __Pyx_Unpacked___Pyx_PyLong_TrueDivideObjC(PyObject *op1, PyObj
             }
             return PyLong_Type.tp_as_number->nb_true_divide(op1, op2);
         return PyLong_FromLong(x);
-    
+
 }
 #endif
 static PyObject* __Pyx_Float___Pyx_PyLong_TrueDivideObjC(PyObject *float_val, long intval, int zerodivision_check) {
@@ -33464,7 +33464,7 @@ static PyObject* __Pyx_Float___Pyx_PyLong_TrueDivideObjC(PyObject *float_val, lo
     const long b = intval;
     double a = __Pyx_PyFloat_AS_DOUBLE(float_val);
         double result;
-        
+
         result = ((double)a) / (double)b;
         return PyFloat_FromDouble(result);
 }
@@ -36039,8 +36039,8 @@ static PyObject* __Pyx_Unpacked___Pyx_PyLong_AddObjC(PyObject *op1, PyObject *op
         return PyLong_FromLongLong(llx);
 #endif
     return __Pyx_Fallback___Pyx_PyLong_AddObjC(op1, op2, inplace);
-    
-    
+
+
 }
 #endif
 static PyObject* __Pyx_Float___Pyx_PyLong_AddObjC(PyObject *float_val, long intval, int zerodivision_check) {
@@ -36048,7 +36048,7 @@ static PyObject* __Pyx_Float___Pyx_PyLong_AddObjC(PyObject *float_val, long intv
     const long b = intval;
     double a = __Pyx_PyFloat_AS_DOUBLE(float_val);
         double result;
-        
+
         result = ((double)a) + (double)b;
         return PyFloat_FromDouble(result);
 }
@@ -36106,13 +36106,13 @@ static PyObject* __Pyx_PyFloat_TrueDivideObjC(PyObject *op1, PyObject *op2, doub
     CYTHON_UNUSED_VAR(zerodivision_check);
     if (likely(PyFloat_CheckExact(op1))) {
         a = __Pyx_PyFloat_AS_DOUBLE(op1);
-        
+
     } else
     if (likely(PyLong_CheckExact(op1))) {
         #if CYTHON_USE_PYLONG_INTERNALS
         if (__Pyx_PyLong_IsZero(op1)) {
             a = 0.0;
-            
+
         } else if (__Pyx_PyLong_IsCompact(op1)) {
             a = (double) __Pyx_PyLong_CompactValue(op1);
         } else {
@@ -36319,13 +36319,13 @@ static int __Pyx_PyFloat_BoolEqObjC(PyObject *op1, PyObject *op2, double floatva
     }
     if (likely(PyFloat_CheckExact(op1))) {
         a = __Pyx_PyFloat_AS_DOUBLE(op1);
-        
+
     } else
     if (likely(PyLong_CheckExact(op1))) {
         #if CYTHON_USE_PYLONG_INTERNALS
         if (__Pyx_PyLong_IsZero(op1)) {
             a = 0.0;
-            
+
         } else if (__Pyx_PyLong_IsCompact(op1)) {
             a = (double) __Pyx_PyLong_CompactValue(op1);
         } else {
@@ -36496,8 +36496,8 @@ static PyObject* __Pyx_Unpacked___Pyx_PyLong_SubtractCObj(PyObject *op1, PyObjec
         return PyLong_FromLongLong(llx);
 #endif
     return __Pyx_Fallback___Pyx_PyLong_SubtractCObj(op1, op2, inplace);
-    
-    
+
+
 }
 #endif
 static PyObject* __Pyx_Float___Pyx_PyLong_SubtractCObj(PyObject *float_val, long intval, int zerodivision_check) {
@@ -36505,7 +36505,7 @@ static PyObject* __Pyx_Float___Pyx_PyLong_SubtractCObj(PyObject *float_val, long
     const long a = intval;
     double b = __Pyx_PyFloat_AS_DOUBLE(float_val);
         double result;
-        
+
         result = ((double)a) - (double)b;
         return PyFloat_FromDouble(result);
 }

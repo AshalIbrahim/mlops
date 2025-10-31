@@ -29,11 +29,11 @@ services:
     volumes:
       - ./mlruns:/app/mlruns
     command: >
-      sh -c "pip install mlflow && 
-             mlflow server 
-             --backend-store-uri sqlite:///mlflow.db 
-             --default-artifact-root file:/app/mlruns 
-             --host 0.0.0.0 
+      sh -c "pip install mlflow &&
+             mlflow server
+             --backend-store-uri sqlite:///mlflow.db
+             --default-artifact-root file:/app/mlruns
+             --host 0.0.0.0
              --port 5000"
     ports:
       - "5000:5000"

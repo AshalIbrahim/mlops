@@ -2811,14 +2811,14 @@ static CYTHON_SMALL_CODE int __pyx_m_traverse(PyObject *m, visitproc visit, void
 
 /* "fontTools/pens/momentsPen.py":16
  * class MomentsPen(BasePen):
- * 
+ *
  *     def __init__(self, glyphset=None):             # <<<<<<<<<<<<<<
  *         BasePen.__init__(self, glyphset)
- * 
+ *
 */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_9fontTools_4pens_10momentsPen_10MomentsPen_1__init__(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_4pens_10momentsPen_10MomentsPen_1__init__(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -2827,7 +2827,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_9fontTools_4pens_10momentsPen_10MomentsPen___init__, "MomentsPen.__init__(self, glyphset=None)");
 static PyMethodDef __pyx_mdef_9fontTools_4pens_10momentsPen_10MomentsPen_1__init__ = {"__init__", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9fontTools_4pens_10momentsPen_10MomentsPen_1__init__, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_9fontTools_4pens_10momentsPen_10MomentsPen___init__};
-static PyObject *__pyx_pw_9fontTools_4pens_10momentsPen_10MomentsPen_1__init__(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_4pens_10momentsPen_10MomentsPen_1__init__(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -2932,10 +2932,10 @@ static PyObject *__pyx_pf_9fontTools_4pens_10momentsPen_10MomentsPen___init__(CY
   __Pyx_RefNannySetupContext("__init__", 0);
 
   /* "fontTools/pens/momentsPen.py":17
- * 
+ *
  *     def __init__(self, glyphset=None):
  *         BasePen.__init__(self, glyphset)             # <<<<<<<<<<<<<<
- * 
+ *
  *         self.area = 0
 */
   __pyx_t_2 = NULL;
@@ -2968,7 +2968,7 @@ static PyObject *__pyx_pf_9fontTools_4pens_10momentsPen_10MomentsPen___init__(CY
 
   /* "fontTools/pens/momentsPen.py":19
  *         BasePen.__init__(self, glyphset)
- * 
+ *
  *         self.area = 0             # <<<<<<<<<<<<<<
  *         self.momentX = 0
  *         self.momentY = 0
@@ -2976,7 +2976,7 @@ static PyObject *__pyx_pf_9fontTools_4pens_10momentsPen_10MomentsPen___init__(CY
   if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_area, __pyx_mstate_global->__pyx_int_0) < 0) __PYX_ERR(0, 19, __pyx_L1_error)
 
   /* "fontTools/pens/momentsPen.py":20
- * 
+ *
  *         self.area = 0
  *         self.momentX = 0             # <<<<<<<<<<<<<<
  *         self.momentY = 0
@@ -3007,7 +3007,7 @@ static PyObject *__pyx_pf_9fontTools_4pens_10momentsPen_10MomentsPen___init__(CY
  *         self.momentXX = 0
  *         self.momentXY = 0             # <<<<<<<<<<<<<<
  *         self.momentYY = 0
- * 
+ *
 */
   if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_momentXY, __pyx_mstate_global->__pyx_int_0) < 0) __PYX_ERR(0, 23, __pyx_L1_error)
 
@@ -3015,17 +3015,17 @@ static PyObject *__pyx_pf_9fontTools_4pens_10momentsPen_10MomentsPen___init__(CY
  *         self.momentXX = 0
  *         self.momentXY = 0
  *         self.momentYY = 0             # <<<<<<<<<<<<<<
- * 
+ *
  *     def _moveTo(self, p0):
 */
   if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_momentYY, __pyx_mstate_global->__pyx_int_0) < 0) __PYX_ERR(0, 24, __pyx_L1_error)
 
   /* "fontTools/pens/momentsPen.py":16
  * class MomentsPen(BasePen):
- * 
+ *
  *     def __init__(self, glyphset=None):             # <<<<<<<<<<<<<<
  *         BasePen.__init__(self, glyphset)
- * 
+ *
 */
 
   /* function exit code */
@@ -3046,14 +3046,14 @@ static PyObject *__pyx_pf_9fontTools_4pens_10momentsPen_10MomentsPen___init__(CY
 
 /* "fontTools/pens/momentsPen.py":26
  *         self.momentYY = 0
- * 
+ *
  *     def _moveTo(self, p0):             # <<<<<<<<<<<<<<
  *         self._startPoint = p0
- * 
+ *
 */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_9fontTools_4pens_10momentsPen_10MomentsPen_3_moveTo(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_4pens_10momentsPen_10MomentsPen_3_moveTo(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -3062,7 +3062,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_9fontTools_4pens_10momentsPen_10MomentsPen_2_moveTo, "MomentsPen._moveTo(self, p0)");
 static PyMethodDef __pyx_mdef_9fontTools_4pens_10momentsPen_10MomentsPen_3_moveTo = {"_moveTo", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9fontTools_4pens_10momentsPen_10MomentsPen_3_moveTo, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_9fontTools_4pens_10momentsPen_10MomentsPen_2_moveTo};
-static PyObject *__pyx_pw_9fontTools_4pens_10momentsPen_10MomentsPen_3_moveTo(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_4pens_10momentsPen_10MomentsPen_3_moveTo(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -3155,20 +3155,20 @@ static PyObject *__pyx_pf_9fontTools_4pens_10momentsPen_10MomentsPen_2_moveTo(CY
   __Pyx_RefNannySetupContext("_moveTo", 0);
 
   /* "fontTools/pens/momentsPen.py":27
- * 
+ *
  *     def _moveTo(self, p0):
  *         self._startPoint = p0             # <<<<<<<<<<<<<<
- * 
+ *
  *     def _closePath(self):
 */
   if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_startPoint, __pyx_v_p0) < 0) __PYX_ERR(0, 27, __pyx_L1_error)
 
   /* "fontTools/pens/momentsPen.py":26
  *         self.momentYY = 0
- * 
+ *
  *     def _moveTo(self, p0):             # <<<<<<<<<<<<<<
  *         self._startPoint = p0
- * 
+ *
 */
 
   /* function exit code */
@@ -3185,14 +3185,14 @@ static PyObject *__pyx_pf_9fontTools_4pens_10momentsPen_10MomentsPen_2_moveTo(CY
 
 /* "fontTools/pens/momentsPen.py":29
  *         self._startPoint = p0
- * 
+ *
  *     def _closePath(self):             # <<<<<<<<<<<<<<
  *         p0 = self._getCurrentPoint()
  *         if p0 != self._startPoint:
 */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_9fontTools_4pens_10momentsPen_10MomentsPen_5_closePath(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_4pens_10momentsPen_10MomentsPen_5_closePath(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -3201,7 +3201,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_9fontTools_4pens_10momentsPen_10MomentsPen_4_closePath, "MomentsPen._closePath(self)");
 static PyMethodDef __pyx_mdef_9fontTools_4pens_10momentsPen_10MomentsPen_5_closePath = {"_closePath", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9fontTools_4pens_10momentsPen_10MomentsPen_5_closePath, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_9fontTools_4pens_10momentsPen_10MomentsPen_4_closePath};
-static PyObject *__pyx_pw_9fontTools_4pens_10momentsPen_10MomentsPen_5_closePath(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_4pens_10momentsPen_10MomentsPen_5_closePath(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -3292,7 +3292,7 @@ static PyObject *__pyx_pf_9fontTools_4pens_10momentsPen_10MomentsPen_4_closePath
   __Pyx_RefNannySetupContext("_closePath", 0);
 
   /* "fontTools/pens/momentsPen.py":30
- * 
+ *
  *     def _closePath(self):
  *         p0 = self._getCurrentPoint()             # <<<<<<<<<<<<<<
  *         if p0 != self._startPoint:
@@ -3316,7 +3316,7 @@ static PyObject *__pyx_pf_9fontTools_4pens_10momentsPen_10MomentsPen_4_closePath
  *         p0 = self._getCurrentPoint()
  *         if p0 != self._startPoint:             # <<<<<<<<<<<<<<
  *             self._lineTo(self._startPoint)
- * 
+ *
 */
   __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_startPoint); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 31, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -3330,7 +3330,7 @@ static PyObject *__pyx_pf_9fontTools_4pens_10momentsPen_10MomentsPen_4_closePath
  *         p0 = self._getCurrentPoint()
  *         if p0 != self._startPoint:
  *             self._lineTo(self._startPoint)             # <<<<<<<<<<<<<<
- * 
+ *
  *     def _endPath(self):
 */
     __pyx_t_1 = __pyx_v_self;
@@ -3353,13 +3353,13 @@ static PyObject *__pyx_pf_9fontTools_4pens_10momentsPen_10MomentsPen_4_closePath
  *         p0 = self._getCurrentPoint()
  *         if p0 != self._startPoint:             # <<<<<<<<<<<<<<
  *             self._lineTo(self._startPoint)
- * 
+ *
 */
   }
 
   /* "fontTools/pens/momentsPen.py":29
  *         self._startPoint = p0
- * 
+ *
  *     def _closePath(self):             # <<<<<<<<<<<<<<
  *         p0 = self._getCurrentPoint()
  *         if p0 != self._startPoint:
@@ -3383,14 +3383,14 @@ static PyObject *__pyx_pf_9fontTools_4pens_10momentsPen_10MomentsPen_4_closePath
 
 /* "fontTools/pens/momentsPen.py":34
  *             self._lineTo(self._startPoint)
- * 
+ *
  *     def _endPath(self):             # <<<<<<<<<<<<<<
  *         p0 = self._getCurrentPoint()
  *         if p0 != self._startPoint:
 */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_9fontTools_4pens_10momentsPen_10MomentsPen_7_endPath(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_4pens_10momentsPen_10MomentsPen_7_endPath(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -3399,7 +3399,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_9fontTools_4pens_10momentsPen_10MomentsPen_6_endPath, "MomentsPen._endPath(self)");
 static PyMethodDef __pyx_mdef_9fontTools_4pens_10momentsPen_10MomentsPen_7_endPath = {"_endPath", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9fontTools_4pens_10momentsPen_10MomentsPen_7_endPath, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_9fontTools_4pens_10momentsPen_10MomentsPen_6_endPath};
-static PyObject *__pyx_pw_9fontTools_4pens_10momentsPen_10MomentsPen_7_endPath(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_4pens_10momentsPen_10MomentsPen_7_endPath(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -3490,7 +3490,7 @@ static PyObject *__pyx_pf_9fontTools_4pens_10momentsPen_10MomentsPen_6_endPath(C
   __Pyx_RefNannySetupContext("_endPath", 0);
 
   /* "fontTools/pens/momentsPen.py":35
- * 
+ *
  *     def _endPath(self):
  *         p0 = self._getCurrentPoint()             # <<<<<<<<<<<<<<
  *         if p0 != self._startPoint:
@@ -3514,7 +3514,7 @@ static PyObject *__pyx_pf_9fontTools_4pens_10momentsPen_10MomentsPen_6_endPath(C
  *         p0 = self._getCurrentPoint()
  *         if p0 != self._startPoint:             # <<<<<<<<<<<<<<
  *             raise OpenContourError("Glyph statistics is not defined on open contours.")
- * 
+ *
 */
   __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_mstate_global->__pyx_n_u_startPoint); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 36, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -3528,7 +3528,7 @@ static PyObject *__pyx_pf_9fontTools_4pens_10momentsPen_10MomentsPen_6_endPath(C
  *         p0 = self._getCurrentPoint()
  *         if p0 != self._startPoint:
  *             raise OpenContourError("Glyph statistics is not defined on open contours.")             # <<<<<<<<<<<<<<
- * 
+ *
  *     @cython.locals(r0=cython.double)
 */
     __pyx_t_1 = NULL;
@@ -3563,13 +3563,13 @@ static PyObject *__pyx_pf_9fontTools_4pens_10momentsPen_10MomentsPen_6_endPath(C
  *         p0 = self._getCurrentPoint()
  *         if p0 != self._startPoint:             # <<<<<<<<<<<<<<
  *             raise OpenContourError("Glyph statistics is not defined on open contours.")
- * 
+ *
 */
   }
 
   /* "fontTools/pens/momentsPen.py":34
  *             self._lineTo(self._startPoint)
- * 
+ *
  *     def _endPath(self):             # <<<<<<<<<<<<<<
  *         p0 = self._getCurrentPoint()
  *         if p0 != self._startPoint:
@@ -3593,14 +3593,14 @@ static PyObject *__pyx_pf_9fontTools_4pens_10momentsPen_10MomentsPen_6_endPath(C
 
 /* "fontTools/pens/momentsPen.py":39
  *             raise OpenContourError("Glyph statistics is not defined on open contours.")
- * 
+ *
  *     @cython.locals(r0=cython.double)             # <<<<<<<<<<<<<<
  *     @cython.locals(r1=cython.double)
  *     @cython.locals(r2=cython.double)
 */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_9fontTools_4pens_10momentsPen_10MomentsPen_9_lineTo(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_4pens_10momentsPen_10MomentsPen_9_lineTo(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -3609,7 +3609,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_9fontTools_4pens_10momentsPen_10MomentsPen_8_lineTo, "MomentsPen._lineTo(self, p1)");
 static PyMethodDef __pyx_mdef_9fontTools_4pens_10momentsPen_10MomentsPen_9_lineTo = {"_lineTo", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9fontTools_4pens_10momentsPen_10MomentsPen_9_lineTo, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_9fontTools_4pens_10momentsPen_10MomentsPen_8_lineTo};
-static PyObject *__pyx_pw_9fontTools_4pens_10momentsPen_10MomentsPen_9_lineTo(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_4pens_10momentsPen_10MomentsPen_9_lineTo(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -3731,7 +3731,7 @@ static PyObject *__pyx_pf_9fontTools_4pens_10momentsPen_10MomentsPen_8_lineTo(CY
  *     def _lineTo(self, p1):
  *         x0, y0 = self._getCurrentPoint()             # <<<<<<<<<<<<<<
  *         x1, y1 = p1
- * 
+ *
 */
   __pyx_t_2 = __pyx_v_self;
   __Pyx_INCREF(__pyx_t_2);
@@ -3804,7 +3804,7 @@ static PyObject *__pyx_pf_9fontTools_4pens_10momentsPen_10MomentsPen_8_lineTo(CY
  *     def _lineTo(self, p1):
  *         x0, y0 = self._getCurrentPoint()
  *         x1, y1 = p1             # <<<<<<<<<<<<<<
- * 
+ *
  *         r0 = x1 * y0
 */
   if ((likely(PyTuple_CheckExact(__pyx_v_p1))) || (PyList_CheckExact(__pyx_v_p1))) {
@@ -3864,7 +3864,7 @@ static PyObject *__pyx_pf_9fontTools_4pens_10momentsPen_10MomentsPen_8_lineTo(CY
 
   /* "fontTools/pens/momentsPen.py":58
  *         x1, y1 = p1
- * 
+ *
  *         r0 = x1 * y0             # <<<<<<<<<<<<<<
  *         r1 = x1 * y1
  *         r2 = x1**2
@@ -3872,7 +3872,7 @@ static PyObject *__pyx_pf_9fontTools_4pens_10momentsPen_10MomentsPen_8_lineTo(CY
   __pyx_v_r0 = (__pyx_v_x1 * __pyx_v_y0);
 
   /* "fontTools/pens/momentsPen.py":59
- * 
+ *
  *         r0 = x1 * y0
  *         r1 = x1 * y1             # <<<<<<<<<<<<<<
  *         r2 = x1**2
@@ -3966,7 +3966,7 @@ static PyObject *__pyx_pf_9fontTools_4pens_10momentsPen_10MomentsPen_8_lineTo(CY
  *         r10 = x1**3
  *         r11 = y0**3             # <<<<<<<<<<<<<<
  *         r12 = y1**3
- * 
+ *
 */
   __pyx_v_r11 = pow(__pyx_v_y0, 3.0);
 
@@ -3974,14 +3974,14 @@ static PyObject *__pyx_pf_9fontTools_4pens_10momentsPen_10MomentsPen_8_lineTo(CY
  *         r10 = x1**3
  *         r11 = y0**3
  *         r12 = y1**3             # <<<<<<<<<<<<<<
- * 
+ *
  *         self.area += -r0 / 2 - r1 / 2 + x0 * (y0 + y1) / 2
 */
   __pyx_v_r12 = pow(__pyx_v_y1, 3.0);
 
   /* "fontTools/pens/momentsPen.py":72
  *         r12 = y1**3
- * 
+ *
  *         self.area += -r0 / 2 - r1 / 2 + x0 * (y0 + y1) / 2             # <<<<<<<<<<<<<<
  *         self.momentX += -r2 * y0 / 6 - r3 / 3 - r5 * x1 / 6 + r6 * (r7 + y1) / 6
  *         self.momentY += (
@@ -3998,7 +3998,7 @@ static PyObject *__pyx_pf_9fontTools_4pens_10momentsPen_10MomentsPen_8_lineTo(CY
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
   /* "fontTools/pens/momentsPen.py":73
- * 
+ *
  *         self.area += -r0 / 2 - r1 / 2 + x0 * (y0 + y1) / 2
  *         self.momentX += -r2 * y0 / 6 - r3 / 3 - r5 * x1 / 6 + r6 * (r7 + y1) / 6             # <<<<<<<<<<<<<<
  *         self.momentY += (
@@ -4132,7 +4132,7 @@ static PyObject *__pyx_pf_9fontTools_4pens_10momentsPen_10MomentsPen_8_lineTo(CY
  *             - r12 * x1 / 12
  *             + x0 * (r11 + r12 + r8 * y1 + r9 * y0) / 12             # <<<<<<<<<<<<<<
  *         )
- * 
+ *
 */
   __pyx_t_1 = PyFloat_FromDouble((((((((-__pyx_v_r0) * __pyx_v_r9) / 12.0) - ((__pyx_v_r1 * __pyx_v_r8) / 12.0)) - ((__pyx_v_r11 * __pyx_v_x1) / 12.0)) - ((__pyx_v_r12 * __pyx_v_x1) / 12.0)) + ((__pyx_v_x0 * (((__pyx_v_r11 + __pyx_v_r12) + (__pyx_v_r8 * __pyx_v_y1)) + (__pyx_v_r9 * __pyx_v_y0))) / 12.0))); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 96, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -4153,7 +4153,7 @@ static PyObject *__pyx_pf_9fontTools_4pens_10momentsPen_10MomentsPen_8_lineTo(CY
 
   /* "fontTools/pens/momentsPen.py":39
  *             raise OpenContourError("Glyph statistics is not defined on open contours.")
- * 
+ *
  *     @cython.locals(r0=cython.double)             # <<<<<<<<<<<<<<
  *     @cython.locals(r1=cython.double)
  *     @cython.locals(r2=cython.double)
@@ -4177,14 +4177,14 @@ static PyObject *__pyx_pf_9fontTools_4pens_10momentsPen_10MomentsPen_8_lineTo(CY
 
 /* "fontTools/pens/momentsPen.py":99
  *         )
- * 
+ *
  *     @cython.locals(r0=cython.double)             # <<<<<<<<<<<<<<
  *     @cython.locals(r1=cython.double)
  *     @cython.locals(r2=cython.double)
 */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_9fontTools_4pens_10momentsPen_10MomentsPen_11_qCurveToOne(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_4pens_10momentsPen_10MomentsPen_11_qCurveToOne(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -4193,7 +4193,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_9fontTools_4pens_10momentsPen_10MomentsPen_10_qCurveToOne, "MomentsPen._qCurveToOne(self, p1, p2)");
 static PyMethodDef __pyx_mdef_9fontTools_4pens_10momentsPen_10MomentsPen_11_qCurveToOne = {"_qCurveToOne", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9fontTools_4pens_10momentsPen_10MomentsPen_11_qCurveToOne, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_9fontTools_4pens_10momentsPen_10MomentsPen_10_qCurveToOne};
-static PyObject *__pyx_pw_9fontTools_4pens_10momentsPen_10MomentsPen_11_qCurveToOne(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_4pens_10momentsPen_10MomentsPen_11_qCurveToOne(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -4440,7 +4440,7 @@ static PyObject *__pyx_pf_9fontTools_4pens_10momentsPen_10MomentsPen_10_qCurveTo
  *         x0, y0 = self._getCurrentPoint()
  *         x1, y1 = p1             # <<<<<<<<<<<<<<
  *         x2, y2 = p2
- * 
+ *
 */
   if ((likely(PyTuple_CheckExact(__pyx_v_p1))) || (PyList_CheckExact(__pyx_v_p1))) {
     PyObject* sequence = __pyx_v_p1;
@@ -4501,7 +4501,7 @@ static PyObject *__pyx_pf_9fontTools_4pens_10momentsPen_10MomentsPen_10_qCurveTo
  *         x0, y0 = self._getCurrentPoint()
  *         x1, y1 = p1
  *         x2, y2 = p2             # <<<<<<<<<<<<<<
- * 
+ *
  *         r0 = 2 * y1
 */
   if ((likely(PyTuple_CheckExact(__pyx_v_p2))) || (PyList_CheckExact(__pyx_v_p2))) {
@@ -4561,7 +4561,7 @@ static PyObject *__pyx_pf_9fontTools_4pens_10momentsPen_10MomentsPen_10_qCurveTo
 
   /* "fontTools/pens/momentsPen.py":161
  *         x2, y2 = p2
- * 
+ *
  *         r0 = 2 * y1             # <<<<<<<<<<<<<<
  *         r1 = r0 * x2
  *         r2 = x2 * y2
@@ -4569,7 +4569,7 @@ static PyObject *__pyx_pf_9fontTools_4pens_10momentsPen_10MomentsPen_10_qCurveTo
   __pyx_v_r0 = (2.0 * __pyx_v_y1);
 
   /* "fontTools/pens/momentsPen.py":162
- * 
+ *
  *         r0 = 2 * y1
  *         r1 = r0 * x2             # <<<<<<<<<<<<<<
  *         r2 = x2 * y2
@@ -5032,7 +5032,7 @@ static PyObject *__pyx_pf_9fontTools_4pens_10momentsPen_10MomentsPen_10_qCurveTo
  *         r51 = y0**3
  *         r52 = 10 * y1             # <<<<<<<<<<<<<<
  *         r53 = 12 * y1
- * 
+ *
 */
   __pyx_v_r52 = (10.0 * __pyx_v_y1);
 
@@ -5040,14 +5040,14 @@ static PyObject *__pyx_pf_9fontTools_4pens_10momentsPen_10MomentsPen_10_qCurveTo
  *         r51 = y0**3
  *         r52 = 10 * y1
  *         r53 = 12 * y1             # <<<<<<<<<<<<<<
- * 
+ *
  *         self.area += (
 */
   __pyx_v_r53 = (12.0 * __pyx_v_y1);
 
   /* "fontTools/pens/momentsPen.py":216
  *         r53 = 12 * y1
- * 
+ *
  *         self.area += (             # <<<<<<<<<<<<<<
  *             -r1 / 6
  *             - r3 / 6
@@ -5067,7 +5067,7 @@ static PyObject *__pyx_pf_9fontTools_4pens_10momentsPen_10MomentsPen_10_qCurveTo
 
   /* "fontTools/pens/momentsPen.py":216
  *         r53 = 12 * y1
- * 
+ *
  *         self.area += (             # <<<<<<<<<<<<<<
  *             -r1 / 6
  *             - r3 / 6
@@ -5230,7 +5230,7 @@ static PyObject *__pyx_pf_9fontTools_4pens_10momentsPen_10MomentsPen_10_qCurveTo
  *             + x1 * y2 * (r43 + r44 + r9 * y1) / 210
  *             - y0 * (r19 * r45 + r2 * r53 - r21 * r4 + r48) / 420             # <<<<<<<<<<<<<<
  *         )
- * 
+ *
 */
   __pyx_t_4 = PyFloat_FromDouble((((((((((((-__pyx_v_r2) * __pyx_v_r42) / 420.0) - ((__pyx_v_r22 * __pyx_v_r29) / 420.0)) - ((__pyx_v_r24 * ((__pyx_v_r14 + __pyx_v_r36) + (__pyx_v_r52 * __pyx_v_x2))) / 420.0)) - ((__pyx_v_r49 * __pyx_v_x2) / 420.0)) - ((__pyx_v_r50 * __pyx_v_x2) / 12.0)) - ((__pyx_v_r51 * (__pyx_v_r47 + __pyx_v_x2)) / 84.0)) + ((__pyx_v_x0 * ((((((((((__pyx_v_r19 * __pyx_v_r46) + (__pyx_v_r21 * __pyx_v_r5)) + (__pyx_v_r21 * __pyx_v_r52)) + (__pyx_v_r24 * __pyx_v_r29)) + (__pyx_v_r25 * __pyx_v_r53)) + (__pyx_v_r26 * __pyx_v_y2)) + (__pyx_v_r42 * __pyx_v_y0)) + __pyx_v_r49) + (5.0 * __pyx_v_r50)) + (35.0 * __pyx_v_r51))) / 420.0)) + (((__pyx_v_x1 * __pyx_v_y2) * ((__pyx_v_r43 + __pyx_v_r44) + (__pyx_v_r9 * __pyx_v_y1))) / 210.0)) - ((__pyx_v_y0 * ((((__pyx_v_r19 * __pyx_v_r45) + (__pyx_v_r2 * __pyx_v_r53)) - (__pyx_v_r21 * __pyx_v_r4)) + __pyx_v_r48)) / 420.0))); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 307, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
@@ -5251,7 +5251,7 @@ static PyObject *__pyx_pf_9fontTools_4pens_10momentsPen_10MomentsPen_10_qCurveTo
 
   /* "fontTools/pens/momentsPen.py":99
  *         )
- * 
+ *
  *     @cython.locals(r0=cython.double)             # <<<<<<<<<<<<<<
  *     @cython.locals(r1=cython.double)
  *     @cython.locals(r2=cython.double)
@@ -5275,14 +5275,14 @@ static PyObject *__pyx_pf_9fontTools_4pens_10momentsPen_10MomentsPen_10_qCurveTo
 
 /* "fontTools/pens/momentsPen.py":310
  *         )
- * 
+ *
  *     @cython.locals(r0=cython.double)             # <<<<<<<<<<<<<<
  *     @cython.locals(r1=cython.double)
  *     @cython.locals(r2=cython.double)
 */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_9fontTools_4pens_10momentsPen_10MomentsPen_13_curveToOne(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_4pens_10momentsPen_10MomentsPen_13_curveToOne(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -5291,7 +5291,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_9fontTools_4pens_10momentsPen_10MomentsPen_12_curveToOne, "MomentsPen._curveToOne(self, p1, p2, p3)");
 static PyMethodDef __pyx_mdef_9fontTools_4pens_10momentsPen_10MomentsPen_13_curveToOne = {"_curveToOne", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9fontTools_4pens_10momentsPen_10MomentsPen_13_curveToOne, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_9fontTools_4pens_10momentsPen_10MomentsPen_12_curveToOne};
-static PyObject *__pyx_pw_9fontTools_4pens_10momentsPen_10MomentsPen_13_curveToOne(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_4pens_10momentsPen_10MomentsPen_13_curveToOne(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -5689,7 +5689,7 @@ static PyObject *__pyx_pf_9fontTools_4pens_10momentsPen_10MomentsPen_12_curveToO
  *         x1, y1 = p1
  *         x2, y2 = p2             # <<<<<<<<<<<<<<
  *         x3, y3 = p3
- * 
+ *
 */
   if ((likely(PyTuple_CheckExact(__pyx_v_p2))) || (PyList_CheckExact(__pyx_v_p2))) {
     PyObject* sequence = __pyx_v_p2;
@@ -5750,7 +5750,7 @@ static PyObject *__pyx_pf_9fontTools_4pens_10momentsPen_10MomentsPen_12_curveToO
  *         x1, y1 = p1
  *         x2, y2 = p2
  *         x3, y3 = p3             # <<<<<<<<<<<<<<
- * 
+ *
  *         r0 = 6 * y2
 */
   if ((likely(PyTuple_CheckExact(__pyx_v_p3))) || (PyList_CheckExact(__pyx_v_p3))) {
@@ -5810,7 +5810,7 @@ static PyObject *__pyx_pf_9fontTools_4pens_10momentsPen_10MomentsPen_12_curveToO
 
   /* "fontTools/pens/momentsPen.py":453
  *         x3, y3 = p3
- * 
+ *
  *         r0 = 6 * y2             # <<<<<<<<<<<<<<
  *         r1 = r0 * x3
  *         r2 = 10 * y3
@@ -5818,7 +5818,7 @@ static PyObject *__pyx_pf_9fontTools_4pens_10momentsPen_10MomentsPen_12_curveToO
   __pyx_v_r0 = (6.0 * __pyx_v_y2);
 
   /* "fontTools/pens/momentsPen.py":454
- * 
+ *
  *         r0 = 6 * y2
  *         r1 = r0 * x3             # <<<<<<<<<<<<<<
  *         r2 = 10 * y3
@@ -6992,7 +6992,7 @@ static PyObject *__pyx_pf_9fontTools_4pens_10momentsPen_10MomentsPen_12_curveToO
  *         r130 = r112 * y3 + r21 * r51
  *         r131 = 189 * r53             # <<<<<<<<<<<<<<
  *         r132 = 90 * y2
- * 
+ *
 */
   __pyx_v_r131 = (189.0 * __pyx_v_r53);
 
@@ -7000,14 +7000,14 @@ static PyObject *__pyx_pf_9fontTools_4pens_10momentsPen_10MomentsPen_12_curveToO
  *         r130 = r112 * y3 + r21 * r51
  *         r131 = 189 * r53
  *         r132 = 90 * y2             # <<<<<<<<<<<<<<
- * 
+ *
  *         self.area += (
 */
   __pyx_v_r132 = (90.0 * __pyx_v_y2);
 
   /* "fontTools/pens/momentsPen.py":587
  *         r132 = 90 * y2
- * 
+ *
  *         self.area += (             # <<<<<<<<<<<<<<
  *             -r1 / 20
  *             - r3 / 20
@@ -7027,7 +7027,7 @@ static PyObject *__pyx_pf_9fontTools_4pens_10momentsPen_10MomentsPen_12_curveToO
 
   /* "fontTools/pens/momentsPen.py":587
  *         r132 = 90 * y2
- * 
+ *
  *         self.area += (             # <<<<<<<<<<<<<<
  *             -r1 / 20
  *             - r3 / 20
@@ -7211,7 +7211,7 @@ static PyObject *__pyx_pf_9fontTools_4pens_10momentsPen_10MomentsPen_12_curveToO
 
   /* "fontTools/pens/momentsPen.py":310
  *         )
- * 
+ *
  *     @cython.locals(r0=cython.double)             # <<<<<<<<<<<<<<
  *     @cython.locals(r1=cython.double)
  *     @cython.locals(r2=cython.double)
@@ -7611,7 +7611,7 @@ __Pyx_RefNannySetupContext("PyInit_momentsPen", 0);
 
   /* "fontTools/pens/momentsPen.py":1
  * from fontTools.pens.basePen import BasePen, OpenContourError             # <<<<<<<<<<<<<<
- * 
+ *
  * try:
 */
   __pyx_t_2 = __Pyx_PyList_Pack(2, __pyx_mstate_global->__pyx_n_u_BasePen, __pyx_mstate_global->__pyx_n_u_OpenContourError); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1, __pyx_L1_error)
@@ -7631,7 +7631,7 @@ __Pyx_RefNannySetupContext("PyInit_momentsPen", 0);
 
   /* "fontTools/pens/momentsPen.py":3
  * from fontTools.pens.basePen import BasePen, OpenContourError
- * 
+ *
  * try:             # <<<<<<<<<<<<<<
  *     import cython
  * except (AttributeError, ImportError):
@@ -7641,7 +7641,7 @@ __Pyx_RefNannySetupContext("PyInit_momentsPen", 0);
     /*try:*/ {
 
       /* "fontTools/pens/momentsPen.py":4
- * 
+ *
  * try:
  *     import cython             # <<<<<<<<<<<<<<
  * except (AttributeError, ImportError):
@@ -7654,17 +7654,17 @@ __Pyx_RefNannySetupContext("PyInit_momentsPen", 0);
  *     # if cython not installed, use mock module with no-op decorators and types
  *     from fontTools.misc import cython
  * COMPILED = cython.compiled             # <<<<<<<<<<<<<<
- * 
- * 
+ *
+ *
 */
   if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_COMPILED, Py_True) < 0) __PYX_ERR(0, 8, __pyx_L1_error)
 
   /* "fontTools/pens/momentsPen.py":11
- * 
- * 
+ *
+ *
  * __all__ = ["MomentsPen"]             # <<<<<<<<<<<<<<
- * 
- * 
+ *
+ *
 */
   __pyx_t_3 = __Pyx_PyList_Pack(1, __pyx_mstate_global->__pyx_n_u_MomentsPen); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 11, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
@@ -7672,10 +7672,10 @@ __Pyx_RefNannySetupContext("PyInit_momentsPen", 0);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
   /* "fontTools/pens/momentsPen.py":14
- * 
- * 
+ *
+ *
  * class MomentsPen(BasePen):             # <<<<<<<<<<<<<<
- * 
+ *
  *     def __init__(self, glyphset=None):
 */
   __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_BasePen); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 14, __pyx_L1_error)
@@ -7696,10 +7696,10 @@ __Pyx_RefNannySetupContext("PyInit_momentsPen", 0);
 
   /* "fontTools/pens/momentsPen.py":16
  * class MomentsPen(BasePen):
- * 
+ *
  *     def __init__(self, glyphset=None):             # <<<<<<<<<<<<<<
  *         BasePen.__init__(self, glyphset)
- * 
+ *
 */
   __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_9fontTools_4pens_10momentsPen_10MomentsPen_1__init__, 0, __pyx_mstate_global->__pyx_n_u_MomentsPen___init, NULL, __pyx_mstate_global->__pyx_n_u_fontTools_pens_momentsPen, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[0])); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 16, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -7709,10 +7709,10 @@ __Pyx_RefNannySetupContext("PyInit_momentsPen", 0);
 
   /* "fontTools/pens/momentsPen.py":26
  *         self.momentYY = 0
- * 
+ *
  *     def _moveTo(self, p0):             # <<<<<<<<<<<<<<
  *         self._startPoint = p0
- * 
+ *
 */
   __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_9fontTools_4pens_10momentsPen_10MomentsPen_3_moveTo, 0, __pyx_mstate_global->__pyx_n_u_MomentsPen__moveTo, NULL, __pyx_mstate_global->__pyx_n_u_fontTools_pens_momentsPen, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[1])); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 26, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -7721,7 +7721,7 @@ __Pyx_RefNannySetupContext("PyInit_momentsPen", 0);
 
   /* "fontTools/pens/momentsPen.py":29
  *         self._startPoint = p0
- * 
+ *
  *     def _closePath(self):             # <<<<<<<<<<<<<<
  *         p0 = self._getCurrentPoint()
  *         if p0 != self._startPoint:
@@ -7733,7 +7733,7 @@ __Pyx_RefNannySetupContext("PyInit_momentsPen", 0);
 
   /* "fontTools/pens/momentsPen.py":34
  *             self._lineTo(self._startPoint)
- * 
+ *
  *     def _endPath(self):             # <<<<<<<<<<<<<<
  *         p0 = self._getCurrentPoint()
  *         if p0 != self._startPoint:
@@ -7745,7 +7745,7 @@ __Pyx_RefNannySetupContext("PyInit_momentsPen", 0);
 
   /* "fontTools/pens/momentsPen.py":39
  *             raise OpenContourError("Glyph statistics is not defined on open contours.")
- * 
+ *
  *     @cython.locals(r0=cython.double)             # <<<<<<<<<<<<<<
  *     @cython.locals(r1=cython.double)
  *     @cython.locals(r2=cython.double)
@@ -7757,7 +7757,7 @@ __Pyx_RefNannySetupContext("PyInit_momentsPen", 0);
 
   /* "fontTools/pens/momentsPen.py":99
  *         )
- * 
+ *
  *     @cython.locals(r0=cython.double)             # <<<<<<<<<<<<<<
  *     @cython.locals(r1=cython.double)
  *     @cython.locals(r2=cython.double)
@@ -7769,7 +7769,7 @@ __Pyx_RefNannySetupContext("PyInit_momentsPen", 0);
 
   /* "fontTools/pens/momentsPen.py":310
  *         )
- * 
+ *
  *     @cython.locals(r0=cython.double)             # <<<<<<<<<<<<<<
  *     @cython.locals(r1=cython.double)
  *     @cython.locals(r2=cython.double)
@@ -7780,10 +7780,10 @@ __Pyx_RefNannySetupContext("PyInit_momentsPen", 0);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
   /* "fontTools/pens/momentsPen.py":14
- * 
- * 
+ *
+ *
  * class MomentsPen(BasePen):             # <<<<<<<<<<<<<<
- * 
+ *
  *     def __init__(self, glyphset=None):
 */
   __pyx_t_2 = __Pyx_Py3ClassCreate(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_MomentsPen, __pyx_t_3, __pyx_t_7, NULL, 0, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 14, __pyx_L1_error)
@@ -7795,11 +7795,11 @@ __Pyx_RefNannySetupContext("PyInit_momentsPen", 0);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
   /* "fontTools/pens/momentsPen.py":866
- * 
- * 
+ *
+ *
  * if __name__ == "__main__":             # <<<<<<<<<<<<<<
  *     from fontTools.misc.symfont import x, y, printGreenPen
- * 
+ *
 */
   __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_mstate_global->__pyx_n_u_name); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 866, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
@@ -7808,10 +7808,10 @@ __Pyx_RefNannySetupContext("PyInit_momentsPen", 0);
   if (__pyx_t_8) {
 
     /* "fontTools/pens/momentsPen.py":867
- * 
+ *
  * if __name__ == "__main__":
  *     from fontTools.misc.symfont import x, y, printGreenPen             # <<<<<<<<<<<<<<
- * 
+ *
  *     printGreenPen(
 */
     __pyx_t_3 = __Pyx_PyList_Pack(3, __pyx_mstate_global->__pyx_n_u_x, __pyx_mstate_global->__pyx_n_u_y, __pyx_mstate_global->__pyx_n_u_printGreenPen); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 867, __pyx_L1_error)
@@ -7835,7 +7835,7 @@ __Pyx_RefNannySetupContext("PyInit_momentsPen", 0);
 
     /* "fontTools/pens/momentsPen.py":869
  *     from fontTools.misc.symfont import x, y, printGreenPen
- * 
+ *
  *     printGreenPen(             # <<<<<<<<<<<<<<
  *         "MomentsPen",
  *         [
@@ -7948,17 +7948,17 @@ __Pyx_RefNannySetupContext("PyInit_momentsPen", 0);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
     /* "fontTools/pens/momentsPen.py":866
- * 
- * 
+ *
+ *
  * if __name__ == "__main__":             # <<<<<<<<<<<<<<
  *     from fontTools.misc.symfont import x, y, printGreenPen
- * 
+ *
 */
   }
 
   /* "fontTools/pens/momentsPen.py":1
  * from fontTools.pens.basePen import BasePen, OpenContourError             # <<<<<<<<<<<<<<
- * 
+ *
  * try:
 */
   __pyx_t_6 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1, __pyx_L1_error)
@@ -8257,10 +8257,10 @@ static int __Pyx_InitCachedConstants(__pyx_mstatetype *__pyx_mstate) {
 
   /* "fontTools/pens/momentsPen.py":16
  * class MomentsPen(BasePen):
- * 
+ *
  *     def __init__(self, glyphset=None):             # <<<<<<<<<<<<<<
  *         BasePen.__init__(self, glyphset)
- * 
+ *
 */
   __pyx_mstate_global->__pyx_tuple[0] = PyTuple_Pack(1, Py_None); if (unlikely(!__pyx_mstate_global->__pyx_tuple[0])) __PYX_ERR(0, 16, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_mstate_global->__pyx_tuple[0]);

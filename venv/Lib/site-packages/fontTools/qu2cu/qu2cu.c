@@ -1548,11 +1548,11 @@ struct __pyx_obj_9fontTools_5qu2cu_5qu2cu___pyx_scope_struct__genexpr;
 struct __pyx_obj_9fontTools_5qu2cu_5qu2cu___pyx_scope_struct_1_genexpr;
 
 /* "fontTools/qu2cu/qu2cu.py":235
- * 
+ *
  *     if not is_complex:
  *         curves = [tuple((c.real, c.imag) for c in curve) for curve in curves]             # <<<<<<<<<<<<<<
  *     return curves
- * 
+ *
 */
 struct __pyx_obj_9fontTools_5qu2cu_5qu2cu___pyx_scope_struct__genexpr {
   PyObject_HEAD
@@ -1570,7 +1570,7 @@ struct __pyx_obj_9fontTools_5qu2cu_5qu2cu___pyx_scope_struct__genexpr {
  *             for k, reconst in enumerate(reconstructed):
  *                 orig = elevated_quadratics[j + k]
  *                 p0, p1, p2, p3 = tuple(v - u for v, u in zip(reconst, orig))             # <<<<<<<<<<<<<<
- * 
+ *
  *                 if not cubic_farthest_fit_inside(p0, p1, p2, p3, tolerance):
 */
 struct __pyx_obj_9fontTools_5qu2cu_5qu2cu___pyx_scope_struct_1_genexpr {
@@ -3176,7 +3176,7 @@ static CYTHON_SMALL_CODE int __pyx_m_traverse(PyObject *m, visitproc visit, void
 /* #### Code section: module_code ### */
 
 /* "fontTools/qu2cu/qu2cu.py":40
- * 
+ *
  * # Copied from cu2qu
  * @cython.cfunc             # <<<<<<<<<<<<<<
  * @cython.returns(cython.int)
@@ -3200,7 +3200,7 @@ static int __pyx_f_9fontTools_5qu2cu_5qu2cu_cubic_farthest_fit_inside(__pyx_t_do
  *     # First check p2 then p1, as p2 has higher error early on.
  *     if abs(p2) <= tolerance and abs(p1) <= tolerance:             # <<<<<<<<<<<<<<
  *         return True
- * 
+ *
 */
   __pyx_t_2 = (__Pyx_c_abs_double(__pyx_v_p2) <= __pyx_v_tolerance);
   if (__pyx_t_2) {
@@ -3217,7 +3217,7 @@ static int __pyx_f_9fontTools_5qu2cu_5qu2cu_cubic_farthest_fit_inside(__pyx_t_do
  *     # First check p2 then p1, as p2 has higher error early on.
  *     if abs(p2) <= tolerance and abs(p1) <= tolerance:
  *         return True             # <<<<<<<<<<<<<<
- * 
+ *
  *     # Split.
 */
     __pyx_r = 1;
@@ -3228,12 +3228,12 @@ static int __pyx_f_9fontTools_5qu2cu_5qu2cu_cubic_farthest_fit_inside(__pyx_t_do
  *     # First check p2 then p1, as p2 has higher error early on.
  *     if abs(p2) <= tolerance and abs(p1) <= tolerance:             # <<<<<<<<<<<<<<
  *         return True
- * 
+ *
 */
   }
 
   /* "fontTools/qu2cu/qu2cu.py":73
- * 
+ *
  *     # Split.
  *     mid = (p0 + 3 * (p1 + p2) + p3) * 0.125             # <<<<<<<<<<<<<<
  *     if abs(mid) > tolerance:
@@ -3297,8 +3297,8 @@ static int __pyx_f_9fontTools_5qu2cu_5qu2cu_cubic_farthest_fit_inside(__pyx_t_do
  *     return cubic_farthest_fit_inside(
  *         p0, (p0 + p1) * 0.5, mid - deriv3, mid, tolerance
  *     ) and cubic_farthest_fit_inside(mid, mid + deriv3, (p2 + p3) * 0.5, p3, tolerance)             # <<<<<<<<<<<<<<
- * 
- * 
+ *
+ *
 */
   __pyx_t_4 = __pyx_f_9fontTools_5qu2cu_5qu2cu_cubic_farthest_fit_inside(__pyx_v_mid, __Pyx_c_sum_double(__pyx_v_mid, __pyx_v_deriv3), __Pyx_c_prod_double(__Pyx_c_sum_double(__pyx_v_p2, __pyx_v_p3), __pyx_t_double_complex_from_parts(0.5, 0)), __pyx_v_p3, __pyx_v_tolerance); if (unlikely(__pyx_t_4 == ((int)-1) && PyErr_Occurred())) __PYX_ERR(0, 79, __pyx_L1_error)
   __pyx_t_3 = __pyx_t_4;
@@ -3307,7 +3307,7 @@ static int __pyx_f_9fontTools_5qu2cu_5qu2cu_cubic_farthest_fit_inside(__pyx_t_do
   goto __pyx_L0;
 
   /* "fontTools/qu2cu/qu2cu.py":40
- * 
+ *
  * # Copied from cu2qu
  * @cython.cfunc             # <<<<<<<<<<<<<<
  * @cython.returns(cython.int)
@@ -3323,15 +3323,15 @@ static int __pyx_f_9fontTools_5qu2cu_5qu2cu_cubic_farthest_fit_inside(__pyx_t_do
 }
 
 /* "fontTools/qu2cu/qu2cu.py":82
- * 
- * 
+ *
+ *
  * @cython.locals(             # <<<<<<<<<<<<<<
  *     p0=cython.complex,
  *     p1=cython.complex,
 */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_9fontTools_5qu2cu_5qu2cu_1elevate_quadratic(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_5qu2cu_5qu2cu_1elevate_quadratic(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -3340,7 +3340,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_9fontTools_5qu2cu_5qu2cu_elevate_quadratic, "elevate_quadratic(double complex p0, double complex p1, double complex p2)\n\nGiven a quadratic bezier curve, return its degree-elevated cubic.");
 static PyMethodDef __pyx_mdef_9fontTools_5qu2cu_5qu2cu_1elevate_quadratic = {"elevate_quadratic", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9fontTools_5qu2cu_5qu2cu_1elevate_quadratic, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_9fontTools_5qu2cu_5qu2cu_elevate_quadratic};
-static PyObject *__pyx_pw_9fontTools_5qu2cu_5qu2cu_1elevate_quadratic(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_5qu2cu_5qu2cu_1elevate_quadratic(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -3448,7 +3448,7 @@ static PyObject *__pyx_pf_9fontTools_5qu2cu_5qu2cu_elevate_quadratic(CYTHON_UNUS
   __Pyx_RefNannySetupContext("elevate_quadratic", 0);
 
   /* "fontTools/qu2cu/qu2cu.py":92
- * 
+ *
  *     # https://pomax.github.io/bezierinfo/#reordering
  *     p1_2_3 = p1 * (2 / 3)             # <<<<<<<<<<<<<<
  *     return (
@@ -3502,7 +3502,7 @@ static PyObject *__pyx_pf_9fontTools_5qu2cu_5qu2cu_elevate_quadratic(CYTHON_UNUS
  *         (p2 * (1 / 3) + p1_2_3),
  *         p2,             # <<<<<<<<<<<<<<
  *     )
- * 
+ *
 */
   __pyx_t_5 = __pyx_PyComplex_FromComplex(__pyx_v_p2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 97, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
@@ -3533,8 +3533,8 @@ static PyObject *__pyx_pf_9fontTools_5qu2cu_5qu2cu_elevate_quadratic(CYTHON_UNUS
   goto __pyx_L0;
 
   /* "fontTools/qu2cu/qu2cu.py":82
- * 
- * 
+ *
+ *
  * @cython.locals(             # <<<<<<<<<<<<<<
  *     p0=cython.complex,
  *     p1=cython.complex,
@@ -3556,8 +3556,8 @@ static PyObject *__pyx_pf_9fontTools_5qu2cu_5qu2cu_elevate_quadratic(CYTHON_UNUS
 }
 
 /* "fontTools/qu2cu/qu2cu.py":101
- * 
- * 
+ *
+ *
  * @cython.cfunc             # <<<<<<<<<<<<<<
  * @cython.locals(
  *     start=cython.int,
@@ -3600,7 +3600,7 @@ static PyObject *__pyx_f_9fontTools_5qu2cu_5qu2cu_merge_curves(PyObject *__pyx_v
   __Pyx_RefNannySetupContext("merge_curves", 0);
 
   /* "fontTools/qu2cu/qu2cu.py":121
- * 
+ *
  *     # Reconstruct the t values of the cut segments
  *     prod_ratio = 1.0             # <<<<<<<<<<<<<<
  *     sum_ratio = 1.0
@@ -3649,7 +3649,7 @@ static PyObject *__pyx_f_9fontTools_5qu2cu_5qu2cu_merge_curves(PyObject *__pyx_v
  *     for k in range(1, n):
  *         ck = curves[start + k]             # <<<<<<<<<<<<<<
  *         c_before = curves[start + k - 1]
- * 
+ *
 */
     __pyx_t_5 = (__pyx_v_start + __pyx_v_k);
     __pyx_t_1 = __Pyx_GetItemInt(__pyx_v_curves, __pyx_t_5, int, 1, __Pyx_PyLong_From_int, 0, 1, 1, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 125, __pyx_L1_error)
@@ -3661,7 +3661,7 @@ static PyObject *__pyx_f_9fontTools_5qu2cu_5qu2cu_merge_curves(PyObject *__pyx_v
  *     for k in range(1, n):
  *         ck = curves[start + k]
  *         c_before = curves[start + k - 1]             # <<<<<<<<<<<<<<
- * 
+ *
  *         # |t_(k+1) - t_k| / |t_k - t_(k - 1)| = ratio
 */
     __pyx_t_6 = ((__pyx_v_start + __pyx_v_k) - 1);
@@ -3671,11 +3671,11 @@ static PyObject *__pyx_f_9fontTools_5qu2cu_5qu2cu_merge_curves(PyObject *__pyx_v
     __pyx_t_1 = 0;
 
     /* "fontTools/qu2cu/qu2cu.py":129
- * 
+ *
  *         # |t_(k+1) - t_k| / |t_k - t_(k - 1)| = ratio
  *         assert ck[0] == c_before[3]             # <<<<<<<<<<<<<<
  *         ratio = abs(ck[1] - ck[0]) / abs(c_before[3] - c_before[2])
- * 
+ *
 */
     #ifndef CYTHON_WITHOUT_ASSERTIONS
     if (unlikely(__pyx_assertions_enabled())) {
@@ -3701,7 +3701,7 @@ static PyObject *__pyx_f_9fontTools_5qu2cu_5qu2cu_merge_curves(PyObject *__pyx_v
  *         # |t_(k+1) - t_k| / |t_k - t_(k - 1)| = ratio
  *         assert ck[0] == c_before[3]
  *         ratio = abs(ck[1] - ck[0]) / abs(c_before[3] - c_before[2])             # <<<<<<<<<<<<<<
- * 
+ *
  *         prod_ratio *= ratio
 */
     __pyx_t_8 = __Pyx_GetItemInt(__pyx_v_ck, 1, long, 1, __Pyx_PyLong_From_long, 0, 0, 1, 1); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 130, __pyx_L1_error)
@@ -3736,7 +3736,7 @@ static PyObject *__pyx_f_9fontTools_5qu2cu_5qu2cu_merge_curves(PyObject *__pyx_v
 
     /* "fontTools/qu2cu/qu2cu.py":132
  *         ratio = abs(ck[1] - ck[0]) / abs(c_before[3] - c_before[2])
- * 
+ *
  *         prod_ratio *= ratio             # <<<<<<<<<<<<<<
  *         sum_ratio += prod_ratio
  *         ts.append(sum_ratio)
@@ -3744,11 +3744,11 @@ static PyObject *__pyx_f_9fontTools_5qu2cu_5qu2cu_merge_curves(PyObject *__pyx_v
     __pyx_v_prod_ratio = (__pyx_v_prod_ratio * __pyx_v_ratio);
 
     /* "fontTools/qu2cu/qu2cu.py":133
- * 
+ *
  *         prod_ratio *= ratio
  *         sum_ratio += prod_ratio             # <<<<<<<<<<<<<<
  *         ts.append(sum_ratio)
- * 
+ *
 */
     __pyx_v_sum_ratio = (__pyx_v_sum_ratio + __pyx_v_prod_ratio);
 
@@ -3756,7 +3756,7 @@ static PyObject *__pyx_f_9fontTools_5qu2cu_5qu2cu_merge_curves(PyObject *__pyx_v
  *         prod_ratio *= ratio
  *         sum_ratio += prod_ratio
  *         ts.append(sum_ratio)             # <<<<<<<<<<<<<<
- * 
+ *
  *     # (t(n) - t(n - 1)) / (t_(1) - t(0)) = prod_ratio
 */
     __pyx_t_10 = PyFloat_FromDouble(__pyx_v_sum_ratio); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 134, __pyx_L1_error)
@@ -3767,9 +3767,9 @@ static PyObject *__pyx_f_9fontTools_5qu2cu_5qu2cu_merge_curves(PyObject *__pyx_v
 
   /* "fontTools/qu2cu/qu2cu.py":138
  *     # (t(n) - t(n - 1)) / (t_(1) - t(0)) = prod_ratio
- * 
+ *
  *     ts = [t / sum_ratio for t in ts[:-1]]             # <<<<<<<<<<<<<<
- * 
+ *
  *     p0 = curves[start][0]
 */
   { /* enter inner scope */
@@ -3811,7 +3811,7 @@ static PyObject *__pyx_f_9fontTools_5qu2cu_5qu2cu_merge_curves(PyObject *__pyx_v
 
   /* "fontTools/qu2cu/qu2cu.py":140
  *     ts = [t / sum_ratio for t in ts[:-1]]
- * 
+ *
  *     p0 = curves[start][0]             # <<<<<<<<<<<<<<
  *     p1 = curves[start][1]
  *     p2 = curves[start + n - 1][2]
@@ -3826,7 +3826,7 @@ static PyObject *__pyx_f_9fontTools_5qu2cu_5qu2cu_merge_curves(PyObject *__pyx_v
   __pyx_v_p0 = __pyx_t_14;
 
   /* "fontTools/qu2cu/qu2cu.py":141
- * 
+ *
  *     p0 = curves[start][0]
  *     p1 = curves[start][1]             # <<<<<<<<<<<<<<
  *     p2 = curves[start + n - 1][2]
@@ -3846,7 +3846,7 @@ static PyObject *__pyx_f_9fontTools_5qu2cu_5qu2cu_merge_curves(PyObject *__pyx_v
  *     p1 = curves[start][1]
  *     p2 = curves[start + n - 1][2]             # <<<<<<<<<<<<<<
  *     p3 = curves[start + n - 1][3]
- * 
+ *
 */
   __pyx_t_6 = ((__pyx_v_start + __pyx_v_n) - 1);
   __pyx_t_10 = __Pyx_GetItemInt(__pyx_v_curves, __pyx_t_6, long, 1, __Pyx_PyLong_From_long, 0, 1, 1, 1); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 142, __pyx_L1_error)
@@ -3862,7 +3862,7 @@ static PyObject *__pyx_f_9fontTools_5qu2cu_5qu2cu_merge_curves(PyObject *__pyx_v
  *     p1 = curves[start][1]
  *     p2 = curves[start + n - 1][2]
  *     p3 = curves[start + n - 1][3]             # <<<<<<<<<<<<<<
- * 
+ *
  *     # Build the curve by scaling the control-points.
 */
   __pyx_t_6 = ((__pyx_v_start + __pyx_v_n) - 1);
@@ -3876,11 +3876,11 @@ static PyObject *__pyx_f_9fontTools_5qu2cu_5qu2cu_merge_curves(PyObject *__pyx_v
   __pyx_v_p3 = __pyx_t_14;
 
   /* "fontTools/qu2cu/qu2cu.py":146
- * 
+ *
  *     # Build the curve by scaling the control-points.
  *     p1 = p0 + (p1 - p0) / (ts[0] if ts else 1)             # <<<<<<<<<<<<<<
  *     p2 = p3 + (p2 - p3) / ((1 - ts[-1]) if ts else 1)
- * 
+ *
 */
   __pyx_t_10 = __pyx_PyComplex_FromComplex(__pyx_v_p0); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 146, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_10);
@@ -3918,7 +3918,7 @@ static PyObject *__pyx_f_9fontTools_5qu2cu_5qu2cu_merge_curves(PyObject *__pyx_v
  *     # Build the curve by scaling the control-points.
  *     p1 = p0 + (p1 - p0) / (ts[0] if ts else 1)
  *     p2 = p3 + (p2 - p3) / ((1 - ts[-1]) if ts else 1)             # <<<<<<<<<<<<<<
- * 
+ *
  *     curve = (p0, p1, p2, p3)
 */
   __pyx_t_8 = __pyx_PyComplex_FromComplex(__pyx_v_p3); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 147, __pyx_L1_error)
@@ -3958,9 +3958,9 @@ static PyObject *__pyx_f_9fontTools_5qu2cu_5qu2cu_merge_curves(PyObject *__pyx_v
 
   /* "fontTools/qu2cu/qu2cu.py":149
  *     p2 = p3 + (p2 - p3) / ((1 - ts[-1]) if ts else 1)
- * 
+ *
  *     curve = (p0, p1, p2, p3)             # <<<<<<<<<<<<<<
- * 
+ *
  *     return curve, ts
 */
   __pyx_t_10 = __pyx_PyComplex_FromComplex(__pyx_v_p0); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 149, __pyx_L1_error)
@@ -3990,10 +3990,10 @@ static PyObject *__pyx_f_9fontTools_5qu2cu_5qu2cu_merge_curves(PyObject *__pyx_v
 
   /* "fontTools/qu2cu/qu2cu.py":151
  *     curve = (p0, p1, p2, p3)
- * 
+ *
  *     return curve, ts             # <<<<<<<<<<<<<<
- * 
- * 
+ *
+ *
 */
   __Pyx_XDECREF(__pyx_r);
   __pyx_t_7 = PyTuple_New(2); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 151, __pyx_L1_error)
@@ -4009,8 +4009,8 @@ static PyObject *__pyx_f_9fontTools_5qu2cu_5qu2cu_merge_curves(PyObject *__pyx_v
   goto __pyx_L0;
 
   /* "fontTools/qu2cu/qu2cu.py":101
- * 
- * 
+ *
+ *
  * @cython.cfunc             # <<<<<<<<<<<<<<
  * @cython.locals(
  *     start=cython.int,
@@ -4036,15 +4036,15 @@ static PyObject *__pyx_f_9fontTools_5qu2cu_5qu2cu_merge_curves(PyObject *__pyx_v
 }
 
 /* "fontTools/qu2cu/qu2cu.py":154
- * 
- * 
+ *
+ *
  * @cython.locals(             # <<<<<<<<<<<<<<
  *     count=cython.int,
  *     num_offcurves=cython.int,
 */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_9fontTools_5qu2cu_5qu2cu_3add_implicit_on_curves(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_5qu2cu_5qu2cu_3add_implicit_on_curves(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -4053,7 +4053,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_9fontTools_5qu2cu_5qu2cu_2add_implicit_on_curves, "add_implicit_on_curves(p)");
 static PyMethodDef __pyx_mdef_9fontTools_5qu2cu_5qu2cu_3add_implicit_on_curves = {"add_implicit_on_curves", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9fontTools_5qu2cu_5qu2cu_3add_implicit_on_curves, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_9fontTools_5qu2cu_5qu2cu_2add_implicit_on_curves};
-static PyObject *__pyx_pw_9fontTools_5qu2cu_5qu2cu_3add_implicit_on_curves(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_5qu2cu_5qu2cu_3add_implicit_on_curves(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -4248,7 +4248,7 @@ static PyObject *__pyx_pf_9fontTools_5qu2cu_5qu2cu_2add_implicit_on_curves(CYTHO
  *         q.insert(i + 1 + count, on)
  *         count += 1             # <<<<<<<<<<<<<<
  *     return q
- * 
+ *
 */
     __pyx_v_count = (__pyx_v_count + 1);
   }
@@ -4257,8 +4257,8 @@ static PyObject *__pyx_pf_9fontTools_5qu2cu_5qu2cu_2add_implicit_on_curves(CYTHO
  *         q.insert(i + 1 + count, on)
  *         count += 1
  *     return q             # <<<<<<<<<<<<<<
- * 
- * 
+ *
+ *
 */
   __Pyx_XDECREF(__pyx_r);
   __Pyx_INCREF(__pyx_v_q);
@@ -4266,8 +4266,8 @@ static PyObject *__pyx_pf_9fontTools_5qu2cu_5qu2cu_2add_implicit_on_curves(CYTHO
   goto __pyx_L0;
 
   /* "fontTools/qu2cu/qu2cu.py":154
- * 
- * 
+ *
+ *
  * @cython.locals(             # <<<<<<<<<<<<<<
  *     count=cython.int,
  *     num_offcurves=cython.int,
@@ -4286,15 +4286,15 @@ static PyObject *__pyx_pf_9fontTools_5qu2cu_5qu2cu_2add_implicit_on_curves(CYTHO
 }
 
 /* "fontTools/qu2cu/qu2cu.py":178
- * 
- * 
+ *
+ *
  * @cython.locals(             # <<<<<<<<<<<<<<
  *     cost=cython.int,
  *     is_complex=cython.int,
 */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_9fontTools_5qu2cu_5qu2cu_5quadratic_to_curves(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_5qu2cu_5qu2cu_5quadratic_to_curves(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -4303,7 +4303,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_9fontTools_5qu2cu_5qu2cu_4quadratic_to_curves, "quadratic_to_curves(list quads: List[List[Point]], double max_err: float = 0.5, all_cubic: bool = False) -> List[Tuple[Point, ...]]\n\nConverts a connecting list of quadratic splines to a list of quadratic\nand cubic curves.\n\nA quadratic spline is specified as a list of points.  Either each point is\na 2-tuple of X,Y coordinates, or each point is a complex number with\nreal/imaginary components representing X,Y coordinates.\n\nThe first and last points are on-curve points and the rest are off-curve\npoints, with an implied on-curve point in the middle between every two\nconsequtive off-curve points.\n\nReturns:\n    The output is a list of tuples of points. Points are represented\n    in the same format as the input, either as 2-tuples or complex numbers.\n\n    Each tuple is either of length three, for a quadratic curve, or four,\n    for a cubic curve.  Each curve's last point is the same as the next\n    curve's first point.\n\nArgs:\n    quads: quadratic splines\n\n    max_err: absolute error tolerance; defaults to 0.5\n\n    all_cubic: if True, only cubic curves are generated; defaults to False");
 static PyMethodDef __pyx_mdef_9fontTools_5qu2cu_5qu2cu_5quadratic_to_curves = {"quadratic_to_curves", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9fontTools_5qu2cu_5qu2cu_5quadratic_to_curves, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_9fontTools_5qu2cu_5qu2cu_4quadratic_to_curves};
-static PyObject *__pyx_pw_9fontTools_5qu2cu_5qu2cu_5quadratic_to_curves(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_5qu2cu_5qu2cu_5quadratic_to_curves(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -4410,8 +4410,8 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   __pyx_r = __pyx_pf_9fontTools_5qu2cu_5qu2cu_4quadratic_to_curves(__pyx_self, __pyx_v_quads, __pyx_v_max_err, __pyx_v_all_cubic);
 
   /* "fontTools/qu2cu/qu2cu.py":178
- * 
- * 
+ *
+ *
  * @cython.locals(             # <<<<<<<<<<<<<<
  *     cost=cython.int,
  *     is_complex=cython.int,
@@ -4436,11 +4436,11 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 static PyObject *__pyx_gb_9fontTools_5qu2cu_5qu2cu_19quadratic_to_curves_8genexpr3_2generator(__pyx_CoroutineObject *__pyx_generator, CYTHON_UNUSED PyThreadState *__pyx_tstate, PyObject *__pyx_sent_value); /* proto */
 
 /* "fontTools/qu2cu/qu2cu.py":235
- * 
+ *
  *     if not is_complex:
  *         curves = [tuple((c.real, c.imag) for c in curve) for curve in curves]             # <<<<<<<<<<<<<<
  *     return curves
- * 
+ *
 */
 
 static PyObject *__pyx_pf_9fontTools_5qu2cu_5qu2cu_19quadratic_to_curves_8genexpr3_genexpr(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_genexpr_arg_0) {
@@ -4619,8 +4619,8 @@ static PyObject *__pyx_gb_9fontTools_5qu2cu_5qu2cu_19quadratic_to_curves_8genexp
 }
 
 /* "fontTools/qu2cu/qu2cu.py":178
- * 
- * 
+ *
+ *
  * @cython.locals(             # <<<<<<<<<<<<<<
  *     cost=cython.int,
  *     is_complex=cython.int,
@@ -4686,7 +4686,7 @@ static PyObject *__pyx_pf_9fontTools_5qu2cu_5qu2cu_4quadratic_to_curves(CYTHON_U
  *     is_complex = type(quads[0][0]) is complex
  *     if not is_complex:             # <<<<<<<<<<<<<<
  *         quads = [[complex(x, y) for (x, y) in p] for p in quads]
- * 
+ *
 */
   __pyx_t_3 = (!(__pyx_v_is_complex != 0));
   if (__pyx_t_3) {
@@ -4695,7 +4695,7 @@ static PyObject *__pyx_pf_9fontTools_5qu2cu_5qu2cu_4quadratic_to_curves(CYTHON_U
  *     is_complex = type(quads[0][0]) is complex
  *     if not is_complex:
  *         quads = [[complex(x, y) for (x, y) in p] for p in quads]             # <<<<<<<<<<<<<<
- * 
+ *
  *     q = [quads[0][0]]
 */
     { /* enter inner scope */
@@ -4825,7 +4825,7 @@ static PyObject *__pyx_pf_9fontTools_5qu2cu_5qu2cu_4quadratic_to_curves(CYTHON_U
             __pyx_t_11 = 0;
             __pyx_t_11 = NULL;
             __Pyx_INCREF((PyObject *)(&PyComplex_Type));
-            __pyx_t_10 = ((PyObject *)(&PyComplex_Type)); 
+            __pyx_t_10 = ((PyObject *)(&PyComplex_Type));
             __pyx_t_14 = 1;
             {
               PyObject *__pyx_callargs[3] = {__pyx_t_11, __pyx_8genexpr2__pyx_v_x, __pyx_8genexpr2__pyx_v_y};
@@ -4867,13 +4867,13 @@ static PyObject *__pyx_pf_9fontTools_5qu2cu_5qu2cu_4quadratic_to_curves(CYTHON_U
  *     is_complex = type(quads[0][0]) is complex
  *     if not is_complex:             # <<<<<<<<<<<<<<
  *         quads = [[complex(x, y) for (x, y) in p] for p in quads]
- * 
+ *
 */
   }
 
   /* "fontTools/qu2cu/qu2cu.py":217
  *         quads = [[complex(x, y) for (x, y) in p] for p in quads]
- * 
+ *
  *     q = [quads[0][0]]             # <<<<<<<<<<<<<<
  *     costs = [1]
  *     cost = 1
@@ -4892,7 +4892,7 @@ static PyObject *__pyx_pf_9fontTools_5qu2cu_5qu2cu_4quadratic_to_curves(CYTHON_U
   __pyx_t_2 = 0;
 
   /* "fontTools/qu2cu/qu2cu.py":218
- * 
+ *
  *     q = [quads[0][0]]
  *     costs = [1]             # <<<<<<<<<<<<<<
  *     cost = 1
@@ -5074,7 +5074,7 @@ static PyObject *__pyx_pf_9fontTools_5qu2cu_5qu2cu_4quadratic_to_curves(CYTHON_U
  *         q.extend(qq)
  *         cost += 1             # <<<<<<<<<<<<<<
  *         costs.append(cost)
- * 
+ *
 */
     __pyx_v_cost = (__pyx_v_cost + 1);
 
@@ -5082,7 +5082,7 @@ static PyObject *__pyx_pf_9fontTools_5qu2cu_5qu2cu_4quadratic_to_curves(CYTHON_U
  *         q.extend(qq)
  *         cost += 1
  *         costs.append(cost)             # <<<<<<<<<<<<<<
- * 
+ *
  *     curves = spline_to_curves(q, costs, max_err, all_cubic)
 */
     __pyx_t_1 = __Pyx_PyLong_From_int(__pyx_v_cost); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 230, __pyx_L1_error)
@@ -5102,9 +5102,9 @@ static PyObject *__pyx_pf_9fontTools_5qu2cu_5qu2cu_4quadratic_to_curves(CYTHON_U
 
   /* "fontTools/qu2cu/qu2cu.py":232
  *         costs.append(cost)
- * 
+ *
  *     curves = spline_to_curves(q, costs, max_err, all_cubic)             # <<<<<<<<<<<<<<
- * 
+ *
  *     if not is_complex:
 */
   __pyx_t_1 = NULL;
@@ -5138,7 +5138,7 @@ static PyObject *__pyx_pf_9fontTools_5qu2cu_5qu2cu_4quadratic_to_curves(CYTHON_U
 
   /* "fontTools/qu2cu/qu2cu.py":234
  *     curves = spline_to_curves(q, costs, max_err, all_cubic)
- * 
+ *
  *     if not is_complex:             # <<<<<<<<<<<<<<
  *         curves = [tuple((c.real, c.imag) for c in curve) for curve in curves]
  *     return curves
@@ -5147,11 +5147,11 @@ static PyObject *__pyx_pf_9fontTools_5qu2cu_5qu2cu_4quadratic_to_curves(CYTHON_U
   if (__pyx_t_3) {
 
     /* "fontTools/qu2cu/qu2cu.py":235
- * 
+ *
  *     if not is_complex:
  *         curves = [tuple((c.real, c.imag) for c in curve) for curve in curves]             # <<<<<<<<<<<<<<
  *     return curves
- * 
+ *
 */
     { /* enter inner scope */
       __pyx_t_2 = PyList_New(0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 235, __pyx_L28_error)
@@ -5228,7 +5228,7 @@ static PyObject *__pyx_pf_9fontTools_5qu2cu_5qu2cu_4quadratic_to_curves(CYTHON_U
 
     /* "fontTools/qu2cu/qu2cu.py":234
  *     curves = spline_to_curves(q, costs, max_err, all_cubic)
- * 
+ *
  *     if not is_complex:             # <<<<<<<<<<<<<<
  *         curves = [tuple((c.real, c.imag) for c in curve) for curve in curves]
  *     return curves
@@ -5239,8 +5239,8 @@ static PyObject *__pyx_pf_9fontTools_5qu2cu_5qu2cu_4quadratic_to_curves(CYTHON_U
  *     if not is_complex:
  *         curves = [tuple((c.real, c.imag) for c in curve) for curve in curves]
  *     return curves             # <<<<<<<<<<<<<<
- * 
- * 
+ *
+ *
 */
   __Pyx_XDECREF(__pyx_r);
   if (!(likely(PyList_CheckExact(__pyx_v_curves))||((__pyx_v_curves) == Py_None) || __Pyx_RaiseUnexpectedTypeError("list", __pyx_v_curves))) __PYX_ERR(0, 236, __pyx_L1_error)
@@ -5249,8 +5249,8 @@ static PyObject *__pyx_pf_9fontTools_5qu2cu_5qu2cu_4quadratic_to_curves(CYTHON_U
   goto __pyx_L0;
 
   /* "fontTools/qu2cu/qu2cu.py":178
- * 
- * 
+ *
+ *
  * @cython.locals(             # <<<<<<<<<<<<<<
  *     cost=cython.int,
  *     is_complex=cython.int,
@@ -5286,15 +5286,15 @@ static PyObject *__pyx_pf_9fontTools_5qu2cu_5qu2cu_4quadratic_to_curves(CYTHON_U
 }
 
 /* "fontTools/qu2cu/qu2cu.py":242
- * 
- * 
+ *
+ *
  * @cython.locals(             # <<<<<<<<<<<<<<
  *     i=cython.int,
  *     j=cython.int,
 */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_9fontTools_5qu2cu_5qu2cu_7spline_to_curves(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_5qu2cu_5qu2cu_7spline_to_curves(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -5303,7 +5303,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_9fontTools_5qu2cu_5qu2cu_6spline_to_curves, "spline_to_curves(q, costs, double tolerance=0.5, int all_cubic=False)\n\nq: quadratic spline with alternating on-curve / off-curve points.\n\ncosts: cumulative list of encoding cost of q in terms of number of\n  points that need to be encoded.  Implied on-curve points do not\n  contribute to the cost. If all points need to be encoded, then\n  costs will be range(1, len(q)+1).");
 static PyMethodDef __pyx_mdef_9fontTools_5qu2cu_5qu2cu_7spline_to_curves = {"spline_to_curves", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9fontTools_5qu2cu_5qu2cu_7spline_to_curves, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_9fontTools_5qu2cu_5qu2cu_6spline_to_curves};
-static PyObject *__pyx_pw_9fontTools_5qu2cu_5qu2cu_7spline_to_curves(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_5qu2cu_5qu2cu_7spline_to_curves(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -5419,8 +5419,8 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   __pyx_r = __pyx_pf_9fontTools_5qu2cu_5qu2cu_6spline_to_curves(__pyx_self, __pyx_v_q, __pyx_v_costs, __pyx_v_tolerance, __pyx_v_all_cubic);
 
   /* "fontTools/qu2cu/qu2cu.py":242
- * 
- * 
+ *
+ *
  * @cython.locals(             # <<<<<<<<<<<<<<
  *     i=cython.int,
  *     j=cython.int,
@@ -5439,7 +5439,7 @@ static PyObject *__pyx_gb_9fontTools_5qu2cu_5qu2cu_16spline_to_curves_2generator
  *             for k, reconst in enumerate(reconstructed):
  *                 orig = elevated_quadratics[j + k]
  *                 p0, p1, p2, p3 = tuple(v - u for v, u in zip(reconst, orig))             # <<<<<<<<<<<<<<
- * 
+ *
  *                 if not cubic_farthest_fit_inside(p0, p1, p2, p3, tolerance):
 */
 
@@ -5667,8 +5667,8 @@ static PyObject *__pyx_gb_9fontTools_5qu2cu_5qu2cu_16spline_to_curves_2generator
 }
 
 /* "fontTools/qu2cu/qu2cu.py":242
- * 
- * 
+ *
+ *
  * @cython.locals(             # <<<<<<<<<<<<<<
  *     i=cython.int,
  *     j=cython.int,
@@ -5749,9 +5749,9 @@ static PyObject *__pyx_pf_9fontTools_5qu2cu_5qu2cu_6spline_to_curves(CYTHON_UNUS
 
   /* "fontTools/qu2cu/qu2cu.py":275
  *     """
- * 
+ *
  *     assert len(q) >= 3, "quadratic spline requires at least 3 points"             # <<<<<<<<<<<<<<
- * 
+ *
  *     # Elevate quadratic segments to cubic
 */
   #ifndef CYTHON_WITHOUT_ASSERTIONS
@@ -5768,7 +5768,7 @@ static PyObject *__pyx_pf_9fontTools_5qu2cu_5qu2cu_6spline_to_curves(CYTHON_UNUS
   #endif
 
   /* "fontTools/qu2cu/qu2cu.py":278
- * 
+ *
  *     # Elevate quadratic segments to cubic
  *     elevated_quadratics = [             # <<<<<<<<<<<<<<
  *         elevate_quadratic(*q[i : i + 3]) for i in range(0, len(q) - 2, 2)
@@ -5783,7 +5783,7 @@ static PyObject *__pyx_pf_9fontTools_5qu2cu_5qu2cu_6spline_to_curves(CYTHON_UNUS
  *     elevated_quadratics = [
  *         elevate_quadratic(*q[i : i + 3]) for i in range(0, len(q) - 2, 2)             # <<<<<<<<<<<<<<
  *     ]
- * 
+ *
 */
     __pyx_t_1 = PyObject_Length(__pyx_v_q); if (unlikely(__pyx_t_1 == ((Py_ssize_t)-1))) __PYX_ERR(0, 279, __pyx_L1_error)
     __pyx_t_4 = (__pyx_t_1 - 2);
@@ -5809,7 +5809,7 @@ static PyObject *__pyx_pf_9fontTools_5qu2cu_5qu2cu_6spline_to_curves(CYTHON_UNUS
   __pyx_t_3 = 0;
 
   /* "fontTools/qu2cu/qu2cu.py":283
- * 
+ *
  *     # Find sharp corners; they have to be oncurves for sure.
  *     forced = set()             # <<<<<<<<<<<<<<
  *     for i in range(1, len(elevated_quadratics)):
@@ -5886,7 +5886,7 @@ static PyObject *__pyx_pf_9fontTools_5qu2cu_5qu2cu_6spline_to_curves(CYTHON_UNUS
  *         p2 = elevated_quadratics[i][1]
  *         if abs(p1 - p0) + abs(p2 - p1) > tolerance + abs(p2 - p0):             # <<<<<<<<<<<<<<
  *             forced.add(i)
- * 
+ *
 */
     __pyx_t_2 = ((__Pyx_c_abs_double(__Pyx_c_diff_double(__pyx_v_p1, __pyx_v_p0)) + __Pyx_c_abs_double(__Pyx_c_diff_double(__pyx_v_p2, __pyx_v_p1))) > (__pyx_v_tolerance + __Pyx_c_abs_double(__Pyx_c_diff_double(__pyx_v_p2, __pyx_v_p0))));
     if (__pyx_t_2) {
@@ -5895,7 +5895,7 @@ static PyObject *__pyx_pf_9fontTools_5qu2cu_5qu2cu_6spline_to_curves(CYTHON_UNUS
  *         p2 = elevated_quadratics[i][1]
  *         if abs(p1 - p0) + abs(p2 - p1) > tolerance + abs(p2 - p0):
  *             forced.add(i)             # <<<<<<<<<<<<<<
- * 
+ *
  *     # Dynamic-Programming to find the solution with fewest number of
 */
       __pyx_t_7 = __Pyx_PyLong_From_int(__pyx_v_i); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 289, __pyx_L1_error)
@@ -5908,7 +5908,7 @@ static PyObject *__pyx_pf_9fontTools_5qu2cu_5qu2cu_6spline_to_curves(CYTHON_UNUS
  *         p2 = elevated_quadratics[i][1]
  *         if abs(p1 - p0) + abs(p2 - p1) > tolerance + abs(p2 - p0):             # <<<<<<<<<<<<<<
  *             forced.add(i)
- * 
+ *
 */
     }
   }
@@ -6007,7 +6007,7 @@ static PyObject *__pyx_pf_9fontTools_5qu2cu_5qu2cu_6spline_to_curves(CYTHON_UNUS
  *         best_sol = impossible
  *         for j in range(start, i):             # <<<<<<<<<<<<<<
  *             j_sol_count, j_sol_error = sols[j].num_points, sols[j].error
- * 
+ *
 */
     __pyx_t_13 = __pyx_v_i;
     __pyx_t_14 = __pyx_t_13;
@@ -6018,7 +6018,7 @@ static PyObject *__pyx_pf_9fontTools_5qu2cu_5qu2cu_6spline_to_curves(CYTHON_UNUS
  *         best_sol = impossible
  *         for j in range(start, i):
  *             j_sol_count, j_sol_error = sols[j].num_points, sols[j].error             # <<<<<<<<<<<<<<
- * 
+ *
  *             if not all_cubic:
 */
       __pyx_t_7 = __Pyx_GetItemInt_List(__pyx_v_sols, __pyx_v_j, int, 1, __Pyx_PyLong_From_int, 1, 1, 1, 1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 299, __pyx_L1_error)
@@ -6040,7 +6040,7 @@ static PyObject *__pyx_pf_9fontTools_5qu2cu_5qu2cu_6spline_to_curves(CYTHON_UNUS
 
       /* "fontTools/qu2cu/qu2cu.py":301
  *             j_sol_count, j_sol_error = sols[j].num_points, sols[j].error
- * 
+ *
  *             if not all_cubic:             # <<<<<<<<<<<<<<
  *                 # Solution with quadratics between j:i
  *                 this_count = costs[2 * i - 1] - costs[2 * j] + 1
@@ -6143,7 +6143,7 @@ static PyObject *__pyx_pf_9fontTools_5qu2cu_5qu2cu_6spline_to_curves(CYTHON_UNUS
  *                 i_sol = Solution(i_sol_count, i_sol_error, i - j, False)
  *                 if i_sol < best_sol:             # <<<<<<<<<<<<<<
  *                     best_sol = i_sol
- * 
+ *
 */
         __pyx_t_6 = PyObject_RichCompare(__pyx_v_i_sol, __pyx_v_best_sol, Py_LT); __Pyx_XGOTREF(__pyx_t_6); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 307, __pyx_L1_error)
         __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_6); if (unlikely((__pyx_t_2 < 0))) __PYX_ERR(0, 307, __pyx_L1_error)
@@ -6154,7 +6154,7 @@ static PyObject *__pyx_pf_9fontTools_5qu2cu_5qu2cu_6spline_to_curves(CYTHON_UNUS
  *                 i_sol = Solution(i_sol_count, i_sol_error, i - j, False)
  *                 if i_sol < best_sol:
  *                     best_sol = i_sol             # <<<<<<<<<<<<<<
- * 
+ *
  *                 if this_count <= 3:
 */
           __Pyx_INCREF(__pyx_v_i_sol);
@@ -6165,13 +6165,13 @@ static PyObject *__pyx_pf_9fontTools_5qu2cu_5qu2cu_6spline_to_curves(CYTHON_UNUS
  *                 i_sol = Solution(i_sol_count, i_sol_error, i - j, False)
  *                 if i_sol < best_sol:             # <<<<<<<<<<<<<<
  *                     best_sol = i_sol
- * 
+ *
 */
         }
 
         /* "fontTools/qu2cu/qu2cu.py":310
  *                     best_sol = i_sol
- * 
+ *
  *                 if this_count <= 3:             # <<<<<<<<<<<<<<
  *                     # Can't get any better than this in the path below
  *                     continue
@@ -6185,14 +6185,14 @@ static PyObject *__pyx_pf_9fontTools_5qu2cu_5qu2cu_6spline_to_curves(CYTHON_UNUS
  *                 if this_count <= 3:
  *                     # Can't get any better than this in the path below
  *                     continue             # <<<<<<<<<<<<<<
- * 
+ *
  *             # Fit elevated_quadratics[j:i] into one cubic
 */
           goto __pyx_L10_continue;
 
           /* "fontTools/qu2cu/qu2cu.py":310
  *                     best_sol = i_sol
- * 
+ *
  *                 if this_count <= 3:             # <<<<<<<<<<<<<<
  *                     # Can't get any better than this in the path below
  *                     continue
@@ -6201,7 +6201,7 @@ static PyObject *__pyx_pf_9fontTools_5qu2cu_5qu2cu_6spline_to_curves(CYTHON_UNUS
 
         /* "fontTools/qu2cu/qu2cu.py":301
  *             j_sol_count, j_sol_error = sols[j].num_points, sols[j].error
- * 
+ *
  *             if not all_cubic:             # <<<<<<<<<<<<<<
  *                 # Solution with quadratics between j:i
  *                 this_count = costs[2 * i - 1] - costs[2 * j] + 1
@@ -6209,7 +6209,7 @@ static PyObject *__pyx_pf_9fontTools_5qu2cu_5qu2cu_6spline_to_curves(CYTHON_UNUS
       }
 
       /* "fontTools/qu2cu/qu2cu.py":315
- * 
+ *
  *             # Fit elevated_quadratics[j:i] into one cubic
  *             try:             # <<<<<<<<<<<<<<
  *                 curve, ts = merge_curves(elevated_quadratics, j, i - j)
@@ -6289,7 +6289,7 @@ static PyObject *__pyx_pf_9fontTools_5qu2cu_5qu2cu_6spline_to_curves(CYTHON_UNUS
           __pyx_t_19 = 0;
 
           /* "fontTools/qu2cu/qu2cu.py":315
- * 
+ *
  *             # Fit elevated_quadratics[j:i] into one cubic
  *             try:             # <<<<<<<<<<<<<<
  *                 curve, ts = merge_curves(elevated_quadratics, j, i - j)
@@ -6313,7 +6313,7 @@ static PyObject *__pyx_pf_9fontTools_5qu2cu_5qu2cu_6spline_to_curves(CYTHON_UNUS
  *                 curve, ts = merge_curves(elevated_quadratics, j, i - j)
  *             except ZeroDivisionError:             # <<<<<<<<<<<<<<
  *                 continue
- * 
+ *
 */
         __pyx_t_16 = __Pyx_PyErr_ExceptionMatches(__pyx_builtin_ZeroDivisionError);
         if (__pyx_t_16) {
@@ -6327,7 +6327,7 @@ static PyObject *__pyx_pf_9fontTools_5qu2cu_5qu2cu_6spline_to_curves(CYTHON_UNUS
  *                 curve, ts = merge_curves(elevated_quadratics, j, i - j)
  *             except ZeroDivisionError:
  *                 continue             # <<<<<<<<<<<<<<
- * 
+ *
  *             # Now reconstruct the segments from the fitted curve
 */
           goto __pyx_L25_except_continue;
@@ -6340,7 +6340,7 @@ static PyObject *__pyx_pf_9fontTools_5qu2cu_5qu2cu_6spline_to_curves(CYTHON_UNUS
         goto __pyx_L17_except_error;
 
         /* "fontTools/qu2cu/qu2cu.py":315
- * 
+ *
  *             # Fit elevated_quadratics[j:i] into one cubic
  *             try:             # <<<<<<<<<<<<<<
  *                 curve, ts = merge_curves(elevated_quadratics, j, i - j)
@@ -6362,11 +6362,11 @@ static PyObject *__pyx_pf_9fontTools_5qu2cu_5qu2cu_6spline_to_curves(CYTHON_UNUS
       }
 
       /* "fontTools/qu2cu/qu2cu.py":321
- * 
+ *
  *             # Now reconstruct the segments from the fitted curve
  *             reconstructed_iter = splitCubicAtTC(*curve, *ts)             # <<<<<<<<<<<<<<
  *             reconstructed = []
- * 
+ *
 */
       __Pyx_GetModuleGlobalName(__pyx_t_7, __pyx_mstate_global->__pyx_n_u_splitCubicAtTC); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 321, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_7);
@@ -6389,7 +6389,7 @@ static PyObject *__pyx_pf_9fontTools_5qu2cu_5qu2cu_6spline_to_curves(CYTHON_UNUS
  *             # Now reconstruct the segments from the fitted curve
  *             reconstructed_iter = splitCubicAtTC(*curve, *ts)
  *             reconstructed = []             # <<<<<<<<<<<<<<
- * 
+ *
  *             # Knot errors
 */
       __pyx_t_6 = PyList_New(0); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 322, __pyx_L1_error)
@@ -6398,7 +6398,7 @@ static PyObject *__pyx_pf_9fontTools_5qu2cu_5qu2cu_6spline_to_curves(CYTHON_UNUS
       __pyx_t_6 = 0;
 
       /* "fontTools/qu2cu/qu2cu.py":325
- * 
+ *
  *             # Knot errors
  *             error = 0             # <<<<<<<<<<<<<<
  *             for k, reconst in enumerate(reconstructed_iter):
@@ -6586,7 +6586,7 @@ static PyObject *__pyx_pf_9fontTools_5qu2cu_5qu2cu_6spline_to_curves(CYTHON_UNUS
  *             if error > tolerance:
  *                 # Not feasible
  *                 continue             # <<<<<<<<<<<<<<
- * 
+ *
  *             # Interior errors
 */
         goto __pyx_L10_continue;
@@ -6601,7 +6601,7 @@ static PyObject *__pyx_pf_9fontTools_5qu2cu_5qu2cu_6spline_to_curves(CYTHON_UNUS
       }
 
       /* "fontTools/qu2cu/qu2cu.py":338
- * 
+ *
  *             # Interior errors
  *             for k, reconst in enumerate(reconstructed):             # <<<<<<<<<<<<<<
  *                 orig = elevated_quadratics[j + k]
@@ -6632,7 +6632,7 @@ static PyObject *__pyx_pf_9fontTools_5qu2cu_5qu2cu_6spline_to_curves(CYTHON_UNUS
  *             for k, reconst in enumerate(reconstructed):
  *                 orig = elevated_quadratics[j + k]             # <<<<<<<<<<<<<<
  *                 p0, p1, p2, p3 = tuple(v - u for v, u in zip(reconst, orig))
- * 
+ *
 */
         __pyx_t_26 = (__pyx_v_j + __pyx_v_k);
         __pyx_t_7 = __Pyx_GetItemInt_List(__pyx_v_elevated_quadratics, __pyx_t_26, int, 1, __Pyx_PyLong_From_int, 1, 1, 1, 1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 339, __pyx_L1_error)
@@ -6644,12 +6644,12 @@ static PyObject *__pyx_pf_9fontTools_5qu2cu_5qu2cu_6spline_to_curves(CYTHON_UNUS
  *             for k, reconst in enumerate(reconstructed):
  *                 orig = elevated_quadratics[j + k]
  *                 p0, p1, p2, p3 = tuple(v - u for v, u in zip(reconst, orig))             # <<<<<<<<<<<<<<
- * 
+ *
  *                 if not cubic_farthest_fit_inside(p0, p1, p2, p3, tolerance):
 */
         __pyx_t_19 = NULL;
         __Pyx_INCREF(__pyx_builtin_zip);
-        __pyx_t_18 = __pyx_builtin_zip; 
+        __pyx_t_18 = __pyx_builtin_zip;
         __pyx_t_12 = 1;
         {
           PyObject *__pyx_callargs[3] = {__pyx_t_19, __pyx_v_reconst, __pyx_v_orig};
@@ -6710,7 +6710,7 @@ static PyObject *__pyx_pf_9fontTools_5qu2cu_5qu2cu_6spline_to_curves(CYTHON_UNUS
 
         /* "fontTools/qu2cu/qu2cu.py":342
  *                 p0, p1, p2, p3 = tuple(v - u for v, u in zip(reconst, orig))
- * 
+ *
  *                 if not cubic_farthest_fit_inside(p0, p1, p2, p3, tolerance):             # <<<<<<<<<<<<<<
  *                     error = tolerance + 1
  *                     break
@@ -6720,7 +6720,7 @@ static PyObject *__pyx_pf_9fontTools_5qu2cu_5qu2cu_6spline_to_curves(CYTHON_UNUS
         if (__pyx_t_2) {
 
           /* "fontTools/qu2cu/qu2cu.py":343
- * 
+ *
  *                 if not cubic_farthest_fit_inside(p0, p1, p2, p3, tolerance):
  *                     error = tolerance + 1             # <<<<<<<<<<<<<<
  *                     break
@@ -6739,7 +6739,7 @@ static PyObject *__pyx_pf_9fontTools_5qu2cu_5qu2cu_6spline_to_curves(CYTHON_UNUS
 
           /* "fontTools/qu2cu/qu2cu.py":342
  *                 p0, p1, p2, p3 = tuple(v - u for v, u in zip(reconst, orig))
- * 
+ *
  *                 if not cubic_farthest_fit_inside(p0, p1, p2, p3, tolerance):             # <<<<<<<<<<<<<<
  *                     error = tolerance + 1
  *                     break
@@ -6747,7 +6747,7 @@ static PyObject *__pyx_pf_9fontTools_5qu2cu_5qu2cu_6spline_to_curves(CYTHON_UNUS
         }
 
         /* "fontTools/qu2cu/qu2cu.py":338
- * 
+ *
  *             # Interior errors
  *             for k, reconst in enumerate(reconstructed):             # <<<<<<<<<<<<<<
  *                 orig = elevated_quadratics[j + k]
@@ -6775,7 +6775,7 @@ static PyObject *__pyx_pf_9fontTools_5qu2cu_5qu2cu_6spline_to_curves(CYTHON_UNUS
  *             if error > tolerance:
  *                 # Not feasible
  *                 continue             # <<<<<<<<<<<<<<
- * 
+ *
  *             # Save best solution
 */
         goto __pyx_L10_continue;
@@ -6790,7 +6790,7 @@ static PyObject *__pyx_pf_9fontTools_5qu2cu_5qu2cu_6spline_to_curves(CYTHON_UNUS
       }
 
       /* "fontTools/qu2cu/qu2cu.py":350
- * 
+ *
  *             # Save best solution
  *             i_sol_count = j_sol_count + 3             # <<<<<<<<<<<<<<
  *             i_sol_error = max(j_sol_error, error)
@@ -6862,7 +6862,7 @@ static PyObject *__pyx_pf_9fontTools_5qu2cu_5qu2cu_6spline_to_curves(CYTHON_UNUS
  *             i_sol = Solution(i_sol_count, i_sol_error, i - j, True)
  *             if i_sol < best_sol:             # <<<<<<<<<<<<<<
  *                 best_sol = i_sol
- * 
+ *
 */
       __pyx_t_6 = PyObject_RichCompare(__pyx_v_i_sol, __pyx_v_best_sol, Py_LT); __Pyx_XGOTREF(__pyx_t_6); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 353, __pyx_L1_error)
       __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_6); if (unlikely((__pyx_t_2 < 0))) __PYX_ERR(0, 353, __pyx_L1_error)
@@ -6873,7 +6873,7 @@ static PyObject *__pyx_pf_9fontTools_5qu2cu_5qu2cu_6spline_to_curves(CYTHON_UNUS
  *             i_sol = Solution(i_sol_count, i_sol_error, i - j, True)
  *             if i_sol < best_sol:
  *                 best_sol = i_sol             # <<<<<<<<<<<<<<
- * 
+ *
  *             if i_sol_count == 3:
 */
         __Pyx_INCREF(__pyx_v_i_sol);
@@ -6884,13 +6884,13 @@ static PyObject *__pyx_pf_9fontTools_5qu2cu_5qu2cu_6spline_to_curves(CYTHON_UNUS
  *             i_sol = Solution(i_sol_count, i_sol_error, i - j, True)
  *             if i_sol < best_sol:             # <<<<<<<<<<<<<<
  *                 best_sol = i_sol
- * 
+ *
 */
       }
 
       /* "fontTools/qu2cu/qu2cu.py":356
  *                 best_sol = i_sol
- * 
+ *
  *             if i_sol_count == 3:             # <<<<<<<<<<<<<<
  *                 # Can't get any better than this
  *                 break
@@ -6902,14 +6902,14 @@ static PyObject *__pyx_pf_9fontTools_5qu2cu_5qu2cu_6spline_to_curves(CYTHON_UNUS
  *             if i_sol_count == 3:
  *                 # Can't get any better than this
  *                 break             # <<<<<<<<<<<<<<
- * 
+ *
  *         sols.append(best_sol)
 */
         goto __pyx_L11_break;
 
         /* "fontTools/qu2cu/qu2cu.py":356
  *                 best_sol = i_sol
- * 
+ *
  *             if i_sol_count == 3:             # <<<<<<<<<<<<<<
  *                 # Can't get any better than this
  *                 break
@@ -6921,7 +6921,7 @@ static PyObject *__pyx_pf_9fontTools_5qu2cu_5qu2cu_6spline_to_curves(CYTHON_UNUS
 
     /* "fontTools/qu2cu/qu2cu.py":360
  *                 break
- * 
+ *
  *         sols.append(best_sol)             # <<<<<<<<<<<<<<
  *         if i in forced:
  *             start = i
@@ -6929,11 +6929,11 @@ static PyObject *__pyx_pf_9fontTools_5qu2cu_5qu2cu_6spline_to_curves(CYTHON_UNUS
     __pyx_t_11 = __Pyx_PyList_Append(__pyx_v_sols, __pyx_v_best_sol); if (unlikely(__pyx_t_11 == ((int)-1))) __PYX_ERR(0, 360, __pyx_L1_error)
 
     /* "fontTools/qu2cu/qu2cu.py":361
- * 
+ *
  *         sols.append(best_sol)
  *         if i in forced:             # <<<<<<<<<<<<<<
  *             start = i
- * 
+ *
 */
     __pyx_t_6 = __Pyx_PyLong_From_int(__pyx_v_i); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 361, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
@@ -6945,23 +6945,23 @@ static PyObject *__pyx_pf_9fontTools_5qu2cu_5qu2cu_6spline_to_curves(CYTHON_UNUS
  *         sols.append(best_sol)
  *         if i in forced:
  *             start = i             # <<<<<<<<<<<<<<
- * 
+ *
  *     # Reconstruct solution
 */
       __pyx_v_start = __pyx_v_i;
 
       /* "fontTools/qu2cu/qu2cu.py":361
- * 
+ *
  *         sols.append(best_sol)
  *         if i in forced:             # <<<<<<<<<<<<<<
  *             start = i
- * 
+ *
 */
     }
   }
 
   /* "fontTools/qu2cu/qu2cu.py":365
- * 
+ *
  *     # Reconstruct solution
  *     splits = []             # <<<<<<<<<<<<<<
  *     cubic = []
@@ -7093,7 +7093,7 @@ static PyObject *__pyx_pf_9fontTools_5qu2cu_5qu2cu_6spline_to_curves(CYTHON_UNUS
 */
   __pyx_t_8 = NULL;
   __Pyx_INCREF(__pyx_builtin_zip);
-  __pyx_t_18 = __pyx_builtin_zip; 
+  __pyx_t_18 = __pyx_builtin_zip;
   __pyx_t_12 = 1;
   {
     PyObject *__pyx_callargs[3] = {__pyx_t_8, __pyx_v_splits, __pyx_v_cubic};
@@ -7236,7 +7236,7 @@ static PyObject *__pyx_pf_9fontTools_5qu2cu_5qu2cu_6spline_to_curves(CYTHON_UNUS
  *             for k in range(j, i):
  *                 curves.append(q[k * 2 : k * 2 + 3])             # <<<<<<<<<<<<<<
  *         j = i
- * 
+ *
 */
         __pyx_t_19 = __Pyx_PyObject_GetSlice(__pyx_v_q, (__pyx_v_k * 2), ((__pyx_v_k * 2) + 3), NULL, NULL, NULL, 1, 1, 1); if (unlikely(!__pyx_t_19)) __PYX_ERR(0, 380, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_19);
@@ -7250,7 +7250,7 @@ static PyObject *__pyx_pf_9fontTools_5qu2cu_5qu2cu_6spline_to_curves(CYTHON_UNUS
  *             for k in range(j, i):
  *                 curves.append(q[k * 2 : k * 2 + 3])
  *         j = i             # <<<<<<<<<<<<<<
- * 
+ *
  *     return curves
 */
     __pyx_v_j = __pyx_v_i;
@@ -7267,10 +7267,10 @@ static PyObject *__pyx_pf_9fontTools_5qu2cu_5qu2cu_6spline_to_curves(CYTHON_UNUS
 
   /* "fontTools/qu2cu/qu2cu.py":383
  *         j = i
- * 
+ *
  *     return curves             # <<<<<<<<<<<<<<
- * 
- * 
+ *
+ *
 */
   __Pyx_XDECREF(__pyx_r);
   __Pyx_INCREF(__pyx_v_curves);
@@ -7278,8 +7278,8 @@ static PyObject *__pyx_pf_9fontTools_5qu2cu_5qu2cu_6spline_to_curves(CYTHON_UNUS
   goto __pyx_L0;
 
   /* "fontTools/qu2cu/qu2cu.py":242
- * 
- * 
+ *
+ *
  * @cython.locals(             # <<<<<<<<<<<<<<
  *     i=cython.int,
  *     j=cython.int,
@@ -7319,8 +7319,8 @@ static PyObject *__pyx_pf_9fontTools_5qu2cu_5qu2cu_6spline_to_curves(CYTHON_UNUS
 }
 
 /* "fontTools/qu2cu/qu2cu.py":386
- * 
- * 
+ *
+ *
  * def main():             # <<<<<<<<<<<<<<
  *     from fontTools.cu2qu.benchmark import generate_curve
  *     from fontTools.cu2qu import curve_to_quadratic
@@ -7367,11 +7367,11 @@ static PyObject *__pyx_pf_9fontTools_5qu2cu_5qu2cu_8main(CYTHON_UNUSED PyObject 
   __Pyx_RefNannySetupContext("main", 0);
 
   /* "fontTools/qu2cu/qu2cu.py":387
- * 
+ *
  * def main():
  *     from fontTools.cu2qu.benchmark import generate_curve             # <<<<<<<<<<<<<<
  *     from fontTools.cu2qu import curve_to_quadratic
- * 
+ *
 */
   __pyx_t_1 = PyList_New(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 387, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -7392,7 +7392,7 @@ static PyObject *__pyx_pf_9fontTools_5qu2cu_5qu2cu_8main(CYTHON_UNUSED PyObject 
  * def main():
  *     from fontTools.cu2qu.benchmark import generate_curve
  *     from fontTools.cu2qu import curve_to_quadratic             # <<<<<<<<<<<<<<
- * 
+ *
  *     tolerance = 0.05
 */
   __pyx_t_2 = PyList_New(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 388, __pyx_L1_error)
@@ -7412,7 +7412,7 @@ static PyObject *__pyx_pf_9fontTools_5qu2cu_5qu2cu_8main(CYTHON_UNUSED PyObject 
 
   /* "fontTools/qu2cu/qu2cu.py":390
  *     from fontTools.cu2qu import curve_to_quadratic
- * 
+ *
  *     tolerance = 0.05             # <<<<<<<<<<<<<<
  *     reconstruct_tolerance = tolerance * 1
  *     curve = generate_curve()
@@ -7420,7 +7420,7 @@ static PyObject *__pyx_pf_9fontTools_5qu2cu_5qu2cu_8main(CYTHON_UNUSED PyObject 
   __pyx_v_tolerance = 0.05;
 
   /* "fontTools/qu2cu/qu2cu.py":391
- * 
+ *
  *     tolerance = 0.05
  *     reconstruct_tolerance = tolerance * 1             # <<<<<<<<<<<<<<
  *     curve = generate_curve()
@@ -7437,7 +7437,7 @@ static PyObject *__pyx_pf_9fontTools_5qu2cu_5qu2cu_8main(CYTHON_UNUSED PyObject 
 */
   __pyx_t_2 = NULL;
   __Pyx_INCREF(__pyx_v_generate_curve);
-  __pyx_t_3 = __pyx_v_generate_curve; 
+  __pyx_t_3 = __pyx_v_generate_curve;
   __pyx_t_4 = 1;
   #if CYTHON_UNPACK_METHODS
   if (unlikely(PyMethod_Check(__pyx_t_3))) {
@@ -7470,7 +7470,7 @@ static PyObject *__pyx_pf_9fontTools_5qu2cu_5qu2cu_8main(CYTHON_UNUSED PyObject 
 */
   __pyx_t_3 = NULL;
   __Pyx_INCREF(__pyx_v_curve_to_quadratic);
-  __pyx_t_2 = __pyx_v_curve_to_quadratic; 
+  __pyx_t_2 = __pyx_v_curve_to_quadratic;
   __pyx_t_5 = PyFloat_FromDouble(__pyx_v_tolerance); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 393, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __pyx_t_4 = 1;
@@ -7506,7 +7506,7 @@ static PyObject *__pyx_pf_9fontTools_5qu2cu_5qu2cu_8main(CYTHON_UNUSED PyObject 
 */
   __pyx_t_2 = NULL;
   __Pyx_INCREF(__pyx_builtin_print);
-  __pyx_t_5 = __pyx_builtin_print; 
+  __pyx_t_5 = __pyx_builtin_print;
 
   /* "fontTools/qu2cu/qu2cu.py":395
  *     quadratics = curve_to_quadratic(curve, tolerance)
@@ -7551,7 +7551,7 @@ static PyObject *__pyx_pf_9fontTools_5qu2cu_5qu2cu_8main(CYTHON_UNUSED PyObject 
 */
   __pyx_t_5 = NULL;
   __Pyx_INCREF(__pyx_builtin_print);
-  __pyx_t_6 = __pyx_builtin_print; 
+  __pyx_t_6 = __pyx_builtin_print;
   __pyx_t_8 = PyObject_Length(__pyx_v_quadratics); if (unlikely(__pyx_t_8 == ((Py_ssize_t)-1))) __PYX_ERR(0, 397, __pyx_L1_error)
   __pyx_t_2 = PyLong_FromSsize_t(__pyx_t_8); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 397, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -7621,7 +7621,7 @@ static PyObject *__pyx_pf_9fontTools_5qu2cu_5qu2cu_8main(CYTHON_UNUSED PyObject 
 */
   __pyx_t_7 = NULL;
   __Pyx_INCREF(__pyx_builtin_print);
-  __pyx_t_2 = __pyx_builtin_print; 
+  __pyx_t_2 = __pyx_builtin_print;
   __pyx_t_8 = PyObject_Length(__pyx_v_curves); if (unlikely(__pyx_t_8 == ((Py_ssize_t)-1))) __PYX_ERR(0, 399, __pyx_L1_error)
   __pyx_t_5 = PyLong_FromSsize_t(__pyx_t_8); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 399, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
@@ -7645,11 +7645,11 @@ static PyObject *__pyx_pf_9fontTools_5qu2cu_5qu2cu_8main(CYTHON_UNUSED PyObject 
  *     print("Those quadratics turned back into %d cubics. " % len(curves))
  *     print("Original curve:", curve)             # <<<<<<<<<<<<<<
  *     print("Reconstructed curve(s):", curves)
- * 
+ *
 */
   __pyx_t_2 = NULL;
   __Pyx_INCREF(__pyx_builtin_print);
-  __pyx_t_6 = __pyx_builtin_print; 
+  __pyx_t_6 = __pyx_builtin_print;
   __pyx_t_4 = 1;
   {
     PyObject *__pyx_callargs[3] = {__pyx_t_2, __pyx_mstate_global->__pyx_kp_u_Original_curve, __pyx_v_curve};
@@ -7665,12 +7665,12 @@ static PyObject *__pyx_pf_9fontTools_5qu2cu_5qu2cu_8main(CYTHON_UNUSED PyObject 
  *     print("Those quadratics turned back into %d cubics. " % len(curves))
  *     print("Original curve:", curve)
  *     print("Reconstructed curve(s):", curves)             # <<<<<<<<<<<<<<
- * 
- * 
+ *
+ *
 */
   __pyx_t_6 = NULL;
   __Pyx_INCREF(__pyx_builtin_print);
-  __pyx_t_2 = __pyx_builtin_print; 
+  __pyx_t_2 = __pyx_builtin_print;
   __pyx_t_4 = 1;
   {
     PyObject *__pyx_callargs[3] = {__pyx_t_6, __pyx_mstate_global->__pyx_kp_u_Reconstructed_curve_s, __pyx_v_curves};
@@ -7683,8 +7683,8 @@ static PyObject *__pyx_pf_9fontTools_5qu2cu_5qu2cu_8main(CYTHON_UNUSED PyObject 
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
   /* "fontTools/qu2cu/qu2cu.py":386
- * 
- * 
+ *
+ *
  * def main():             # <<<<<<<<<<<<<<
  *     from fontTools.cu2qu.benchmark import generate_curve
  *     from fontTools.cu2qu import curve_to_quadratic
@@ -8448,7 +8448,7 @@ __Pyx_RefNannySetupContext("PyInit_qu2cu", 0);
 
   /* "fontTools/qu2cu/qu2cu.py":19
  * # limitations under the License.
- * 
+ *
  * try:             # <<<<<<<<<<<<<<
  *     import cython
  * except (AttributeError, ImportError):
@@ -8458,7 +8458,7 @@ __Pyx_RefNannySetupContext("PyInit_qu2cu", 0);
     /*try:*/ {
 
       /* "fontTools/qu2cu/qu2cu.py":20
- * 
+ *
  * try:
  *     import cython             # <<<<<<<<<<<<<<
  * except (AttributeError, ImportError):
@@ -8471,14 +8471,14 @@ __Pyx_RefNannySetupContext("PyInit_qu2cu", 0);
  *     # if cython not installed, use mock module with no-op decorators and types
  *     from fontTools.misc import cython
  * COMPILED = cython.compiled             # <<<<<<<<<<<<<<
- * 
+ *
  * from fontTools.misc.bezierTools import splitCubicAtTC
 */
   if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_COMPILED, Py_True) < 0) __PYX_ERR(0, 24, __pyx_L1_error)
 
   /* "fontTools/qu2cu/qu2cu.py":26
  * COMPILED = cython.compiled
- * 
+ *
  * from fontTools.misc.bezierTools import splitCubicAtTC             # <<<<<<<<<<<<<<
  * from collections import namedtuple
  * import math
@@ -8495,7 +8495,7 @@ __Pyx_RefNannySetupContext("PyInit_qu2cu", 0);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
   /* "fontTools/qu2cu/qu2cu.py":27
- * 
+ *
  * from fontTools.misc.bezierTools import splitCubicAtTC
  * from collections import namedtuple             # <<<<<<<<<<<<<<
  * import math
@@ -8559,11 +8559,11 @@ __Pyx_RefNannySetupContext("PyInit_qu2cu", 0);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
   /* "fontTools/qu2cu/qu2cu.py":36
- * 
- * 
+ *
+ *
  * __all__ = ["quadratic_to_curves"]             # <<<<<<<<<<<<<<
- * 
- * 
+ *
+ *
 */
   __pyx_t_5 = __Pyx_PyList_Pack(1, __pyx_mstate_global->__pyx_n_u_quadratic_to_curves); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 36, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
@@ -8571,8 +8571,8 @@ __Pyx_RefNannySetupContext("PyInit_qu2cu", 0);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
   /* "fontTools/qu2cu/qu2cu.py":82
- * 
- * 
+ *
+ *
  * @cython.locals(             # <<<<<<<<<<<<<<
  *     p0=cython.complex,
  *     p1=cython.complex,
@@ -8583,8 +8583,8 @@ __Pyx_RefNannySetupContext("PyInit_qu2cu", 0);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
   /* "fontTools/qu2cu/qu2cu.py":154
- * 
- * 
+ *
+ *
  * @cython.locals(             # <<<<<<<<<<<<<<
  *     count=cython.int,
  *     num_offcurves=cython.int,
@@ -8595,11 +8595,11 @@ __Pyx_RefNannySetupContext("PyInit_qu2cu", 0);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
   /* "fontTools/qu2cu/qu2cu.py":175
- * 
- * 
+ *
+ *
  * Point = Union[Tuple[float, float], complex]             # <<<<<<<<<<<<<<
- * 
- * 
+ *
+ *
 */
   __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_Union); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 175, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
@@ -8632,8 +8632,8 @@ __Pyx_RefNannySetupContext("PyInit_qu2cu", 0);
   __Pyx_GOTREF(__pyx_t_7);
 
   /* "fontTools/qu2cu/qu2cu.py":178
- * 
- * 
+ *
+ *
  * @cython.locals(             # <<<<<<<<<<<<<<
  *     cost=cython.int,
  *     is_complex=cython.int,
@@ -8657,11 +8657,11 @@ __Pyx_RefNannySetupContext("PyInit_qu2cu", 0);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
   /* "fontTools/qu2cu/qu2cu.py":239
- * 
- * 
+ *
+ *
  * Solution = namedtuple("Solution", ["num_points", "error", "start_index", "is_cubic"])             # <<<<<<<<<<<<<<
- * 
- * 
+ *
+ *
 */
   __pyx_t_7 = NULL;
   __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_mstate_global->__pyx_n_u_namedtuple); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 239, __pyx_L1_error)
@@ -8694,8 +8694,8 @@ __Pyx_RefNannySetupContext("PyInit_qu2cu", 0);
   __Pyx_GOTREF(__pyx_t_6);
 
   /* "fontTools/qu2cu/qu2cu.py":242
- * 
- * 
+ *
+ *
  * @cython.locals(             # <<<<<<<<<<<<<<
  *     i=cython.int,
  *     j=cython.int,
@@ -8712,8 +8712,8 @@ __Pyx_RefNannySetupContext("PyInit_qu2cu", 0);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
   /* "fontTools/qu2cu/qu2cu.py":386
- * 
- * 
+ *
+ *
  * def main():             # <<<<<<<<<<<<<<
  *     from fontTools.cu2qu.benchmark import generate_curve
  *     from fontTools.cu2qu import curve_to_quadratic
@@ -8724,8 +8724,8 @@ __Pyx_RefNannySetupContext("PyInit_qu2cu", 0);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
   /* "fontTools/qu2cu/qu2cu.py":404
- * 
- * 
+ *
+ *
  * if __name__ == "__main__":             # <<<<<<<<<<<<<<
  *     main()
 */
@@ -8736,7 +8736,7 @@ __Pyx_RefNannySetupContext("PyInit_qu2cu", 0);
   if (__pyx_t_9) {
 
     /* "fontTools/qu2cu/qu2cu.py":405
- * 
+ *
  * if __name__ == "__main__":
  *     main()             # <<<<<<<<<<<<<<
 */
@@ -8755,8 +8755,8 @@ __Pyx_RefNannySetupContext("PyInit_qu2cu", 0);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
     /* "fontTools/qu2cu/qu2cu.py":404
- * 
- * 
+ *
+ *
  * if __name__ == "__main__":             # <<<<<<<<<<<<<<
  *     main()
 */
@@ -8765,7 +8765,7 @@ __Pyx_RefNannySetupContext("PyInit_qu2cu", 0);
   /* "fontTools/qu2cu/qu2cu.py":1
  * # cython: language_level=3             # <<<<<<<<<<<<<<
  * # distutils: define_macros=CYTHON_TRACE_NOGIL=1
- * 
+ *
 */
   __pyx_t_6 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
@@ -10724,8 +10724,8 @@ static PyObject* __Pyx_Unpacked___Pyx_PyLong_SubtractCObj(PyObject *op1, PyObjec
         return PyLong_FromLongLong(llx);
 #endif
     return __Pyx_Fallback___Pyx_PyLong_SubtractCObj(op1, op2, inplace);
-    
-    
+
+
 }
 #endif
 static PyObject* __Pyx_Float___Pyx_PyLong_SubtractCObj(PyObject *float_val, long intval, int zerodivision_check) {
@@ -10733,7 +10733,7 @@ static PyObject* __Pyx_Float___Pyx_PyLong_SubtractCObj(PyObject *float_val, long
     const long a = intval;
     double b = __Pyx_PyFloat_AS_DOUBLE(float_val);
         double result;
-        
+
         result = ((double)a) - (double)b;
         return PyFloat_FromDouble(result);
 }
@@ -11396,8 +11396,8 @@ static PyObject* __Pyx_Unpacked___Pyx_PyLong_AddObjC(PyObject *op1, PyObject *op
         return PyLong_FromLongLong(llx);
 #endif
     return __Pyx_Fallback___Pyx_PyLong_AddObjC(op1, op2, inplace);
-    
-    
+
+
 }
 #endif
 static PyObject* __Pyx_Float___Pyx_PyLong_AddObjC(PyObject *float_val, long intval, int zerodivision_check) {
@@ -11405,7 +11405,7 @@ static PyObject* __Pyx_Float___Pyx_PyLong_AddObjC(PyObject *float_val, long intv
     const long b = intval;
     double a = __Pyx_PyFloat_AS_DOUBLE(float_val);
         double result;
-        
+
         result = ((double)a) + (double)b;
         return PyFloat_FromDouble(result);
 }

@@ -1512,8 +1512,8 @@ struct __pyx_obj_9fontTools_6varLib_3iup___pyx_scope_struct_3_genexpr;
 struct __pyx_obj_9fontTools_6varLib_3iup___pyx_scope_struct_4_genexpr;
 
 /* "fontTools/varLib/iup.py":293
- * 
- * 
+ *
+ *
  * @cython.locals(             # <<<<<<<<<<<<<<
  *     i=cython.int,
  *     j=cython.int,
@@ -1525,8 +1525,8 @@ struct __pyx_defaults {
 
 
 /* "fontTools/varLib/iup.py":169
- * 
- * 
+ *
+ *
  * @cython.cfunc             # <<<<<<<<<<<<<<
  * @cython.inline
  * @cython.locals(
@@ -1538,7 +1538,7 @@ struct __pyx_obj_9fontTools_6varLib_3iup___pyx_scope_struct____pyx_f_9fontTools_
 
 
 /* "fontTools/varLib/iup.py":197
- * 
+ *
  *     return all(
  *         abs(complex(x - p, y - q)) <= tolerance             # <<<<<<<<<<<<<<
  *         for (x, y), (p, q) in zip(deltas, interp)
@@ -1558,8 +1558,8 @@ struct __pyx_obj_9fontTools_6varLib_3iup___pyx_scope_struct_1_genexpr {
 
 
 /* "fontTools/varLib/iup.py":363
- * 
- * 
+ *
+ *
  * def iup_contour_optimize(             # <<<<<<<<<<<<<<
  *     deltas: _DeltaSegment, coords: _PointSegment, tolerance: Real = 0.0
  * ) -> _DeltaOrNoneSegment:
@@ -1572,11 +1572,11 @@ struct __pyx_obj_9fontTools_6varLib_3iup___pyx_scope_struct_2_iup_contour_optimi
 
 
 /* "fontTools/varLib/iup.py":378
- * 
+ *
  *     # If all are within tolerance distance of 0, encode nothing:
  *     if all(abs(complex(*p)) <= tolerance for p in deltas):             # <<<<<<<<<<<<<<
  *         return [None] * n
- * 
+ *
 */
 struct __pyx_obj_9fontTools_6varLib_3iup___pyx_scope_struct_3_genexpr {
   PyObject_HEAD
@@ -1591,7 +1591,7 @@ struct __pyx_obj_9fontTools_6varLib_3iup___pyx_scope_struct_3_genexpr {
  *     d0 = deltas[0]
  *     if all(d0 == d for d in deltas):             # <<<<<<<<<<<<<<
  *         return [d0] + [None] * (n - 1)
- * 
+ *
 */
 struct __pyx_obj_9fontTools_6varLib_3iup___pyx_scope_struct_4_genexpr {
   PyObject_HEAD
@@ -3165,8 +3165,8 @@ static CYTHON_SMALL_CODE int __pyx_m_traverse(PyObject *m, visitproc visit, void
 /* #### Code section: module_code ### */
 
 /* "fontTools/varLib/iup.py":28
- * 
- * 
+ *
+ *
  * @cython.cfunc             # <<<<<<<<<<<<<<
  * @cython.locals(
  *     j=cython.int,
@@ -3252,7 +3252,7 @@ static PyObject *__pyx_f_9fontTools_6varLib_3iup_iup_segment(PyObject *__pyx_v_c
  *     for j in 0, 1:
  *         out_arrays[j] = out = []             # <<<<<<<<<<<<<<
  *         x1, x2, d1, d2 = rc1[j], rc2[j], rd1[j], rd2[j]
- * 
+ *
 */
     __pyx_t_3 = PyList_New(0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 51, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
@@ -3265,7 +3265,7 @@ static PyObject *__pyx_f_9fontTools_6varLib_3iup_iup_segment(PyObject *__pyx_v_c
  *     for j in 0, 1:
  *         out_arrays[j] = out = []
  *         x1, x2, d1, d2 = rc1[j], rc2[j], rd1[j], rd2[j]             # <<<<<<<<<<<<<<
- * 
+ *
  *         if x1 == x2:
 */
     __pyx_t_3 = __Pyx_GetItemInt(__pyx_v_rc1, __pyx_v_j, int, 1, __Pyx_PyLong_From_int, 0, 1, 1, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 52, __pyx_L1_error)
@@ -3291,7 +3291,7 @@ static PyObject *__pyx_f_9fontTools_6varLib_3iup_iup_segment(PyObject *__pyx_v_c
 
     /* "fontTools/varLib/iup.py":54
  *         x1, x2, d1, d2 = rc1[j], rc2[j], rd1[j], rd2[j]
- * 
+ *
  *         if x1 == x2:             # <<<<<<<<<<<<<<
  *             n = len(coords)
  *             if d1 == d2:
@@ -3300,7 +3300,7 @@ static PyObject *__pyx_f_9fontTools_6varLib_3iup_iup_segment(PyObject *__pyx_v_c
     if (__pyx_t_9) {
 
       /* "fontTools/varLib/iup.py":55
- * 
+ *
  *         if x1 == x2:
  *             n = len(coords)             # <<<<<<<<<<<<<<
  *             if d1 == d2:
@@ -3356,7 +3356,7 @@ static PyObject *__pyx_f_9fontTools_6varLib_3iup_iup_segment(PyObject *__pyx_v_c
  *             else:
  *                 out.extend([0] * n)             # <<<<<<<<<<<<<<
  *             continue
- * 
+ *
 */
       /*else*/ {
         __pyx_t_11 = PyList_New(1 * ((__pyx_v_n<0) ? 0:__pyx_v_n)); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 59, __pyx_L1_error)
@@ -3377,14 +3377,14 @@ static PyObject *__pyx_f_9fontTools_6varLib_3iup_iup_segment(PyObject *__pyx_v_c
  *             else:
  *                 out.extend([0] * n)
  *             continue             # <<<<<<<<<<<<<<
- * 
+ *
  *         if x1 > x2:
 */
       goto __pyx_L3_continue;
 
       /* "fontTools/varLib/iup.py":54
  *         x1, x2, d1, d2 = rc1[j], rc2[j], rd1[j], rd2[j]
- * 
+ *
  *         if x1 == x2:             # <<<<<<<<<<<<<<
  *             n = len(coords)
  *             if d1 == d2:
@@ -3393,7 +3393,7 @@ static PyObject *__pyx_f_9fontTools_6varLib_3iup_iup_segment(PyObject *__pyx_v_c
 
     /* "fontTools/varLib/iup.py":62
  *             continue
- * 
+ *
  *         if x1 > x2:             # <<<<<<<<<<<<<<
  *             x1, x2 = x2, x1
  *             d1, d2 = d2, d1
@@ -3402,11 +3402,11 @@ static PyObject *__pyx_f_9fontTools_6varLib_3iup_iup_segment(PyObject *__pyx_v_c
     if (__pyx_t_9) {
 
       /* "fontTools/varLib/iup.py":63
- * 
+ *
  *         if x1 > x2:
  *             x1, x2 = x2, x1             # <<<<<<<<<<<<<<
  *             d1, d2 = d2, d1
- * 
+ *
 */
       __pyx_t_8 = __pyx_v_x2;
       __pyx_t_7 = __pyx_v_x1;
@@ -3417,7 +3417,7 @@ static PyObject *__pyx_f_9fontTools_6varLib_3iup_iup_segment(PyObject *__pyx_v_c
  *         if x1 > x2:
  *             x1, x2 = x2, x1
  *             d1, d2 = d2, d1             # <<<<<<<<<<<<<<
- * 
+ *
  *         # x1 < x2
 */
       __pyx_t_7 = __pyx_v_d2;
@@ -3427,7 +3427,7 @@ static PyObject *__pyx_f_9fontTools_6varLib_3iup_iup_segment(PyObject *__pyx_v_c
 
       /* "fontTools/varLib/iup.py":62
  *             continue
- * 
+ *
  *         if x1 > x2:             # <<<<<<<<<<<<<<
  *             x1, x2 = x2, x1
  *             d1, d2 = d2, d1
@@ -3435,7 +3435,7 @@ static PyObject *__pyx_f_9fontTools_6varLib_3iup_iup_segment(PyObject *__pyx_v_c
     }
 
     /* "fontTools/varLib/iup.py":67
- * 
+ *
  *         # x1 < x2
  *         scale = (d2 - d1) / (x2 - x1)             # <<<<<<<<<<<<<<
  *         for pair in coords:
@@ -3454,7 +3454,7 @@ static PyObject *__pyx_f_9fontTools_6varLib_3iup_iup_segment(PyObject *__pyx_v_c
  *         scale = (d2 - d1) / (x2 - x1)
  *         for pair in coords:             # <<<<<<<<<<<<<<
  *             x = pair[j]
- * 
+ *
 */
     if (likely(PyList_CheckExact(__pyx_v_coords)) || PyTuple_CheckExact(__pyx_v_coords)) {
       __pyx_t_11 = __pyx_v_coords; __Pyx_INCREF(__pyx_t_11);
@@ -3512,7 +3512,7 @@ static PyObject *__pyx_f_9fontTools_6varLib_3iup_iup_segment(PyObject *__pyx_v_c
  *         scale = (d2 - d1) / (x2 - x1)
  *         for pair in coords:
  *             x = pair[j]             # <<<<<<<<<<<<<<
- * 
+ *
  *             if x <= x1:
 */
       __pyx_t_3 = __Pyx_GetItemInt(__pyx_v_pair, __pyx_v_j, int, 1, __Pyx_PyLong_From_int, 0, 1, 1, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 69, __pyx_L1_error)
@@ -3523,7 +3523,7 @@ static PyObject *__pyx_f_9fontTools_6varLib_3iup_iup_segment(PyObject *__pyx_v_c
 
       /* "fontTools/varLib/iup.py":71
  *             x = pair[j]
- * 
+ *
  *             if x <= x1:             # <<<<<<<<<<<<<<
  *                 d = d1
  *             elif x >= x2:
@@ -3532,7 +3532,7 @@ static PyObject *__pyx_f_9fontTools_6varLib_3iup_iup_segment(PyObject *__pyx_v_c
       if (__pyx_t_9) {
 
         /* "fontTools/varLib/iup.py":72
- * 
+ *
  *             if x <= x1:
  *                 d = d1             # <<<<<<<<<<<<<<
  *             elif x >= x2:
@@ -3542,7 +3542,7 @@ static PyObject *__pyx_f_9fontTools_6varLib_3iup_iup_segment(PyObject *__pyx_v_c
 
         /* "fontTools/varLib/iup.py":71
  *             x = pair[j]
- * 
+ *
  *             if x <= x1:             # <<<<<<<<<<<<<<
  *                 d = d1
  *             elif x >= x2:
@@ -3584,7 +3584,7 @@ static PyObject *__pyx_f_9fontTools_6varLib_3iup_iup_segment(PyObject *__pyx_v_c
  *                 # - https://github.com/fonttools/fonttools/issues/3703
  *                 nudge = (x - x1) * scale             # <<<<<<<<<<<<<<
  *                 d = d1 + nudge
- * 
+ *
 */
       /*else*/ {
         __pyx_v_nudge = ((__pyx_v_x - __pyx_v_x1) * __pyx_v_scale);
@@ -3593,7 +3593,7 @@ static PyObject *__pyx_f_9fontTools_6varLib_3iup_iup_segment(PyObject *__pyx_v_c
  *                 # - https://github.com/fonttools/fonttools/issues/3703
  *                 nudge = (x - x1) * scale
  *                 d = d1 + nudge             # <<<<<<<<<<<<<<
- * 
+ *
  *             out.append(d)
 */
         __pyx_v_d = (__pyx_v_d1 + __pyx_v_nudge);
@@ -3602,9 +3602,9 @@ static PyObject *__pyx_f_9fontTools_6varLib_3iup_iup_segment(PyObject *__pyx_v_c
 
       /* "fontTools/varLib/iup.py":86
  *                 d = d1 + nudge
- * 
+ *
  *             out.append(d)             # <<<<<<<<<<<<<<
- * 
+ *
  *     return zip(*out_arrays)
 */
       __pyx_t_3 = PyFloat_FromDouble(__pyx_v_d); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 86, __pyx_L1_error)
@@ -3617,7 +3617,7 @@ static PyObject *__pyx_f_9fontTools_6varLib_3iup_iup_segment(PyObject *__pyx_v_c
  *         scale = (d2 - d1) / (x2 - x1)
  *         for pair in coords:             # <<<<<<<<<<<<<<
  *             x = pair[j]
- * 
+ *
 */
     }
     __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
@@ -3635,10 +3635,10 @@ static PyObject *__pyx_f_9fontTools_6varLib_3iup_iup_segment(PyObject *__pyx_v_c
 
   /* "fontTools/varLib/iup.py":88
  *             out.append(d)
- * 
+ *
  *     return zip(*out_arrays)             # <<<<<<<<<<<<<<
- * 
- * 
+ *
+ *
 */
   __Pyx_XDECREF(__pyx_r);
   __pyx_t_1 = PySequence_Tuple(__pyx_v_out_arrays); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 88, __pyx_L1_error)
@@ -3651,8 +3651,8 @@ static PyObject *__pyx_f_9fontTools_6varLib_3iup_iup_segment(PyObject *__pyx_v_c
   goto __pyx_L0;
 
   /* "fontTools/varLib/iup.py":28
- * 
- * 
+ *
+ *
  * @cython.cfunc             # <<<<<<<<<<<<<<
  * @cython.locals(
  *     j=cython.int,
@@ -3675,15 +3675,15 @@ static PyObject *__pyx_f_9fontTools_6varLib_3iup_iup_segment(PyObject *__pyx_v_c
 }
 
 /* "fontTools/varLib/iup.py":91
- * 
- * 
+ *
+ *
  * def iup_contour(deltas: _DeltaOrNoneSegment, coords: _PointSegment) -> _DeltaSegment:             # <<<<<<<<<<<<<<
  *     """For the contour given in `coords`, interpolate any missing
  *     delta values in delta vector `deltas`.
 */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_9fontTools_6varLib_3iup_1iup_contour(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_6varLib_3iup_1iup_contour(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -3692,7 +3692,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_9fontTools_6varLib_3iup_iup_contour, "iup_contour(deltas: _DeltaOrNoneSegment, coords: _PointSegment) -> _DeltaSegment\n\nFor the contour given in `coords`, interpolate any missing\ndelta values in delta vector `deltas`.\n\nReturns fully filled-out delta vector.");
 static PyMethodDef __pyx_mdef_9fontTools_6varLib_3iup_1iup_contour = {"iup_contour", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9fontTools_6varLib_3iup_1iup_contour, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_9fontTools_6varLib_3iup_iup_contour};
-static PyObject *__pyx_pw_9fontTools_6varLib_3iup_1iup_contour(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_6varLib_3iup_1iup_contour(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -3811,7 +3811,7 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_iup_contour(CYTHON_UNUSED PyOb
 
   /* "fontTools/varLib/iup.py":97
  *     Returns fully filled-out delta vector."""
- * 
+ *
  *     assert len(deltas) == len(coords)             # <<<<<<<<<<<<<<
  *     if None not in deltas:
  *         return deltas
@@ -3831,11 +3831,11 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_iup_contour(CYTHON_UNUSED PyOb
   #endif
 
   /* "fontTools/varLib/iup.py":98
- * 
+ *
  *     assert len(deltas) == len(coords)
  *     if None not in deltas:             # <<<<<<<<<<<<<<
  *         return deltas
- * 
+ *
 */
   __pyx_t_3 = (__Pyx_PySequence_ContainsTF(Py_None, __pyx_v_deltas, Py_NE)); if (unlikely((__pyx_t_3 < 0))) __PYX_ERR(0, 98, __pyx_L1_error)
   if (__pyx_t_3) {
@@ -3844,7 +3844,7 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_iup_contour(CYTHON_UNUSED PyOb
  *     assert len(deltas) == len(coords)
  *     if None not in deltas:
  *         return deltas             # <<<<<<<<<<<<<<
- * 
+ *
  *     n = len(deltas)
 */
     __Pyx_XDECREF(__pyx_r);
@@ -3853,17 +3853,17 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_iup_contour(CYTHON_UNUSED PyOb
     goto __pyx_L0;
 
     /* "fontTools/varLib/iup.py":98
- * 
+ *
  *     assert len(deltas) == len(coords)
  *     if None not in deltas:             # <<<<<<<<<<<<<<
  *         return deltas
- * 
+ *
 */
   }
 
   /* "fontTools/varLib/iup.py":101
  *         return deltas
- * 
+ *
  *     n = len(deltas)             # <<<<<<<<<<<<<<
  *     # indices of points with explicit deltas
  *     indices = [i for i, v in enumerate(deltas) if v is not None]
@@ -3983,7 +3983,7 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_iup_contour(CYTHON_UNUSED PyOb
  *     if not indices:
  *         # All deltas are None.  Return 0,0 for all.
  *         return [(0, 0)] * n             # <<<<<<<<<<<<<<
- * 
+ *
  *     out = []
 */
     __Pyx_XDECREF(__pyx_r);
@@ -4012,7 +4012,7 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_iup_contour(CYTHON_UNUSED PyOb
 
   /* "fontTools/varLib/iup.py":108
  *         return [(0, 0)] * n
- * 
+ *
  *     out = []             # <<<<<<<<<<<<<<
  *     it = iter(indices)
  *     start = next(it)
@@ -4023,7 +4023,7 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_iup_contour(CYTHON_UNUSED PyOb
   __pyx_t_4 = 0;
 
   /* "fontTools/varLib/iup.py":109
- * 
+ *
  *     out = []
  *     it = iter(indices)             # <<<<<<<<<<<<<<
  *     start = next(it)
@@ -4419,10 +4419,10 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_iup_contour(CYTHON_UNUSED PyOb
 
   /* "fontTools/varLib/iup.py":139
  *         )
- * 
+ *
  *     assert len(deltas) == len(out), (len(deltas), len(out))             # <<<<<<<<<<<<<<
  *     return out
- * 
+ *
 */
   #ifndef CYTHON_WITHOUT_ASSERTIONS
   if (unlikely(__pyx_assertions_enabled())) {
@@ -4457,11 +4457,11 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_iup_contour(CYTHON_UNUSED PyOb
   #endif
 
   /* "fontTools/varLib/iup.py":140
- * 
+ *
  *     assert len(deltas) == len(out), (len(deltas), len(out))
  *     return out             # <<<<<<<<<<<<<<
- * 
- * 
+ *
+ *
 */
   __Pyx_XDECREF(__pyx_r);
   __Pyx_INCREF(__pyx_v_out);
@@ -4469,8 +4469,8 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_iup_contour(CYTHON_UNUSED PyOb
   goto __pyx_L0;
 
   /* "fontTools/varLib/iup.py":91
- * 
- * 
+ *
+ *
  * def iup_contour(deltas: _DeltaOrNoneSegment, coords: _PointSegment) -> _DeltaSegment:             # <<<<<<<<<<<<<<
  *     """For the contour given in `coords`, interpolate any missing
  *     delta values in delta vector `deltas`.
@@ -4506,15 +4506,15 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_iup_contour(CYTHON_UNUSED PyOb
 }
 
 /* "fontTools/varLib/iup.py":143
- * 
- * 
+ *
+ *
  * def iup_delta(             # <<<<<<<<<<<<<<
  *     deltas: _DeltaOrNoneSegment, coords: _PointSegment, ends: _Endpoints
  * ) -> _DeltaSegment:
 */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_9fontTools_6varLib_3iup_3iup_delta(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_6varLib_3iup_3iup_delta(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -4523,7 +4523,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_9fontTools_6varLib_3iup_2iup_delta, "iup_delta(deltas: _DeltaOrNoneSegment, coords: _PointSegment, ends: _Endpoints) -> _DeltaSegment\n\nFor the outline given in `coords`, with contour endpoints given\nin sorted increasing order in `ends`, interpolate any missing\ndelta values in delta vector `deltas`.\n\nReturns fully filled-out delta vector.");
 static PyMethodDef __pyx_mdef_9fontTools_6varLib_3iup_3iup_delta = {"iup_delta", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9fontTools_6varLib_3iup_3iup_delta, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_9fontTools_6varLib_3iup_2iup_delta};
-static PyObject *__pyx_pw_9fontTools_6varLib_3iup_3iup_delta(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_6varLib_3iup_3iup_delta(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -4643,7 +4643,7 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_2iup_delta(CYTHON_UNUSED PyObj
 
   /* "fontTools/varLib/iup.py":152
  *     Returns fully filled-out delta vector."""
- * 
+ *
  *     assert sorted(ends) == ends and len(coords) == (ends[-1] + 1 if ends else 0) + 4             # <<<<<<<<<<<<<<
  *     n = len(coords)
  *     ends = ends + [n - 4, n - 3, n - 2, n - 1]
@@ -4698,7 +4698,7 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_2iup_delta(CYTHON_UNUSED PyObj
   #endif
 
   /* "fontTools/varLib/iup.py":153
- * 
+ *
  *     assert sorted(ends) == ends and len(coords) == (ends[-1] + 1 if ends else 0) + 4
  *     n = len(coords)             # <<<<<<<<<<<<<<
  *     ends = ends + [n - 4, n - 3, n - 2, n - 1]
@@ -4882,7 +4882,7 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_2iup_delta(CYTHON_UNUSED PyObj
  *         contour = iup_contour(deltas[start:end], coords[start:end])
  *         out.extend(contour)             # <<<<<<<<<<<<<<
  *         start = end
- * 
+ *
 */
     __pyx_t_12 = __Pyx_PyList_Extend(__pyx_v_out, __pyx_v_contour); if (unlikely(__pyx_t_12 == ((int)-1))) __PYX_ERR(0, 160, __pyx_L1_error)
 
@@ -4890,7 +4890,7 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_2iup_delta(CYTHON_UNUSED PyObj
  *         contour = iup_contour(deltas[start:end], coords[start:end])
  *         out.extend(contour)
  *         start = end             # <<<<<<<<<<<<<<
- * 
+ *
  *     return out
 */
     __Pyx_INCREF(__pyx_v_end);
@@ -4908,10 +4908,10 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_2iup_delta(CYTHON_UNUSED PyObj
 
   /* "fontTools/varLib/iup.py":163
  *         start = end
- * 
+ *
  *     return out             # <<<<<<<<<<<<<<
- * 
- * 
+ *
+ *
 */
   __Pyx_XDECREF(__pyx_r);
   __Pyx_INCREF(__pyx_v_out);
@@ -4919,8 +4919,8 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_2iup_delta(CYTHON_UNUSED PyObj
   goto __pyx_L0;
 
   /* "fontTools/varLib/iup.py":143
- * 
- * 
+ *
+ *
  * def iup_delta(             # <<<<<<<<<<<<<<
  *     deltas: _DeltaOrNoneSegment, coords: _PointSegment, ends: _Endpoints
  * ) -> _DeltaSegment:
@@ -4950,7 +4950,7 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_2iup_delta(CYTHON_UNUSED PyObj
 static PyObject *__pyx_gb_9fontTools_6varLib_3iup_18can_iup_in_between_2generator(__pyx_CoroutineObject *__pyx_generator, CYTHON_UNUSED PyThreadState *__pyx_tstate, PyObject *__pyx_sent_value); /* proto */
 
 /* "fontTools/varLib/iup.py":197
- * 
+ *
  *     return all(
  *         abs(complex(x - p, y - q)) <= tolerance             # <<<<<<<<<<<<<<
  *         for (x, y), (p, q) in zip(deltas, interp)
@@ -5034,7 +5034,7 @@ static PyObject *__pyx_gb_9fontTools_6varLib_3iup_18can_iup_in_between_2generato
  *         abs(complex(x - p, y - q)) <= tolerance
  *         for (x, y), (p, q) in zip(deltas, interp)             # <<<<<<<<<<<<<<
  *     )
- * 
+ *
 */
   if (unlikely(!__pyx_cur_scope->__pyx_genexpr_arg_0)) { __Pyx_RaiseUnboundLocalError(".0"); __PYX_ERR(0, 198, __pyx_L1_error) }
   if (likely(PyList_CheckExact(__pyx_cur_scope->__pyx_genexpr_arg_0)) || PyTuple_CheckExact(__pyx_cur_scope->__pyx_genexpr_arg_0)) {
@@ -5250,7 +5250,7 @@ static PyObject *__pyx_gb_9fontTools_6varLib_3iup_18can_iup_in_between_2generato
     __pyx_cur_scope->__pyx_v_q = __pyx_t_11;
 
     /* "fontTools/varLib/iup.py":197
- * 
+ *
  *     return all(
  *         abs(complex(x - p, y - q)) <= tolerance             # <<<<<<<<<<<<<<
  *         for (x, y), (p, q) in zip(deltas, interp)
@@ -5258,7 +5258,7 @@ static PyObject *__pyx_gb_9fontTools_6varLib_3iup_18can_iup_in_between_2generato
 */
     __pyx_t_6 = NULL;
     __Pyx_INCREF((PyObject *)(&PyComplex_Type));
-    __pyx_t_5 = ((PyObject *)(&PyComplex_Type)); 
+    __pyx_t_5 = ((PyObject *)(&PyComplex_Type));
     __pyx_t_7 = PyFloat_FromDouble((__pyx_cur_scope->__pyx_v_x - __pyx_cur_scope->__pyx_v_p)); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 197, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
     __pyx_t_9 = PyFloat_FromDouble((__pyx_cur_scope->__pyx_v_y - __pyx_cur_scope->__pyx_v_q)); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 197, __pyx_L1_error)
@@ -5287,7 +5287,7 @@ static PyObject *__pyx_gb_9fontTools_6varLib_3iup_18can_iup_in_between_2generato
 
       /* "fontTools/varLib/iup.py":196
  *     deltas = deltas[i + 1 : j]
- * 
+ *
  *     return all(             # <<<<<<<<<<<<<<
  *         abs(complex(x - p, y - q)) <= tolerance
  *         for (x, y), (p, q) in zip(deltas, interp)
@@ -5295,7 +5295,7 @@ static PyObject *__pyx_gb_9fontTools_6varLib_3iup_18can_iup_in_between_2generato
       __Pyx_XDECREF(__pyx_r);
 
       /* "fontTools/varLib/iup.py":197
- * 
+ *
  *     return all(
  *         abs(complex(x - p, y - q)) <= tolerance             # <<<<<<<<<<<<<<
  *         for (x, y), (p, q) in zip(deltas, interp)
@@ -5312,7 +5312,7 @@ static PyObject *__pyx_gb_9fontTools_6varLib_3iup_18can_iup_in_between_2generato
  *         abs(complex(x - p, y - q)) <= tolerance
  *         for (x, y), (p, q) in zip(deltas, interp)             # <<<<<<<<<<<<<<
  *     )
- * 
+ *
 */
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -5320,7 +5320,7 @@ static PyObject *__pyx_gb_9fontTools_6varLib_3iup_18can_iup_in_between_2generato
 
     /* "fontTools/varLib/iup.py":196
  *     deltas = deltas[i + 1 : j]
- * 
+ *
  *     return all(             # <<<<<<<<<<<<<<
  *         abs(complex(x - p, y - q)) <= tolerance
  *         for (x, y), (p, q) in zip(deltas, interp)
@@ -5328,7 +5328,7 @@ static PyObject *__pyx_gb_9fontTools_6varLib_3iup_18can_iup_in_between_2generato
     __Pyx_XDECREF(__pyx_r);
 
     /* "fontTools/varLib/iup.py":197
- * 
+ *
  *     return all(
  *         abs(complex(x - p, y - q)) <= tolerance             # <<<<<<<<<<<<<<
  *         for (x, y), (p, q) in zip(deltas, interp)
@@ -5366,8 +5366,8 @@ static PyObject *__pyx_gb_9fontTools_6varLib_3iup_18can_iup_in_between_2generato
 }
 
 /* "fontTools/varLib/iup.py":169
- * 
- * 
+ *
+ *
  * @cython.cfunc             # <<<<<<<<<<<<<<
  * @cython.inline
  * @cython.locals(
@@ -5407,7 +5407,7 @@ static CYTHON_INLINE int __pyx_f_9fontTools_6varLib_3iup_can_iup_in_between(PyOb
 
   /* "fontTools/varLib/iup.py":192
  *     provided error tolerance."""
- * 
+ *
  *     assert j - i >= 2             # <<<<<<<<<<<<<<
  *     interp = iup_segment(coords[i + 1 : j], coords[i], deltas[i], coords[j], deltas[j])
  *     deltas = deltas[i + 1 : j]
@@ -5425,11 +5425,11 @@ static CYTHON_INLINE int __pyx_f_9fontTools_6varLib_3iup_can_iup_in_between(PyOb
   #endif
 
   /* "fontTools/varLib/iup.py":193
- * 
+ *
  *     assert j - i >= 2
  *     interp = iup_segment(coords[i + 1 : j], coords[i], deltas[i], coords[j], deltas[j])             # <<<<<<<<<<<<<<
  *     deltas = deltas[i + 1 : j]
- * 
+ *
 */
   __pyx_t_2 = __Pyx_PyObject_GetSlice(__pyx_v_coords, (__pyx_v_i + 1), __pyx_v_j, NULL, NULL, NULL, 1, 1, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 193, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -5455,7 +5455,7 @@ static CYTHON_INLINE int __pyx_f_9fontTools_6varLib_3iup_can_iup_in_between(PyOb
  *     assert j - i >= 2
  *     interp = iup_segment(coords[i + 1 : j], coords[i], deltas[i], coords[j], deltas[j])
  *     deltas = deltas[i + 1 : j]             # <<<<<<<<<<<<<<
- * 
+ *
  *     return all(
 */
   __pyx_t_7 = __Pyx_PyObject_GetSlice(__pyx_v_deltas, (__pyx_v_i + 1), __pyx_v_j, NULL, NULL, NULL, 1, 1, 1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 194, __pyx_L1_error)
@@ -5468,11 +5468,11 @@ static CYTHON_INLINE int __pyx_f_9fontTools_6varLib_3iup_can_iup_in_between(PyOb
  *         abs(complex(x - p, y - q)) <= tolerance
  *         for (x, y), (p, q) in zip(deltas, interp)             # <<<<<<<<<<<<<<
  *     )
- * 
+ *
 */
   __pyx_t_6 = NULL;
   __Pyx_INCREF(__pyx_builtin_zip);
-  __pyx_t_5 = __pyx_builtin_zip; 
+  __pyx_t_5 = __pyx_builtin_zip;
   __pyx_t_8 = 1;
   {
     PyObject *__pyx_callargs[3] = {__pyx_t_6, __pyx_v_deltas, __pyx_v_interp};
@@ -5484,7 +5484,7 @@ static CYTHON_INLINE int __pyx_f_9fontTools_6varLib_3iup_can_iup_in_between(PyOb
   }
 
   /* "fontTools/varLib/iup.py":197
- * 
+ *
  *     return all(
  *         abs(complex(x - p, y - q)) <= tolerance             # <<<<<<<<<<<<<<
  *         for (x, y), (p, q) in zip(deltas, interp)
@@ -5502,8 +5502,8 @@ static CYTHON_INLINE int __pyx_f_9fontTools_6varLib_3iup_can_iup_in_between(PyOb
   goto __pyx_L0;
 
   /* "fontTools/varLib/iup.py":169
- * 
- * 
+ *
+ *
  * @cython.cfunc             # <<<<<<<<<<<<<<
  * @cython.inline
  * @cython.locals(
@@ -5529,15 +5529,15 @@ static CYTHON_INLINE int __pyx_f_9fontTools_6varLib_3iup_can_iup_in_between(PyOb
 }
 
 /* "fontTools/varLib/iup.py":202
- * 
- * 
+ *
+ *
  * @cython.locals(             # <<<<<<<<<<<<<<
  *     cj=cython.double,
  *     dj=cython.double,
 */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_9fontTools_6varLib_3iup_5_iup_contour_bound_forced_set(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_6varLib_3iup_5_iup_contour_bound_forced_set(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -5546,7 +5546,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_9fontTools_6varLib_3iup_4_iup_contour_bound_forced_set, "_iup_contour_bound_forced_set(deltas: _DeltaSegment, coords: _PointSegment, tolerance: Real = 0) -> set\n\nThe forced set is a conservative set of points on the contour that must be encoded\nexplicitly (ie. cannot be interpolated).  Calculating this set allows for significantly\nspeeding up the dynamic-programming, as well as resolve circularity in DP.\n\nThe set is precise; that is, if an index is in the returned set, then there is no way\nthat IUP can generate delta for that point, given `coords` and `deltas`.");
 static PyMethodDef __pyx_mdef_9fontTools_6varLib_3iup_5_iup_contour_bound_forced_set = {"_iup_contour_bound_forced_set", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9fontTools_6varLib_3iup_5_iup_contour_bound_forced_set, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_9fontTools_6varLib_3iup_4_iup_contour_bound_forced_set};
-static PyObject *__pyx_pw_9fontTools_6varLib_3iup_5_iup_contour_bound_forced_set(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_6varLib_3iup_5_iup_contour_bound_forced_set(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -5695,7 +5695,7 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_4_iup_contour_bound_forced_set
  *     that IUP can generate delta for that point, given `coords` and `deltas`.
  *     """
  *     assert len(deltas) == len(coords)             # <<<<<<<<<<<<<<
- * 
+ *
  *     n = len(deltas)
 */
   #ifndef CYTHON_WITHOUT_ASSERTIONS
@@ -5714,7 +5714,7 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_4_iup_contour_bound_forced_set
 
   /* "fontTools/varLib/iup.py":224
  *     assert len(deltas) == len(coords)
- * 
+ *
  *     n = len(deltas)             # <<<<<<<<<<<<<<
  *     forced = set()
  *     # Track "last" and "next" points on the contour as we sweep.
@@ -5726,7 +5726,7 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_4_iup_contour_bound_forced_set
   __pyx_t_4 = 0;
 
   /* "fontTools/varLib/iup.py":225
- * 
+ *
  *     n = len(deltas)
  *     forced = set()             # <<<<<<<<<<<<<<
  *     # Track "last" and "next" points on the contour as we sweep.
@@ -5746,7 +5746,7 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_4_iup_contour_bound_forced_set
 */
   __pyx_t_5 = NULL;
   __Pyx_INCREF(__pyx_builtin_range);
-  __pyx_t_6 = __pyx_builtin_range; 
+  __pyx_t_6 = __pyx_builtin_range;
   __pyx_t_2 = PyObject_Length(__pyx_v_deltas); if (unlikely(__pyx_t_2 == ((Py_ssize_t)-1))) __PYX_ERR(0, 227, __pyx_L1_error)
   __pyx_t_7 = PyLong_FromSsize_t((__pyx_t_2 - 1)); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 227, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
@@ -5840,7 +5840,7 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_4_iup_contour_bound_forced_set
  *         ld, lc = deltas[i - 1], coords[i - 1]
  *         d, c = deltas[i], coords[i]             # <<<<<<<<<<<<<<
  *         nd, nc = deltas[i - n + 1], coords[i - n + 1]
- * 
+ *
 */
     __pyx_t_5 = __Pyx_PyObject_GetItem(__pyx_v_deltas, __pyx_v_i); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 229, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
@@ -5855,7 +5855,7 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_4_iup_contour_bound_forced_set
  *         ld, lc = deltas[i - 1], coords[i - 1]
  *         d, c = deltas[i], coords[i]
  *         nd, nc = deltas[i - n + 1], coords[i - n + 1]             # <<<<<<<<<<<<<<
- * 
+ *
  *         for j in (0, 1):  # For X and for Y
 */
     __pyx_t_7 = PyNumber_Subtract(__pyx_v_i, __pyx_v_n); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 230, __pyx_L1_error)
@@ -5881,7 +5881,7 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_4_iup_contour_bound_forced_set
 
     /* "fontTools/varLib/iup.py":232
  *         nd, nc = deltas[i - n + 1], coords[i - n + 1]
- * 
+ *
  *         for j in (0, 1):  # For X and for Y             # <<<<<<<<<<<<<<
  *             cj = c[j]
  *             dj = d[j]
@@ -5902,7 +5902,7 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_4_iup_contour_bound_forced_set
       __pyx_t_7 = 0;
 
       /* "fontTools/varLib/iup.py":233
- * 
+ *
  *         for j in (0, 1):  # For X and for Y
  *             cj = c[j]             # <<<<<<<<<<<<<<
  *             dj = d[j]
@@ -5958,7 +5958,7 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_4_iup_contour_bound_forced_set
  *             ldj = ld[j]
  *             ncj = nc[j]             # <<<<<<<<<<<<<<
  *             ndj = nd[j]
- * 
+ *
 */
       __pyx_t_7 = __Pyx_PyObject_GetItem(__pyx_v_nc, __pyx_v_j); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 237, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_7);
@@ -5970,7 +5970,7 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_4_iup_contour_bound_forced_set
  *             ldj = ld[j]
  *             ncj = nc[j]
  *             ndj = nd[j]             # <<<<<<<<<<<<<<
- * 
+ *
  *             if lcj <= ncj:
 */
       __pyx_t_7 = __Pyx_PyObject_GetItem(__pyx_v_nd, __pyx_v_j); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 238, __pyx_L1_error)
@@ -5981,7 +5981,7 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_4_iup_contour_bound_forced_set
 
       /* "fontTools/varLib/iup.py":240
  *             ndj = nd[j]
- * 
+ *
  *             if lcj <= ncj:             # <<<<<<<<<<<<<<
  *                 c1, c2 = lcj, ncj
  *                 d1, d2 = ldj, ndj
@@ -5990,7 +5990,7 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_4_iup_contour_bound_forced_set
       if (__pyx_t_3) {
 
         /* "fontTools/varLib/iup.py":241
- * 
+ *
  *             if lcj <= ncj:
  *                 c1, c2 = lcj, ncj             # <<<<<<<<<<<<<<
  *                 d1, d2 = ldj, ndj
@@ -6015,7 +6015,7 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_4_iup_contour_bound_forced_set
 
         /* "fontTools/varLib/iup.py":240
  *             ndj = nd[j]
- * 
+ *
  *             if lcj <= ncj:             # <<<<<<<<<<<<<<
  *                 c1, c2 = lcj, ncj
  *                 d1, d2 = ldj, ndj
@@ -6028,7 +6028,7 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_4_iup_contour_bound_forced_set
  *             else:
  *                 c1, c2 = ncj, lcj             # <<<<<<<<<<<<<<
  *                 d1, d2 = ndj, ldj
- * 
+ *
 */
       /*else*/ {
         __pyx_t_10 = __pyx_v_ncj;
@@ -6040,7 +6040,7 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_4_iup_contour_bound_forced_set
  *             else:
  *                 c1, c2 = ncj, lcj
  *                 d1, d2 = ndj, ldj             # <<<<<<<<<<<<<<
- * 
+ *
  *             force = False
 */
         __pyx_t_11 = __pyx_v_ndj;
@@ -6052,9 +6052,9 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_4_iup_contour_bound_forced_set
 
       /* "fontTools/varLib/iup.py":247
  *                 d1, d2 = ndj, ldj
- * 
+ *
  *             force = False             # <<<<<<<<<<<<<<
- * 
+ *
  *             # If the two coordinates are the same, then the interpolation
 */
       __pyx_v_force = 0;
@@ -6074,9 +6074,9 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_4_iup_contour_bound_forced_set
  *             if c1 == c2:
  *                 if abs(d1 - d2) > tolerance and abs(dj) > tolerance:             # <<<<<<<<<<<<<<
  *                     force = True
- * 
+ *
 */
-        __pyx_t_10 = fabs((__pyx_v_d1 - __pyx_v_d2)); 
+        __pyx_t_10 = fabs((__pyx_v_d1 - __pyx_v_d2));
         __pyx_t_7 = PyFloat_FromDouble(__pyx_t_10); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 255, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_7);
         __pyx_t_4 = PyObject_RichCompare(__pyx_t_7, __pyx_v_tolerance, Py_GT); __Pyx_XGOTREF(__pyx_t_4); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 255, __pyx_L1_error)
@@ -6088,7 +6088,7 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_4_iup_contour_bound_forced_set
           __pyx_t_3 = __pyx_t_12;
           goto __pyx_L10_bool_binop_done;
         }
-        __pyx_t_10 = fabs(__pyx_v_dj); 
+        __pyx_t_10 = fabs(__pyx_v_dj);
         __pyx_t_4 = PyFloat_FromDouble(__pyx_t_10); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 255, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_4);
         __pyx_t_7 = PyObject_RichCompare(__pyx_t_4, __pyx_v_tolerance, Py_GT); __Pyx_XGOTREF(__pyx_t_7); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 255, __pyx_L1_error)
@@ -6103,7 +6103,7 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_4_iup_contour_bound_forced_set
  *             if c1 == c2:
  *                 if abs(d1 - d2) > tolerance and abs(dj) > tolerance:
  *                     force = True             # <<<<<<<<<<<<<<
- * 
+ *
  *             # If coordinate for current point is between coordinate of adjacent
 */
           __pyx_v_force = 1;
@@ -6113,7 +6113,7 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_4_iup_contour_bound_forced_set
  *             if c1 == c2:
  *                 if abs(d1 - d2) > tolerance and abs(dj) > tolerance:             # <<<<<<<<<<<<<<
  *                     force = True
- * 
+ *
 */
         }
 
@@ -6145,7 +6145,7 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_4_iup_contour_bound_forced_set
  *             elif c1 <= cj <= c2:  # and c1 != c2
  *                 if not (min(d1, d2) - tolerance <= dj <= max(d1, d2) + tolerance):             # <<<<<<<<<<<<<<
  *                     force = True
- * 
+ *
 */
         __pyx_t_10 = __pyx_v_d2;
         __pyx_t_11 = __pyx_v_d1;
@@ -6192,7 +6192,7 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_4_iup_contour_bound_forced_set
  *             elif c1 <= cj <= c2:  # and c1 != c2
  *                 if not (min(d1, d2) - tolerance <= dj <= max(d1, d2) + tolerance):
  *                     force = True             # <<<<<<<<<<<<<<
- * 
+ *
  *             # Otherwise, the delta should either match the closest, or have the
 */
           __pyx_v_force = 1;
@@ -6202,7 +6202,7 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_4_iup_contour_bound_forced_set
  *             elif c1 <= cj <= c2:  # and c1 != c2
  *                 if not (min(d1, d2) - tolerance <= dj <= max(d1, d2) + tolerance):             # <<<<<<<<<<<<<<
  *                     force = True
- * 
+ *
 */
         }
 
@@ -6244,7 +6244,7 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_4_iup_contour_bound_forced_set
  *                             and abs(dj - d1) > tolerance
  *                             and ((dj - tolerance < d1) != (d1 < d2))
 */
-            __pyx_t_11 = fabs(__pyx_v_dj); 
+            __pyx_t_11 = fabs(__pyx_v_dj);
             __pyx_t_14 = PyFloat_FromDouble(__pyx_t_11); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 273, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_14);
             __pyx_t_7 = PyObject_RichCompare(__pyx_t_14, __pyx_v_tolerance, Py_GT); __Pyx_XGOTREF(__pyx_t_7); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 273, __pyx_L1_error)
@@ -6264,7 +6264,7 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_4_iup_contour_bound_forced_set
  *                             and ((dj - tolerance < d1) != (d1 < d2))
  *                         ):
 */
-            __pyx_t_11 = fabs((__pyx_v_dj - __pyx_v_d1)); 
+            __pyx_t_11 = fabs((__pyx_v_dj - __pyx_v_d1));
             __pyx_t_7 = PyFloat_FromDouble(__pyx_t_11); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 274, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_7);
             __pyx_t_14 = PyObject_RichCompare(__pyx_t_7, __pyx_v_tolerance, Py_GT); __Pyx_XGOTREF(__pyx_t_14); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 274, __pyx_L1_error)
@@ -6357,7 +6357,7 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_4_iup_contour_bound_forced_set
  *                             and abs(dj - d2) > tolerance
  *                             and ((d2 < dj + tolerance) != (d1 < d2))
 */
-            __pyx_t_11 = fabs(__pyx_v_dj); 
+            __pyx_t_11 = fabs(__pyx_v_dj);
             __pyx_t_7 = PyFloat_FromDouble(__pyx_t_11); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 280, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_7);
             __pyx_t_14 = PyObject_RichCompare(__pyx_t_7, __pyx_v_tolerance, Py_GT); __Pyx_XGOTREF(__pyx_t_14); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 280, __pyx_L1_error)
@@ -6377,7 +6377,7 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_4_iup_contour_bound_forced_set
  *                             and ((d2 < dj + tolerance) != (d1 < d2))
  *                         ):
 */
-            __pyx_t_11 = fabs((__pyx_v_dj - __pyx_v_d2)); 
+            __pyx_t_11 = fabs((__pyx_v_dj - __pyx_v_d2));
             __pyx_t_14 = PyFloat_FromDouble(__pyx_t_11); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 281, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_14);
             __pyx_t_7 = PyObject_RichCompare(__pyx_t_14, __pyx_v_tolerance, Py_GT); __Pyx_XGOTREF(__pyx_t_7); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 281, __pyx_L1_error)
@@ -6430,7 +6430,7 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_4_iup_contour_bound_forced_set
  *                             and ((d2 < dj + tolerance) != (d1 < d2))
  *                         ):
  *                             force = True             # <<<<<<<<<<<<<<
- * 
+ *
  *             if force:
 */
               __pyx_v_force = 1;
@@ -6459,7 +6459,7 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_4_iup_contour_bound_forced_set
 
       /* "fontTools/varLib/iup.py":286
  *                             force = True
- * 
+ *
  *             if force:             # <<<<<<<<<<<<<<
  *                 forced.add(i)
  *                 break
@@ -6468,11 +6468,11 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_4_iup_contour_bound_forced_set
       if (__pyx_t_12) {
 
         /* "fontTools/varLib/iup.py":287
- * 
+ *
  *             if force:
  *                 forced.add(i)             # <<<<<<<<<<<<<<
  *                 break
- * 
+ *
 */
         __pyx_t_17 = PySet_Add(__pyx_v_forced, __pyx_v_i); if (unlikely(__pyx_t_17 == ((int)-1))) __PYX_ERR(0, 287, __pyx_L1_error)
 
@@ -6480,14 +6480,14 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_4_iup_contour_bound_forced_set
  *             if force:
  *                 forced.add(i)
  *                 break             # <<<<<<<<<<<<<<
- * 
+ *
  *     return forced
 */
         goto __pyx_L6_break;
 
         /* "fontTools/varLib/iup.py":286
  *                             force = True
- * 
+ *
  *             if force:             # <<<<<<<<<<<<<<
  *                 forced.add(i)
  *                 break
@@ -6496,7 +6496,7 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_4_iup_contour_bound_forced_set
 
       /* "fontTools/varLib/iup.py":232
  *         nd, nc = deltas[i - n + 1], coords[i - n + 1]
- * 
+ *
  *         for j in (0, 1):  # For X and for Y             # <<<<<<<<<<<<<<
  *             cj = c[j]
  *             dj = d[j]
@@ -6521,10 +6521,10 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_4_iup_contour_bound_forced_set
 
   /* "fontTools/varLib/iup.py":290
  *                 break
- * 
+ *
  *     return forced             # <<<<<<<<<<<<<<
- * 
- * 
+ *
+ *
 */
   __Pyx_XDECREF(__pyx_r);
   __Pyx_INCREF(__pyx_v_forced);
@@ -6532,8 +6532,8 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_4_iup_contour_bound_forced_set
   goto __pyx_L0;
 
   /* "fontTools/varLib/iup.py":202
- * 
- * 
+ *
+ *
  * @cython.locals(             # <<<<<<<<<<<<<<
  *     cj=cython.double,
  *     dj=cython.double,
@@ -6567,8 +6567,8 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_4_iup_contour_bound_forced_set
 }
 
 /* "fontTools/varLib/iup.py":293
- * 
- * 
+ *
+ *
  * @cython.locals(             # <<<<<<<<<<<<<<
  *     i=cython.int,
  *     j=cython.int,
@@ -6596,8 +6596,8 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_16__defaults__(CYTHON_UNUSED P
   __Pyx_GOTREF(__pyx_t_1);
 
   /* "fontTools/varLib/iup.py":293
- * 
- * 
+ *
+ *
  * @cython.locals(             # <<<<<<<<<<<<<<
  *     i=cython.int,
  *     j=cython.int,
@@ -6638,7 +6638,7 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_16__defaults__(CYTHON_UNUSED P
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_9fontTools_6varLib_3iup_7_iup_contour_optimize_dp(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_6varLib_3iup_7_iup_contour_optimize_dp(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -6647,7 +6647,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_9fontTools_6varLib_3iup_6_iup_contour_optimize_dp, "_iup_contour_optimize_dp(deltas: _DeltaSegment, coords: _PointSegment, set forced=set(), double tolerance: Real = 0, lookback: Integral = None)\n\nStraightforward Dynamic-Programming.  For each index i, find least-costly encoding of\npoints 0 to i where i is explicitly encoded.  We find this by considering all previous\nexplicit points j and check whether interpolation can fill points between j and i.\n\nNote that solution always encodes last point explicitly.  Higher-level is responsible\nfor removing that restriction.\n\nAs major speedup, we stop looking further whenever we see a \"forced\" point.");
 static PyMethodDef __pyx_mdef_9fontTools_6varLib_3iup_7_iup_contour_optimize_dp = {"_iup_contour_optimize_dp", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9fontTools_6varLib_3iup_7_iup_contour_optimize_dp, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_9fontTools_6varLib_3iup_6_iup_contour_optimize_dp};
-static PyObject *__pyx_pw_9fontTools_6varLib_3iup_7_iup_contour_optimize_dp(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_6varLib_3iup_7_iup_contour_optimize_dp(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -6775,8 +6775,8 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   __pyx_r = __pyx_pf_9fontTools_6varLib_3iup_6_iup_contour_optimize_dp(__pyx_self, __pyx_v_deltas, __pyx_v_coords, __pyx_v_forced, __pyx_v_tolerance, __pyx_v_lookback);
 
   /* "fontTools/varLib/iup.py":293
- * 
- * 
+ *
+ *
  * @cython.locals(             # <<<<<<<<<<<<<<
  *     i=cython.int,
  *     j=cython.int,
@@ -6832,7 +6832,7 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_6_iup_contour_optimize_dp(CYTH
 
   /* "fontTools/varLib/iup.py":318
  *     As major speedup, we stop looking further whenever we see a "forced" point."""
- * 
+ *
  *     n = len(deltas)             # <<<<<<<<<<<<<<
  *     if lookback is None:
  *         lookback = n
@@ -6841,7 +6841,7 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_6_iup_contour_optimize_dp(CYTH
   __pyx_v_n = __pyx_t_1;
 
   /* "fontTools/varLib/iup.py":319
- * 
+ *
  *     n = len(deltas)
  *     if lookback is None:             # <<<<<<<<<<<<<<
  *         lookback = n
@@ -6863,7 +6863,7 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_6_iup_contour_optimize_dp(CYTH
     __pyx_t_3 = 0;
 
     /* "fontTools/varLib/iup.py":319
- * 
+ *
  *     n = len(deltas)
  *     if lookback is None:             # <<<<<<<<<<<<<<
  *         lookback = n
@@ -6931,7 +6931,7 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_6_iup_contour_optimize_dp(CYTH
  *     chain = {-1: None}
  *     for i in range(0, n):             # <<<<<<<<<<<<<<
  *         best_cost = costs[i - 1] + 1
- * 
+ *
 */
   __pyx_t_1 = __pyx_v_n;
   __pyx_t_7 = __pyx_t_1;
@@ -6942,7 +6942,7 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_6_iup_contour_optimize_dp(CYTH
  *     chain = {-1: None}
  *     for i in range(0, n):
  *         best_cost = costs[i - 1] + 1             # <<<<<<<<<<<<<<
- * 
+ *
  *         costs[i] = best_cost
 */
     __pyx_t_3 = __Pyx_PyLong_From_long((__pyx_v_i - 1)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 325, __pyx_L1_error)
@@ -6959,10 +6959,10 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_6_iup_contour_optimize_dp(CYTH
 
     /* "fontTools/varLib/iup.py":327
  *         best_cost = costs[i - 1] + 1
- * 
+ *
  *         costs[i] = best_cost             # <<<<<<<<<<<<<<
  *         chain[i] = i - 1
- * 
+ *
 */
     __pyx_t_3 = PyFloat_FromDouble(__pyx_v_best_cost); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 327, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
@@ -6973,10 +6973,10 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_6_iup_contour_optimize_dp(CYTH
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
     /* "fontTools/varLib/iup.py":328
- * 
+ *
  *         costs[i] = best_cost
  *         chain[i] = i - 1             # <<<<<<<<<<<<<<
- * 
+ *
  *         if i - 1 in forced:
 */
     __pyx_t_3 = __Pyx_PyLong_From_long((__pyx_v_i - 1)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 328, __pyx_L1_error)
@@ -6989,10 +6989,10 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_6_iup_contour_optimize_dp(CYTH
 
     /* "fontTools/varLib/iup.py":330
  *         chain[i] = i - 1
- * 
+ *
  *         if i - 1 in forced:             # <<<<<<<<<<<<<<
  *             continue
- * 
+ *
 */
     __pyx_t_3 = __Pyx_PyLong_From_long((__pyx_v_i - 1)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 330, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
@@ -7005,29 +7005,29 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_6_iup_contour_optimize_dp(CYTH
     if (__pyx_t_2) {
 
       /* "fontTools/varLib/iup.py":331
- * 
+ *
  *         if i - 1 in forced:
  *             continue             # <<<<<<<<<<<<<<
- * 
+ *
  *         for j in range(i - 2, max(i - lookback, -2), -1):
 */
       goto __pyx_L4_continue;
 
       /* "fontTools/varLib/iup.py":330
  *         chain[i] = i - 1
- * 
+ *
  *         if i - 1 in forced:             # <<<<<<<<<<<<<<
  *             continue
- * 
+ *
 */
     }
 
     /* "fontTools/varLib/iup.py":333
  *             continue
- * 
+ *
  *         for j in range(i - 2, max(i - lookback, -2), -1):             # <<<<<<<<<<<<<<
  *             cost = costs[j] + 1
- * 
+ *
 */
     __pyx_t_10 = -2L;
     __pyx_t_3 = __Pyx_PyLong_From_int(__pyx_v_i); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 333, __pyx_L1_error)
@@ -7058,10 +7058,10 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_6_iup_contour_optimize_dp(CYTH
       __pyx_v_j = __pyx_t_13;
 
       /* "fontTools/varLib/iup.py":334
- * 
+ *
  *         for j in range(i - 2, max(i - lookback, -2), -1):
  *             cost = costs[j] + 1             # <<<<<<<<<<<<<<
- * 
+ *
  *             if cost < best_cost and can_iup_in_between(deltas, coords, j, i, tolerance):
 */
       __pyx_t_3 = __Pyx_PyLong_From_int(__pyx_v_j); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 334, __pyx_L1_error)
@@ -7078,7 +7078,7 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_6_iup_contour_optimize_dp(CYTH
 
       /* "fontTools/varLib/iup.py":336
  *             cost = costs[j] + 1
- * 
+ *
  *             if cost < best_cost and can_iup_in_between(deltas, coords, j, i, tolerance):             # <<<<<<<<<<<<<<
  *                 costs[i] = best_cost = cost
  *                 chain[i] = j
@@ -7099,11 +7099,11 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_6_iup_contour_optimize_dp(CYTH
       if (__pyx_t_2) {
 
         /* "fontTools/varLib/iup.py":337
- * 
+ *
  *             if cost < best_cost and can_iup_in_between(deltas, coords, j, i, tolerance):
  *                 costs[i] = best_cost = cost             # <<<<<<<<<<<<<<
  *                 chain[i] = j
- * 
+ *
 */
         __pyx_t_3 = PyFloat_FromDouble(__pyx_v_cost); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 337, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_3);
@@ -7118,7 +7118,7 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_6_iup_contour_optimize_dp(CYTH
  *             if cost < best_cost and can_iup_in_between(deltas, coords, j, i, tolerance):
  *                 costs[i] = best_cost = cost
  *                 chain[i] = j             # <<<<<<<<<<<<<<
- * 
+ *
  *             if j in forced:
 */
         __pyx_t_3 = __Pyx_PyLong_From_int(__pyx_v_j); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 338, __pyx_L1_error)
@@ -7131,7 +7131,7 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_6_iup_contour_optimize_dp(CYTH
 
         /* "fontTools/varLib/iup.py":336
  *             cost = costs[j] + 1
- * 
+ *
  *             if cost < best_cost and can_iup_in_between(deltas, coords, j, i, tolerance):             # <<<<<<<<<<<<<<
  *                 costs[i] = best_cost = cost
  *                 chain[i] = j
@@ -7140,10 +7140,10 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_6_iup_contour_optimize_dp(CYTH
 
       /* "fontTools/varLib/iup.py":340
  *                 chain[i] = j
- * 
+ *
  *             if j in forced:             # <<<<<<<<<<<<<<
  *                 break
- * 
+ *
 */
       __pyx_t_3 = __Pyx_PyLong_From_int(__pyx_v_j); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 340, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
@@ -7156,20 +7156,20 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_6_iup_contour_optimize_dp(CYTH
       if (__pyx_t_2) {
 
         /* "fontTools/varLib/iup.py":341
- * 
+ *
  *             if j in forced:
  *                 break             # <<<<<<<<<<<<<<
- * 
+ *
  *     return chain, costs
 */
         goto __pyx_L8_break;
 
         /* "fontTools/varLib/iup.py":340
  *                 chain[i] = j
- * 
+ *
  *             if j in forced:             # <<<<<<<<<<<<<<
  *                 break
- * 
+ *
 */
       }
     }
@@ -7179,10 +7179,10 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_6_iup_contour_optimize_dp(CYTH
 
   /* "fontTools/varLib/iup.py":343
  *                 break
- * 
+ *
  *     return chain, costs             # <<<<<<<<<<<<<<
- * 
- * 
+ *
+ *
 */
   __Pyx_XDECREF(__pyx_r);
   __pyx_t_3 = PyTuple_New(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 343, __pyx_L1_error)
@@ -7198,8 +7198,8 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_6_iup_contour_optimize_dp(CYTH
   goto __pyx_L0;
 
   /* "fontTools/varLib/iup.py":293
- * 
- * 
+ *
+ *
  * @cython.locals(             # <<<<<<<<<<<<<<
  *     i=cython.int,
  *     j=cython.int,
@@ -7223,15 +7223,15 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_6_iup_contour_optimize_dp(CYTH
 }
 
 /* "fontTools/varLib/iup.py":346
- * 
- * 
+ *
+ *
  * def _rot_list(l: list, k: int):             # <<<<<<<<<<<<<<
  *     """Rotate list by k items forward.  Ie. item at position 0 will be
  *     at position k in returned list.  Negative k is allowed."""
 */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_9fontTools_6varLib_3iup_9_rot_list(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_6varLib_3iup_9_rot_list(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -7240,7 +7240,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_9fontTools_6varLib_3iup_8_rot_list, "_rot_list(list l: list, int k: int)\n\nRotate list by k items forward.  Ie. item at position 0 will be\nat position k in returned list.  Negative k is allowed.");
 static PyMethodDef __pyx_mdef_9fontTools_6varLib_3iup_9_rot_list = {"_rot_list", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9fontTools_6varLib_3iup_9_rot_list, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_9fontTools_6varLib_3iup_8_rot_list};
-static PyObject *__pyx_pw_9fontTools_6varLib_3iup_9_rot_list(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_6varLib_3iup_9_rot_list(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -7394,7 +7394,7 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_8_rot_list(CYTHON_UNUSED PyObj
  *     if not k:
  *         return l             # <<<<<<<<<<<<<<
  *     return l[n - k :] + l[: n - k]
- * 
+ *
 */
     __Pyx_XDECREF(__pyx_r);
     __Pyx_INCREF(__pyx_v_l);
@@ -7414,8 +7414,8 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_8_rot_list(CYTHON_UNUSED PyObj
  *     if not k:
  *         return l
  *     return l[n - k :] + l[: n - k]             # <<<<<<<<<<<<<<
- * 
- * 
+ *
+ *
 */
   __Pyx_XDECREF(__pyx_r);
   __pyx_t_2 = PyNumber_Subtract(__pyx_v_n, __pyx_v_k); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 353, __pyx_L1_error)
@@ -7451,8 +7451,8 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_8_rot_list(CYTHON_UNUSED PyObj
   goto __pyx_L0;
 
   /* "fontTools/varLib/iup.py":346
- * 
- * 
+ *
+ *
  * def _rot_list(l: list, k: int):             # <<<<<<<<<<<<<<
  *     """Rotate list by k items forward.  Ie. item at position 0 will be
  *     at position k in returned list.  Negative k is allowed."""
@@ -7474,15 +7474,15 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_8_rot_list(CYTHON_UNUSED PyObj
 }
 
 /* "fontTools/varLib/iup.py":356
- * 
- * 
+ *
+ *
  * def _rot_set(s: set, k: int, n: int):             # <<<<<<<<<<<<<<
  *     k %= n
  *     if not k:
 */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_9fontTools_6varLib_3iup_11_rot_set(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_6varLib_3iup_11_rot_set(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -7491,7 +7491,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_9fontTools_6varLib_3iup_10_rot_set, "_rot_set(set s: set, int k: int, int n: int)");
 static PyMethodDef __pyx_mdef_9fontTools_6varLib_3iup_11_rot_set = {"_rot_set", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9fontTools_6varLib_3iup_11_rot_set, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_9fontTools_6varLib_3iup_10_rot_set};
-static PyObject *__pyx_pw_9fontTools_6varLib_3iup_11_rot_set(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_6varLib_3iup_11_rot_set(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -7616,7 +7616,7 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_10_rot_set(CYTHON_UNUSED PyObj
   __Pyx_INCREF(__pyx_v_k);
 
   /* "fontTools/varLib/iup.py":357
- * 
+ *
  * def _rot_set(s: set, k: int, n: int):
  *     k %= n             # <<<<<<<<<<<<<<
  *     if not k:
@@ -7643,7 +7643,7 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_10_rot_set(CYTHON_UNUSED PyObj
  *     if not k:
  *         return s             # <<<<<<<<<<<<<<
  *     return {(v + k) % n for v in s}
- * 
+ *
 */
     __Pyx_XDECREF(__pyx_r);
     __Pyx_INCREF(__pyx_v_s);
@@ -7663,8 +7663,8 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_10_rot_set(CYTHON_UNUSED PyObj
  *     if not k:
  *         return s
  *     return {(v + k) % n for v in s}             # <<<<<<<<<<<<<<
- * 
- * 
+ *
+ *
 */
   __Pyx_XDECREF(__pyx_r);
   { /* enter inner scope */
@@ -7704,8 +7704,8 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_10_rot_set(CYTHON_UNUSED PyObj
   goto __pyx_L0;
 
   /* "fontTools/varLib/iup.py":356
- * 
- * 
+ *
+ *
  * def _rot_set(s: set, k: int, n: int):             # <<<<<<<<<<<<<<
  *     k %= n
  *     if not k:
@@ -7728,15 +7728,15 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_10_rot_set(CYTHON_UNUSED PyObj
 }
 
 /* "fontTools/varLib/iup.py":363
- * 
- * 
+ *
+ *
  * def iup_contour_optimize(             # <<<<<<<<<<<<<<
  *     deltas: _DeltaSegment, coords: _PointSegment, tolerance: Real = 0.0
  * ) -> _DeltaOrNoneSegment:
 */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_9fontTools_6varLib_3iup_13iup_contour_optimize(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_6varLib_3iup_13iup_contour_optimize(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -7745,7 +7745,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_9fontTools_6varLib_3iup_12iup_contour_optimize, "iup_contour_optimize(deltas: _DeltaSegment, coords: _PointSegment, tolerance: Real = 0.0) -> _DeltaOrNoneSegment\n\nFor contour with coordinates `coords`, optimize a set of delta\nvalues `deltas` within error `tolerance`.\n\nReturns delta vector that has most number of None items instead of\nthe input delta.");
 static PyMethodDef __pyx_mdef_9fontTools_6varLib_3iup_13iup_contour_optimize = {"iup_contour_optimize", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9fontTools_6varLib_3iup_13iup_contour_optimize, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_9fontTools_6varLib_3iup_12iup_contour_optimize};
-static PyObject *__pyx_pw_9fontTools_6varLib_3iup_13iup_contour_optimize(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_6varLib_3iup_13iup_contour_optimize(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -7846,11 +7846,11 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 static PyObject *__pyx_gb_9fontTools_6varLib_3iup_20iup_contour_optimize_2generator1(__pyx_CoroutineObject *__pyx_generator, CYTHON_UNUSED PyThreadState *__pyx_tstate, PyObject *__pyx_sent_value); /* proto */
 
 /* "fontTools/varLib/iup.py":378
- * 
+ *
  *     # If all are within tolerance distance of 0, encode nothing:
  *     if all(abs(complex(*p)) <= tolerance for p in deltas):             # <<<<<<<<<<<<<<
  *         return [None] * n
- * 
+ *
 */
 
 static PyObject *__pyx_pf_9fontTools_6varLib_3iup_20iup_contour_optimize_genexpr(PyObject *__pyx_self, PyObject *__pyx_genexpr_arg_0) {
@@ -8028,7 +8028,7 @@ static PyObject *__pyx_gb_9fontTools_6varLib_3iup_20iup_contour_optimize_5genera
  *     d0 = deltas[0]
  *     if all(d0 == d for d in deltas):             # <<<<<<<<<<<<<<
  *         return [d0] + [None] * (n - 1)
- * 
+ *
 */
 
 static PyObject *__pyx_pf_9fontTools_6varLib_3iup_20iup_contour_optimize_3genexpr(PyObject *__pyx_self, PyObject *__pyx_genexpr_arg_0) {
@@ -8190,8 +8190,8 @@ static PyObject *__pyx_gb_9fontTools_6varLib_3iup_20iup_contour_optimize_5genera
 }
 
 /* "fontTools/varLib/iup.py":363
- * 
- * 
+ *
+ *
  * def iup_contour_optimize(             # <<<<<<<<<<<<<<
  *     deltas: _DeltaSegment, coords: _PointSegment, tolerance: Real = 0.0
  * ) -> _DeltaOrNoneSegment:
@@ -8247,9 +8247,9 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_12iup_contour_optimize(CYTHON_
 
   /* "fontTools/varLib/iup.py":373
  *     """
- * 
+ *
  *     n = len(deltas)             # <<<<<<<<<<<<<<
- * 
+ *
  *     # Get the easy cases out of the way:
 */
   __pyx_t_1 = PyObject_Length(__pyx_v_deltas); if (unlikely(__pyx_t_1 == ((Py_ssize_t)-1))) __PYX_ERR(0, 373, __pyx_L1_error)
@@ -8259,11 +8259,11 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_12iup_contour_optimize(CYTHON_
   __pyx_t_2 = 0;
 
   /* "fontTools/varLib/iup.py":378
- * 
+ *
  *     # If all are within tolerance distance of 0, encode nothing:
  *     if all(abs(complex(*p)) <= tolerance for p in deltas):             # <<<<<<<<<<<<<<
  *         return [None] * n
- * 
+ *
 */
   __pyx_t_2 = __pyx_pf_9fontTools_6varLib_3iup_20iup_contour_optimize_genexpr(((PyObject*)__pyx_cur_scope), __pyx_v_deltas); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 378, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -8278,7 +8278,7 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_12iup_contour_optimize(CYTHON_
  *     # If all are within tolerance distance of 0, encode nothing:
  *     if all(abs(complex(*p)) <= tolerance for p in deltas):
  *         return [None] * n             # <<<<<<<<<<<<<<
- * 
+ *
  *     # If there's exactly one point, return it:
 */
     __Pyx_XDECREF(__pyx_r);
@@ -8297,20 +8297,20 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_12iup_contour_optimize(CYTHON_
     goto __pyx_L0;
 
     /* "fontTools/varLib/iup.py":378
- * 
+ *
  *     # If all are within tolerance distance of 0, encode nothing:
  *     if all(abs(complex(*p)) <= tolerance for p in deltas):             # <<<<<<<<<<<<<<
  *         return [None] * n
- * 
+ *
 */
   }
 
   /* "fontTools/varLib/iup.py":382
- * 
+ *
  *     # If there's exactly one point, return it:
  *     if n == 1:             # <<<<<<<<<<<<<<
  *         return deltas
- * 
+ *
 */
   __pyx_t_4 = (__Pyx_PyLong_BoolEqObjC(__pyx_v_n, __pyx_mstate_global->__pyx_int_1, 1, 0)); if (unlikely((__pyx_t_4 < 0))) __PYX_ERR(0, 382, __pyx_L1_error)
   if (__pyx_t_4) {
@@ -8319,7 +8319,7 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_12iup_contour_optimize(CYTHON_
  *     # If there's exactly one point, return it:
  *     if n == 1:
  *         return deltas             # <<<<<<<<<<<<<<
- * 
+ *
  *     # If all deltas are exactly the same, return just one (the first one):
 */
     __Pyx_XDECREF(__pyx_r);
@@ -8328,16 +8328,16 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_12iup_contour_optimize(CYTHON_
     goto __pyx_L0;
 
     /* "fontTools/varLib/iup.py":382
- * 
+ *
  *     # If there's exactly one point, return it:
  *     if n == 1:             # <<<<<<<<<<<<<<
  *         return deltas
- * 
+ *
 */
   }
 
   /* "fontTools/varLib/iup.py":386
- * 
+ *
  *     # If all deltas are exactly the same, return just one (the first one):
  *     d0 = deltas[0]             # <<<<<<<<<<<<<<
  *     if all(d0 == d for d in deltas):
@@ -8354,7 +8354,7 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_12iup_contour_optimize(CYTHON_
  *     d0 = deltas[0]
  *     if all(d0 == d for d in deltas):             # <<<<<<<<<<<<<<
  *         return [d0] + [None] * (n - 1)
- * 
+ *
 */
   __pyx_t_3 = __pyx_pf_9fontTools_6varLib_3iup_20iup_contour_optimize_3genexpr(((PyObject*)__pyx_cur_scope), __pyx_v_deltas); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 387, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
@@ -8369,7 +8369,7 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_12iup_contour_optimize(CYTHON_
  *     d0 = deltas[0]
  *     if all(d0 == d for d in deltas):
  *         return [d0] + [None] * (n - 1)             # <<<<<<<<<<<<<<
- * 
+ *
  *     # Else, solve the general problem using Dynamic Programming.
 */
     __Pyx_XDECREF(__pyx_r);
@@ -8404,13 +8404,13 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_12iup_contour_optimize(CYTHON_
  *     d0 = deltas[0]
  *     if all(d0 == d for d in deltas):             # <<<<<<<<<<<<<<
  *         return [d0] + [None] * (n - 1)
- * 
+ *
 */
   }
 
   /* "fontTools/varLib/iup.py":392
  *     # Else, solve the general problem using Dynamic Programming.
- * 
+ *
  *     forced = _iup_contour_bound_forced_set(deltas, coords, tolerance)             # <<<<<<<<<<<<<<
  *     # The _iup_contour_optimize_dp() routine returns the optimal encoding
  *     # solution given the constraint that the last point is always encoded.
@@ -8456,13 +8456,13 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_12iup_contour_optimize(CYTHON_
  *         # such that the last point in the list is a forced point.
  *         k = (n - 1) - max(forced)             # <<<<<<<<<<<<<<
  *         assert k >= 0
- * 
+ *
 */
     __pyx_t_3 = __Pyx_PyLong_SubtractObjC(__pyx_v_n, __pyx_mstate_global->__pyx_int_1, 1, 0, 0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 404, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __pyx_t_5 = NULL;
     __Pyx_INCREF(__pyx_builtin_max);
-    __pyx_t_7 = __pyx_builtin_max; 
+    __pyx_t_7 = __pyx_builtin_max;
     __pyx_t_6 = 1;
     {
       PyObject *__pyx_callargs[2] = {__pyx_t_5, __pyx_v_forced};
@@ -8483,7 +8483,7 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_12iup_contour_optimize(CYTHON_
  *         # such that the last point in the list is a forced point.
  *         k = (n - 1) - max(forced)
  *         assert k >= 0             # <<<<<<<<<<<<<<
- * 
+ *
  *         deltas = _rot_list(deltas, k)
 */
     #ifndef CYTHON_WITHOUT_ASSERTIONS
@@ -8502,7 +8502,7 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_12iup_contour_optimize(CYTHON_
 
     /* "fontTools/varLib/iup.py":407
  *         assert k >= 0
- * 
+ *
  *         deltas = _rot_list(deltas, k)             # <<<<<<<<<<<<<<
  *         coords = _rot_list(coords, k)
  *         forced = _rot_set(forced, k, n)
@@ -8534,11 +8534,11 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_12iup_contour_optimize(CYTHON_
     __pyx_t_7 = 0;
 
     /* "fontTools/varLib/iup.py":408
- * 
+ *
  *         deltas = _rot_list(deltas, k)
  *         coords = _rot_list(coords, k)             # <<<<<<<<<<<<<<
  *         forced = _rot_set(forced, k, n)
- * 
+ *
 */
     __pyx_t_3 = NULL;
     __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_mstate_global->__pyx_n_u_rot_list); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 408, __pyx_L1_error)
@@ -8570,7 +8570,7 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_12iup_contour_optimize(CYTHON_
  *         deltas = _rot_list(deltas, k)
  *         coords = _rot_list(coords, k)
  *         forced = _rot_set(forced, k, n)             # <<<<<<<<<<<<<<
- * 
+ *
  *         # Debugging: Pass a set() instead of forced variable to the next call
 */
     __pyx_t_2 = NULL;
@@ -8603,7 +8603,7 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_12iup_contour_optimize(CYTHON_
  *         # Debugging: Pass a set() instead of forced variable to the next call
  *         # to exercise forced-set computation for under-counting.
  *         chain, costs = _iup_contour_optimize_dp(deltas, coords, forced, tolerance)             # <<<<<<<<<<<<<<
- * 
+ *
  *         # Assemble solution.
 */
     __pyx_t_3 = NULL;
@@ -8685,7 +8685,7 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_12iup_contour_optimize(CYTHON_
     __pyx_t_3 = 0;
 
     /* "fontTools/varLib/iup.py":416
- * 
+ *
  *         # Assemble solution.
  *         solution = set()             # <<<<<<<<<<<<<<
  *         i = n - 1
@@ -8733,7 +8733,7 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_12iup_contour_optimize(CYTHON_
  *             solution.add(i)
  *             i = chain[i]             # <<<<<<<<<<<<<<
  *         solution.remove(-1)
- * 
+ *
 */
       __pyx_t_7 = __Pyx_PyObject_GetItem(__pyx_v_chain, __pyx_v_i); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 420, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_7);
@@ -8745,7 +8745,7 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_12iup_contour_optimize(CYTHON_
  *             solution.add(i)
  *             i = chain[i]
  *         solution.remove(-1)             # <<<<<<<<<<<<<<
- * 
+ *
  *         # if not forced <= solution:
 */
     __pyx_t_9 = __Pyx_PySet_Remove(__pyx_v_solution, __pyx_mstate_global->__pyx_int_neg_1); if (unlikely(__pyx_t_9 == ((int)-1))) __PYX_ERR(0, 421, __pyx_L1_error)
@@ -8754,7 +8754,7 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_12iup_contour_optimize(CYTHON_
  *         # 	print("deltas", deltas)
  *         # 	print("len", len(deltas))
  *         assert forced <= solution, (forced, solution)             # <<<<<<<<<<<<<<
- * 
+ *
  *         deltas = [deltas[i] if i in solution else None for i in range(n)]
 */
     #ifndef CYTHON_WITHOUT_ASSERTIONS
@@ -8785,9 +8785,9 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_12iup_contour_optimize(CYTHON_
 
     /* "fontTools/varLib/iup.py":429
  *         assert forced <= solution, (forced, solution)
- * 
+ *
  *         deltas = [deltas[i] if i in solution else None for i in range(n)]             # <<<<<<<<<<<<<<
- * 
+ *
  *         deltas = _rot_list(deltas, -k)
 */
     { /* enter inner scope */
@@ -8795,7 +8795,7 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_12iup_contour_optimize(CYTHON_
       __Pyx_GOTREF(__pyx_t_3);
       __pyx_t_2 = NULL;
       __Pyx_INCREF(__pyx_builtin_range);
-      __pyx_t_5 = __pyx_builtin_range; 
+      __pyx_t_5 = __pyx_builtin_range;
       __pyx_t_6 = 1;
       {
         PyObject *__pyx_callargs[2] = {__pyx_t_2, __pyx_v_n};
@@ -8883,7 +8883,7 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_12iup_contour_optimize(CYTHON_
 
     /* "fontTools/varLib/iup.py":431
  *         deltas = [deltas[i] if i in solution else None for i in range(n)]
- * 
+ *
  *         deltas = _rot_list(deltas, -k)             # <<<<<<<<<<<<<<
  *     else:
  *         # Repeat the contour an extra time, solve the new case, then look for solutions of the
@@ -9039,7 +9039,7 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_12iup_contour_optimize(CYTHON_
  *             deltas + deltas, coords + coords, forced, tolerance, n
  *         )
  *         best_sol, best_cost = None, n + 1             # <<<<<<<<<<<<<<
- * 
+ *
  *         for start in range(n - 1, len(costs) - 1):
 */
     __pyx_t_3 = Py_None;
@@ -9053,14 +9053,14 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_12iup_contour_optimize(CYTHON_
 
     /* "fontTools/varLib/iup.py":441
  *         best_sol, best_cost = None, n + 1
- * 
+ *
  *         for start in range(n - 1, len(costs) - 1):             # <<<<<<<<<<<<<<
  *             # Assemble solution.
  *             solution = set()
 */
     __pyx_t_3 = NULL;
     __Pyx_INCREF(__pyx_builtin_range);
-    __pyx_t_2 = __pyx_builtin_range; 
+    __pyx_t_2 = __pyx_builtin_range;
     __pyx_t_5 = __Pyx_PyLong_SubtractObjC(__pyx_v_n, __pyx_mstate_global->__pyx_int_1, 1, 0, 0); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 441, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __pyx_t_1 = PyObject_Length(__pyx_v_costs); if (unlikely(__pyx_t_1 == ((Py_ssize_t)-1))) __PYX_ERR(0, 441, __pyx_L1_error)
@@ -9234,7 +9234,7 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_12iup_contour_optimize(CYTHON_
  *                 cost = costs[start] - costs[start - n]
  *                 if cost <= best_cost:             # <<<<<<<<<<<<<<
  *                     best_sol, best_cost = solution, cost
- * 
+ *
 */
         __pyx_t_7 = PyObject_RichCompare(__pyx_v_cost, __pyx_v_best_cost, Py_LE); __Pyx_XGOTREF(__pyx_t_7); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 450, __pyx_L1_error)
         __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_7); if (unlikely((__pyx_t_4 < 0))) __PYX_ERR(0, 450, __pyx_L1_error)
@@ -9245,7 +9245,7 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_12iup_contour_optimize(CYTHON_
  *                 cost = costs[start] - costs[start - n]
  *                 if cost <= best_cost:
  *                     best_sol, best_cost = solution, cost             # <<<<<<<<<<<<<<
- * 
+ *
  *         # if not forced <= best_sol:
 */
           __pyx_t_7 = __pyx_v_solution;
@@ -9262,7 +9262,7 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_12iup_contour_optimize(CYTHON_
  *                 cost = costs[start] - costs[start - n]
  *                 if cost <= best_cost:             # <<<<<<<<<<<<<<
  *                     best_sol, best_cost = solution, cost
- * 
+ *
 */
         }
 
@@ -9277,7 +9277,7 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_12iup_contour_optimize(CYTHON_
 
       /* "fontTools/varLib/iup.py":441
  *         best_sol, best_cost = None, n + 1
- * 
+ *
  *         for start in range(n - 1, len(costs) - 1):             # <<<<<<<<<<<<<<
  *             # Assemble solution.
  *             solution = set()
@@ -9289,7 +9289,7 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_12iup_contour_optimize(CYTHON_
  *         # 	print("deltas", deltas)
  *         # 	print("len", len(deltas))
  *         assert forced <= best_sol, (forced, best_sol)             # <<<<<<<<<<<<<<
- * 
+ *
  *         deltas = [deltas[i] if i in best_sol else None for i in range(n)]
 */
     #ifndef CYTHON_WITHOUT_ASSERTIONS
@@ -9320,9 +9320,9 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_12iup_contour_optimize(CYTHON_
 
     /* "fontTools/varLib/iup.py":459
  *         assert forced <= best_sol, (forced, best_sol)
- * 
+ *
  *         deltas = [deltas[i] if i in best_sol else None for i in range(n)]             # <<<<<<<<<<<<<<
- * 
+ *
  *     return deltas
 */
     { /* enter inner scope */
@@ -9330,7 +9330,7 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_12iup_contour_optimize(CYTHON_
       __Pyx_GOTREF(__pyx_t_5);
       __pyx_t_7 = NULL;
       __Pyx_INCREF(__pyx_builtin_range);
-      __pyx_t_11 = __pyx_builtin_range; 
+      __pyx_t_11 = __pyx_builtin_range;
       __pyx_t_6 = 1;
       {
         PyObject *__pyx_callargs[2] = {__pyx_t_7, __pyx_v_n};
@@ -9424,10 +9424,10 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_12iup_contour_optimize(CYTHON_
 
   /* "fontTools/varLib/iup.py":461
  *         deltas = [deltas[i] if i in best_sol else None for i in range(n)]
- * 
+ *
  *     return deltas             # <<<<<<<<<<<<<<
- * 
- * 
+ *
+ *
 */
   __Pyx_XDECREF(__pyx_r);
   __Pyx_INCREF(__pyx_v_deltas);
@@ -9435,8 +9435,8 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_12iup_contour_optimize(CYTHON_
   goto __pyx_L0;
 
   /* "fontTools/varLib/iup.py":363
- * 
- * 
+ *
+ *
  * def iup_contour_optimize(             # <<<<<<<<<<<<<<
  *     deltas: _DeltaSegment, coords: _PointSegment, tolerance: Real = 0.0
  * ) -> _DeltaOrNoneSegment:
@@ -9476,15 +9476,15 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_12iup_contour_optimize(CYTHON_
 }
 
 /* "fontTools/varLib/iup.py":464
- * 
- * 
+ *
+ *
  * def iup_delta_optimize(             # <<<<<<<<<<<<<<
  *     deltas: _DeltaSegment,
  *     coords: _PointSegment,
 */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_9fontTools_6varLib_3iup_15iup_delta_optimize(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_6varLib_3iup_15iup_delta_optimize(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -9493,7 +9493,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
 ); /*proto*/
 PyDoc_STRVAR(__pyx_doc_9fontTools_6varLib_3iup_14iup_delta_optimize, "iup_delta_optimize(deltas: _DeltaSegment, coords: _PointSegment, ends: _Endpoints, tolerance: Real = 0.0) -> _DeltaOrNoneSegment\n\nFor the outline given in `coords`, with contour endpoints given\nin sorted increasing order in `ends`, optimize a set of delta\nvalues `deltas` within error `tolerance`.\n\nReturns delta vector that has most number of None items instead of\nthe input delta.");
 static PyMethodDef __pyx_mdef_9fontTools_6varLib_3iup_15iup_delta_optimize = {"iup_delta_optimize", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_9fontTools_6varLib_3iup_15iup_delta_optimize, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_9fontTools_6varLib_3iup_14iup_delta_optimize};
-static PyObject *__pyx_pw_9fontTools_6varLib_3iup_15iup_delta_optimize(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_9fontTools_6varLib_3iup_15iup_delta_optimize(PyObject *__pyx_self,
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -9902,7 +9902,7 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_14iup_delta_optimize(CYTHON_UN
  *         assert len(contour) == end - start + 1
  *         out.extend(contour)             # <<<<<<<<<<<<<<
  *         start = end + 1
- * 
+ *
 */
     __pyx_t_14 = __Pyx_PyList_Extend(__pyx_v_out, __pyx_v_contour); if (unlikely(__pyx_t_14 == ((int)-1))) __PYX_ERR(0, 487, __pyx_L1_error)
 
@@ -9910,7 +9910,7 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_14iup_delta_optimize(CYTHON_UN
  *         assert len(contour) == end - start + 1
  *         out.extend(contour)
  *         start = end + 1             # <<<<<<<<<<<<<<
- * 
+ *
  *     return out
 */
     __pyx_t_7 = __Pyx_PyLong_AddObjC(__pyx_v_end, __pyx_mstate_global->__pyx_int_1, 1, 0, 0); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 488, __pyx_L1_error)
@@ -9930,7 +9930,7 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_14iup_delta_optimize(CYTHON_UN
 
   /* "fontTools/varLib/iup.py":490
  *         start = end + 1
- * 
+ *
  *     return out             # <<<<<<<<<<<<<<
 */
   __Pyx_XDECREF(__pyx_r);
@@ -9939,8 +9939,8 @@ static PyObject *__pyx_pf_9fontTools_6varLib_3iup_14iup_delta_optimize(CYTHON_UN
   goto __pyx_L0;
 
   /* "fontTools/varLib/iup.py":464
- * 
- * 
+ *
+ *
  * def iup_delta_optimize(             # <<<<<<<<<<<<<<
  *     deltas: _DeltaSegment,
  *     coords: _PointSegment,
@@ -11438,13 +11438,13 @@ __Pyx_RefNannySetupContext("PyInit_iup", 0);
  *     # if cython not installed, use mock module with no-op decorators and types
  *     from fontTools.misc import cython
  * COMPILED = cython.compiled             # <<<<<<<<<<<<<<
- * 
+ *
  * from typing import (
 */
   if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_COMPILED, Py_True) < 0) __PYX_ERR(0, 6, __pyx_L1_error)
 
   /* "fontTools/varLib/iup.py":9
- * 
+ *
  * from typing import (
  *     Sequence,             # <<<<<<<<<<<<<<
  *     Tuple,
@@ -11455,7 +11455,7 @@ __Pyx_RefNannySetupContext("PyInit_iup", 0);
 
   /* "fontTools/varLib/iup.py":8
  * COMPILED = cython.compiled
- * 
+ *
  * from typing import (             # <<<<<<<<<<<<<<
  *     Sequence,
  *     Tuple,
@@ -11481,8 +11481,8 @@ __Pyx_RefNannySetupContext("PyInit_iup", 0);
  *     Union,
  * )
  * from numbers import Integral, Real             # <<<<<<<<<<<<<<
- * 
- * 
+ *
+ *
 */
   __pyx_t_5 = __Pyx_PyList_Pack(2, __pyx_mstate_global->__pyx_n_u_Integral, __pyx_mstate_global->__pyx_n_u_Real); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 13, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
@@ -11500,8 +11500,8 @@ __Pyx_RefNannySetupContext("PyInit_iup", 0);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
   /* "fontTools/varLib/iup.py":16
- * 
- * 
+ *
+ *
  * _Point = Tuple[Real, Real]             # <<<<<<<<<<<<<<
  * _Delta = Tuple[Real, Real]
  * _PointSegment = Sequence[_Point]
@@ -11524,7 +11524,7 @@ __Pyx_RefNannySetupContext("PyInit_iup", 0);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
   /* "fontTools/varLib/iup.py":17
- * 
+ *
  * _Point = Tuple[Real, Real]
  * _Delta = Tuple[Real, Real]             # <<<<<<<<<<<<<<
  * _PointSegment = Sequence[_Point]
@@ -11609,7 +11609,7 @@ __Pyx_RefNannySetupContext("PyInit_iup", 0);
  * _DeltaOrNone = Union[_Delta, None]
  * _DeltaOrNoneSegment = Sequence[_DeltaOrNone]             # <<<<<<<<<<<<<<
  * _Endpoints = Sequence[Integral]
- * 
+ *
 */
   __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_mstate_global->__pyx_n_u_Sequence); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 21, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
@@ -11626,8 +11626,8 @@ __Pyx_RefNannySetupContext("PyInit_iup", 0);
  * _DeltaOrNone = Union[_Delta, None]
  * _DeltaOrNoneSegment = Sequence[_DeltaOrNone]
  * _Endpoints = Sequence[Integral]             # <<<<<<<<<<<<<<
- * 
- * 
+ *
+ *
 */
   __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_mstate_global->__pyx_n_u_Sequence); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 22, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
@@ -11641,17 +11641,17 @@ __Pyx_RefNannySetupContext("PyInit_iup", 0);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
   /* "fontTools/varLib/iup.py":25
- * 
- * 
+ *
+ *
  * MAX_LOOKBACK = 8             # <<<<<<<<<<<<<<
- * 
- * 
+ *
+ *
 */
   if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_MAX_LOOKBACK, __pyx_mstate_global->__pyx_int_8) < 0) __PYX_ERR(0, 25, __pyx_L1_error)
 
   /* "fontTools/varLib/iup.py":91
- * 
- * 
+ *
+ *
  * def iup_contour(deltas: _DeltaOrNoneSegment, coords: _PointSegment) -> _DeltaSegment:             # <<<<<<<<<<<<<<
  *     """For the contour given in `coords`, interpolate any missing
  *     delta values in delta vector `deltas`.
@@ -11669,8 +11669,8 @@ __Pyx_RefNannySetupContext("PyInit_iup", 0);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
   /* "fontTools/varLib/iup.py":143
- * 
- * 
+ *
+ *
  * def iup_delta(             # <<<<<<<<<<<<<<
  *     deltas: _DeltaOrNoneSegment, coords: _PointSegment, ends: _Endpoints
  * ) -> _DeltaSegment:
@@ -11689,8 +11689,8 @@ __Pyx_RefNannySetupContext("PyInit_iup", 0);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
   /* "fontTools/varLib/iup.py":202
- * 
- * 
+ *
+ *
  * @cython.locals(             # <<<<<<<<<<<<<<
  *     cj=cython.double,
  *     dj=cython.double,
@@ -11710,8 +11710,8 @@ __Pyx_RefNannySetupContext("PyInit_iup", 0);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
   /* "fontTools/varLib/iup.py":293
- * 
- * 
+ *
+ *
  * @cython.locals(             # <<<<<<<<<<<<<<
  *     i=cython.int,
  *     j=cython.int,
@@ -11737,8 +11737,8 @@ __Pyx_RefNannySetupContext("PyInit_iup", 0);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
   /* "fontTools/varLib/iup.py":346
- * 
- * 
+ *
+ *
  * def _rot_list(l: list, k: int):             # <<<<<<<<<<<<<<
  *     """Rotate list by k items forward.  Ie. item at position 0 will be
  *     at position k in returned list.  Negative k is allowed."""
@@ -11755,8 +11755,8 @@ __Pyx_RefNannySetupContext("PyInit_iup", 0);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
   /* "fontTools/varLib/iup.py":356
- * 
- * 
+ *
+ *
  * def _rot_set(s: set, k: int, n: int):             # <<<<<<<<<<<<<<
  *     k %= n
  *     if not k:
@@ -11774,8 +11774,8 @@ __Pyx_RefNannySetupContext("PyInit_iup", 0);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
   /* "fontTools/varLib/iup.py":363
- * 
- * 
+ *
+ *
  * def iup_contour_optimize(             # <<<<<<<<<<<<<<
  *     deltas: _DeltaSegment, coords: _PointSegment, tolerance: Real = 0.0
  * ) -> _DeltaOrNoneSegment:
@@ -11795,8 +11795,8 @@ __Pyx_RefNannySetupContext("PyInit_iup", 0);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
   /* "fontTools/varLib/iup.py":464
- * 
- * 
+ *
+ *
  * def iup_delta_optimize(             # <<<<<<<<<<<<<<
  *     deltas: _DeltaSegment,
  *     coords: _PointSegment,
@@ -12046,7 +12046,7 @@ static int __Pyx_InitCachedConstants(__pyx_mstatetype *__pyx_mstate) {
  *     if not indices:
  *         # All deltas are None.  Return 0,0 for all.
  *         return [(0, 0)] * n             # <<<<<<<<<<<<<<
- * 
+ *
  *     out = []
 */
   __pyx_mstate_global->__pyx_tuple[1] = PyTuple_Pack(2, __pyx_mstate_global->__pyx_int_0, __pyx_mstate_global->__pyx_int_0); if (unlikely(!__pyx_mstate_global->__pyx_tuple[1])) __PYX_ERR(0, 106, __pyx_L1_error)
@@ -12054,8 +12054,8 @@ static int __Pyx_InitCachedConstants(__pyx_mstatetype *__pyx_mstate) {
   __Pyx_GIVEREF(__pyx_mstate_global->__pyx_tuple[1]);
 
   /* "fontTools/varLib/iup.py":202
- * 
- * 
+ *
+ *
  * @cython.locals(             # <<<<<<<<<<<<<<
  *     cj=cython.double,
  *     dj=cython.double,
@@ -12065,8 +12065,8 @@ static int __Pyx_InitCachedConstants(__pyx_mstatetype *__pyx_mstate) {
   __Pyx_GIVEREF(__pyx_mstate_global->__pyx_tuple[2]);
 
   /* "fontTools/varLib/iup.py":363
- * 
- * 
+ *
+ *
  * def iup_contour_optimize(             # <<<<<<<<<<<<<<
  *     deltas: _DeltaSegment, coords: _PointSegment, tolerance: Real = 0.0
  * ) -> _DeltaOrNoneSegment:
@@ -13791,8 +13791,8 @@ static PyObject* __Pyx_Unpacked___Pyx_PyLong_AddObjC(PyObject *op1, PyObject *op
         return PyLong_FromLongLong(llx);
 #endif
     return __Pyx_Fallback___Pyx_PyLong_AddObjC(op1, op2, inplace);
-    
-    
+
+
 }
 #endif
 static PyObject* __Pyx_Float___Pyx_PyLong_AddObjC(PyObject *float_val, long intval, int zerodivision_check) {
@@ -13800,7 +13800,7 @@ static PyObject* __Pyx_Float___Pyx_PyLong_AddObjC(PyObject *float_val, long intv
     const long b = intval;
     double a = __Pyx_PyFloat_AS_DOUBLE(float_val);
         double result;
-        
+
         result = ((double)a) + (double)b;
         return PyFloat_FromDouble(result);
 }
@@ -14186,8 +14186,8 @@ static PyObject* __Pyx_Unpacked___Pyx_PyLong_SubtractObjC(PyObject *op1, PyObjec
         return PyLong_FromLongLong(llx);
 #endif
     return __Pyx_Fallback___Pyx_PyLong_SubtractObjC(op1, op2, inplace);
-    
-    
+
+
 }
 #endif
 static PyObject* __Pyx_Float___Pyx_PyLong_SubtractObjC(PyObject *float_val, long intval, int zerodivision_check) {
@@ -14195,7 +14195,7 @@ static PyObject* __Pyx_Float___Pyx_PyLong_SubtractObjC(PyObject *float_val, long
     const long b = intval;
     double a = __Pyx_PyFloat_AS_DOUBLE(float_val);
         double result;
-        
+
         result = ((double)a) - (double)b;
         return PyFloat_FromDouble(result);
 }

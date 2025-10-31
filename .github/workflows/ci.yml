@@ -106,7 +106,7 @@ jobs:
           done
           echo "✅ All golden endpoints passed!"
       - name: Stop canary container
-        run: |  
+        run: |
           container_id=$(docker ps -q --filter ancestor=ghcr.io/${{ github.repository }}:${{ github.sha }})
-          docker stop $container_id    
-          docker rm $container_id     
+          docker stop $container_id
+          docker rm $container_id

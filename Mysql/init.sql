@@ -14,4 +14,3 @@ CREATE TABLE IF NOT EXISTS property_data (
     amenities TEXT,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
-
