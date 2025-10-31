@@ -52,7 +52,11 @@ jobs:
 
 
       - name: Run tests with coverage
-        run: pytest --cov=backend --cov-fail-under=80
+        env:
+          PYTHONPATH: ${{ github.workspace }}
+        run: |
+          pytest --cov=backend tests/ --cov-fail-under=80
+
 
   build:
     name: Build and Push Docker Image to GHCR
