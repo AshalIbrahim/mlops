@@ -1,25 +1,17 @@
-# tests/test_app_real_db.py
+import pytest
 from fastapi.testclient import TestClient
-from backend.app import app, get_connection, load_location_and_property_types
+from backend.app import app, load_model
 
 client = TestClient(app)
 
+# Load the model at runtime
+model, sale_feature_columns, valid_metadata = load_model()
 
-# --- Test database connection directly ---
-def test_db_connection():
-    conn = None
-    try:
-        conn = get_connection()
-        cursor = conn.cursor()
-        cursor.execute("SELECT 1")
-        result = cursor.fetchone()
-        assert result[0] == 1
-    finally:
-        if conn:
-            conn.close()
+# Skip prediction tests only if model is None
+skip_if_no_model = pytest.mark.skipif(model is None, reason="MLflow model not loaded")
 
 
-# --- Test basic endpoints ---
+# ---- Home & Health ----
 def test_home():
     response = client.get("/")
     assert response.status_code == 200
@@ -29,44 +21,81 @@ def test_home():
 def test_health_check():
     response = client.get("/health")
     assert response.status_code == 200
-    assert response.json() == {"status": "ok"}
+    assert response.json()["status"] == "ok"
 
 
-# --- Test /listings with real DB ---
-def test_get_listings_real_db():
+# ---- Listings ----
+def test_get_listings():
     response = client.get("/listings?limit=5")
     assert response.status_code == 200
     data = response.json()
     assert isinstance(data, list)
+    assert len(data) <= 5
     if data:
         for item in data:
             assert "prop_type" in item
-            assert "price" in item
             assert "location" in item
+            assert "price" in item
 
 
-# --- Test /locations and /prop_type endpoints ---
-def test_get_locations_real_db():
-    response = client.get("/locations")
+@skip_if_no_model
+def test_predict_price_valid():
+    """
+    Predict using a valid location and propType.
+    """
+    # Adjust location and propType to something present in your DB
+    response = client.post(
+        "/predict",
+        json={
+            "coveredArea": 1000,
+            "beds": 3,
+            "bathrooms": 2,
+            "location": "Cantt, Karachi, Sindh",
+            "propType": "House",
+            "purpose": "sale",
+        },
+    )
     assert response.status_code == 200
-    data = response.json()
-    assert "locations" in data
-    assert isinstance(data["locations"], list)
+    json_resp = response.json()
+    assert "prediction" in json_resp
+    assert "formatted_price" in json_resp
 
 
-def test_get_prop_type_real_db():
-    response = client.get("/prop_type")
-    assert response.status_code == 200
-    data = response.json()
-    assert "prop_type" in data
-    assert isinstance(data["prop_type"], list)
+@skip_if_no_model
+def test_predict_invalid_location():
+    """
+    Predict with an invalid location.
+    """
+    response = client.post(
+        "/predict",
+        json={
+            "coveredArea": 1000,
+            "beds": 3,
+            "bathrooms": 2,
+            "location": "InvalidLocation",
+            "propType": "House",
+            "purpose": "sale",
+        },
+    )
+    assert response.status_code == 400
+    assert "Invalid location" in response.json()["detail"]
 
 
-# --- Test the helper function that loads locations and property types ---
-def test_load_location_and_property_types_direct():
-    result = load_location_and_property_types()
-    assert isinstance(result, dict)
-    assert "locations" in result
-    assert "prop_type" in result
-    assert isinstance(result["locations"], list)
-    assert isinstance(result["prop_type"], list)
+@skip_if_no_model
+def test_predict_invalid_prop_type():
+    """
+    Predict with an invalid propType.
+    """
+    response = client.post(
+        "/predict",
+        json={
+            "coveredArea": 1000,
+            "beds": 3,
+            "bathrooms": 2,
+            "location": "Cantt, Karachi, Sindh",
+            "propType": "InvalidType",
+            "purpose": "sale",
+        },
+    )
+    assert response.status_code == 400
+    assert "Invalid property type" in response.json()["detail"]

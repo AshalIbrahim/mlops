@@ -6,6 +6,8 @@ import mlflow
 import mlflow.pyfunc
 import json
 from pydantic import BaseModel
+import mlflow
+import mlflow.pyfunc
 
 # ---- Setup ----
 app = FastAPI(title="Zameen MLOps API")
@@ -28,48 +30,100 @@ app.add_middleware(
 mlflow.set_tracking_uri("http://127.0.0.1:5000")
 
 model_name = "ZameenPriceModelV2"
-model_version = "Production"
+stage = "Production"
 
-# Try loading from model registry (preferred). If that fails, try to locate
-# the model artifacts from the registry entry and load directly from the
-# artifact location (local mlruns or remote store).
-model = None
-try:
-    model_uri = f"models:/{model_name}/{model_version}"
-    model = mlflow.pyfunc.load_model(model_uri)
-    print(f"✅ Loaded MLflow model via URI: {model_uri}")
-except Exception as e:
-    print(f" Failed to load model via models:/ URI: {e}")
+
+def load_model(model_name="ZameenPriceModelV2", stage="Production"):
+    """
+    Load MLflow model along with sale feature columns and validation metadata.
+    Prefers models in the specified stage, falls back to latest version if needed.
+
+    Returns:
+        model: Loaded MLflow pyfunc model or None if failed
+        sale_feature_columns: List of sale feature columns or None
+        valid_metadata: Validation metadata dictionary or None
+    """
+    model = None
+    sale_feature_columns = None
+    valid_metadata = None
+
     try:
         client = mlflow.tracking.MlflowClient()
-        versions = client.get_latest_versions(model_name)
-        if not versions:
-            raise Exception("No registered versions found")
-        # Try each version's source path until one loads
-        loaded = False
-        for v in versions:
-            try:
-                src = v.source  # usually points to an artifact URI or mlruns path
-                print(f"Trying to load model from source: {src}")
-                # If source is an artifact:/ or runs:/ URI, mlflow can load it directly
-                model = mlflow.pyfunc.load_model(src)
-                print(f"Loaded model from source: {src}")
-                loaded = True
-                break
-            except Exception as e2:
-                print(f" - could not load from {v.version} source {v.source}: {e2}")
-        if not loaded:
-            model = None
-            print("❌ Could not load any registered model sources.")
-    except Exception as e3:
-        model = None
-        print(f"❌ Failed to load model from registry: {e3}")
 
+        # Attempt to get models in desired stage first
+        versions = client.get_latest_versions(model_name, stages=[stage])
+        if not versions:
+            print(
+                f"⚠️ No models found in stage '{stage}', falling back to any latest version."
+            )
+            versions = client.get_latest_versions(model_name)
+            if not versions:
+                raise Exception("No registered versions found for model")
+
+        # Pick the highest numeric version
+        try:
+            chosen = sorted(versions, key=lambda v: int(v.version), reverse=True)[0]
+        except Exception:
+            chosen = versions[0]
+
+        run_id = chosen.run_id
+        print(f"Using model version {chosen.version} from run {run_id}.")
+
+        # Load model via mlflow URI if possible
+        try:
+            model_uri = f"models:/{model_name}/{stage}"
+            model = mlflow.pyfunc.load_model(model_uri)
+            print(f"✅ Loaded MLflow model via URI: {model_uri}")
+        except Exception as e_uri:
+            print(f"⚠️ Failed to load model via models:/ URI: {e_uri}")
+            # fallback to source path from registry
+            try:
+                src = chosen.source
+                model = mlflow.pyfunc.load_model(src)
+                print(f"✅ Loaded MLflow model from source path: {src}")
+            except Exception as e_src:
+                print(f"❌ Failed to load model from source: {e_src}")
+                model = None
+
+        # Download artifacts
+        try:
+            feature_path = client.download_artifacts(run_id, "feature_columns.json")
+            metadata_path = client.download_artifacts(run_id, "valid_metadata.json")
+
+            with open(feature_path, "r") as f:
+                feat = json.load(f)
+            with open(metadata_path, "r") as f:
+                valid_metadata = json.load(f)
+
+            sale_feature_columns = feat.get("sale", [])
+            print(
+                f"Loaded {len(sale_feature_columns)} sale feature columns from MLflow (run {run_id})."
+            )
+            print("Loaded validation metadata from MLflow.")
+        except Exception as e_art:
+            print(f"⚠️ Failed to load feature/metadata artifacts: {e_art}")
+
+    except Exception as e:
+        print(f"❌ Failed to load model or artifacts: {e}")
+
+    return model, sale_feature_columns, valid_metadata
+
+
+model, sale_feature_columns, valid_metadata = load_model()
 # ---- Load feature schema and validation metadata from MLflow artifacts ----
-sale_feature_columns = None
-valid_metadata = None
+
 locations = []
 propertyTypes = []
+
+
+def get_connection():
+    return mysql.connector.connect(
+        host="zameen-db.c5ye0uuk68w0.eu-north-1.rds.amazonaws.com",
+        port=3306,
+        user="admin",
+        password="Brianlara1",
+        database="zameen",
+    )
 
 
 def load_location_and_property_types():
@@ -127,23 +181,15 @@ try:
 
     sale_feature_columns = feat.get("sale", [])
     print(
-        f"✅ Loaded {len(sale_feature_columns)} sale feature columns from MLflow (run {run_id})."
+        f"Loaded {len(sale_feature_columns)} sale feature columns from MLflow (run {run_id})."
     )
-    print("✅ Loaded validation metadata from MLflow.")
+    print("Loaded validation metadata from MLflow.")
 except Exception as e:
-    print(f"⚠️ Failed to load feature schema from MLflow: {e}")
+    print(f"Failed to load feature schema from MLflow: {e}")
     sale_feature_columns = None
 
 
 # ---- Database connection ----
-def get_connection():
-    return mysql.connector.connect(
-        host="zameen-db.c5ye0uuk68w0.eu-north-1.rds.amazonaws.com",
-        port=3306,
-        user="admin",
-        password="Brianlara1",
-        database="zameen",
-    )
 
 
 # ---- API Routes ----

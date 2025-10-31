@@ -63,7 +63,7 @@ jobs:
         working-directory: ${{ github.workspace }}  # project root
         env:
           PYTHONPATH: ${{ github.workspace }}
-        run: pytest --cov=backend tests/ --cov-fail-under=70
+        run: pytest --cov=backend tests/ --cov-fail-under=80
 
 
   build:
