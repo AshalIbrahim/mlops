@@ -41,13 +41,14 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.11"
+          python-version: "3.10"
 
       - name: Install dependencies
         run: |
           pip install -U pip
           pip install -r requirements.txt
           pip install pytest pytest-cov
+          pip install mysql.connector boto3
 
       - name: Run tests with coverage
         run: pytest --cov=app --cov-fail-under=80
