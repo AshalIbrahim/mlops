@@ -138,10 +138,10 @@ except Exception as e:
 # ---- Database connection ----
 def get_connection():
     return mysql.connector.connect(
-    host='zameen-db.c5ye0uuk68w0.eu-north-1.rds.amazonaws.com',
-    port=3306,
-    user='admin',
-    password='Brianlara1'
+        host="zameen-db.c5ye0uuk68w0.eu-north-1.rds.amazonaws.com",
+        port=3306,
+        user="admin",
+        password="Brianlara1",
     )
 
 
