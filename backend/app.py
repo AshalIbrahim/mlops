@@ -6,7 +6,6 @@ import mlflow
 import mlflow.pyfunc
 import json
 from pydantic import BaseModel
-import os
 
 # ---- Setup ----
 app = FastAPI(title="Zameen MLOps API")
@@ -125,7 +124,7 @@ try:
         
     sale_feature_columns = feat.get("sale", [])
     print(f"✅ Loaded {len(sale_feature_columns)} sale feature columns from MLflow (run {run_id}).")
-    print(f"✅ Loaded validation metadata from MLflow.")
+    print("✅ Loaded validation metadata from MLflow.")
 except Exception as e:
     print(f"⚠️ Failed to load feature schema from MLflow: {e}")
     sale_feature_columns = None
@@ -187,12 +186,7 @@ async def predict_price(input_data: PredictionInput):
     # Get current valid locations and property types from database
     valid_data = load_location_and_property_types()
     
-    # Validate purpose
-    if input_data.purpose.lower() not in ["sale", "rent"]:
-        raise HTTPException(status_code=400, detail="Purpose must be 'sale' or 'rent'")
-    
-    purpose = input_data.purpose.lower()
-    
+
     # Validate location
     if input_data.location not in valid_data["locations"]:
         raise HTTPException(

@@ -5,7 +5,6 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_absolute_error, r2_score
 import pandas as pd
 import json
-import os
 
 # ----------------------
 # MLflow setup
@@ -37,7 +36,7 @@ valid_metadata = {
 with open("valid_metadata.json", "w") as f:
     json.dump(valid_metadata, f, indent=4)
 
-print(f"✅ Saved valid_metadata.json with validation data")
+print("✅ Saved valid_metadata.json with validation data")
 
 # One-hot encode locations and property types for each dataset
 locations_sale = pd.get_dummies(sale_data["location"], prefix="location")
