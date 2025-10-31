@@ -1,89 +1,40 @@
-You are absolutely right. My apologies. A README on GitHub must be generic for any user.
 
-Here is the revised, generic, plain-text version. It uses placeholders like <path-to-your-project> so anyone can follow the instructions.
+What is Prometheus? (The Data Collector)
 
-Getting Started: A Simple Text Guide
+Think of Prometheus as a data journalist. Its only job is to collect important numbers (metrics) from our applications and store them with a timestamp.
 
-Part 1: Configuration (Do This First!)
+How it Works: Prometheus reads a configuration file (monitoring/prometheus.yml) that gives it a list of "targets" to check. Every 15 seconds, it visits a special webpage on each target (like http://localhost:8000/metrics) and "scrapes" all the metrics it finds there.
 
-You must edit three files to make sure everything can connect.
+What it Collects: It stores this information in its own time-series database. For our project, it collects data like:
 
-First, edit the backend files for the database connection.
-Open the file named backend/app.py.
-Find the section for mysql.connector.connect.
-Change the host, user, and password to match your database.
-Do the same thing for the file named backend/format.py.
+How many HTTP requests our API receives.
 
-Second, edit the Prometheus configuration.
-Open the file named monitoring/prometheus.yml.
-Make sure the targets are correct. For a local setup, 'localhost:8000' for the app and 'localhost:8002' for the script should be correct.
+How long our ML model takes to make a prediction.
 
-Part 2: Installation
+Whether our data processing script succeeded or failed.
 
-You will need two separate terminals for this part.
+The CPU and Memory usage of the server.
 
-For the Backend (Terminal 1):
-First, navigate to the backend folder by typing:
-cd <path-to-your-project>/backend
-Next, create a virtual environment by typing:
-python -m venv venv
-Now, activate the environment.
-On Windows, type: venv\Scripts\activate
-On macOS or Linux, type: source venv/bin/activate
-Finally, install the required packages by typing:
-pip install -r requirements.txt
+In Short: Prometheus is the backend engine that collects and stores all the raw monitoring data.
 
-For the Frontend (Terminal 2):
-First, navigate to the frontend folder by typing:
-cd <path-to-your-project>/frontend
-Next, install the dependencies by typing:
-npm install
+What is Grafana? (The Data Visualizer)
 
-Part 3: Running the Full Application
+Think of Grafana as the graphic designer who turns the raw data collected by Prometheus into beautiful, easy-to-understand dashboards.
 
-You need to open and run commands in several new terminals. The order is important. Keep each terminal open.
+How it Works: Grafana does NOT store any data itself. Instead, you tell it how to connect to a "data source," which in our case is Prometheus.
 
-Terminal 1: Start Prometheus
-First, navigate to the folder where you unzipped Prometheus.
-Next, run the Prometheus server.
-On Windows, type: .\prometheus.exe --config.file=<path-to-your-project>\monitoring\prometheus.yml
-On macOS or Linux, type: ./prometheus --config.file=<path-to-your-project>/monitoring/prometheus.yml
-Keep this terminal open.
+What it Does: You build dashboards in Grafana by creating panels. Each panel is a chart, graph, or single number. For each panel, you write a query to ask Prometheus for specific data. Grafana then visualizes the answer.
 
-Terminal 2: Start the MLflow Server
-First, navigate to your main project folder by typing:
-cd <path-to-your-project>
-Next, start the MLflow server by typing:
-mlflow ui
-Keep this terminal open.
+In Short: Grafana is the frontend that we look at. It asks Prometheus for data and displays it visually on dashboards.
 
-Terminal 3: Start the Backend API
-First, navigate to the backend folder by typing:
-cd <path-to-your-project>/backend
-Next, activate the virtual environment.
-On Windows, type: venv\Scripts\activate
-On macOS or Linux, type: source venv/bin/activate
-Now, start the API server by typing:
-uvicorn app:app --reload --port 8000
-Keep this terminal open.
+How They Work Together: A Simple Workflow
 
-Terminal 4: Start the Frontend
-First, navigate to the frontend folder by typing:
-cd <path-to-your-project>/frontend
-Next, start the frontend application by typing:
-npm start
-Keep this terminal open.
+Our Python application (app.py) runs and exposes its current metrics (like http_requests_total) on a /metrics webpage.
 
-Part 4: How to Run the Data Script
+Prometheus visits this webpage every 15 seconds, saves the values, and stores them in its database.
 
-You only need to do this when you want to load new data into the database.
+We open Grafana in our browser and look at a dashboard.
 
-First, open a new terminal.
-Navigate to the backend folder by typing:
-cd <path-to-your-project>/backend
-Activate the virtual environment.
-On Windows, type: venv\Scripts\activate
-On macOS or Linux, type: source venv/bin/activate
-Finally, run the script by typing:
-python format.py
-This script will run and then finish.
+A panel on the dashboard asks Prometheus, "Hey, what was the rate of HTTP requests over the last 5 minutes?"
+
+Prometheus answers with the data, and Grafana draws a graph showing the request rate over time.
