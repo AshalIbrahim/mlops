@@ -87,3 +87,4 @@ ruff
 black 
 pytest
 pytest-cov
+httpx

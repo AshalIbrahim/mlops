@@ -1,73 +1,92 @@
-from backend.app import get_connection
-import warnings
+# tests/test_app_real_db_extended.py
+from fastapi.testclient import TestClient
+from backend.app import app, get_connection, load_location_and_property_types
 import mysql.connector
-import sys
-import os
-import pytest
 
-# Ignore all warnings coming from mlflow
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
-warnings.filterwarnings("ignore", category=Warning, module="mlflow")
+client = TestClient(app)
 
 
-def test_database_connection_success():
-    """
-    Test that verifies the database connection can be established successfully.
-    """
-
+# --- Test database connection directly ---
+def test_db_connection():
+    conn = None
     try:
         conn = get_connection()
-        assert conn.is_connected(), "Database connection failed."
-    except mysql.connector.Error as err:
-        pytest.fail(f"Database connection failed: {err}")
+        cursor = conn.cursor()
+        cursor.execute("SELECT 1")
+        result = cursor.fetchone()
+        assert result[0] == 1
     finally:
-        if "conn" in locals() and conn.is_connected():
+        if conn:
             conn.close()
 
 
-def test_getlistings_endpoint():
-    """
-    Test the /listings endpoint to ensure it returns data correctly.
-    """
-    from fastapi.testclient import TestClient
-    from backend.app import app
+# --- Test basic endpoints ---
+def test_home():
+    response = client.get("/")
+    assert response.status_code == 200
+    assert response.json() == {"message": "Zameen API is running"}
 
-    client = TestClient(app)
 
+def test_health_check():
+    response = client.get("/health")
+    assert response.status_code == 200
+    assert response.json() == {"status": "ok"}
+
+
+# --- Test /listings with edge cases ---
+def test_get_listings_real_db():
+    # Normal limit
     response = client.get("/listings?limit=5")
-    assert response.status_code == 200, "Failed to get listings."
+    assert response.status_code == 200
     data = response.json()
-    assert isinstance(data, list), "Response is not a list."
-    assert len(data) <= 5, "Returned more listings than the limit."
+    assert isinstance(data, list)
+    if data:
+        for item in data:
+            assert "prop_type" in item
+            assert "price" in item
+            assert "location" in item
+
+    # Edge case: limit=0
+    response = client.get("/listings?limit=0")
+    assert response.status_code == 200
+    assert response.json() == []
 
 
-def test_getlocations_endpoint():
-    """
-    Test the /locations endpoint to ensure it returns location data correctly.
-    """
-    from fastapi.testclient import TestClient
-    from backend.app import app
-
-    client = TestClient(app)
-
-    response = client.get("/locations?purpose=sale")
-    assert response.status_code == 200, "Failed to get locations."
+# --- Test /locations and /prop_type endpoints ---
+def test_get_locations_real_db():
+    response = client.get("/locations")
+    assert response.status_code == 200
     data = response.json()
-    assert "locations" in data, "Response does not contain 'locations' key."
-    assert isinstance(data["locations"], list), "'locations' is not a list."
+    assert "locations" in data
+    assert isinstance(data["locations"], list)
 
 
-def test_getproptype_endpoint():
-    """
-    Test the /prop_type endpoint to ensure it returns property type data correctly.
-    """
-    from fastapi.testclient import TestClient
-    from backend.app import app
-
-    client = TestClient(app)
-
-    response = client.get("/prop_type?purpose=rent")
-    assert response.status_code == 200, "Failed to get property types."
+def test_get_prop_type_real_db():
+    response = client.get("/prop_type")
+    assert response.status_code == 200
     data = response.json()
-    assert "prop_types" in data, "Response does not contain 'prop_types' key."
-    assert isinstance(data["prop_types"], list), "'prop_types' is not a list."
+    assert "prop_type" in data
+    assert isinstance(data["prop_type"], list)
+
+
+# --- Test the helper function with real DB ---
+def test_load_location_and_property_types_direct():
+    result = load_location_and_property_types()
+    assert isinstance(result, dict)
+    assert "locations" in result
+    assert "prop_type" in result
+    assert isinstance(result["locations"], list)
+    assert isinstance(result["prop_type"], list)
+
+
+# --- Force DB exception to hit except blocks ---
+def test_load_location_and_property_types_error(monkeypatch):
+    # Force get_connection() to raise an exception
+    def fake_connection():
+        raise mysql.connector.Error("Forced DB error")
+
+    monkeypatch.setattr("backend.app.get_connection", fake_connection)
+
+    result = load_location_and_property_types()
+    assert result["locations"] == []
+    assert result["prop_type"] == []

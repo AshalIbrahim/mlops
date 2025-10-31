@@ -55,6 +55,8 @@ jobs:
         env:
           PYTHONPATH: ${{ github.workspace }}
         run: |
+          mlflow server 
+          sleep 10
           pytest --cov=backend tests/ --cov-fail-under=80
 
 
