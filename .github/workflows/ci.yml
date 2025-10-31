@@ -48,10 +48,12 @@ jobs:
           pip install -U pip
           pip install -r requirements.txt
           pip install pytest pytest-cov
-          pip install mysql.connector boto3
+          pip install mysql-connector-python boto3
+
 
       - name: Run tests with coverage
-        run:
+        run: |
+          export PYTHONPATH=$PYTHONPATH:$(pwd)
           pytest --cov=backend --cov-fail-under=80
 
   build:
