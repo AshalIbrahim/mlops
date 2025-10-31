@@ -52,7 +52,7 @@ jobs:
 
       - name: Run tests with coverage
         run: |
-          set PYTHONPATH=%PYTHONPATH%;%cd%
+          export PYTHONPATH=$PYTHONPATH:$(pwd)
           pytest --cov=backend --cov-fail-under=80
 
   build:
