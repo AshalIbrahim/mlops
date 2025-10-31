@@ -45,6 +45,7 @@ mlflow.set_tracking_uri("http://127.0.0.1:5000")
 model_name = "ZameenPriceModelV2"
 stage = "Production"
 
+
 # ---- DB Connection ----
 def get_connection():
     return mysql.connector.connect(
@@ -54,6 +55,7 @@ def get_connection():
         password=os.getenv("password"),
         database=os.getenv("db_name"),
     )
+
 
 # ---- Load model ----
 def load_model(model_name="ZameenPriceModelV2", stage="Production"):
@@ -65,7 +67,9 @@ def load_model(model_name="ZameenPriceModelV2", stage="Production"):
         client = mlflow.tracking.MlflowClient()
 
         # Try stage first, fallback to latest
-        versions = client.get_latest_versions(model_name, stages=[stage]) or client.get_latest_versions(model_name)
+        versions = client.get_latest_versions(
+            model_name, stages=[stage]
+        ) or client.get_latest_versions(model_name)
         if not versions:
             raise Exception("No registered versions found for model")
 
@@ -126,6 +130,7 @@ def load_location_and_property_types():
 
 load_location_and_property_types()
 
+
 # ---- Routes ----
 @app.get("/")
 def home():
@@ -175,15 +180,24 @@ class PredictionInput(BaseModel):
 @app.post("/predict")
 async def predict_price(input_data: PredictionInput):
     if model is None:
-        raise HTTPException(status_code=500, detail="Model not loaded. Check MLflow server and registry.")
+        raise HTTPException(
+            status_code=500,
+            detail="Model not loaded. Check MLflow server and registry.",
+        )
 
     valid_data = load_location_and_property_types()
 
     if input_data.location not in valid_data["locations"]:
-        raise HTTPException(status_code=400, detail=f"Invalid location. Must be one of: {', '.join(valid_data['locations'])}")
+        raise HTTPException(
+            status_code=400,
+            detail=f"Invalid location. Must be one of: {', '.join(valid_data['locations'])}",
+        )
 
     if input_data.propType not in valid_data["prop_type"]:
-        raise HTTPException(status_code=400, detail=f"Invalid property type. Must be one of: {', '.join(valid_data['prop_type'])}")
+        raise HTTPException(
+            status_code=400,
+            detail=f"Invalid property type. Must be one of: {', '.join(valid_data['prop_type'])}",
+        )
 
     try:
         base_df = pd.DataFrame(
@@ -205,7 +219,10 @@ async def predict_price(input_data: PredictionInput):
             input_df = input_df.fillna(0)
 
         predicted_price = float(model.predict(input_df)[0])
-        return {"prediction": predicted_price, "formatted_price": f"PKR {predicted_price:,.2f}"}
+        return {
+            "prediction": predicted_price,
+            "formatted_price": f"PKR {predicted_price:,.2f}",
+        }
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Prediction failed: {str(e)}")
 

@@ -41,16 +41,36 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.11"
+          python-version: "3.10"
 
       - name: Install dependencies
         run: |
           pip install -U pip
           pip install -r requirements.txt
           pip install pytest pytest-cov
+          pip install mysql-connector-python boto3 mlflow
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_DEFAULT_REGION }}
+
+      - name: Start MLflow server
+        run: |
+          mlflow server \
+            --backend-store-uri sqlite:///mlflow.db \
+            --default-artifact-root ./mlruns \
+            --host 127.0.0.1 \
+            --port 5000 &
+          sleep 5  # Give server time to start
 
       - name: Run tests with coverage
-        run: pytest --cov=app --cov-fail-under=80
+        working-directory: ${{ github.workspace }}
+        env:
+          PYTHONPATH: ${{ github.workspace }}
+        run: pytest --cov=backend tests/ --cov-fail-under=80
 
   build:
     name: Build and Push Docker Image to GHCR
@@ -105,8 +125,9 @@ jobs:
             fi
           done
           echo "✅ All golden endpoints passed!"
+
       - name: Stop canary container
-        run: |  
+        run: |
           container_id=$(docker ps -q --filter ancestor=ghcr.io/${{ github.repository }}:${{ github.sha }})
-          docker stop $container_id    
-          docker rm $container_id     
+          docker stop $container_id
+          docker rm $container_id

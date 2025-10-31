@@ -5,150 +5,21 @@ import mysql.connector
 import time
 import os
 from dotenv import load_dotenv
+
+
+# ---------- STEP 1: Load CSV ----------
+
 load_dotenv()
-
-# # ---------- STEP 1: Load CSV ----------
-# df = pd.read_csv("F:\working_code\properties.csv")
-# print("✅ Loaded CSV with", len(df), "rows.")
-
-# # ---------- STEP 2: Normalize Column Names ----------
-# df.columns = (
-#     df.columns
-#     .str.strip()
-#     .str.lower()
-#     .str.replace(' ', '_')
-#     .str.replace('\ufeff', '', regex=True)  # remove BOM if present
-# )
-
-# print("🧾 Columns found:", list(df.columns))
-
-# # ---------- STEP 3: Auto-fix Column Names ----------
-# rename_map = {}
-# for c in df.columns:
-#     if "price" in c and "text" in c:
-#         rename_map[c] = "price"
-#     if "prop" in c and "type" in c:
-#         rename_map[c] = "prop_type"
-#     if "covered" in c and "area" in c:
-#         rename_map[c] = "covered_area"
-# df.rename(columns=rename_map, inplace=True)
-
-# # Ensure all required columns exist
-# required_cols = ["prop_type", "purpose", "covered_area", "price", "location", "beds", "baths", "amenities"]
-# missing = [c for c in required_cols if c not in df.columns]
-# if missing:
-#     raise ValueError(f"❌ Missing required columns in CSV: {missing}")
-
-# # ---------- STEP 4: Clean Price ----------
-# def clean_price(price):
-#     if isinstance(price, str):
-#         price = price.strip()
-#         match = re.search(r"([\d\.]+)\s*(Crore|Lakh)", price)
-#         if match:
-#             value, unit = float(match.group(1)), match.group(2)
-#             if unit == "Crore":
-#                 return value * 10_000_000
-#             elif unit == "Lakh":
-#                 return value * 100_000
-#         nums = re.findall(r"[\d\.]+", price)
-#         return float(nums[0]) if nums else np.nan
-#     return np.nan
-
-# #df["price"] = df["price"].apply(clean_price)
-
-# # ---------- STEP 5: Clean Covered Area ----------
-# df["covered_area"] = df["covered_area"].astype(str).str.extract(r"([\d\.]+)").astype(float)
-
-# # ---------- STEP 6: Clean Beds & Baths ----------
-# df["beds"] = df["beds"].astype(str).str.extract(r"(\d+)").astype(float)
-# df["baths"] = df["baths"].astype(str).str.extract(r"(\d+)").astype(float)
-# # Convert standalone dashes (and common dash variants) to "0" in numeric columns
-# num_cols = [c for c in ("covered_area", "price", "beds", "baths") if c in df.columns]
-# dash_variants = {"-", "–", "—"}
-# for col in num_cols:
-#     df[col] = df[col].astype(str).str.strip()
-#     df.loc[df[col].isin(dash_variants), col] = "0"
-
-
-
-# # ---------- STEP 7: Impute Missing Values ----------
-# for index, row in df.iterrows():
-#     if row['beds'] == 0 and 'bed' in row['amenities'].lower():
-#         df.at[index, 'beds'] = 1  # Replace with 1 bed if mentioned in amenities
-#     if row['baths'] == 0 and 'bath' in row['amenities'].lower():
-#         df.at[index, 'baths'] = 1  # Replace with 1 bath if mentioned in amenities
-# # ---------- STEP 8: Clean Text Fields ----------
-# for col in ["prop_type", "purpose", "location", "amenities"]:
-#     df[col] = df[col].astype(str).str.strip().replace({"nan": ""})
-
-# # ---------- STEP 9: Save Cleaned CSV ----------
-# df.to_csv("zameen_cleaned.csv", index=False)
-# print("✅ Cleaned data saved to zameen_cleaned.csv")
-
-# # ---------- STEP 10: Connect to MySQL ----------
-# def connect_mysql(retries=3, delay=2):
-#     for i in range(retries):
-#         try:
-#             connection = mysql.connector.connect(
-#                 host=os.getenv("host"),      # change if needed
-#                 user=os.getenv("user"),           # your MySQL username
-#                 password=os.getenv("password"),  # your MySQL password
-#                 database="zameen"     # your database name
-#             )
-#             if connection.is_connected():
-#                 print("✅ Connected to MySQL successfully.")
-#                 return connection
-#         except mysql.connector.Error as e:
-#             print(f"⚠️ MySQL connection failed ({e}), retrying in {delay}s...")
-#             time.sleep(delay)
-#     raise ConnectionError("❌ Could not connect to MySQL after retries.")
-
-# connection = connect_mysql()
-# cursor = connection.cursor()
-
-# try:
-# # ---------- STEP 12: Insert Data ----------
-#     insert_query = """
-#         INSERT INTO property_data
-#         (prop_type, purpose, covered_area, price, location, beds, baths, amenities)
-#         VALUES (%s, %s, %s, %s, %s, %s, %s, %s);
-#     """
-
-#     data_tuples = [
-#         (
-#             row.prop_type, row.purpose, row.covered_area, row.price,
-#             row.location, int(row.beds), int(row.baths), row.amenities
-#         )
-#         for _, row in df.iterrows()
-        
-#     ]
-
-#     cursor.executemany(insert_query, data_tuples)
-#     connection.commit()
-# except Exception as e:
-#     print("err in insertion")
-
-
-
-# print(f"✅ Successfully inserted {cursor.rowcount} rows into MySQL.")
-
-import pandas as pd
-import re
-import numpy as np
-import mysql.connector
-import time
-
 # ---------- STEP 1: Load CSV ----------
 # (adjust path as needed)pi
 df = pd.read_csv("F:\working_code\properties.csv")
 
 # ---------- STEP 2: Normalize Column Names ----------
 df.columns = (
-    df.columns
-    .str.strip()
+    df.columns.str.strip()
     .str.lower()
-    .str.replace(' ', '_')
-    .str.replace('\ufeff', '', regex=True)  # remove BOM if present
+    .str.replace(" ", "_")
+    .str.replace("\ufeff", "", regex=True)  # remove BOM if present
 )
 
 print("🧾 Columns found:", list(df.columns))
@@ -165,10 +36,20 @@ for c in df.columns:
 df.rename(columns=rename_map, inplace=True)
 
 # Ensure all required columns exist
-required_cols = ["prop_type", "purpose", "covered_area", "price", "location", "beds", "baths", "amenities"]
+required_cols = [
+    "prop_type",
+    "purpose",
+    "covered_area",
+    "price",
+    "location",
+    "beds",
+    "baths",
+    "amenities",
+]
 missing = [c for c in required_cols if c not in df.columns]
 if missing:
     raise ValueError(f"❌ Missing required columns in CSV: {missing}")
+
 
 # ---------- STEP 4: Clean Price ----------
 def clean_price(price):
@@ -188,17 +69,24 @@ def clean_price(price):
     except Exception:
         return np.nan
 
+
 # Optionally apply cleaning if your price column needs parsing
 # df["price"] = df["price"].apply(clean_price)
 
 # ---------- STEP 5: Clean Covered Area ----------
 # Coerce to numeric safely
-df["covered_area"] = pd.to_numeric(df["covered_area"].astype(str).str.extract(r"([\d\.]+)")[0], errors='coerce')
+df["covered_area"] = pd.to_numeric(
+    df["covered_area"].astype(str).str.extract(r"([\d\.]+)")[0], errors="coerce"
+)
 
 # ---------- STEP 6: Clean Beds & Baths ----------
 # Extract numbers and coerce
-df["beds"] = pd.to_numeric(df["beds"].astype(str).str.extract(r"(\d+)")[0], errors='coerce')
-df["baths"] = pd.to_numeric(df["baths"].astype(str).str.extract(r"(\d+)")[0], errors='coerce')
+df["beds"] = pd.to_numeric(
+    df["beds"].astype(str).str.extract(r"(\d+)")[0], errors="coerce"
+)
+df["baths"] = pd.to_numeric(
+    df["baths"].astype(str).str.extract(r"(\d+)")[0], errors="coerce"
+)
 # Replace common dash variants with NaN
 num_cols = [c for c in ("covered_area", "price", "beds", "baths") if c in df.columns]
 dash_variants = {"-", "–", "—"}
@@ -215,57 +103,56 @@ for col in ["prop_type", "purpose", "location", "amenities"]:
 # Inspect amenities for numeric mentions like "2 beds", "3 bath" and use that
 # If a number is mentioned, fill with that number. Otherwise leave as 0.
 for index, row in df.iterrows():
-    amenities_text = (row.get('amenities') or "").lower()
+    amenities_text = (row.get("amenities") or "").lower()
     # Beds: look for patterns like '2 bed', '2 beds', '2 br', '2 bedroom'
-    if 'beds' in df.columns:
-        beds_val = row.get('beds')
+    if "beds" in df.columns:
+        beds_val = row.get("beds")
         if pd.isna(beds_val) or beds_val == 0:
             bed_match = re.search(r"(\d+)\s*(?:beds?|br|bedrooms?)", amenities_text)
             if bed_match:
                 try:
-                    df.at[index, 'beds'] = int(bed_match.group(1))
+                    df.at[index, "beds"] = int(bed_match.group(1))
                 except Exception:
                     # on parse error, leave as 0
-                    df.at[index, 'beds'] = 0
+                    df.at[index, "beds"] = 0
             else:
                 # leave as 0 per requirement
-                df.at[index, 'beds'] = 0
+                df.at[index, "beds"] = 0
     # Baths: look for patterns like '2 bath', '2 baths', '2 ba', '2 bathroom'
-    if 'baths' in df.columns:
-        baths_val = row.get('baths')
+    if "baths" in df.columns:
+        baths_val = row.get("baths")
         if pd.isna(baths_val) or baths_val == 0:
             bath_match = re.search(r"(\d+)\s*(?:baths?|ba|bathrooms?)", amenities_text)
             if bath_match:
                 try:
-                    df.at[index, 'baths'] = int(bath_match.group(1))
+                    df.at[index, "baths"] = int(bath_match.group(1))
                 except Exception:
-                    df.at[index, 'baths'] = 0
+                    df.at[index, "baths"] = 0
             else:
                 # leave as 0 per requirement
-                df.at[index, 'baths'] = 0
+                df.at[index, "baths"] = 0
 
 # After imputation ensure beds/baths are integers and no NaN remain
-if 'beds' in df.columns:
-    df['beds'] = pd.to_numeric(df['beds'], errors='coerce').fillna(0).astype(int)
-if 'baths' in df.columns:
-    df['baths'] = pd.to_numeric(df['baths'], errors='coerce').fillna(0).astype(int)
+if "beds" in df.columns:
+    df["beds"] = pd.to_numeric(df["beds"], errors="coerce").fillna(0).astype(int)
+if "baths" in df.columns:
+    df["baths"] = pd.to_numeric(df["baths"], errors="coerce").fillna(0).astype(int)
 
 # ---------- STEP 9: Save Cleaned CSV ----------
 df.to_csv("zameen_cleaned.csv", index=False)
-print("✅ Cleaned data saved to zameen_cleaned.csv")
+print("Cleaned data saved to zameen_cleaned.csv")
+
 
 # ---------- STEP 10: Connect to MySQL ----------
 def connect_mysql(retries=3, delay=2):
     for i in range(retries):
         try:
             connection = mysql.connector.connect(
-                host=os.getenv('host'),
-                port=os.getenv('port'),
-                user=os.getenv('user'),
-                password=os.getenv('password'),
-                database="zameen"
-                
-
+                host=os.getenv("host"),
+                port=os.getenv("port"),
+                user=os.getenv("user"),
+                password=os.getenv("password"),
+                database="zameen",
             )
             if connection.is_connected():
                 print("✅ Connected to MySQL successfully.")
@@ -274,6 +161,7 @@ def connect_mysql(retries=3, delay=2):
             print(f"⚠️ MySQL connection failed ({e}), retrying in {delay}s...")
             time.sleep(delay)
     raise ConnectionError("❌ Could not connect to MySQL after retries.")
+
 
 connection = connect_mysql()
 cursor = connection.cursor()
@@ -305,24 +193,30 @@ try:
             return None
 
     for _, row in df.iterrows():
-        covered_area_val = to_float_safe(row.get('covered_area'))
-        price_val = to_float_safe(row.get('price'))
-        beds_val = to_int_safe(row.get('beds'))
-        baths_val = to_int_safe(row.get('baths'))
+        covered_area_val = to_float_safe(row.get("covered_area"))
+        price_val = to_float_safe(row.get("price"))
+        beds_val = to_int_safe(row.get("beds"))
+        baths_val = to_int_safe(row.get("baths"))
 
         # Amenities: prefer empty string instead of numpy.nan
-        amenities_val = row.get('amenities') if row.get('amenities') not in (None, "", "nan") else ""
+        amenities_val = (
+            row.get("amenities")
+            if row.get("amenities") not in (None, "", "nan")
+            else ""
+        )
 
-        data_tuples.append((
-            row.get('prop_type') or None,
-            row.get('purpose') or None,
-            covered_area_val,
-            price_val,
-            row.get('location') or None,
-            beds_val,
-            baths_val,
-            amenities_val
-        ))
+        data_tuples.append(
+            (
+                row.get("prop_type") or None,
+                row.get("purpose") or None,
+                covered_area_val,
+                price_val,
+                row.get("location") or None,
+                beds_val,
+                baths_val,
+                amenities_val,
+            )
+        )
 
     cursor.executemany(insert_query, data_tuples)
     connection.commit()

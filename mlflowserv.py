@@ -8,6 +8,7 @@ import json
 import os
 import boto3
 from dotenv import load_dotenv
+
 load_dotenv()
 print("AWS_ACCESS_KEY_ID:", os.getenv("AWS_ACCESS_KEY_ID"))
 print("AWS_SECRET_ACCESS_KEY:", os.getenv("AWS_SECRET_ACCESS_KEY"))
@@ -23,6 +24,7 @@ S3_BUCKET = "zameen-project"
 S3_MODELS_PREFIX = "zameen_models"
 s3 = boto3.client("s3")  # credentials from environment or IAM role
 
+
 def upload_to_s3(local_path, s3_bucket, s3_key):
     """Upload a file or directory to S3"""
     if os.path.isdir(local_path):
@@ -35,6 +37,7 @@ def upload_to_s3(local_path, s3_bucket, s3_key):
     else:
         s3.upload_file(local_path, s3_bucket, s3_key)
     print(f"✅ Uploaded {local_path} to s3://{s3_bucket}/{s3_key}")
+
 
 # ----------------------
 # Load and preprocess data
@@ -58,11 +61,16 @@ with open("valid_metadata.json", "w") as f:
 # One-hot encode locations and property types
 locations_sale = pd.get_dummies(sale_data["location"], prefix="location")
 prop_types_sale = pd.get_dummies(sale_data["prop_type"], prefix="prop_type")
-X_sale = pd.concat([sale_data[["covered_area", "beds", "baths"]], locations_sale, prop_types_sale], axis=1)
+X_sale = pd.concat(
+    [sale_data[["covered_area", "beds", "baths"]], locations_sale, prop_types_sale],
+    axis=1,
+)
 y_sale = sale_data["price"]
 
 # Train/test split
-X_train_sale, X_test_sale, y_train_sale, y_test_sale = train_test_split(X_sale, y_sale, test_size=0.3, random_state=42)
+X_train_sale, X_test_sale, y_train_sale, y_test_sale = train_test_split(
+    X_sale, y_sale, test_size=0.3, random_state=42
+)
 
 # Save feature columns
 feature_columns = {"sale": list(X_sale.columns)}
@@ -83,8 +91,14 @@ r2_sale = r2_score(y_test_sale, y_pred_sale)
 mlflow.sklearn.save_model(model_sale, "ZameenPriceModelSale")
 
 # Upload model and artifacts to S3
-upload_to_s3("ZameenPriceModelSale", S3_BUCKET, f"{S3_MODELS_PREFIX}/ZameenPriceModelSale")
-upload_to_s3("feature_columns.json", S3_BUCKET, f"{S3_MODELS_PREFIX}/feature_columns.json")
-upload_to_s3("valid_metadata.json", S3_BUCKET, f"{S3_MODELS_PREFIX}/valid_metadata.json")
+upload_to_s3(
+    "ZameenPriceModelSale", S3_BUCKET, f"{S3_MODELS_PREFIX}/ZameenPriceModelSale"
+)
+upload_to_s3(
+    "feature_columns.json", S3_BUCKET, f"{S3_MODELS_PREFIX}/feature_columns.json"
+)
+upload_to_s3(
+    "valid_metadata.json", S3_BUCKET, f"{S3_MODELS_PREFIX}/valid_metadata.json"
+)
 
 print(f"✅ Sale model trained and uploaded. MAE: {mae_sale:.2f}, R²: {r2_sale:.4f}")
