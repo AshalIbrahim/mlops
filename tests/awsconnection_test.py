@@ -2,6 +2,7 @@ import mysql.connector
 import pytest
 from backend.app import get_connection
 
+
 def test_database_connection_success():
     """
     Test that verifies the database connection can be established successfully.
