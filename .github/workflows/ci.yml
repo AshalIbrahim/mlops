@@ -69,6 +69,7 @@ jobs:
       - name: Run tests with coverage
         working-directory: ${{ github.workspace }}
         env:
+          PYTHONPATH: ${{ github.workspace }}
           HOST: ${{ secrets.HOST }}
           USER: ${{ secrets.USER }}
           PASSWORD: ${{ secrets.PASSWORD }}
