@@ -70,11 +70,11 @@ jobs:
         working-directory: ${{ github.workspace }}
         env:
           PYTHONPATH: ${{ github.workspace }}
-          RDS_HOST: ${{ secrets.host }}
-          RDS_USER: ${{ secrets.user }}
-          RDS_PASSWORD: ${{ secrets.password }}
-          RDS_DATABASE: ${{ secrets.db_name }}
-          RDS_PORT: ${{ secrets.port }}
+          RDS_HOST: ${{ secrets.HOST }}
+          RDS_USER: ${{ secrets.USER }}
+          RDS_PASSWORD: ${{ secrets.PASSWORD }}
+          RDS_DATABASE: ${{ secrets.DB_NAME }}
+          RDS_PORT: ${{ secrets.PORT }}
         run: pytest --cov=backend tests/ --cov-fail-under=80
 
   build:
