@@ -28,7 +28,6 @@ async def lifespan(app: FastAPI):
     print("🚀 Starting up: loading model and DB metadata...")
     model, sale_feature_columns, valid_metadata = load_model()
     load_location_and_property_types()  # load once
-    yield
     # (cleanup logic could go here later)
 
 
