@@ -34,6 +34,8 @@ jobs:
     name: Test with pytest (coverage ≥80%)
     runs-on: ubuntu-latest
     needs: lint
+    env:
+      CI: true
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -47,37 +49,32 @@ jobs:
         run: |
           pip install -U pip
           pip install -r requirements.txt
-          pip install pytest pytest-cov
+          pip install pytest pytest-cov pytest-mock
           pip install mysql-connector-python boto3 mlflow
-
-      - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@v4
-        with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: ${{ secrets.AWS_DEFAULT_REGION }}
-
-      - name: Start MLflow server
-        run: |
-          mlflow server \
-            --backend-store-uri sqlite:///mlflow.db \
-            --default-artifact-root ./mlruns \
-            --host 127.0.0.1 \
-            --port 5000 &
-          sleep 5  # Give server time to start
 
       - name: Run tests with coverage
         working-directory: ${{ github.workspace }}
         env:
-          S3_BUCKET: ${{ secrets.S3_BUCKET }}
-          S3_MODELS_PREFIX: ${{ secrets.S3_MODELS_PREFIX }}
           PYTHONPATH: ${{ github.workspace }}
-          HOST: ${{ secrets.HOST }}
-          USER: ${{ secrets.USER }}
-          PASSWORD: ${{ secrets.PASSWORD }}
-          DB_NAME: ${{ secrets.DB_NAME }}
-          PORT: ${{ secrets.PORT }}
-        run: pytest --cov=backend tests/ --cov-fail-under=80
+          # Set dummy values - will be mocked in CI
+          HOST: localhost
+          USER: test
+          PASSWORD: test
+          DB_NAME: test_db
+          PORT: 3306
+          AWS_ACCESS_KEY_ID: test-key
+          AWS_SECRET_ACCESS_KEY: test-secret
+          AWS_DEFAULT_REGION: eu-north-1
+          S3_BUCKET: zameen-project
+          S3_MODELS_PREFIX: zameen_models
+        run: |
+          pytest -v --cov=backend tests/ --cov-fail-under=80 --tb=short
+
+      - name: Upload coverage reports
+        if: always()
+        uses: codecov/codecov-action@v3
+        with:
+          fail_ci_if_error: false
 
   build:
     name: Build and Push Docker Image to GHCR
@@ -106,9 +103,34 @@ jobs:
     steps:
       - name: Run canary container
         run: |
-          docker run -d -p 8000:8000 -e CANARY=true ghcr.io/${{ github.repository }}:${{ github.sha }}
+          docker run -d -p 8000:8000 \
+            -e CANARY=true \
+            -e AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY_ID }} \
+            -e AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }} \
+            -e AWS_DEFAULT_REGION=${{ secrets.AWS_DEFAULT_REGION }} \
+            -e S3_BUCKET=${{ secrets.S3_BUCKET }} \
+            -e S3_MODELS_PREFIX=${{ secrets.S3_MODELS_PREFIX }} \
+            -e HOST=${{ secrets.HOST }} \
+            -e USER=${{ secrets.USER }} \
+            -e PASSWORD=${{ secrets.PASSWORD }} \
+            -e DB_NAME=${{ secrets.DB_NAME }} \
+            -e PORT=${{ secrets.PORT }} \
+            ghcr.io/${{ github.repository }}:${{ github.sha }}
+            
       - name: Wait for service startup
-        run: sleep 10
+        run: |
+          echo "Waiting for service to start..."
+          for i in {1..30}; do
+            if curl -f http://localhost:8000/health 2>/dev/null; then
+              echo "✅ Service is up!"
+              exit 0
+            fi
+            echo "Attempt $i: Service not ready yet..."
+            sleep 2
+          done
+          echo "❌ Service failed to start within 60 seconds"
+          docker logs $(docker ps -q --filter ancestor=ghcr.io/${{ github.repository }}:${{ github.sha }})
+          exit 1
 
   acceptance-tests:
     name: Acceptance Tests (Golden Set)
@@ -134,7 +156,11 @@ jobs:
           echo "✅ All golden endpoints passed!"
 
       - name: Stop canary container
+        if: always()
         run: |
           container_id=$(docker ps -q --filter ancestor=ghcr.io/${{ github.repository }}:${{ github.sha }})
-          docker stop $container_id
-          docker rm $container_id
+          if [ -n "$container_id" ]; then
+            docker logs $container_id
+            docker stop $container_id
+            docker rm $container_id
+          fi
