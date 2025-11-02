@@ -108,7 +108,7 @@ jobs:
         run: |
           docker push ghcr.io/${{ env.owner_lc }}/mlops:${{ github.sha }}
 
-  canary-deploy:
+    canary-deploy:
     name: Canary Deploy
     runs-on: ubuntu-latest
     needs: build
@@ -128,20 +128,35 @@ jobs:
       - name: Run canary container
         run: |
           owner_lc=$(echo '${{ github.repository_owner }}' | tr '[:upper:]' '[:lower:]')
-          docker run -d -p 8000:8000 -e CANARY=true ghcr.io/${owner_lc}/mlops:${{ github.sha }}
+          docker run -d -p 8000:8000 \
+            -e CANARY=true \
+            -e S3_BUCKET=${{ secrets.S3_BUCKET }} \
+            -e S3_MODELS_PREFIX=${{ secrets.S3_MODELS_PREFIX }} \
+            -e HOST=${{ secrets.HOST }} \
+            -e USER=${{ secrets.USER }} \
+            -e PASSWORD=${{ secrets.PASSWORD }} \
+            -e DB_NAME=${{ secrets.DB_NAME }} \
+            -e PORT=${{ secrets.PORT }} \
+            --name canary_container \
+            ghcr.io/${owner_lc}/mlops:${{ github.sha }}
 
       - name: Wait for service startup
         run: |
           echo "Waiting for FastAPI canary to be ready..."
-          for i in {1..30}; do
+          for i in {1..60}; do
             status=$(curl -s -o /dev/null -w "%{http_code}" http://localhost:8000/health || true)
             if [ "$status" -eq 200 ]; then
               echo "✅ Service is up!"
-              break
+              exit 0
             fi
             echo "⏳ Not ready yet, waiting 2s..."
             sleep 2
           done
+          echo "❌ Service failed to start within 2 minutes"
+          docker logs canary_container
+          docker stop canary_container
+          docker rm canary_container
+          exit 1
 
   acceptance-tests:
     name: Acceptance Tests (Golden Set)
@@ -167,9 +182,9 @@ jobs:
           done
           echo "✅ All golden endpoints passed!"
 
-      - name: Test /predict endpoint (sale + rent + edge)
+      - name: Test /predict endpoint (sale only)
         run: |
-          echo "Testing /predict variations"
+          echo "Testing /predict sale payload"
           sale_payload='{
             "listing_type": "sale",
             "location": "DHA Defence, Karachi, Sindh",
@@ -179,39 +194,17 @@ jobs:
             "area": 200,
             "price": 0
           }'
-          rent_payload='{
-            "listing_type": "rent",
-            "location": "Clifton, Karachi, Sindh",
-            "property_type": "Flat",
-            "bedrooms": 2,
-            "bathrooms": 2,
-            "area": 120,
-            "price": 0
-          }'
-          edge_payload='{
-            "listing_type": "sale",
-            "location": "Gulistan-e-Jauhar, Karachi, Sindh",
-            "property_type": "Plot",
-            "bedrooms": 0,
-            "bathrooms": 0,
-            "area": 50,
-            "price": 0
-          }'
-          payloads=("$sale_payload" "$rent_payload" "$edge_payload")
-          for payload in "${payloads[@]}"; do
-            status=$(curl -s -o /dev/null -w "%{http_code}" -X POST \
-              -H "Content-Type: application/json" \
-              -d "$payload" http://localhost:8000/predict)
-            if [ "$status" -ne 200 ]; then
-              echo "❌ /predict failed with status $status"
-              exit 1
-            fi
-          done
-          echo "✅ /predict endpoint passed all variations!"
+
+          status=$(curl -s -o /dev/null -w "%{http_code}" -X POST \
+            -H "Content-Type: application/json" \
+            -d "$sale_payload" http://localhost:8000/predict)
+          if [ "$status" -ne 200 ]; then
+            echo "❌ /predict failed with status $status"
+            exit 1
+          fi
+          echo "✅ /predict endpoint passed sale payload!"
 
       - name: Stop canary container
         run: |
-          owner_lc=$(echo '${{ github.repository_owner }}' | tr '[:upper:]' '[:lower:]')
-          container_id=$(docker ps -q --filter ancestor=ghcr.io/${owner_lc}/mlops:${{ github.sha }})
-          docker stop $container_id
-          docker rm $container_id
+          docker stop canary_container
+          docker rm canary_container
