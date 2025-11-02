@@ -79,11 +79,11 @@ def load_model(model_name="ZameenPriceModelV2", stage="Production"):
         try:
             model_uri = f"models:/{model_name}/{stage}"
             model = mlflow.pyfunc.load_model(model_uri)
-            print(f"✅ Loaded model via URI: {model_uri}")
+            print(f"Loaded model via URI: {model_uri}")
         except Exception as e_uri:
             print(f"⚠ Failed via URI: {e_uri}, trying source...")
             model = mlflow.pyfunc.load_model(chosen.source)
-            print(f"✅ Loaded model from source path: {chosen.source}")
+            print(f"Loaded model from source path: {chosen.source}")
 
         # Download artifacts
         feature_path = client.download_artifacts(run_id, "feature_columns.json")
@@ -97,7 +97,7 @@ def load_model(model_name="ZameenPriceModelV2", stage="Production"):
         sale_feature_columns = feat.get("sale", [])
         print(f"Loaded {len(sale_feature_columns)} features from run {run_id}")
     except Exception as e:
-        print(f"❌ Model/artifact load failed: {e}")
+        print(f"Model/artifact load failed: {e}")
 
     return model, sale_feature_columns, valid_metadata
 
@@ -124,7 +124,7 @@ def load_location_and_property_types():
 
         return {"locations": locations, "prop_type": propertyTypes}
     except Exception as e:
-        print(f"⚠ Failed to load locations/property types from DB: {e}")
+        print(f" Failed to load locations/property types from DB: {e}")
         return {"locations": [], "prop_type": []}
 
 
@@ -134,7 +134,7 @@ load_location_and_property_types()
 # ---- Routes ----
 @app.get("/")
 def home():
-    return {"message": "Zameen API is running 🚀"}
+    return {"message": "Zameen API is running"}
 
 
 @app.get("/listings")
