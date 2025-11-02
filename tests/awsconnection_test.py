@@ -1,123 +1,114 @@
 import pytest
-import os
-from unittest.mock import Mock, patch, MagicMock
-import numpy as np
+from fastapi.testclient import TestClient
+from backend.app import app, load_model, model as m
+
+client = TestClient(app)
+
+
+# ---- Home & Health ----
+def test_home():
+    response = client.get("/")
+    assert response.status_code == 200
+    assert response.json() == {"message": "Zameen API is running"}
+
+
+def test_health_check():
+    response = client.get("/health")
+    assert response.status_code == 200
+    assert response.json()["status"] == "ok"
+
+
+# ---- Listings ----
+def test_get_listings():
+    response = client.get("/listings?limit=5")
+    assert response.status_code == 200
+    data = response.json()
+    assert isinstance(data, list)
+    assert len(data) <= 5
+    if data:
+        for item in data:
+            assert "prop_type" in item
+            assert "location" in item
+            assert "price" in item
+
+
+def test_get_locations():
+    response = client.get("/locations")
+    assert response.status_code == 200
+    data = response.json()
+    assert "locations" in data
+    assert isinstance(data["locations"], list)
+
+
+def test_get_prop_type():
+    response = client.get("/prop_type")
+    assert response.status_code == 200
+    data = response.json()
+    assert "prop_type" in data
+    assert isinstance(data["prop_type"], list)
+
+
+# ---- Prediction Tests ----
 
 
 @pytest.fixture(scope="session")
-def is_ci():
-    """Detect if running in CI environment."""
-    return os.getenv("CI") == "true" or os.getenv("GITHUB_ACTIONS") == "true"
+def model_resources():
+    """Load model once per session to avoid repeated S3 calls."""
+    m, sale_feature_columns, valid_metadata = load_model()
+    return m, sale_feature_columns, valid_metadata
 
 
-@pytest.fixture(scope="session", autouse=True)
-def mock_model_for_ci(is_ci):
-    """Mock the model loading in CI to avoid S3 dependency."""
-    if not is_ci:
-        # Local environment - use real model
-        yield
-        return
-
-    print("🔧 CI Environment detected - using mocked model")
-
-    # Create a mock model
-    mock_model = Mock()
-    mock_model.predict = Mock(return_value=np.array([50000000.0]))  # 50M PKR
-
-    mock_sale_features = [
-        "covered_area",
-        "beds",
-        "baths",
-        "location_Cantt, Karachi, Sindh",
-        "location_DHA Defence, Karachi, Sindh",
-        "prop_type_House",
-        "prop_type_Flat",
-    ]
-
-    mock_metadata = {
-        "locations": ["Cantt, Karachi, Sindh", "DHA Defence, Karachi, Sindh"],
-        "prop_types": ["House", "Flat", "Upper Portion"],
-    }
-
-    with patch("backend.app.load_model") as mock_load:
-        mock_load.return_value = (mock_model, mock_sale_features, mock_metadata)
-
-        # Also patch the module-level variables
-        with patch("backend.app.model", mock_model):
-            with patch("backend.app.sale_feature_columns", mock_sale_features):
-                with patch("backend.app.valid_metadata", mock_metadata):
-                    with patch("backend.app.locations", mock_metadata["locations"]):
-                        with patch(
-                            "backend.app.propertyTypes", mock_metadata["prop_types"]
-                        ):
-                            yield
+skip_if_no_model = pytest.mark.skipif(m is None, reason="MLflow model not loaded")
 
 
-@pytest.fixture(scope="session", autouse=True)
-def mock_db_for_ci(is_ci):
-    """Mock database connection in CI."""
-    if not is_ci:
-        # Local environment - use real DB
-        yield
-        return
-
-    print("🔧 CI Environment detected - using mocked database")
-
-    # Mock database responses
-    mock_listings = [
-        {
-            "prop_type": "House",
-            "purpose": "sale",
-            "covered_area": 1000.0,
-            "price": 50000000.0,
-            "location": "Cantt, Karachi, Sindh",
+@skip_if_no_model
+def test_predict_price_valid():
+    response = client.post(
+        "/predict",
+        json={
+            "coveredArea": 1000,
             "beds": 3,
-            "baths": 2,
-        },
-        {
-            "prop_type": "Flat",
+            "bathrooms": 2,
+            "location": "Cantt, Karachi, Sindh",
+            "propType": "House",
             "purpose": "sale",
-            "covered_area": 800.0,
-            "price": 30000000.0,
-            "location": "DHA Defence, Karachi, Sindh",
-            "beds": 2,
-            "baths": 2,
         },
-    ]
-
-    def mock_get_connection():
-        mock_conn = MagicMock()
-        mock_cursor = MagicMock()
-
-        # Mock cursor methods
-        mock_cursor.fetchall.return_value = mock_listings
-        mock_cursor.__enter__ = Mock(return_value=mock_cursor)
-        mock_cursor.__exit__ = Mock(return_value=False)
-
-        mock_conn.cursor.return_value = mock_cursor
-        mock_conn.__enter__ = Mock(return_value=mock_conn)
-        mock_conn.__exit__ = Mock(return_value=False)
-
-        return mock_conn
-
-    with patch("backend.app.get_connection", side_effect=mock_get_connection):
-        yield
+    )
+    assert response.status_code == 200
+    json_resp = response.json()
+    assert "prediction" in json_resp
+    assert "formatted_price" in json_resp
 
 
-@pytest.fixture(scope="session", autouse=True)
-def setup_ci_environment(is_ci):
-    """Set up necessary environment variables for CI."""
-    if is_ci:
-        print("🔧 Setting up CI environment variables")
-        # Ensure all required env vars have defaults
-        os.environ.setdefault("AWS_ACCESS_KEY_ID", "test-key")
-        os.environ.setdefault("AWS_SECRET_ACCESS_KEY", "test-secret")
-        os.environ.setdefault("AWS_DEFAULT_REGION", "eu-north-1")
-        os.environ.setdefault("S3_BUCKET", "zameen-project")
-        os.environ.setdefault("S3_MODELS_PREFIX", "zameen_models")
-        os.environ.setdefault("HOST", "localhost")
-        os.environ.setdefault("USER", "test")
-        os.environ.setdefault("PASSWORD", "test")
-        os.environ.setdefault("DB_NAME", "test_db")
-        os.environ.setdefault("PORT", "3306")
-    yield
+@skip_if_no_model
+def test_predict_invalid_location():
+    response = client.post(
+        "/predict",
+        json={
+            "coveredArea": 1000,
+            "beds": 3,
+            "bathrooms": 2,
+            "location": "InvalidLocation",
+            "propType": "House",
+            "purpose": "sale",
+        },
+    )
+    assert response.status_code == 400
+    assert "Invalid location" in response.json()["detail"]
+
+
+@skip_if_no_model
+def test_predict_invalid_prop_type():
+    response = client.post(
+        "/predict",
+        json={
+            "coveredArea": 1000,
+            "beds": 3,
+            "bathrooms": 2,
+            "location": "Cantt, Karachi, Sindh",
+            "propType": "InvalidType",
+            "purpose": "sale",
+        },
+    )
+    assert response.status_code == 400
+    assert "Invalid property type" in response.json()["detail"]
