@@ -69,12 +69,11 @@ jobs:
       - name: Run tests with coverage
         working-directory: ${{ github.workspace }}
         env:
-          PYTHONPATH: ${{ github.workspace }}
-          RDS_HOST: ${{ secrets.HOST }}
-          RDS_USER: ${{ secrets.USER }}
-          RDS_PASSWORD: ${{ secrets.PASSWORD }}
-          RDS_DATABASE: ${{ secrets.DB_NAME }}
-          RDS_PORT: ${{ secrets.PORT }}
+          HOST: ${{ secrets.HOST }}
+          USER: ${{ secrets.USER }}
+          PASSWORD: ${{ secrets.PASSWORD }}
+          DB_NAME: ${{ secrets.DB_NAME }}
+          PORT: ${{ secrets.PORT }}
         run: pytest --cov=backend tests/ --cov-fail-under=80
 
   build:
