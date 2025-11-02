@@ -103,7 +103,7 @@ jobs:
 
       - name: Build Docker image
         run: |
-          docker build -t ghcr.io/${{ env.owner_lc }}/mlops:${{ github.sha }} .
+          docker build -t ghcr.io/${{ env.owner_lc }}/mlops:${{ github.sha }} -f backend/Dockerfile .
 
       - name: Push Docker image
         run: |
