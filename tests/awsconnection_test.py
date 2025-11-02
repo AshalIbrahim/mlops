@@ -31,19 +31,21 @@ def test_get_listings():
             assert "location" in item
             assert "price" in item
 
+
 def test_get_locations():
     response = client.get("/locations")
     assert response.status_code == 200
     data = response.json()
     assert "locations" in data
-    assert isinstance(data["locations"], list)  
+    assert isinstance(data["locations"], list)
+
 
 def test_get_prop_type():
     response = client.get("/prop_type")
     assert response.status_code == 200
     data = response.json()
     assert "prop_type" in data
-    assert isinstance(data["prop_type"], list)              
+    assert isinstance(data["prop_type"], list)
 
 
 model, sale_feature_columns, valid_metadata = load_model()
