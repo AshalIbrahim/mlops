@@ -1,6 +1,6 @@
 import pytest
 from fastapi.testclient import TestClient
-from backend.app import app, load_model
+from backend.app import app, load_model, model  # ✅ explicit imports
 
 client = TestClient(app)
 
@@ -48,19 +48,21 @@ def test_get_prop_type():
     assert isinstance(data["prop_type"], list)
 
 
-model, sale_feature_columns, valid_metadata = load_model()
+# ---- Prediction Tests ----
 
-print(model)
-# Skip prediction tests only if model is None
+
+@pytest.fixture(scope="session")
+def model_resources():
+    """Load model once per session to avoid repeated S3 calls."""
+    m, sale_feature_columns, valid_metadata = load_model()
+    return m, sale_feature_columns, valid_metadata
+
+
 skip_if_no_model = pytest.mark.skipif(model is None, reason="MLflow model not loaded")
 
 
 @skip_if_no_model
 def test_predict_price_valid():
-    """
-    Predict using a valid location and propType.
-    """
-    # Adjust location and propType to something present in your DB
     response = client.post(
         "/predict",
         json={
@@ -80,9 +82,6 @@ def test_predict_price_valid():
 
 @skip_if_no_model
 def test_predict_invalid_location():
-    """
-    Predict with an invalid location.
-    """
     response = client.post(
         "/predict",
         json={
@@ -100,9 +99,6 @@ def test_predict_invalid_location():
 
 @skip_if_no_model
 def test_predict_invalid_prop_type():
-    """
-    Predict with an invalid propType.
-    """
     response = client.post(
         "/predict",
         json={
