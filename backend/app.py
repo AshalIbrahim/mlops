@@ -68,7 +68,9 @@ def load_model(model_name="ZameenPriceModelSale"):
 
         # Download entire model folder
         paginator = s3.get_paginator("list_objects_v2")
-        for page in paginator.paginate(Bucket=S3_BUCKET, Prefix=f"{S3_MODELS_PREFIX}/{model_name}"):
+        for page in paginator.paginate(
+            Bucket=S3_BUCKET, Prefix=f"{S3_MODELS_PREFIX}/{model_name}"
+        ):
             for obj in page.get("Contents", []):
                 key = obj["Key"]
                 rel_path = os.path.relpath(key, f"{S3_MODELS_PREFIX}/{model_name}")
@@ -77,8 +79,16 @@ def load_model(model_name="ZameenPriceModelSale"):
                 s3.download_file(S3_BUCKET, key, local_path)
 
         # Download metadata
-        s3.download_file(S3_BUCKET, f"{S3_MODELS_PREFIX}/feature_columns.json", "model_cache/feature_columns.json")
-        s3.download_file(S3_BUCKET, f"{S3_MODELS_PREFIX}/valid_metadata.json", "model_cache/valid_metadata.json")
+        s3.download_file(
+            S3_BUCKET,
+            f"{S3_MODELS_PREFIX}/feature_columns.json",
+            "model_cache/feature_columns.json",
+        )
+        s3.download_file(
+            S3_BUCKET,
+            f"{S3_MODELS_PREFIX}/valid_metadata.json",
+            "model_cache/valid_metadata.json",
+        )
 
         # Load with MLflow
         model = mlflow.sklearn.load_model(f"model_cache/{model_name}")
