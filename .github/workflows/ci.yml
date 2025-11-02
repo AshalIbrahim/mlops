@@ -2,13 +2,9 @@ name: Backend CI
 
 on:
   push:
-    branches: [main]
+    branches: [ main ]
   pull_request:
-    branches: [main]
-
-env:
-  AWS_REGION: ap-south-1  # optional: fallback if secret missing
-  MLFLOW_TRACKING_URI: http://127.0.0.1:5000
+    branches: [ main ]
 
 jobs:
   lint:
@@ -51,37 +47,35 @@ jobs:
         run: |
           pip install -U pip
           pip install -r requirements.txt
-          pip install pytest pytest-cov mysql-connector-python boto3 mlflow
+          pip install pytest pytest-cov
+          pip install mysql-connector-python boto3 mlflow
 
       - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@v4
+        uses: aws-actions/configure-aws-credentials@v2
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ secrets.AWS_DEFAULT_REGION }}
 
-      - name: Set environment variables
-        run: |
-          echo "RDS_HOST=${{ secrets.RDS_HOST }}" >> $GITHUB_ENV
-          echo "RDS_USER=${{ secrets.RDS_USER }}" >> $GITHUB_ENV
-          echo "RDS_PASSWORD=${{ secrets.RDS_PASSWORD }}" >> $GITHUB_ENV
-          echo "RDS_DATABASE=${{ secrets.RDS_DATABASE }}" >> $GITHUB_ENV
-          echo "RDS_PORT=${{ secrets.RDS_PORT }}" >> $GITHUB_ENV
-
       - name: Start MLflow server
         run: |
-          nohup mlflow server \
+          mlflow server \
             --backend-store-uri sqlite:///mlflow.db \
             --default-artifact-root ./mlruns \
             --host 127.0.0.1 \
             --port 5000 &
-          sleep 7
+          sleep 5  # Give server time to start
 
       - name: Run tests with coverage
+        working-directory: ${{ github.workspace }}
         env:
           PYTHONPATH: ${{ github.workspace }}
-          MLFLOW_TRACKING_URI: http://127.0.0.1:5000
-        run: pytest --cov=backend tests/ --cov-fail-under=80 --disable-warnings -q
+          HOST: ${{ secrets.HOST }}
+          USER: ${{ secrets.USER }}
+          PASSWORD: ${{ secrets.PASSWORD }}
+          DB_NAME: ${{ secrets.DB_NAME }}
+          PORT: ${{ secrets.PORT }}
+        run: pytest --cov=backend tests/ --cov-fail-under=80
 
   build:
     name: Build and Push Docker Image to GHCR
@@ -110,14 +104,7 @@ jobs:
     steps:
       - name: Run canary container
         run: |
-          docker run -d -p 8000:8000 \
-            -e CANARY=true \
-            -e RDS_HOST=${{ secrets.RDS_HOST }} \
-            -e RDS_USER=${{ secrets.RDS_USER }} \
-            -e RDS_PASSWORD=${{ secrets.RDS_PASSWORD }} \
-            -e RDS_DATABASE=${{ secrets.RDS_DATABASE }} \
-            -e RDS_PORT=${{ secrets.RDS_PORT }} \
-            ghcr.io/${{ github.repository }}:${{ github.sha }}
+          docker run -d -p 8000:8000 -e CANARY=true ghcr.io/${{ github.repository }}:${{ github.sha }}
       - name: Wait for service startup
         run: sleep 10
 
@@ -147,6 +134,5 @@ jobs:
       - name: Stop canary container
         run: |
           container_id=$(docker ps -q --filter ancestor=ghcr.io/${{ github.repository }}:${{ github.sha }})
-          if [ -n "$container_id" ]; then
-            docker stop $container_id && docker rm $container_id
-          fi
+          docker stop $container_id
+          docker rm $container_id
