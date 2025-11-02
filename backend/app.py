@@ -58,46 +58,41 @@ def get_connection():
 
 
 # ---- Load model ----
-def load_model(model_name="ZameenPriceModelV2", stage="Production"):
+def load_model(model_name="ZameenPriceModelSale"):
     model = None
     sale_feature_columns = None
     valid_metadata = None
 
     try:
-        client = mlflow.tracking.MlflowClient()
+        os.makedirs("model_cache", exist_ok=True)
 
-        # Try stage first, fallback to latest
-        versions = client.get_latest_versions(
-            model_name, stages=[stage]
-        ) or client.get_latest_versions(model_name)
-        if not versions:
-            raise Exception("No registered versions found for model")
+        # Download entire model folder
+        paginator = s3.get_paginator("list_objects_v2")
+        for page in paginator.paginate(Bucket=S3_BUCKET, Prefix=f"{S3_MODELS_PREFIX}/{model_name}"):
+            for obj in page.get("Contents", []):
+                key = obj["Key"]
+                rel_path = os.path.relpath(key, f"{S3_MODELS_PREFIX}/{model_name}")
+                local_path = os.path.join("model_cache", model_name, rel_path)
+                os.makedirs(os.path.dirname(local_path), exist_ok=True)
+                s3.download_file(S3_BUCKET, key, local_path)
 
-        chosen = sorted(versions, key=lambda v: int(v.version), reverse=True)[0]
-        run_id = chosen.run_id
+        # Download metadata
+        s3.download_file(S3_BUCKET, f"{S3_MODELS_PREFIX}/feature_columns.json", "model_cache/feature_columns.json")
+        s3.download_file(S3_BUCKET, f"{S3_MODELS_PREFIX}/valid_metadata.json", "model_cache/valid_metadata.json")
 
-        try:
-            model_uri = f"models:/{model_name}/{stage}"
-            model = mlflow.pyfunc.load_model(model_uri)
-            print(f"Loaded model via URI: {model_uri}")
-        except Exception as e_uri:
-            print(f"⚠ Failed via URI: {e_uri}, trying source...")
-            model = mlflow.pyfunc.load_model(chosen.source)
-            print(f"Loaded model from source path: {chosen.source}")
+        # Load with MLflow
+        model = mlflow.sklearn.load_model(f"model_cache/{model_name}")
 
-        # Download artifacts
-        feature_path = client.download_artifacts(run_id, "feature_columns.json")
-        metadata_path = client.download_artifacts(run_id, "valid_metadata.json")
-
-        with open(feature_path, "r") as f:
+        with open("model_cache/feature_columns.json", "r") as f:
             feat = json.load(f)
-        with open(metadata_path, "r") as f:
+        with open("model_cache/valid_metadata.json", "r") as f:
             valid_metadata = json.load(f)
 
         sale_feature_columns = feat.get("sale", [])
-        print(f"Loaded {len(sale_feature_columns)} features from run {run_id}")
+        print("✅ Model and artifacts loaded from S3 successfully!")
+
     except Exception as e:
-        print(f"Model/artifact load failed: {e}")
+        print(f"❌ Model load failed: {e}")
 
     return model, sale_feature_columns, valid_metadata
 
