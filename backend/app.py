@@ -49,11 +49,11 @@ stage = "Production"
 # ---- DB Connection ----
 def get_connection():
     return mysql.connector.connect(
-        host=os.getenv("host"),
-        port=int(os.getenv("port", 3306)),
-        user=os.getenv("user"),
-        password=os.getenv("password"),
-        database=os.getenv("db_name"),
+        host=os.getenv("HOST"),
+        port=int(os.getenv("PORT", 3306)),
+        user=os.getenv("USER"),
+        password=os.getenv("PASSWORD"),
+        database=os.getenv("DB_NAME"),
     )
 
 
