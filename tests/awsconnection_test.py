@@ -4,12 +4,6 @@ from backend.app import app, load_model
 
 client = TestClient(app)
 
-# Load the model at runtime
-model, sale_feature_columns, valid_metadata = load_model()
-
-# Skip prediction tests only if model is None
-skip_if_no_model = pytest.mark.skipif(model is None, reason="MLflow model not loaded")
-
 
 # ---- Home & Health ----
 def test_home():
@@ -36,6 +30,13 @@ def test_get_listings():
             assert "prop_type" in item
             assert "location" in item
             assert "price" in item
+
+
+model, sale_feature_columns, valid_metadata = load_model()
+
+print(model)
+# Skip prediction tests only if model is None
+skip_if_no_model = pytest.mark.skipif(model is None, reason="MLflow model not loaded")
 
 
 @skip_if_no_model
