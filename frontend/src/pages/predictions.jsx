@@ -147,9 +147,9 @@ const Predictions = () => {
                       value={Number(formData.coveredArea)}
                       onChange={handleSliderChange('coveredArea')}
                       valueLabelDisplay="auto"
-                      min={500}
+                      min={1}
                       max={5000}
-                      step={50}
+                      step={5}
                       sx={{
                         color: '#7b1fa2',
                         '& .MuiSlider-thumb': {
