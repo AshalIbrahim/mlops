@@ -20,6 +20,7 @@ const STORAGE_KEY = "zameen_chat_history_v2";
 const OPEN_KEY = "zameen_chat_open_v2";
 const API = import.meta.env.VITE_API_URL || "http://127.0.0.1:8000";
 
+
 async function getBotReply(messages) {
   const payload = {
     messages: messages.map((m) => ({
@@ -36,9 +37,14 @@ async function getBotReply(messages) {
     });
 
     const data = await resp.json();
-    return data.response || "Sorry, I couldn't generate a response.";
+    return {
+      text: (data.response || "Sorry, I couldn't generate a response.").trim(),
+    };
   } catch (e) {
-    return "Connection error: unable to reach assistant.";
+    return {
+      text: "Connection error: unable to reach assistant.",
+      properties: [],
+    };
   }
 }
 
@@ -51,6 +57,65 @@ export default function Chatbot({ fullPage = false }) {
   const [llmChecking, setLlmChecking] = useState(true);
   const listRef = useRef(null);
   const sendDebounceRef = useRef(false);
+
+
+  const renderMessages = () => {
+    return (
+      <>
+        {messages.length === 0 && (
+          <ListItem>
+            <ListItemText
+              primary="Ask me about prices, listings, or locations."
+              secondary="(Powered by RAG + Gemini)"
+            />
+          </ListItem>
+        )}
+
+        {messages.map((m, idx) => {
+          const isUser = m.from === "user";
+          const bubbleBg = isUser ? "#1976d2" : "#f0f0f0";
+          const bubbleColor = isUser ? "white" : "black";
+          const bubbleMaxWidth = fullPage ? "80%" : "70%";
+
+          return (
+            <ListItem
+              key={idx}
+              sx={{
+                display: "flex",
+                flexDirection: isUser ? "row-reverse" : "row",
+                alignItems: "flex-start",
+              }}
+            >
+              <Avatar sx={{ mx: 1 }}>{isUser ? "U" : "B"}</Avatar>
+              <Box
+                sx={{
+                  maxWidth: bubbleMaxWidth,
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: isUser ? "flex-end" : "flex-start",
+                }}
+              >
+                <Box
+                  sx={{
+                    bgcolor: bubbleBg,
+                    color: bubbleColor,
+                    px: 2,
+                    py: 1,
+                    borderRadius: 3,
+                    width: "100%",
+                  }}
+                >
+                  <Typography sx={{ fontSize: "0.95rem", whiteSpace: "pre-line" }}>
+                    {m.text}
+                  </Typography>
+                </Box>
+              </Box>
+            </ListItem>
+          );
+        })}
+      </>
+    );
+  };
 
   // Load saved chat + open state
   useEffect(() => {
@@ -147,32 +212,40 @@ export default function Chatbot({ fullPage = false }) {
     // set loading early to prevent fast additional sends
     setLoading(true);
 
-    // Add user message instantly
-    setMessages((prev) => {
-      const updated = [...prev, userMsg];
-      botReply(updated);
-      return updated;
-    });
+    // Build new history once, then update state and call botReply.
+    // This avoids putting side-effects inside the state updater, which
+    // React may invoke more than once in StrictMode (leading to 2 replies).
+    const newHistory = [...messages, userMsg];
+    setMessages(newHistory);
+    botReply(newHistory);
   }
 
   async function botReply(history) {
-    let botText = "";
+    let botPayload = { text: "", properties: [] };
     try {
-      botText = await getBotReply(history);
+      botPayload = await getBotReply(history);
     } catch (e) {
-      botText = "Connection error: unable to reach assistant.";
+      botPayload = {
+        text: "Connection error: unable to reach assistant.",
+        properties: [],
+      };
     }
 
     const botMsg = {
       from: "bot",
-      text: botText,
+      text: botPayload.text,
       time: Date.now(),
     };
 
     // Prevent adding duplicate assistant messages
     setMessages((prev) => {
       const lastAssistant = [...prev].reverse().find((m) => m.from === "bot");
-      if (lastAssistant && lastAssistant.text && lastAssistant.text.trim() === botText.trim()) {
+      if (
+        lastAssistant &&
+        lastAssistant.text &&
+        botMsg.text &&
+        lastAssistant.text.trim() === botMsg.text.trim()
+      ) {
         return prev;
       }
       return [...prev, botMsg];
@@ -200,7 +273,7 @@ export default function Chatbot({ fullPage = false }) {
             zIndex: 10000,
           }}
         >
-          <Box sx={{ px: 2, py: 1.5, display: "flex", alignItems: "center", bgcolor: "#1976d2" }}>
+          <Box sx={{ px: 2, py: 1.5, display: "flex", alignItems: "center", background: 'linear-gradient(90deg, #6a1b9a, #8e24aa, #ab47bc)' }}>
             <Typography sx={{ flex: 1, color: "white", fontWeight: 600 }}>Zameen Assistant</Typography>
             <IconButton size="small" onClick={() => setOpen(false)}>
               <CloseIcon sx={{ color: "white" }} />
@@ -208,20 +281,7 @@ export default function Chatbot({ fullPage = false }) {
           </Box>
 
           <List ref={listRef} sx={{ flex: 1, overflowY: "auto", px: 1.5, py: 1 }}>
-            {messages.length === 0 && (
-              <ListItem>
-                <ListItemText primary="Ask me about prices, listings, or locations." secondary="(Powered by RAG + Gemini)" />
-              </ListItem>
-            )}
-
-            {messages.map((m, idx) => (
-              <ListItem key={idx} sx={{ display: "flex", flexDirection: m.from === "user" ? "row-reverse" : "row" }}>
-                <Avatar sx={{ mx: 1 }}>{m.from === "user" ? "U" : "B"}</Avatar>
-                <Box sx={{ maxWidth: "70%", bgcolor: m.from === "user" ? "#1976d2" : "#f0f0f0", color: m.from === "user" ? "white" : "black", px: 2, py: 1, borderRadius: 3 }}>
-                  <Typography sx={{ fontSize: "0.9rem", whiteSpace: "pre-line" }}>{m.text}</Typography>
-                </Box>
-              </ListItem>
-            ))}
+            {renderMessages()}
 
             {loading && (
               <ListItem sx={{ display: "flex", alignItems: "center" }}>
@@ -236,7 +296,22 @@ export default function Chatbot({ fullPage = false }) {
 
           <Box sx={{ display: "flex", gap: 1, p: 2, borderTop: "1px solid #eee" }}>
             <TextField size="small" fullWidth placeholder={llmLoaded ? "Type a message..." : "Loading assistant..."} value={input} onChange={(e) => setInput(e.target.value)} onKeyDown={(e) => { if (e.key === "Enter") sendMessage(); }} disabled={!llmLoaded} />
-            <Button variant="contained" onClick={sendMessage} disabled={loading || !llmLoaded}>Send</Button>
+            <Button 
+              variant="contained" 
+              onClick={sendMessage} 
+              disabled={loading || !llmLoaded}
+              sx={{
+                background: 'linear-gradient(90deg, #7b1fa2, #ab47bc)',
+                '&:hover': {
+                  background: 'linear-gradient(90deg, #6a1b9a, #9c27b0)',
+                },
+                '&:disabled': {
+                  background: '#ccc',
+                },
+              }}
+            >
+              Send
+            </Button>
           </Box>
         </Paper>
       )}
@@ -244,26 +319,23 @@ export default function Chatbot({ fullPage = false }) {
       {/* Full page mode */}
       {fullPage && (
         <Paper elevation={2} sx={{ width: "100%", minHeight: "70vh", display: "flex", flexDirection: "column", borderRadius: 2, overflow: "hidden" }}>
-          <Box sx={{ px: 3, py: 2, display: "flex", alignItems: "center", bgcolor: "#1976d2" }}>
+          <Box sx={{ px: 3, py: 2, display: "flex", alignItems: "center", background: 'linear-gradient(90deg, #6a1b9a, #8e24aa, #ab47bc)' }}>
             <Typography sx={{ flex: 1, color: "white", fontWeight: 700, fontSize: "1.1rem" }}>Zameen Assistant</Typography>
-            <Button color="inherit" onClick={() => { setMessages([]); try { localStorage.removeItem(STORAGE_KEY); } catch (e) {} }}>Clear</Button>
+            <Button 
+              color="inherit" 
+              onClick={() => { setMessages([]); try { localStorage.removeItem(STORAGE_KEY); } catch (e) {} }}
+              sx={{
+                '&:hover': {
+                  background: 'rgba(255, 255, 255, 0.1)',
+                },
+              }}
+            >
+              Clear
+            </Button>
           </Box>
 
           <List ref={listRef} sx={{ flex: 1, overflowY: "auto", px: 2, py: 2 }}>
-            {messages.length === 0 && (
-              <ListItem>
-                <ListItemText primary="Ask me about prices, listings, or locations." secondary="(Powered by RAG + Gemini)" />
-              </ListItem>
-            )}
-
-            {messages.map((m, idx) => (
-              <ListItem key={idx} sx={{ display: "flex", flexDirection: m.from === "user" ? "row-reverse" : "row" }}>
-                <Avatar sx={{ mx: 1 }}>{m.from === "user" ? "U" : "B"}</Avatar>
-                <Box sx={{ maxWidth: "80%", bgcolor: m.from === "user" ? "#1976d2" : "#f0f0f0", color: m.from === "user" ? "white" : "black", px: 2, py: 1, borderRadius: 3 }}>
-                  <Typography sx={{ fontSize: "0.95rem", whiteSpace: "pre-line" }}>{m.text}</Typography>
-                </Box>
-              </ListItem>
-            ))}
+            {renderMessages()}
 
             {loading && (
               <ListItem sx={{ display: "flex", alignItems: "center" }}>
@@ -278,7 +350,22 @@ export default function Chatbot({ fullPage = false }) {
 
           <Box sx={{ display: "flex", gap: 1, p: 2, borderTop: "1px solid #eee" }}>
             <TextField size="small" fullWidth placeholder={llmLoaded ? "Type a message..." : "Loading assistant..."} value={input} onChange={(e) => setInput(e.target.value)} onKeyDown={(e) => { if (e.key === "Enter") sendMessage(); }} disabled={!llmLoaded} />
-            <Button variant="contained" onClick={sendMessage} disabled={loading || !llmLoaded}>Send</Button>
+            <Button 
+              variant="contained" 
+              onClick={sendMessage} 
+              disabled={loading || !llmLoaded}
+              sx={{
+                background: 'linear-gradient(90deg, #7b1fa2, #ab47bc)',
+                '&:hover': {
+                  background: 'linear-gradient(90deg, #6a1b9a, #9c27b0)',
+                },
+                '&:disabled': {
+                  background: '#ccc',
+                },
+              }}
+            >
+              Send
+            </Button>
           </Box>
 
           {/* Loading overlay when assistant not ready */}
@@ -295,7 +382,23 @@ export default function Chatbot({ fullPage = false }) {
 
       {/* Floating Action Button (only when not fullPage) */}
       {!fullPage && (
-        <Fab color="primary" aria-label="chat" sx={{ position: "fixed", bottom: "20px", right: "20px", zIndex: 9999 }} onClick={() => setOpen((o) => !o)}>
+        <Fab 
+          aria-label="chat" 
+          sx={{ 
+            position: "fixed", 
+            bottom: "20px", 
+            right: "20px", 
+            zIndex: 9999,
+            background: 'linear-gradient(135deg, #6a1b9a, #8e24aa, #ab47bc)',
+            '&:hover': {
+              background: 'linear-gradient(135deg, #7b1fa2, #9c27b0, #ba68c8)',
+              transform: 'scale(1.05)',
+            },
+            boxShadow: '0 8px 24px rgba(106, 27, 154, 0.4)',
+            transition: 'all 0.3s ease',
+          }} 
+          onClick={() => setOpen((o) => !o)}
+        >
           <ChatIcon />
         </Fab>
       )}

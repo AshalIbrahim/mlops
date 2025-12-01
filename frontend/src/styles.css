@@ -1,11 +1,18 @@
 /* Minimal styles; MUI handles majority of styling */
 body {
   font-family: Roboto, Arial, sans-serif;
+  margin: 0;
+  min-height: 100vh;
+  background: radial-gradient(circle at top left, #f3e5f5 0, #ede7f6 30%, #f8f5ff 70%, #ffffff 100%);
 }
 
 :root{
-  --primary: #1976d2;
+  --primary: #7b1fa2;
   --muted: rgba(0,0,0,0.06);
+}
+
+.purple-gradient-appbar .MuiAppBar-root {
+  background: linear-gradient(90deg, #6a1b9a, #8e24aa, #ab47bc);
 }
 
 /* Property cards */
@@ -80,4 +87,10 @@ body {
 @media (max-width: 600px){
   .chatbot-panel{ width: calc(100vw - 40px); right: 10px; left: 10px }
   .chatbot-fab{ width:56px !important; height:56px !important }
+}
+
+.skeleton-card {
+  background: linear-gradient(135deg, rgba(123,31,162,0.12), rgba(156,39,176,0.08));
+  height: 180px;
+  opacity: 0.6;
 }

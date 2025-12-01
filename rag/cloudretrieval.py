@@ -4,6 +4,7 @@ import zipfile
 import boto3
 from sentence_transformers import SentenceTransformer
 from dotenv import load_dotenv
+import numpy as np
 
 load_dotenv()
 
@@ -54,30 +55,39 @@ print("Collection loaded successfully:", collection.name)
 # -----------------------
 # Retrieval
 # -----------------------
-def retrieve(query: str, n_results: int = 10):
-    print(f"\n🔍 Query: {query}")
 
-    query_emb = model.encode([query])[0].tolist()
+def cosine_similarity(a, b):
+    a = np.array(a)
+    b = np.array(b)
+    return np.dot(a, b) / (np.linalg.norm(a) * np.linalg.norm(b))
+
+
+def retrieve(query: str, n_results: int = 10):
+    query_emb = model.encode([query])[0]
 
     results = collection.query(
-        query_embeddings=[query_emb],
+        query_embeddings=[query_emb.tolist()],
         n_results=n_results
     )
 
     docs = results["documents"][0]
     metas = results["metadatas"][0]
-    ids = results["ids"][0]
-    
-    for i in range(len(docs)):
-        print("\n-----------------------------")
-        print(f"Result {i+1}")
-        print(f"ID: {ids[i]}")
-        print(f"Location: {metas[i].get('location')}")
-        print(f"Type: {metas[i].get('type')}")
-        print(docs[i])
 
-    return results
+    # -----------------------------
+    # Rerank using cosine similarity
+    # -----------------------------
+    doc_embeddings = model.encode(docs)
+    scores = [cosine_similarity(query_emb, d_emb) for d_emb in doc_embeddings]
 
+    ranked = sorted(zip(docs, metas, scores), key=lambda x: x[2], reverse=True)
+
+    final_docs = [d for d, m, s in ranked][:5]
+    final_metas = [m for d, m, s in ranked][:5]
+
+    return {
+        "documents": final_docs,
+        "metadatas": final_metas
+    }
 
 if __name__ == "__main__":
     while True:

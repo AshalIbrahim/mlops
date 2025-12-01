@@ -35,18 +35,46 @@ export default function Locations({ onSelectLocation }){
 
   return (
     <div>
-      <Typography variant="h5" sx={{ mb: 2 }}>Locations</Typography>
+      <Typography variant="h5" sx={{ mb: 2, fontWeight: 700, color: '#6a1b9a' }}>Locations</Typography>
       <List>
         {locations.map((loc)=> (
           <ListItem key={loc} disablePadding>
-            <ListItemButton onClick={()=>select(loc)}>
-              <ListItemText primary={loc} />
+            <ListItemButton 
+              onClick={()=>select(loc)}
+              sx={{
+                '&:hover': {
+                  background: 'rgba(123,31,162,0.08)',
+                },
+              }}
+            >
+              <ListItemText 
+                primary={loc}
+                primaryTypographyProps={{
+                  sx: {
+                    color: '#6a1b9a',
+                    fontWeight: 500,
+                  },
+                }}
+              />
             </ListItemButton>
           </ListItem>
         ))}
       </List>
       <Stack direction="row" spacing={2} sx={{ mt: 2 }}>
-        <Button variant="outlined" onClick={()=>{ if(onSelectLocation) onSelectLocation(null); navigate('/') }}>Clear Filter</Button>
+        <Button 
+          variant="outlined" 
+          onClick={()=>{ if(onSelectLocation) onSelectLocation(null); navigate('/') }}
+          sx={{
+            borderColor: '#8e24aa',
+            color: '#6a1b9a',
+            '&:hover': {
+              borderColor: '#6a1b9a',
+              background: 'rgba(123,31,162,0.08)',
+            },
+          }}
+        >
+          Clear Filter
+        </Button>
       </Stack>
     </div>
   )

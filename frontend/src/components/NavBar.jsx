@@ -8,22 +8,64 @@ import Link from '@mui/material/Link'
 
 export default function NavBar(){
   return (
-    <AppBar position="static">
+    <AppBar 
+      position="static"
+      sx={{
+        background: 'linear-gradient(90deg, #6a1b9a, #8e24aa, #ab47bc)',
+        boxShadow: '0 4px 20px rgba(106, 27, 154, 0.3)',
+      }}
+    >
       <Toolbar>
-        <Typography variant="h6" sx={{ flexGrow: 1 }}>
+        <Typography variant="h6" sx={{ flexGrow: 1, fontWeight: 700 }}>
           Zameen
         </Typography>
         <Link component={RouterLink} to="/" color="inherit" underline="none">
-          <Button color="inherit">Listings</Button>
+          <Button 
+            color="inherit"
+            sx={{
+              '&:hover': {
+                background: 'rgba(255, 255, 255, 0.1)',
+              },
+            }}
+          >
+            Listings
+          </Button>
         </Link>
         <Link component={RouterLink} to="/locations" color="inherit" underline="none">
-          <Button color="inherit">Locations</Button>
+          <Button 
+            color="inherit"
+            sx={{
+              '&:hover': {
+                background: 'rgba(255, 255, 255, 0.1)',
+              },
+            }}
+          >
+            Locations
+          </Button>
         </Link>
         <Link component={RouterLink} to="/predictions" color="inherit" underline="none">
-          <Button color="inherit">Predictions</Button>
+          <Button 
+            color="inherit"
+            sx={{
+              '&:hover': {
+                background: 'rgba(255, 255, 255, 0.1)',
+              },
+            }}
+          >
+            Predictions
+          </Button>
         </Link>
         <Link component={RouterLink} to="/chatbot" color="inherit" underline="none">
-          <Button color="inherit">Chatbot</Button>
+          <Button 
+            color="inherit"
+            sx={{
+              '&:hover': {
+                background: 'rgba(255, 255, 255, 0.1)',
+              },
+            }}
+          >
+            Chatbot
+          </Button>
         </Link>
       </Toolbar>
     </AppBar>

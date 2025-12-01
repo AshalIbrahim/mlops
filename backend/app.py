@@ -16,6 +16,7 @@ from dotenv import load_dotenv
 from pydantic import BaseModel
 import zipfile
 import numpy as np
+import re
 
 
 load_dotenv()
@@ -183,17 +184,57 @@ def home():
 
 
 @app.get("/listings")
-def get_listings(limit: int = 20):
+def get_listings(
+    limit: int = 20,
+    location: str | None = None,
+    prop_type: str | None = None,
+    purpose: str | None = None,  # "sale" or "rent"
+    min_price: float | None = None,
+    max_price: float | None = None,
+):
+    """
+    Return property listings with optional filtering applied in the database.
+
+    Supported filters (all optional):
+    - location: exact match on location column
+    - prop_type: exact match on prop_type column
+    - purpose: "sale" / "rent"
+    - min_price / max_price: numeric price range
+    """
     conn = get_connection()
     cursor = conn.cursor(dictionary=True)
-    cursor.execute(
-        """
+
+    query = """
         SELECT prop_type, purpose, covered_area, price, location, beds, baths
         FROM property_data
-        LIMIT %s
-        """,
-        (limit,),
-    )
+        WHERE 1=1
+    """
+    params: list = []
+
+    if location:
+        query += " AND location = %s"
+        params.append(location)
+
+    if prop_type:
+        query += " AND prop_type = %s"
+        params.append(prop_type)
+
+    if purpose:
+        query += " AND purpose = %s"
+        params.append(purpose)
+
+    if min_price is not None:
+        query += " AND price >= %s"
+        params.append(min_price)
+
+    if max_price is not None:
+        query += " AND price <= %s"
+        params.append(max_price)
+
+    query += " LIMIT %s"
+    params.append(limit)
+
+    cursor.execute(query, tuple(params))
     data = cursor.fetchall()
     cursor.close()
     conn.close()
@@ -288,16 +329,20 @@ def cosine_similarity(a, b):
     return np.dot(a, b) / (norm_a * norm_b)
 
 
-def retrieve(query: str, n_results: int = 15, top_k: int = 5):
+def retrieve(query: str, n_results: int = 20, top_k: int = 7):
     """
-    Retrieve top-k documents from Chroma using RAG with cosine reranking.
-    Optimized for quality over quantity with relevance threshold.
+    Enhanced RAG retrieval with advanced reranking:
+    - Hybrid scoring: semantic similarity + keyword matching
+    - Metadata-aware boosting
+    - Diversity filtering to avoid redundant results
     """
     try:
         # Encode query
         query_emb = embmodel.encode([query])[0]
+        query_lower = query.lower()
+        query_words = set(query_lower.split())
 
-        # Retrieve initial results from Chroma
+        # Retrieve initial results from Chroma (get more for better reranking)
         results = collections.query(
             query_embeddings=[query_emb.tolist()],
             n_results=n_results
@@ -305,19 +350,64 @@ def retrieve(query: str, n_results: int = 15, top_k: int = 5):
 
         docs = results["documents"][0]
         metas = results["metadatas"][0]
+        ids = results.get("ids", [None] * len(docs))[0] if results.get("ids") else [None] * len(docs)
 
         if not docs:
             return {"documents": [], "metadatas": [], "scores": []}
 
-        # Rerank using cosine similarity
+        # Enhanced reranking with multiple signals
         doc_embeddings = embmodel.encode(docs)
-        scores = [cosine_similarity(query_emb, d_emb) for d_emb in doc_embeddings]
+        semantic_scores = [cosine_similarity(query_emb, d_emb) for d_emb in doc_embeddings]
+        
+        # Keyword matching boost (simple TF-based)
+        keyword_boosts = []
+        for doc in docs:
+            doc_lower = doc.lower()
+            doc_words = set(doc_lower.split())
+            # Count matching keywords
+            matches = len(query_words.intersection(doc_words))
+            # Normalize by query length
+            keyword_score = matches / max(len(query_words), 1) if query_words else 0
+            keyword_boosts.append(keyword_score * 0.2)  # 20% boost max
+        
+        # Metadata boost (if location/property type matches query)
+        metadata_boosts = []
+        for meta in metas:
+            meta_boost = 0.0
+            if meta:
+                meta_str = " ".join(str(v).lower() for v in meta.values() if v)
+                meta_words = set(meta_str.split())
+                meta_matches = len(query_words.intersection(meta_words))
+                meta_boost = (meta_matches / max(len(query_words), 1)) * 0.15 if query_words else 0
+            metadata_boosts.append(meta_boost)
+        
+        # Combined scoring: semantic (70%) + keyword (20%) + metadata (10%)
+        combined_scores = [
+            (sem * 0.7) + (kw * 0.2) + (meta * 0.1)
+            for sem, kw, meta in zip(semantic_scores, keyword_boosts, metadata_boosts)
+        ]
 
-        # Sort by score (descending) and keep only top-k
-        ranked = sorted(zip(docs, metas, scores), key=lambda x: x[2], reverse=True)
-        final_docs = [d for d, m, s in ranked[:top_k]]
-        final_metas = [m for d, m, s in ranked[:top_k]]
-        final_scores = [s for d, m, s in ranked[:top_k]]
+        # Sort by combined score
+        ranked = sorted(zip(docs, metas, ids, combined_scores, semantic_scores), 
+                       key=lambda x: x[3], reverse=True)
+        
+        # Diversity filtering: avoid very similar documents
+        final_docs = []
+        final_metas = []
+        final_scores = []
+        seen_content = set()
+        
+        for doc, meta, doc_id, comb_score, sem_score in ranked:
+            # Simple deduplication: skip if very similar content already selected
+            doc_snippet = doc[:100].lower().strip()
+            if doc_snippet not in seen_content:
+                final_docs.append(doc)
+                final_metas.append(meta)
+                final_scores.append(comb_score)
+                seen_content.add(doc_snippet)
+                
+                if len(final_docs) >= top_k:
+                    break
 
         return {
             "documents": final_docs,
@@ -326,6 +416,8 @@ def retrieve(query: str, n_results: int = 15, top_k: int = 5):
         }
     except Exception as e:
         print(f"❌ Retrieval Error: {e}")
+        import traceback
+        traceback.print_exc()
         return {"documents": [], "metadatas": [], "scores": []}
 
 
@@ -338,10 +430,141 @@ class ChatRequest(BaseModel):
     messages: List[ChatMessage]
 
 
-def generate_chat_response(messages: List[ChatMessage]) -> str:
+def extract_property_data(doc: str) -> dict:
+    """Extract structured property data from document text for mathematical operations and sentiment analysis."""
+    data = {}
+    try:
+        # Try to extract price
+        price_match = re.search(r'price[:\s]+([\d,]+)', doc, re.IGNORECASE)
+        if price_match:
+            data['price'] = float(price_match.group(1).replace(',', ''))
+        
+        # Extract area
+        area_match = re.search(r'(?:area|covered_area|size)[:\s]+([\d.]+)', doc, re.IGNORECASE)
+        if area_match:
+            data['area'] = float(area_match.group(1))
+        
+        # Extract beds/baths
+        beds_match = re.search(r'bed[s]?[:\s]+(\d+)', doc, re.IGNORECASE)
+        if beds_match:
+            data['beds'] = int(beds_match.group(1))
+        
+        baths_match = re.search(r'bath[s]?[:\s]+(\d+)', doc, re.IGNORECASE)
+        if baths_match:
+            data['baths'] = int(baths_match.group(1))
+        
+        # Extract location
+        location_match = re.search(r'location[:\s]+([A-Za-z\s,]+)', doc, re.IGNORECASE)
+        if location_match:
+            data['location'] = location_match.group(1).strip()
+        
+        # Extract property type
+        prop_type_match = re.search(r'(?:type|prop_type)[:\s]+([A-Za-z\s]+)', doc, re.IGNORECASE)
+        if prop_type_match:
+            data['prop_type'] = prop_type_match.group(1).strip()
+        
+        # Extract sentiment information if present
+        sentiment_keywords = ['water_sentiment', 'electricity_sentiment', 'gas_sentiment', 'traffic_sentiment', 'safety_sentiment']
+        for keyword in sentiment_keywords:
+            pattern = rf'{keyword}[:\s]+(good|fair|poor)', re.IGNORECASE
+            match = re.search(pattern, doc)
+            if match:
+                data[keyword] = match.group(1).capitalize()
+    except:
+        pass
+    return data
+
+
+def build_property_cards(bundles: List[dict]) -> List[dict]:
     """
-    Generate a single, high-quality chat response using RAG + LLM.
-    Ensures no duplicate responses are sent. Returns ONE response only.
+    Prepare structured card data for up to three properties.
+    Only returns cards when we have at least some numeric signal (price/area/beds/baths)
+    to avoid showing empty / meaningless cards.
+    """
+    cards: List[dict] = []
+    for idx, bundle in enumerate(bundles):
+        data = bundle.get("data") or {}
+        doc = bundle.get("doc", "")
+        if not data:
+            continue
+
+        price = data.get("price")
+        area = data.get("area")
+        beds = data.get("beds")
+        baths = data.get("baths")
+
+        # Skip if we have no meaningful structured info at all
+        if price is None and area is None and beds is None and baths is None:
+            continue
+
+        price_per_area = (price / area) if price and area and area != 0 else None
+
+        cards.append(
+            {
+                "id": bundle.get("meta", {}).get("id") or f"property_{idx+1}",
+                "label": data.get("prop_type") or f"Property {idx+1}",
+                "location": data.get("location"),
+                "price": price,
+                "area": area,
+                "beds": beds,
+                "baths": baths,
+                "price_per_area": price_per_area,
+                "score": bundle.get("score"),
+                "snippet": doc[:280],
+            }
+        )
+
+        if len(cards) == 3:
+            break
+
+    return cards
+
+
+def build_comparison_insights(cards: List[dict]) -> str:
+    """Produce textual insights (cheapest, best value, etc.) for prompt guidance."""
+    if not cards:
+        return "Not enough structured data for comparison."
+
+    insights = []
+    priced = [c for c in cards if isinstance(c.get("price"), (int, float))]
+    areas = [c for c in cards if isinstance(c.get("area"), (int, float))]
+    value_props = [c for c in cards if isinstance(c.get("price_per_area"), (int, float))]
+
+    if priced:
+        cheapest = min(priced, key=lambda x: x["price"])
+        insights.append(
+            f"Cheapest option: {cheapest['label']} at PKR {cheapest['price']:,.0f}"
+        )
+    if priced:
+        premium = max(priced, key=lambda x: x["price"])
+        insights.append(
+            f"Highest budget option: {premium['label']} at PKR {premium['price']:,.0f}"
+        )
+    if areas:
+        largest = max(areas, key=lambda x: x["area"])
+        insights.append(
+            f"Largest covered area: {largest['label']} with {largest['area']} units"
+        )
+    if value_props:
+        best_value = min(value_props, key=lambda x: x["price_per_area"])
+        insights.append(
+            f"Best price/area: {best_value['label']} at PKR {best_value['price_per_area']:,.0f} per unit"
+        )
+
+    if not insights:
+        return "Structured comparison unavailable."
+
+    return "\n".join(insights)
+
+
+def generate_chat_response(messages: List[ChatMessage]) -> dict:
+    """
+    Enhanced chat response generation with:
+    - Advanced reasoning capabilities
+    - Mathematical sorting and calculations
+    - Better context memory (extracts key facts)
+    - Conversational tone with context awareness
+    - Structured payload for frontend cards
     """
     try:
         # 1. Get last user message
@@ -350,95 +573,191 @@ def generate_chat_response(messages: List[ChatMessage]) -> str:
         # 2. Check for duplicate user query
         user_messages = [m.content for m in messages if m.role == "user"]
         if len(user_messages) > 1 and user_messages[-1] == user_messages[-2]:
-            return "I just answered that question. Would you like more details or a different question?"
+            return {
+                "text": "I just answered that question. Would you like more details or a different question?",
+                "properties": [],
+            }
 
-        # 3. Keep last 5 messages as short-term memory
-        short_memory = "\n".join(f"{m.role}: {m.content}" for m in messages[-5:])
+        # 3. Enhanced context memory: keep last 10 messages + extract key facts
+        recent_messages = messages[-10:] if len(messages) > 10 else messages
+        conversation_history = "\n".join(
+            f"{'User' if m.role == 'user' else 'Assistant'}: {m.content}"
+            for m in recent_messages[:-1]  # Exclude current message
+        )
 
-        # 4. Query Rewriting (Lightweight) - convert user intent to search query
-        rewrite_prompt = f"""Rewrite the final user message into a clean, standalone search query 
-for retrieving property listings from a vector database.
+        # Extract key facts from conversation (locations, preferences, budgets mentioned)
+        key_facts = []
+        for msg in recent_messages:
+            content_lower = msg.content.lower()
+            # Extract mentioned locations or budgets heuristically
+            if any(word in content_lower for word in ["location", "area", "place", "budget", "price", "in "]):
+                key_facts.append(f"User mentioned: {msg.content[:120]}")
 
-Conversation so far:
-{short_memory}
+        key_facts_str = "\n".join(key_facts[-4:]) if key_facts else "No specific preferences mentioned yet."
 
-Write ONLY the rewritten query, nothing else:"""
+        # 4. Enhanced Query Rewriting with context awareness
+        rewrite_prompt = f"""You are helping rewrite a user query for property search.
+
+Conversation context (excluding the latest user turn):
+{conversation_history}
+
+Key facts extracted:
+{key_facts_str}
+
+Current user message: "{last_user}"
+
+Rewrite this into an optimal search query for finding property listings. Include relevant context from the conversation.
+Return ONLY the rewritten query, nothing else."""
 
         try:
             rewritten_query = googlemodel.models.generate_content(
                 model="gemini-2.0-flash",
-                contents=rewrite_prompt
+                contents=rewrite_prompt,
             ).text.strip()
         except Exception as e:
             print(f"⚠️ Query rewrite failed: {e}, using original message")
             rewritten_query = last_user
 
-        # 5. RAG Retrieval with optimized scoring
-        rag_results = retrieve(rewritten_query, n_results=15, top_k=5)
+        # 5. Enhanced RAG Retrieval
+        rag_results = retrieve(rewritten_query, n_results=20, top_k=7)
         context_docs = rag_results["documents"]
         context_scores = rag_results["scores"]
+        context_metas = rag_results.get("metadatas", []) or []
 
-        # Format context with relevance info
-        if context_docs:
-            context = "\n---DOC---\n".join(
-                f"{doc} (relevance: {score:.2f})" 
-                for doc, score in zip(context_docs, context_scores)
+        # Bundle documents with structured data and extract sentiment info
+        bundled_results = []
+        formatted_context_parts = []
+        sentiment_info = []
+
+        for idx, doc in enumerate(context_docs):
+            score = context_scores[idx] if idx < len(context_scores) else 0.0
+            meta = context_metas[idx] if idx < len(context_metas) else {}
+            prop_data = extract_property_data(doc)
+            bundle = {"doc": doc, "score": score, "meta": meta or {}, "data": prop_data}
+            bundled_results.append(bundle)
+
+            # Extract sentiment information from document (look for sentiment keywords)
+            doc_lower = doc.lower()
+            if any(word in doc_lower for word in ['sentiment', 'water', 'electricity', 'gas', 'traffic', 'safety', 'good', 'fair', 'poor']):
+                # Try to extract location for sentiment mapping
+                location = prop_data.get("location") or meta.get("location", "")
+                if location:
+                    sentiment_info.append(f"Location: {location} - Sentiment data available in document")
+
+            info_parts = [f"Document {idx + 1} (relevance: {score:.3f})"]
+            if prop_data.get("price"):
+                info_parts.append(f"Price: PKR {prop_data['price']:,.0f}")
+            if prop_data.get("area"):
+                info_parts.append(f"Area: {prop_data['area']} sq units")
+            if prop_data.get("location"):
+                info_parts.append(f"Location: {prop_data['location']}")
+            if prop_data.get("beds"):
+                info_parts.append(f"Beds: {prop_data['beds']}")
+            if prop_data.get("baths"):
+                info_parts.append(f"Baths: {prop_data['baths']}")
+
+            formatted_context_parts.append(
+                f"{' | '.join(info_parts)}\nContent: {doc[:600]}"
             )
-        else:
-            context = "[No relevant documents found. Use general knowledge.]"
 
-        # 6. Check if we should use context or general knowledge
+        context = (
+            "\n\n---\n\n".join(formatted_context_parts)
+            if formatted_context_parts
+            else "[No relevant documents found. Use general knowledge.]"
+        )
+
+        structured_cards = build_property_cards(bundled_results)
+        comparison_summary = build_comparison_insights(structured_cards)
+
+        # 6. Determine if context is useful
         avg_score = np.mean(context_scores) if context_scores else 0.0
-        use_context = avg_score > 0.3  # Only use context if relevance is decent
+        use_context = avg_score > 0.25  # Lower threshold for better coverage
 
-        # 7. Generate final response (SINGLE call - no duplicates)
-        main_prompt = f"""You are Zameen.com's intelligent property assistant.
-Your response must be concise, accurate, and conversational.
+        # 7. Enhanced LLM prompt with reasoning, mathematical capabilities, and sentiment awareness
+        sentiment_context = "\n".join(sentiment_info) if sentiment_info else "No specific sentiment data found in retrieved documents."
 
-{'Use the retrieved documents to answer the user:' if use_context else 'Use general real-estate knowledge to answer the user (limited context available):'}
+        main_prompt = f"""You are Zameen.com's intelligent property assistant. You are conversational, helpful, and have strong reasoning abilities.
 
-CONTEXT:
-{context if use_context else '[Limited data - provide general guidance]'}
+CAPABILITIES:
+- Mathematical reasoning: Calculate price per square unit, compare properties, sort by value
+- Context awareness: Remember previous conversation and user preferences
+- Data analysis: Extract and compare property features from retrieved documents
+- Sentiment analysis: Include location sentiments (water, electricity, gas, traffic, safety) when available
+- Natural conversation: Respond like a knowledgeable real estate expert
 
-CONVERSATION:
-{short_memory}
+{"RETRIEVED PROPERTY DATA:" if use_context else "LIMITED DATA - use general knowledge:"}
+{context if use_context else "[No specific property data available. Provide general guidance based on real estate knowledge.]"}
 
-USER:
+LOCATION SENTIMENTS (if available):
+{sentiment_context}
+
+COMPARISON INSIGHTS (use for detailed comparisons):
+{comparison_summary}
+
+CONVERSATION HISTORY:
+{conversation_history}
+
+KEY FACTS FROM CONVERSATION:
+{key_facts_str}
+
+CURRENT USER MESSAGE:
 {last_user}
         
-            ASSISTANT:"""
+INSTRUCTIONS:
+1. If the user asks to compare, sort, or calculate (e.g., "cheapest", "best value", "price per sq ft"), use the retrieved property data to perform mathematical operations
+2. Extract numbers from documents: prices, areas, beds, baths
+3. Calculate metrics like price per square unit when relevant
+4. Sort properties mathematically when asked (by price, area, value, etc.)
+5. When comparing properties, provide detailed comparisons including:
+   - Price differences and value analysis
+   - Size and space comparisons
+   - Location advantages/disadvantages
+   - Sentiment information (water, electricity, gas, traffic, safety) when available in the context
+6. Be conversational - reference previous parts of the conversation naturally
+7. If data is available, cite specific numbers and properties with clear reasoning
+8. Show your mathematical reasoning: explain how you calculated or compared values
+9. Include sentiment information when discussing locations - mention water, electricity, gas, traffic, and safety conditions if found in the retrieved documents
+10. Format your response with clear paragraphs and use bullet points for comparisons when listing multiple properties
+11. If the user asks about locations/types not in context, acknowledge it and provide general guidance
+
+RESPOND AS ASSISTANT:
+Provide a comprehensive, well-formatted response that:
+- Answers the user's question directly and conversationally
+- Includes specific numbers and calculations when comparing properties
+- Mentions location sentiments (water, electricity, gas, traffic, safety) when available
+- Uses clear paragraphs and bullet points for readability
+- Shows mathematical reasoning for any calculations or comparisons"""
 
         output = googlemodel.models.generate_content(
             model="gemini-2.0-flash",
-            contents=main_prompt
+            contents=main_prompt,
         )
         generated = output.text.strip()
 
-        # --- Deduplicate repeated completions (common LLM artifact) ---
-        # If the model returns two similar answers separated by double newlines, keep only the first unique completion.
-        if "\n\n" in generated:
-            parts = [p.strip() for p in generated.split("\n\n") if p.strip()]
-            # If the first two parts are very similar, keep only the first
-            if len(parts) > 1 and parts[0].lower() == parts[1].lower():
-                generated = parts[0]
-            else:
-                # If not identical, but still multiple completions, keep only the first
-                generated = parts[0]
-
-        # 8. Final duplicate check against recent assistant messages
+        # Final duplicate check
         recent_assistant = [m.content for m in reversed(messages) if m.role == "assistant"]
         if recent_assistant and recent_assistant[0].strip() == generated.strip():
-            return "I've already provided that information. Would you like me to expand or clarify something specific?"
+            generated = "I've already provided that information. Would you like me to expand on a specific aspect or help with something else?"
 
-        return generated
+        # Don't send cards - just use comparison data for better text responses
+        return {"text": generated, "properties": []}
 
     except Exception as e:
         print(f"❌ Chat Error: {e}")
-        return "Sorry, I encountered an error. Please try again."
+        import traceback
+
+        traceback.print_exc()
+        return {
+            "text": "Sorry, I encountered an error. Please try again.",
+            "properties": [],
+        }
 
 
 @app.post("/chat")
 def chat(req: ChatRequest):
-    """Chat endpoint - returns a SINGLE response per request."""
-    response = generate_chat_response(req.messages)
-    return {"response": response}
+    """Chat endpoint - returns a SINGLE high-quality text response per request."""
+    payload = generate_chat_response(req.messages)
+    return {
+        "response": payload.get("text"),
+        "properties": [],  # No cards - all info in text response
+    }
