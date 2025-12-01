@@ -22,6 +22,9 @@ export default function NavBar(){
         <Link component={RouterLink} to="/predictions" color="inherit" underline="none">
           <Button color="inherit">Predictions</Button>
         </Link>
+        <Link component={RouterLink} to="/chatbot" color="inherit" underline="none">
+          <Button color="inherit">Chatbot</Button>
+        </Link>
       </Toolbar>
     </AppBar>
   )

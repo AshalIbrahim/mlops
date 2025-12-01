@@ -55,11 +55,11 @@ def main():
     print(f"Fetched {len(rows)} joined rows.")
 
     # Model
-    model = SentenceTransformer('all-MiniLM-L6-v2')
+    model = SentenceTransformer('intfloat/multilingual-e5-large-instruct')
 
     # Chroma (new index)
     chroma_client = chromadb.PersistentClient(path="./chroma_joined_index")
-    collection_name = "zameen_joined_index"
+    collection_name = "zameen_joined_indexBigModel"
 
     existing = [c.name for c in chroma_client.list_collections()]
     if collection_name in existing:

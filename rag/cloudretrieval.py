@@ -54,7 +54,7 @@ print("Collection loaded successfully:", collection.name)
 # -----------------------
 # Retrieval
 # -----------------------
-def retrieve(query: str, n_results: int = 5):
+def retrieve(query: str, n_results: int = 10):
     print(f"\n🔍 Query: {query}")
 
     query_emb = model.encode([query])[0].tolist()
@@ -67,7 +67,7 @@ def retrieve(query: str, n_results: int = 5):
     docs = results["documents"][0]
     metas = results["metadatas"][0]
     ids = results["ids"][0]
-
+    
     for i in range(len(docs)):
         print("\n-----------------------------")
         print(f"Result {i+1}")
