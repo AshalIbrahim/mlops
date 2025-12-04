@@ -1,0 +1,14 @@
+artifact_uri: mlflow-artifacts:/816190430163021017/76594e6efd404c948a4a6bd41c252c68/artifacts
+end_time: 1761238183203
+entry_point_name: ''
+experiment_id: '816190430163021017'
+lifecycle_stage: active
+run_id: 76594e6efd404c948a4a6bd41c252c68
+run_name: handsome-slug-156
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1761238182989
+status: 4
+tags: []
+user_id: Admin

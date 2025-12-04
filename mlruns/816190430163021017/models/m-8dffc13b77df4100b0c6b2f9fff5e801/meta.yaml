@@ -1,0 +1,10 @@
+artifact_location: mlflow-artifacts:/816190430163021017/models/m-8dffc13b77df4100b0c6b2f9fff5e801/artifacts
+creation_timestamp: 1761317478712
+experiment_id: '816190430163021017'
+last_updated_timestamp: 1761317487834
+model_id: m-8dffc13b77df4100b0c6b2f9fff5e801
+model_type: ''
+name: ZameenPriceModelSale
+source_run_id: 7a3e27e6b15d43e4ba96684283680ce3
+status: 2
+status_message: null

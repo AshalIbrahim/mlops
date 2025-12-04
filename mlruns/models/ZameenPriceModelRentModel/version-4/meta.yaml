@@ -1,0 +1,15 @@
+creation_timestamp: 1761398729610
+current_stage: None
+deployment_job_state: null
+description: ''
+last_updated_timestamp: 1761398729610
+model_id: m-a9709bb5540a4818a78b1b1eb4abb8a3
+name: ZameenPriceModelRentModel
+run_id: 947a7bc45e154f6fbce6ece61fae2236
+run_link: ''
+source: models:/m-a9709bb5540a4818a78b1b1eb4abb8a3
+status: READY
+status_message: null
+storage_location: mlflow-artifacts:/816190430163021017/models/m-a9709bb5540a4818a78b1b1eb4abb8a3/artifacts
+user_id: null
+version: 4
